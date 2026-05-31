@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "How is WPM calculated?", a: "Words per minute is based on correctly typed characters divided by five, over the time you took — the standard method used in typing tests." },
   { q: "Does it support Hindi typing?", a: "Yes. Switch to the हिंदी passage to practise Hindi typing for state government skill tests." },
+  { q: "How can I improve my typing speed?", a: "Practise daily, keep your fingers on the home row, and focus on accuracy first — speed follows naturally as errors drop. Re-take the test to track your progress." },
+  { q: "What WPM do government skill tests require?", a: "Requirements vary by exam, commonly around 30–35 WPM in English and 25–30 WPM in Hindi. Check the official notification for the exact target, then practise to comfortably exceed it." },
+  { q: "Is it free?", a: "Yes — free, no sign-up, and it runs entirely in your browser." },
 ];
 
 export default function Page() {
@@ -28,8 +31,34 @@ export default function Page() {
       <p className="lede">Check your typing speed and accuracy in real time. Practise for government skill tests — free and entirely in your browser.</p>
       <TypingTest />
       <div className="ad-slot">Ad placement (AdSense)</div>
+
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>How to take the typing test</h2>
+        <ol className="steps">
+          <li>Choose your language — English or हिंदी.</li>
+          <li>Start typing the passage shown; the timer begins on your first keystroke.</li>
+          <li>Correct characters turn green and mistakes turn red in real time.</li>
+          <li>See your final WPM and accuracy, then click Restart to try again.</li>
+        </ol>
+      </div>
+
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>Practise for government typing skill tests</h2>
+        <p>
+          Many government posts — clerks, data-entry operators, stenographers and more — include a
+          typing skill test with a minimum speed and accuracy. This tool lets you practise in both
+          English and Hindi and gives you instant feedback on words per minute and accuracy, just
+          like the real test.
+        </p>
+        <p>
+          Regular practice here builds the muscle memory and confidence you need on exam day. Focus
+          on typing accurately first; as your error rate falls, your speed climbs naturally. The
+          test runs entirely in your browser, with no sign-up required.
+        </p>
+      </div>
+
       <div className="card faq">
-        <h2 style={{ marginTop: 0 }}>FAQ</h2>
+        <h2 style={{ marginTop: 0 }}>Frequently asked questions</h2>
         <dl>{faqs.map((f) => (<div key={f.q}><dt>{f.q}</dt><dd>{f.a}</dd></div>))}</dl>
       </div>
     </>

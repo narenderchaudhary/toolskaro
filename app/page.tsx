@@ -54,9 +54,8 @@ function ToolCard({ tool, tint, color }: { tool: Tool; tint: string; color: stri
     <>
       <div className="tool-icon" style={{ background: tint, color }}>{tool.icon}</div>
       <div>
-        <div className="t">{tool.t}</div>
+        <div className="t">{tool.t}{!tool.ready && <span className="vol soon" style={{ marginLeft: 8 }}>Soon</span>}</div>
         <div className="d">{tool.d}</div>
-        <span className={`vol${tool.ready ? "" : " soon"}`}>{tool.ready ? tool.vol : `${tool.vol} · Soon`}</span>
       </div>
     </>
   );

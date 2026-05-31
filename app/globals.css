@@ -133,7 +133,16 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
 .result .stat b { color: var(--accent); }
 
 .steps { padding-left: 20px; color: var(--muted); font-size: 14.5px; }
-.steps li { margin: 4px 0; }
+.steps li { margin: 6px 0; }
+
+/* Long-form content blocks on tool pages */
+.content p, .content li { color: #39414f; font-size: 15px; line-height: 1.75; }
+.content p { margin: 0 0 12px; }
+.content p:last-child { margin-bottom: 0; }
+.content ul { padding-left: 20px; margin: 10px 0; }
+.content ul li { margin: 5px 0; }
+.content h2 { letter-spacing: -0.01em; }
+.content h3 { font-size: 16px; margin: 18px 0 6px; }
 .faq dt { font-weight: 700; margin-top: 16px; color: var(--ink); }
 .faq dd { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
 .muted-note { font-size: 13px; color: var(--muted); }
