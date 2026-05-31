@@ -93,6 +93,40 @@ a.tool-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); b
 .tool-card .vol { display: inline-block; margin-top: 9px; font-size: 11.5px; font-weight: 600; color: var(--accent); background: #ecfdf5; padding: 2px 9px; border-radius: 999px; }
 .tool-card .vol.soon { color: var(--muted); background: #f1f5f9; }
 
+/* ---------- Tool landing: rich marketing sections ---------- */
+.tool-hero { text-align: center; padding: 30px 0 8px; }
+.tool-hero h1 { font-size: 40px; line-height: 1.12; letter-spacing: -0.025em; max-width: 760px; margin: 0 auto 14px; }
+.tool-hero .lede { margin: 0 auto 6px; text-align: center; }
+@media (max-width: 640px) { .tool-hero h1 { font-size: 30px; } }
+
+.section-center { text-align: center; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin: 46px 0 28px; }
+.section-center .g { background: linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+@media (max-width: 640px) { .section-center { font-size: 24px; margin: 34px 0 22px; } }
+
+.steps-rail { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.step-row { display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.step-num { width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 4px 12px rgba(79,70,229,.3); }
+.step-body { flex: 1; }
+.step-body h3 { margin: 0 0 3px; font-size: 16px; }
+.step-body p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.step-icon { width: 54px; height: 54px; flex: none; border-radius: 15px; display: grid; place-items: center; font-size: 27px; }
+@media (max-width: 520px) { .step-icon { display: none; } }
+
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.feature { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s; }
+.feature:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.feature-icon { width: 42px; height: 42px; flex: none; border-radius: 11px; display: grid; place-items: center; font-size: 21px; background: #eef2ff; color: var(--brand); }
+.feature h3 { margin: 0 0 4px; font-size: 15.5px; }
+.feature p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+@media (max-width: 640px) { .feature-grid { grid-template-columns: 1fr; } }
+
+.cta-band { text-align: center; border-radius: 20px; padding: 42px 24px; margin: 46px 0 8px; color: #fff; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow-md); }
+.cta-band h2 { color: #fff; font-size: 26px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.cta-band p { color: rgba(255,255,255,.92); margin: 0 0 20px; font-size: 15.5px; }
+.cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.cta-links a { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.32); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+.cta-links a:hover { background: #fff; color: var(--brand-dark); text-decoration: none; }
+
 /* ---------- Cards / sections (tool pages) ---------- */
 h1 { font-size: 30px; letter-spacing: -0.02em; margin: 26px 0 6px; font-weight: 800; }
 .lede { color: var(--muted); margin: 0 0 24px; font-size: 16px; max-width: 680px; }
