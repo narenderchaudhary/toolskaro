@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import WordCounter from "./WordCounter";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Word Counter — Count Words, Characters & Reading Time Online Free",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Free online word counter. Instantly count words, characters, sentences, paragraphs and reading time as you type or paste. 100% in your browser.",
   alternates: { canonical: "/word-counter/" },
 };
+
+const steps = [
+  { icon: "⌨️", title: "Type or paste", text: "Add your text into the box." },
+  { icon: "📊", title: "See live counts", text: "Words, characters, sentences and paragraphs update instantly." },
+  { icon: "✂️", title: "Edit to fit", text: "Trim or expand to meet any word or character limit." },
+];
+
+const features = [
+  { icon: "🔢", title: "Words & characters", text: "Counts words, plus characters with and without spaces." },
+  { icon: "📝", title: "Sentences & paragraphs", text: "Track structure for essays, SOPs and articles." },
+  { icon: "⏱️", title: "Reading time", text: "Estimates reading time at around 200 words per minute." },
+  { icon: "⚡", title: "Real-time", text: "Every count updates the instant you type." },
+  { icon: "🔒", title: "Private", text: "Your text stays in your browser — nothing is stored or sent." },
+  { icon: "🆓", title: "Free, no limit", text: "Paste short answers or long documents — no sign-up needed." },
+];
 
 const faqs = [
   { q: "Does it count characters with and without spaces?", a: "Yes — it shows total characters and characters excluding spaces, which is handy for forms and applications with strict character limits." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Word Counter</h1>
-      <p className="lede">Count words, characters, sentences and reading time instantly as you type — free and private.</p>
+      <div className="tool-hero">
+        <h1>Free online <span className="grad">word counter</span></h1>
+        <p className="lede">Count words, characters, sentences and reading time instantly as you type — free and private.</p>
+      </div>
+
       <WordCounter />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to use the word counter</h2>
-        <ol className="steps">
-          <li>Type directly in the box, or paste your text.</li>
-          <li>Watch the live counts update for words, characters, sentences and paragraphs.</li>
-          <li>Use the characters-without-spaces count for strict character limits.</li>
-          <li>Check the estimated reading time for speeches or articles.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Count in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">word counter</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Stay within any word or character limit</h2>
@@ -58,6 +72,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="More free, private tools"
+        text="Everything runs in your browser — no sign-up required."
+        links={[["/typing-test/", "Typing Test"], ["/qr-code-generator/", "QR Generator"], ["/resume-maker/", "Resume Maker"], ["/age-calculator/", "Age Calculator"]]}
+      />
     </>
   );
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import TypingTest from "./TypingTest";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Typing Test — English & Hindi Typing Speed Test (WPM) Online Free",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Free online typing test in English and Hindi. Measure your typing speed (WPM) and accuracy in real time — great practice for government skill tests. 100% in your browser.",
   alternates: { canonical: "/typing-test/" },
 };
+
+const steps = [
+  { icon: "🌐", title: "Choose language", text: "Pick English or हिंदी." },
+  { icon: "⌨️", title: "Start typing", text: "The timer begins on your first keystroke." },
+  { icon: "📊", title: "See your score", text: "Get your WPM and accuracy, then retry to improve." },
+];
+
+const features = [
+  { icon: "🇮🇳", title: "English & Hindi", text: "Practise both languages for government skill tests." },
+  { icon: "⚡", title: "Live WPM", text: "Real-time words-per-minute and accuracy as you type." },
+  { icon: "🎨", title: "Instant feedback", text: "Correct characters turn green and mistakes turn red." },
+  { icon: "🔁", title: "Unlimited retries", text: "Restart any time to track your progress." },
+  { icon: "🔒", title: "Private", text: "Runs entirely in your browser — nothing is uploaded." },
+  { icon: "🆓", title: "Free", text: "No sign-up and no limits." },
+];
 
 const faqs = [
   { q: "How is WPM calculated?", a: "Words per minute is based on correctly typed characters divided by five, over the time you took — the standard method used in typing tests." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Typing Test — English &amp; Hindi</h1>
-      <p className="lede">Check your typing speed and accuracy in real time. Practise for government skill tests — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Typing test — <span className="grad">English &amp; Hindi</span></h1>
+        <p className="lede">Check your typing speed and accuracy in real time. Practise for government skill tests — free and entirely in your browser.</p>
+      </div>
+
       <TypingTest />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to take the typing test</h2>
-        <ol className="steps">
-          <li>Choose your language — English or हिंदी.</li>
-          <li>Start typing the passage shown; the timer begins on your first keystroke.</li>
-          <li>Correct characters turn green and mistakes turn red in real time.</li>
-          <li>See your final WPM and accuracy, then click Restart to try again.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Test in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">typing test</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Practise for government typing skill tests</h2>
@@ -59,6 +73,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="Get exam-ready with free tools"
+        text="From typing practice to photo and document prep — all in one place."
+        links={[["/word-counter/", "Word Counter"], ["/age-calculator/", "Age Calculator"], ["/resume-maker/", "Resume Maker"], ["/image-compressor/", "Image Compressor"]]}
+      />
     </>
   );
 }

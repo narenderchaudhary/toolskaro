@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import QrGenerator from "./QrGenerator";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "QR Code Generator — Free Online QR Maker (Download PNG)",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Generate a QR code from any link, text, UPI ID or Wi-Fi details. Customise size and colour, then download as PNG. Free, no signup, 100% in your browser.",
   alternates: { canonical: "/qr-code-generator/" },
 };
+
+const steps = [
+  { icon: "⌨️", title: "Enter content", text: "Type a link, text, UPI ID or Wi-Fi details." },
+  { icon: "🎨", title: "Customise", text: "Set the size in pixels and pick a colour." },
+  { icon: "⬇️", title: "Download PNG", text: "Save your QR code as a PNG image." },
+];
+
+const features = [
+  { icon: "♾️", title: "Never expires", text: "Static QR codes encode your data directly — no expiry, ever." },
+  { icon: "💸", title: "UPI payments", text: "Encode a UPI string to accept payments at your shop or stall." },
+  { icon: "🎨", title: "Custom look", text: "Choose any size and foreground colour for the code." },
+  { icon: "🔒", title: "No tracking", text: "Generated in your browser with no redirect and no scan tracking." },
+  { icon: "🆓", title: "Free", text: "Unlimited QR codes, no sign-up and no watermark." },
+  { icon: "🖨️", title: "Use anywhere", text: "Posters, visiting cards, packaging, websites and presentations." },
+];
 
 const faqs = [
   { q: "Do these QR codes expire?", a: "No. These are static QR codes encoded directly from your text, so they never expire and there is no tracking or redirect involved." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>QR Code Generator</h1>
-      <p className="lede">Turn any link, text or UPI ID into a downloadable QR code — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Free <span className="grad">QR code generator</span></h1>
+        <p className="lede">Turn any link, text or UPI ID into a downloadable QR code — free and entirely in your browser.</p>
+      </div>
+
       <QrGenerator />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to generate a QR code</h2>
-        <ol className="steps">
-          <li>Type or paste your link, text, UPI ID or Wi-Fi details.</li>
-          <li>Adjust the size in pixels and choose a colour if you like.</li>
-          <li>The QR preview updates instantly as you type.</li>
-          <li>Click <strong>Download PNG</strong> to save it.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Generate in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">QR generator</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Free static QR codes for any purpose</h2>
@@ -52,13 +66,19 @@ export default function Page() {
           scans.
         </p>
         <p>
-          Use it to share your website or social profile, accept UPI payments at a shop counter,
-          let guests connect to your Wi-Fi, or add a scannable link to a poster, resume or visiting
-          card. Everything is generated locally in your browser and free to download.
+          Use it to share your website or social profile, accept UPI payments at a shop counter, let
+          guests connect to your Wi-Fi, or add a scannable link to a poster, resume or visiting card.
+          Everything is generated locally in your browser and free to download.
         </p>
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="More handy free tools"
+        text="Everything runs in your browser — fast, private and free."
+        links={[["/word-counter/", "Word Counter"], ["/age-calculator/", "Age Calculator"], ["/image-compressor/", "Image Compressor"], ["/pdf/merge/", "Merge PDF"]]}
+      />
     </>
   );
 }

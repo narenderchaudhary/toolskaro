@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import PdfToJpg from "./PdfToJpg";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "PDF to JPG — Convert PDF Pages to Images Online Free (No Upload)",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Convert every page of a PDF into high-quality JPG images and download them. Free, no signup, and 100% in your browser — your PDF is never uploaded.",
   alternates: { canonical: "/pdf/pdf-to-jpg/" },
 };
+
+const steps = [
+  { icon: "📁", title: "Upload your PDF", text: "Choose a PDF file from your device." },
+  { icon: "🖼️", title: "Pages → images", text: "Every page is rendered as a separate JPG." },
+  { icon: "⬇️", title: "Download", text: "Save any page you need as a JPG image." },
+];
+
+const features = [
+  { icon: "🖼️", title: "Every page", text: "Each page of your PDF becomes its own downloadable JPG." },
+  { icon: "🔍", title: "Sharp output", text: "Pages render at a crisp resolution that is great for screen and upload." },
+  { icon: "🔒", title: "Private", text: "Conversion runs in your browser; the PDF never leaves your device." },
+  { icon: "📚", title: "Multi-page & scans", text: "Handles long documents and scanned PDFs alike." },
+  { icon: "🆓", title: "Free", text: "No sign-up, no watermark, no limits." },
+  { icon: "🔁", title: "Round-trip", text: "Need a PDF again later? Use our JPG to PDF tool." },
+];
 
 const faqs = [
   { q: "Does it convert every page?", a: "Yes — each page of your PDF becomes a separate JPG image that you can download individually." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>PDF to JPG</h1>
-      <p className="lede">Turn each page of your PDF into a downloadable JPG image — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Convert <span className="grad">PDF to JPG</span> online</h1>
+        <p className="lede">Turn each page of your PDF into a downloadable JPG image — free and entirely in your browser.</p>
+      </div>
+
       <PdfToJpg />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to convert PDF to JPG</h2>
-        <ol className="steps">
-          <li>Upload your PDF using the box above.</li>
-          <li>The tool renders every page as a separate JPG image.</li>
-          <li>Preview the pages that appear.</li>
-          <li>Click the download button under any page to save it as a JPG.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Convert in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">PDF to JPG</span> tool</>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Extract images from any PDF</h2>
@@ -57,6 +71,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="All the PDF tools you need — free"
+        text="Convert, merge, compress and rebuild PDFs privately in your browser."
+        links={[["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/compress/", "Compress PDF"], ["/image-compressor/", "Image Compressor"]]}
+      />
     </>
   );
 }

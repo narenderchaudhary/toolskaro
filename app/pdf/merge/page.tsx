@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import MergePdf from "./MergePdf";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Merge PDF — Combine PDF Files Online Free (No Upload)",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Combine multiple PDF files into one, reorder them as you like, and download — free, no signup, and 100% in your browser. Your files are never uploaded.",
   alternates: { canonical: "/pdf/merge/" },
 };
+
+const steps = [
+  { icon: "📁", title: "Add PDF files", text: "Drop or choose two or more PDFs." },
+  { icon: "↕️", title: "Reorder", text: "Use the arrows to set the page sequence you want." },
+  { icon: "⬇️", title: "Merge & download", text: "Combine them into a single PDF and save it." },
+];
+
+const features = [
+  { icon: "🗂️", title: "Unlimited files", text: "Combine as many PDFs as you need into one document." },
+  { icon: "↕️", title: "Custom order", text: "Arrange files with up/down controls before merging." },
+  { icon: "🏆", title: "No quality loss", text: "Pages are copied as-is, keeping original text and images." },
+  { icon: "🔒", title: "Private", text: "Merging runs in your browser; files are never uploaded." },
+  { icon: "🆓", title: "Free", text: "No watermark, no sign-up, no page limit." },
+  { icon: "🧩", title: "Pairs with tools", text: "Combine with JPG to PDF and Compress PDF for a complete packet." },
+];
 
 const faqs = [
   { q: "How many PDFs can I merge?", a: "As many as you like. Add two or more files, drag them into the right order, and merge them into a single document." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Merge PDF</h1>
-      <p className="lede">Combine multiple PDFs into a single file, in any order — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Merge <span className="grad">PDF files</span> into one</h1>
+        <p className="lede">Combine multiple PDFs into a single file, in any order — free and entirely in your browser.</p>
+      </div>
+
       <MergePdf />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to merge PDF files</h2>
-        <ol className="steps">
-          <li>Add two or more PDF files using the box above.</li>
-          <li>Reorder them with the up/down arrows so the pages appear in the sequence you want.</li>
-          <li>Click <strong>Merge PDFs</strong>.</li>
-          <li>Download the combined PDF.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Merge in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">PDF merger</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Combine documents into one file for upload</h2>
@@ -59,6 +73,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="Assemble your documents for free"
+        text="Convert, merge and compress everything privately in your browser."
+        links={[["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/pdf-to-jpg/", "PDF to JPG"], ["/image-compressor/", "Image Compressor"]]}
+      />
     </>
   );
 }

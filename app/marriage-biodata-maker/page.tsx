@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import BiodataMaker from "./BiodataMaker";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Marriage Biodata Maker — Free Online (Hindi & English) Download PDF",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Create a marriage biodata in Hindi or English with a traditional header and download it as a PDF. Free, no signup, and 100% in your browser.",
   alternates: { canonical: "/marriage-biodata-maker/" },
 };
+
+const steps = [
+  { icon: "🌐", title: "Choose language", text: "Switch labels between English and हिंदी." },
+  { icon: "📝", title: "Fill the details", text: "Add personal, family and contact information." },
+  { icon: "⬇️", title: "Save as PDF", text: "Click Download / Print and choose ‘Save as PDF’." },
+];
+
+const features = [
+  { icon: "🕉️", title: "Traditional header", text: "Includes an editable header line such as ॥ श्री गणेशाय नमः ॥." },
+  { icon: "🌐", title: "Hindi & English", text: "Switch field labels and type your details in either language." },
+  { icon: "🧾", title: "Clean layout", text: "A neat, respectful one-page format that prints beautifully." },
+  { icon: "🙊", title: "Share only what you want", text: "Only the fields you fill in appear on the biodata." },
+  { icon: "🔒", title: "Private", text: "Generated in your browser — your details are never uploaded." },
+  { icon: "🆓", title: "Free", text: "No watermark and no sign-up." },
+];
 
 const faqs = [
   { q: "Can I make the biodata in Hindi?", a: "Yes — switch the labels to हिंदी, and you can type your details in Hindi or English. A traditional header line is included by default." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Marriage Biodata Maker</h1>
-      <p className="lede">Create a clean marriage biodata in Hindi or English and download it as a PDF — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Free <span className="grad">marriage biodata maker</span></h1>
+        <p className="lede">Create a clean marriage biodata in Hindi or English and download it as a PDF — free and entirely in your browser.</p>
+      </div>
+
       <BiodataMaker />
       <div className="ad-slot no-print">Ad placement (AdSense)</div>
 
-      <div className="card content no-print">
-        <h2 style={{ marginTop: 0 }}>How to make a marriage biodata</h2>
-        <ol className="steps">
-          <li>Choose English or हिंदी labels.</li>
-          <li>Keep or edit the header line (for example, ॥ श्री गणेशाय नमः ॥).</li>
-          <li>Fill in your personal, education, career and family details.</li>
-          <li>Click <strong>Download / Print PDF</strong> and choose “Save as PDF”.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Create it in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">biodata maker</span></>} items={features} />
 
       <div className="card content no-print">
         <h2 style={{ marginTop: 0 }}>A simple, elegant biodata for marriage</h2>
@@ -55,16 +69,15 @@ export default function Page() {
           either language. Only the details you enter appear, so you stay in control of what to
           share. Everything is generated in your browser, keeping your personal information private.
         </p>
-        <h3>What to include</h3>
-        <ul>
-          <li>Personal: name, date/time/place of birth, height, complexion.</li>
-          <li>Background: religion, caste, gotra.</li>
-          <li>Career: education, occupation, annual income.</li>
-          <li>Family: parents’ names, siblings, and contact details.</li>
-        </ul>
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="More free tools you’ll find handy"
+        text="From documents to photos — everything runs privately in your browser."
+        links={[["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"], ["/resume-maker/", "Resume Maker"], ["/pdf/jpg-to-pdf/", "JPG to PDF"]]}
+      />
     </>
   );
 }

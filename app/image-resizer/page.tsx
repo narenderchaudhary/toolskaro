@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import Resizer from "./Resizer";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Image Resizer — Resize Photo by Pixels for Exam Forms (Free, No Upload)",
@@ -9,27 +12,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/image-resizer/" },
 };
 
+const steps = [
+  { icon: "📁", title: "Upload your photo", text: "Drag & drop or choose a JPG/PNG image." },
+  { icon: "📐", title: "Set width & height", text: "Type exact pixels or tap a passport/signature preset." },
+  { icon: "⬇️", title: "Download", text: "Resize and save your correctly sized image." },
+];
+
+const features = [
+  { icon: "📐", title: "Exact pixel sizes", text: "Set any width and height your form requires, down to the pixel." },
+  { icon: "🪪", title: "Exam presets", text: "One-tap sizes for passport photos, signatures and common form formats." },
+  { icon: "🔗", title: "Lock aspect ratio", text: "Keep proportions to avoid stretching, or force an exact size when needed." },
+  { icon: "🔒", title: "Private — no upload", text: "Resizing runs in your browser; your image never leaves your device." },
+  { icon: "⚡", title: "Fast & free", text: "Instant results with no sign-up, no watermark and no limits." },
+  { icon: "🎯", title: "Pairs with compressor", text: "Resize first, then compress to the exact KB limit your portal needs." },
+];
+
 const faqs = [
-  {
-    q: "What size should my exam photo be?",
-    a: "Most Indian exam portals ask for a passport-style photo around 3.5×4.5 cm (about 413×531 px at 300 DPI) and a signature around 3×1 cm. Always confirm the exact size in the official notification — use the presets here as a starting point.",
-  },
-  {
-    q: "How do I resize an image to specific pixel dimensions?",
-    a: "Upload your image, then type the width and height you need in pixels. Keep ‘Lock aspect ratio’ on to avoid stretching, or turn it off to force an exact size. Click Resize and download the result.",
-  },
-  {
-    q: "Will resizing reduce my file size too?",
-    a: "Resizing to smaller pixel dimensions usually reduces file size. If you need an exact KB target (for example 50 KB), resize first and then run the result through our Image Compressor.",
-  },
-  {
-    q: "Does resizing reduce image quality?",
-    a: "Some quality change is normal when scaling an image. We use high-quality smoothing to keep the result as crisp as possible. Avoid enlarging a small image far beyond its original size, as that always looks blurry.",
-  },
-  {
-    q: "Is the tool free and private?",
-    a: "Yes. It is completely free with no sign-up or watermark, and all resizing happens in your browser — your image is never uploaded to any server.",
-  },
+  { q: "What size should my exam photo be?", a: "Most Indian exam portals ask for a passport-style photo around 3.5×4.5 cm (about 413×531 px at 300 DPI) and a signature around 3×1 cm. Always confirm the exact size in the official notification — use the presets here as a starting point." },
+  { q: "How do I resize an image to specific pixel dimensions?", a: "Upload your image, then type the width and height you need in pixels. Keep ‘Lock aspect ratio’ on to avoid stretching, or turn it off to force an exact size. Click Resize and download the result." },
+  { q: "Will resizing reduce my file size too?", a: "Resizing to smaller pixel dimensions usually reduces file size. If you need an exact KB target (for example 50 KB), resize first and then run the result through our Image Compressor." },
+  { q: "Does resizing reduce image quality?", a: "Some quality change is normal when scaling an image. We use high-quality smoothing to keep the result as crisp as possible. Avoid enlarging a small image far beyond its original size, as that always looks blurry." },
+  { q: "Is the tool free and private?", a: "Yes. It is completely free with no sign-up or watermark, and all resizing happens in your browser — your image is never uploaded to any server." },
 ];
 
 export default function Page() {
@@ -40,29 +43,19 @@ export default function Page() {
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Image Resizer</h1>
-      <p className="lede">
-        Resize your photo or signature to exact pixel dimensions — with one-tap presets for
-        passport-size photos and signatures. Free, no signup, 100% in your browser.
-      </p>
+      <div className="tool-hero">
+        <h1>Resize your photo to <span className="grad">exact dimensions</span></h1>
+        <p className="lede">Resize your photo or signature to exact pixel sizes — with one-tap presets for passport photos and signatures. Free, no signup, 100% in your browser.</p>
+      </div>
 
       <Resizer />
-
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to resize an image</h2>
-        <ol className="steps">
-          <li>Upload your photo or signature using the box above.</li>
-          <li>Enter the width and height in pixels, or tap a preset such as “Passport 3.5×4.5cm”.</li>
-          <li>Keep <strong>Lock aspect ratio</strong> on to prevent stretching (turn it off only if your form needs an exact non-proportional size).</li>
-          <li>Click <strong>Resize image</strong> and download the result.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Resize in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">image resizer</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Resize photos for any government exam form</h2>
@@ -78,16 +71,15 @@ export default function Page() {
           then compress to the exact KB limit. Everything runs inside your browser, so your photo
           and signature stay private on your own device.
         </p>
-        <h3>Popular presets</h3>
-        <ul>
-          <li>Passport photo — 3.5×4.5 cm (≈413×531 px)</li>
-          <li>2×2 inch photo — for visa and some applications (≈600×600 px)</li>
-          <li>SSC / general form photo — around 200×230 px</li>
-          <li>Signature — around 3×1 cm</li>
-        </ul>
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="Prepare your whole application in minutes"
+        text="Resize, compress and convert every document — free and private."
+        links={[["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"], ["/signature-resize/", "Signature Resize"], ["/remove-background/", "Remove Background"]]}
+      />
     </>
   );
 }

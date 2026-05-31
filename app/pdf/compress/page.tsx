@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import CompressPdf from "./CompressPdf";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Compress PDF — Reduce PDF File Size Online Free (No Upload)",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Compress a PDF to a smaller file size for exam form uploads and email. Choose a compression level and download — free, no signup, and 100% in your browser.",
   alternates: { canonical: "/pdf/compress/" },
 };
+
+const steps = [
+  { icon: "🎚️", title: "Pick a level", text: "Light, Recommended or Strong compression." },
+  { icon: "📁", title: "Upload your PDF", text: "Choose the PDF you want to shrink." },
+  { icon: "⬇️", title: "Download", text: "See the before/after size and save the smaller PDF." },
+];
+
+const features = [
+  { icon: "📉", title: "Big savings", text: "Scanned and image-heavy PDFs often shrink by 40–80%." },
+  { icon: "🎚️", title: "Adjustable", text: "Choose how hard to compress to balance size and clarity." },
+  { icon: "🔒", title: "Private", text: "Compression runs in your browser; your file is never uploaded." },
+  { icon: "📤", title: "Beat upload limits", text: "Get under the maximum size a form or email allows." },
+  { icon: "🆓", title: "Free", text: "No watermark and no sign-up." },
+  { icon: "🧩", title: "Works with tools", text: "Merge or convert first, then compress the final PDF." },
+];
 
 const faqs = [
   { q: "How much can it reduce my PDF?", a: "For scanned or image-heavy PDFs, savings of 40–80% are common. PDFs that are already small or pure text may compress less." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Compress PDF</h1>
-      <p className="lede">Shrink your PDF to a smaller file size for exam uploads and email — free and entirely in your browser.</p>
+      <div className="tool-hero">
+        <h1>Compress <span className="grad">PDF file size</span> online</h1>
+        <p className="lede">Shrink your PDF to a smaller file size for exam uploads and email — free and entirely in your browser.</p>
+      </div>
+
       <CompressPdf />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to compress a PDF</h2>
-        <ol className="steps">
-          <li>Choose a compression level — Light, Recommended, or Strong.</li>
-          <li>Upload your PDF using the box.</li>
-          <li>The tool re-encodes each page to reduce the file size, showing progress.</li>
-          <li>Review the before/after size and download your smaller PDF.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Compress in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">PDF compressor</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Get your PDF under the upload limit</h2>
@@ -60,6 +74,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="Make any PDF upload-ready"
+        text="Compress, merge and convert your documents — free and private."
+        links={[["/pdf/merge/", "Merge PDF"], ["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/pdf-to-jpg/", "PDF to JPG"], ["/image-compressor/", "Image Compressor"]]}
+      />
     </>
   );
 }

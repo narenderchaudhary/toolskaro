@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Faq from "@/app/components/Faq";
 import AgeCalc from "./AgeCalc";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
   title: "Age Calculator — Find Your Exact Age in Years, Months & Days",
@@ -8,6 +11,21 @@ export const metadata: Metadata = {
     "Free online age calculator. Enter your date of birth to find your exact age in years, months, days, weeks and total days — plus days to your next birthday. Useful for exam eligibility.",
   alternates: { canonical: "/age-calculator/" },
 };
+
+const steps = [
+  { icon: "🎂", title: "Enter date of birth", text: "Select your date of birth." },
+  { icon: "📅", title: "Set the ‘as on’ date", text: "Use today or an exam's cut-off date." },
+  { icon: "✅", title: "See your age", text: "Get exact years, months, days, weeks and total days." },
+];
+
+const features = [
+  { icon: "🎯", title: "Exact breakdown", text: "Years, months and days — accounting for leap years and real month lengths." },
+  { icon: "📅", title: "Cut-off date support", text: "Check your age on any reference date to confirm exam eligibility." },
+  { icon: "🧮", title: "More units", text: "Also shows total months, weeks and days, plus your next birthday countdown." },
+  { icon: "⚡", title: "Instant", text: "Results update the moment you enter the dates." },
+  { icon: "🔒", title: "Private", text: "Calculated in your browser; no dates are stored or sent anywhere." },
+  { icon: "🆓", title: "Free", text: "No sign-up, no limits — use it as often as you like." },
+];
 
 const faqs = [
   { q: "How do I calculate my age for a government exam?", a: "Enter your date of birth and set the “age as on” date to the cut-off date mentioned in the official notification. The result shows your exact age in years, months and days on that date." },
@@ -28,20 +46,16 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1>Age Calculator</h1>
-      <p className="lede">Find your exact age in years, months and days — and check your age as on any exam cut-off date.</p>
+      <div className="tool-hero">
+        <h1>Find your <span className="grad">exact age</span></h1>
+        <p className="lede">Find your exact age in years, months and days — and check your age as on any exam cut-off date.</p>
+      </div>
+
       <AgeCalc />
       <div className="ad-slot">Ad placement (AdSense)</div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>How to use the age calculator</h2>
-        <ol className="steps">
-          <li>Select your date of birth.</li>
-          <li>Set the “age as on” date — today’s date by default, or an exam’s cut-off date.</li>
-          <li>Instantly see your age in years, months, days, weeks and total days.</li>
-          <li>Note the countdown to your next birthday.</li>
-        </ol>
-      </div>
+      <Steps heading={<>Calculate in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features heading={<>Why use this <span className="g">age calculator</span></>} items={features} />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Check exam eligibility in seconds</h2>
@@ -59,6 +73,12 @@ export default function Page() {
       </div>
 
       <Faq items={faqs} />
+
+      <CtaBand
+        heading="More free tools for your application"
+        text="Prepare your photo, signature and documents in minutes."
+        links={[["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"], ["/typing-test/", "Typing Test"], ["/resume-maker/", "Resume Maker"]]}
+      />
     </>
   );
 }

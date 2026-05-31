@@ -235,7 +235,8 @@ footer.site { border-top: 1px solid var(--border); margin-top: 56px; background:
 
 /* ---------- Print (resume / biodata → PDF) ---------- */
 @media print {
-  header.site, footer.site, .ad-slot, .no-print, h1, .lede, .faq { display: none !important; }
+  header.site, footer.site, .ad-slot, .no-print, h1, .lede, .faq,
+  .section-center, .steps-rail, .feature-grid, .cta-band { display: none !important; }
   html, body { background: #fff !important; }
   main.container { max-width: none; padding: 0; }
   .card { box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
