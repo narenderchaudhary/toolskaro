@@ -14,6 +14,9 @@ const CATEGORIES: Category[] = [
       { href: "/passport-photo-maker/", icon: "🪪", t: "Passport Photo Maker", d: "White-background passport / exam photo.", vol: "550K/mo", ready: true },
       { href: "/signature-resize/", icon: "✍️", t: "Signature Resize", d: "Resize signature to the KB & size you need.", vol: "74K/mo", ready: true },
       { href: "/remove-background/", icon: "🪄", t: "Remove Background", d: "Erase photo background in your browser.", vol: "6M/mo", ready: true },
+      { href: "/crop-image/", icon: "✂️", t: "Crop Image", d: "Drag to crop, or use ratio presets.", vol: "", ready: true },
+      { href: "/image-converter/", icon: "🔁", t: "Image Converter", d: "PNG ↔ JPG ↔ WebP with quality.", vol: "", ready: true },
+      { href: "/photo-signature-combiner/", icon: "🧩", t: "Photo + Signature", d: "Combine photo & signature in one image.", vol: "", ready: true },
     ],
   },
   {
