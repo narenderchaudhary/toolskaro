@@ -37,7 +37,20 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
-    name: "Calculators & Utilities",
+    name: "Calculators",
+    color: "#d97706",
+    tint: "#fef3c7",
+    tools: [
+      { href: "/emi-calculator/", icon: "🏦", t: "EMI Calculator", d: "Home, car & personal loan EMI.", vol: "", ready: true },
+      { href: "/sip-calculator/", icon: "📈", t: "SIP Calculator", d: "Mutual fund SIP returns.", vol: "", ready: true },
+      { href: "/gst-calculator/", icon: "🧾", t: "GST Calculator", d: "Add or remove GST (CGST/SGST).", vol: "", ready: true },
+      { href: "/interest-calculator/", icon: "💰", t: "Interest Calculator", d: "Simple & compound interest.", vol: "", ready: true },
+      { href: "/percentage-calculator/", icon: "％", t: "Percentage Calculator", d: "Find %, of, increase/decrease.", vol: "", ready: true },
+      { href: "/marks-percentage-calculator/", icon: "🎓", t: "Marks % & CGPA", d: "Marks %, CGPA ↔ percentage.", vol: "", ready: true },
+    ],
+  },
+  {
+    name: "Utilities",
     color: "#059669",
     tint: "#d1fae5",
     tools: [
