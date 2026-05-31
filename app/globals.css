@@ -103,3 +103,22 @@ input[type="number"], input[type="text"], select {
 footer.site { border-top: 1px solid var(--border); margin-top: 40px; padding: 24px 0; color: var(--muted); font-size: 13px; }
 .muted-note { font-size: 13px; color: var(--muted); }
 .ad-slot { background: #f1f4f8; border: 1px dashed #cdd7e3; border-radius: 10px; padding: 18px; text-align: center; color: #9aa6b6; font-size: 13px; margin: 22px 0; }
+
+/* A4-style document preview for Resume & Biodata makers */
+.doc-preview { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 36px 40px; color: #1a1a1a; line-height: 1.5; }
+.doc-preview h2 { margin: 0 0 2px; font-size: 26px; }
+.doc-preview .doc-sub { color: #555; margin: 0 0 14px; }
+.doc-preview .doc-section { margin-top: 18px; }
+.doc-preview .doc-section h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--brand); border-bottom: 2px solid var(--border); padding-bottom: 4px; margin: 0 0 8px; }
+.doc-preview table { width: 100%; border-collapse: collapse; }
+.doc-preview table td { padding: 5px 8px; vertical-align: top; font-size: 14px; }
+.doc-preview table td:first-child { width: 38%; color: #555; font-weight: 600; }
+
+@media print {
+  header.site, footer.site, .ad-slot, .no-print, h1, .lede, .faq { display: none !important; }
+  html, body { background: #fff !important; }
+  main.container { max-width: none; padding: 0; }
+  .card { box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+  .doc-preview { border: none !important; border-radius: 0 !important; padding: 0 !important; }
+  @page { margin: 14mm; }
+}

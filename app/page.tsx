@@ -13,11 +13,11 @@ const TOOLS: Tool[] = [
   { href: "/age-calculator/", t: "Age Calculator", d: "Exact age in years, months, days.", vol: "9.1M/mo", ready: true },
   { href: "/qr-code-generator/", t: "QR Code Generator", d: "Make a QR from any link or text.", vol: "1.2M/mo", ready: true },
   { href: "/word-counter/", t: "Word Counter", d: "Count words, characters, reading time.", vol: "301K/mo", ready: true },
-  { href: "/signature-resize/", t: "Signature Resize", d: "Resize signature to the KB & size you need.", vol: "74K/mo" },
-  { href: "/pdf/compress/", t: "Compress PDF", d: "Shrink PDF file size.", vol: "2.7M/mo" },
-  { href: "/resume-maker/", t: "Resume / CV Maker", d: "Build a resume and export to PDF.", vol: "450K/mo" },
-  { href: "/marriage-biodata-maker/", t: "Marriage Biodata Maker", d: "Hindi & English biodata templates.", vol: "110K/mo" },
-  { href: "/typing-test/", t: "Typing Test", d: "Hindi & English typing practice (WPM).", vol: "2.2M/mo" },
+  { href: "/signature-resize/", t: "Signature Resize", d: "Resize signature to the KB & size you need.", vol: "74K/mo", ready: true },
+  { href: "/pdf/compress/", t: "Compress PDF", d: "Shrink PDF file size.", vol: "2.7M/mo", ready: true },
+  { href: "/resume-maker/", t: "Resume / CV Maker", d: "Build a resume and export to PDF.", vol: "450K/mo", ready: true },
+  { href: "/marriage-biodata-maker/", t: "Marriage Biodata Maker", d: "Hindi & English biodata templates.", vol: "110K/mo", ready: true },
+  { href: "/typing-test/", t: "Typing Test", d: "Hindi & English typing practice (WPM).", vol: "2.2M/mo", ready: true },
 ];
 
 export default function Home() {
