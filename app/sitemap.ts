@@ -58,5 +58,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
-  return [...main, ...programmatic];
+  const stories = [
+    `${BASE}/web-stories/`,
+    `${BASE}/web-stories/compress-photo-to-50kb.html`,
+    `${BASE}/web-stories/resize-photo-and-signature-for-exam.html`,
+    `${BASE}/web-stories/make-passport-size-photo.html`,
+  ].map((url) => ({ url, changeFrequency: "monthly" as const, priority: 0.5 }));
+  return [...main, ...programmatic, ...stories];
 }

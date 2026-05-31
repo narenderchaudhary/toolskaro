@@ -67,6 +67,7 @@ const PDF_TOOLS = [
 ];
 const COMPANY = [
   ["/about/", "About / Our Team"],
+  ["/web-stories/", "Web Stories"],
   ["/privacy-policy/", "Privacy Policy"],
   ["/disclaimer/", "Disclaimer"],
   ["/terms/", "Terms of Use"],
