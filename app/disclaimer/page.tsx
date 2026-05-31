@@ -42,7 +42,7 @@ export default function Page() {
 
         <h2>Limitation of liability</h2>
         <p>
-          ToolsKaro and its operator (AdMatrix) are not responsible for any loss, rejected
+          ToolsKaro and its operator (AdMatrix Media Agency) are not responsible for any loss, rejected
           application, missed deadline, or damage of any kind arising from the use of this website
           or its tools. You use the site at your own risk.
         </p>

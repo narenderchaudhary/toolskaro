@@ -50,7 +50,7 @@ export default function Page() {
 
         <h2>5. Limitation of liability</h2>
         <p>
-          To the maximum extent permitted by law, ToolsKaro and its operator (AdMatrix) shall not
+          To the maximum extent permitted by law, ToolsKaro and its operator (AdMatrix Media Agency) shall not
           be liable for any indirect, incidental or consequential damages, or for any loss arising
           from your use of, or inability to use, the site.
         </p>

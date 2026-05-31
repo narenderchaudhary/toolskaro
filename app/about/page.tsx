@@ -52,9 +52,9 @@ export default function Page() {
 
         <h2>Our team</h2>
         <p>
-          ToolsKaro is operated and managed by <strong>AdMatrix</strong>, a digital media agency
-          responsible for the platform&apos;s development, maintenance and growth. Editorial and
-          product direction is led by Narender Chaudhary.
+          ToolsKaro is operated and managed by <strong>AdMatrix Media Agency</strong>, responsible
+          for the platform&apos;s development, maintenance and growth. Editorial and product
+          direction is led by Narender Chaudhary.
         </p>
         <div className="team-card">
           <div className="team-avatar">NC</div>

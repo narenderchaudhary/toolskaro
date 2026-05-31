@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 
-const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
-
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
@@ -35,8 +33,8 @@ export default function Page() {
 
         <h2>Editorial</h2>
         <p>
-          ToolsKaro is managed by <strong>AdMatrix</strong>. Editorial and product direction is led
-          by <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Narender Chaudhary (LinkedIn) ↗</a>.
+          ToolsKaro is operated and managed by <strong>AdMatrix Media Agency</strong>. Learn more
+          about the platform and the team on our <a href="/about/">About page</a>.
         </p>
 
         <h2>Tool requests</h2>
