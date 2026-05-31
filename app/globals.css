@@ -177,6 +177,8 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
 .content ul li { margin: 5px 0; }
 .content h2 { letter-spacing: -0.01em; }
 .content h3 { font-size: 16px; margin: 18px 0 6px; }
+/* Underline in-text links so they don't rely on colour alone (WCAG / a11y) */
+.content a, .prose a, .faq-a a { text-decoration: underline; }
 .faq dt { font-weight: 700; margin-top: 16px; color: var(--ink); }
 .faq dd { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
 
