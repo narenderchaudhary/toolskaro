@@ -19,12 +19,19 @@ const ROUTES = [
   "pdf/pdf-to-jpg",
   "pdf/merge",
   "pdf/compress",
+  "about",
+  "contact",
+  "privacy-policy",
+  "disclaimer",
+  "terms",
 ];
+
+const LOW_PRIORITY = new Set(["about", "contact", "privacy-policy", "disclaimer", "terms"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map((path) => ({
     url: `${BASE}/${path}${path ? "/" : ""}`,
-    changeFrequency: "weekly",
-    priority: path === "" ? 1 : 0.8,
+    changeFrequency: LOW_PRIORITY.has(path) ? "monthly" : "weekly",
+    priority: path === "" ? 1 : LOW_PRIORITY.has(path) ? 0.3 : 0.8,
   }));
 }
