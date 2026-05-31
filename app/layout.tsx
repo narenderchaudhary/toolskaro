@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 
 const SITE = "https://toolskaro.com";
-const LINKEDIN = "https://www.linkedin.com/in/naren-chaudharyeditorial";
+const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
 
 export const metadata: Metadata = {
   title: {

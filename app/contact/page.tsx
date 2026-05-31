@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const LINKEDIN = "https://www.linkedin.com/in/naren-chaudharyeditorial";
+const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
 
 export const metadata: Metadata = {
   title: "Contact Us",
