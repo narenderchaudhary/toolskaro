@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <ResumeMaker />
-      <div className="ad-slot no-print">Ad placement (AdSense)</div>
 
       <Steps heading={<>Build it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">resume builder</span></>} items={features} />

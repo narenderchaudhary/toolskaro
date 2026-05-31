@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <AgeCalc />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Calculate in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">age calculator</span></>} items={features} />

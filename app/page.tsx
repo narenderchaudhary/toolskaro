@@ -100,7 +100,6 @@ export default function Home() {
         </section>
       ))}
 
-      <div className="ad-slot">Ad placement (AdSense) — keep below the fold for CWV</div>
 
       <div className="card">
         <h2 style={{ marginTop: 0 }}>Why ToolsKaro?</h2>

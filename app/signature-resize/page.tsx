@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <SignatureResize />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Resize in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">signature resizer</span></>} items={features} />

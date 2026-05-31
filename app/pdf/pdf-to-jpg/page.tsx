@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <PdfToJpg />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Convert in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF to JPG</span> tool</>} items={features} />

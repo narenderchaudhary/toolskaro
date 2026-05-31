@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <WordCounter />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Count in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">word counter</span></>} items={features} />

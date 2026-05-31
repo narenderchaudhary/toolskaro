@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <CompressPdf />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Compress in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF compressor</span></>} items={features} />

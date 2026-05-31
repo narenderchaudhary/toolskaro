@@ -52,7 +52,6 @@ export default function Page() {
       </div>
 
       <PassportPhoto />
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Make it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">passport photo maker</span></>} items={features} />

@@ -59,7 +59,6 @@ export default function Page() {
 
       <Compressor />
 
-      <div className="ad-slot">Ad placement (AdSense)</div>
 
       <Steps heading={<>Compress in <span className="g">3 simple steps</span></>} steps={steps} />
 
