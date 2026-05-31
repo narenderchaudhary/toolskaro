@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Faq from "@/app/components/Faq";
 import RemoveBg from "./RemoveBg";
 
 export const metadata: Metadata = {
@@ -64,10 +65,7 @@ export default function Page() {
         </ul>
       </div>
 
-      <div className="card faq">
-        <h2 style={{ marginTop: 0 }}>Frequently asked questions</h2>
-        <dl>{faqs.map((f) => (<div key={f.q}><dt>{f.q}</dt><dd>{f.a}</dd></div>))}</dl>
-      </div>
+      <Faq items={faqs} />
     </>
   );
 }

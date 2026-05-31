@@ -145,6 +145,19 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
 .content h3 { font-size: 16px; margin: 18px 0 6px; }
 .faq dt { font-weight: 700; margin-top: 16px; color: var(--ink); }
 .faq dd { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+
+/* Collapsible FAQ accordion */
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 15px 0; font-weight: 700; color: var(--ink);
+  font-size: 15px; display: flex; justify-content: space-between; align-items: center; gap: 14px;
+}
+.faq-item summary:hover { color: var(--brand); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--brand); font-size: 22px; font-weight: 400; line-height: 1; flex: none; }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item .faq-a { padding: 0 0 16px; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
 .muted-note { font-size: 13px; color: var(--muted); }
 .ad-slot { background: #f1f3f9; border: 1px dashed #ccd2e3; border-radius: 12px; padding: 18px; text-align: center; color: #9aa3b6; font-size: 13px; margin: 24px 0; }
 
