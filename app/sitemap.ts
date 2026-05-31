@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { ALL_SLUGS } from "./programmatic-data";
 
 const BASE = "https://toolskaro.com";
 
@@ -47,9 +48,15 @@ const ROUTES = [
 const LOW_PRIORITY = new Set(["about", "contact", "privacy-policy", "disclaimer", "terms"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ROUTES.map((path) => ({
+  const main = ROUTES.map((path) => ({
     url: `${BASE}/${path}${path ? "/" : ""}`,
-    changeFrequency: LOW_PRIORITY.has(path) ? "monthly" : "weekly",
+    changeFrequency: (LOW_PRIORITY.has(path) ? "monthly" : "weekly") as "monthly" | "weekly",
     priority: path === "" ? 1 : LOW_PRIORITY.has(path) ? 0.3 : 0.8,
   }));
+  const programmatic = ALL_SLUGS.map((slug) => ({
+    url: `${BASE}/${slug}/`,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+  return [...main, ...programmatic];
 }

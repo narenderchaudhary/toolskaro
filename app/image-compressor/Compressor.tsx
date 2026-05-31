@@ -86,9 +86,9 @@ async function compressToTarget(file: File, targetKB: number): Promise<Result> {
   return { url: URL.createObjectURL(blob), bytes: blob.size, width, height, quality: 10 };
 }
 
-export default function Compressor() {
+export default function Compressor({ initialTarget = 50 }: { initialTarget?: number }) {
   const [file, setFile] = useState<File | null>(null);
-  const [targetKB, setTargetKB] = useState(50);
+  const [targetKB, setTargetKB] = useState(initialTarget);
   const [result, setResult] = useState<Result | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
