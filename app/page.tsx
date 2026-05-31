@@ -28,6 +28,10 @@ const CATEGORIES: Category[] = [
       { href: "/pdf/pdf-to-jpg/", icon: "🖼️", t: "PDF to JPG", d: "Convert PDF pages to images.", vol: "4.1M/mo", ready: true },
       { href: "/pdf/merge/", icon: "🗂️", t: "Merge PDF", d: "Join multiple PDFs into one.", vol: "3.4M/mo", ready: true },
       { href: "/pdf/compress/", icon: "📉", t: "Compress PDF", d: "Shrink PDF file size for uploads.", vol: "2.7M/mo", ready: true },
+      { href: "/pdf/split/", icon: "✂️", t: "Split PDF", d: "Extract pages or split into files.", vol: "", ready: true },
+      { href: "/pdf/rotate/", icon: "🔄", t: "Rotate PDF", d: "Rotate pages 90/180/270°.", vol: "", ready: true },
+      { href: "/pdf/delete-pages/", icon: "🗑️", t: "Delete PDF Pages", d: "Remove unwanted pages.", vol: "", ready: true },
+      { href: "/pdf/page-numbers/", icon: "🔢", t: "Add Page Numbers", d: "Number pages in any position.", vol: "", ready: true },
     ],
   },
   {
