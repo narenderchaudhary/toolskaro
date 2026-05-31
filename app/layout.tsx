@@ -113,8 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 runs entirely in your browser — your files are never uploaded to any server.
               </p>
               <p className="footer-managed">
-                Managed by <strong>AdMatrix</strong> · Editorial by{" "}
-                <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Narender Chaudhary ↗</a>
+                Managed by <strong>AdMatrix Media Agency</strong>
               </p>
             </div>
             <div className="footer-col">
