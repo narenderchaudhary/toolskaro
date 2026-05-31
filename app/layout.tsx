@@ -117,19 +117,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </p>
             </div>
             <div className="footer-col">
-              <h4>Image Tools</h4>
+              <div className="footer-h">Image Tools</div>
               {IMAGE_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <h4>PDF Tools</h4>
+              <div className="footer-h">PDF Tools</div>
               {PDF_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <h4>Company</h4>
+              <div className="footer-h">Company</div>
               {COMPANY.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
