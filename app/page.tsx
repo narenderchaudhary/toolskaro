@@ -65,6 +65,9 @@ const CATEGORIES: Category[] = [
       { href: "/qr-code-generator/", icon: "🔳", t: "QR Code Generator", d: "Make a QR from any link or text.", vol: "1.2M/mo", ready: true },
       { href: "/word-counter/", icon: "🔠", t: "Word Counter", d: "Count words, characters, reading time.", vol: "301K/mo", ready: true },
       { href: "/typing-test/", icon: "⌨️", t: "Typing Test", d: "Hindi & English typing practice (WPM).", vol: "2.2M/mo", ready: true },
+      { href: "/password-generator/", icon: "🔑", t: "Password Generator", d: "Strong, secure random passwords.", vol: "", ready: true },
+      { href: "/text-case-converter/", icon: "🔡", t: "Text Case Converter", d: "UPPERCASE, lowercase, Title Case.", vol: "", ready: true },
+      { href: "/date-difference-calculator/", icon: "📆", t: "Date Difference", d: "Days between two dates.", vol: "", ready: true },
     ],
   },
 ];
