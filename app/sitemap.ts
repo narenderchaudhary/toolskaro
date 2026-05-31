@@ -6,8 +6,13 @@ const ROUTES = [
   "",
   "image-compressor",
   "image-resizer",
+  "passport-photo-maker",
+  "remove-background",
   "age-calculator",
+  "qr-code-generator",
+  "word-counter",
   "pdf/jpg-to-pdf",
+  "pdf/pdf-to-jpg",
   "pdf/merge",
 ];
 
