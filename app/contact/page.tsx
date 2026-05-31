@@ -36,7 +36,7 @@ export default function Page() {
         <h2>Editorial</h2>
         <p>
           ToolsKaro is managed by <strong>AdMatrix</strong>. Editorial and product direction is led
-          by <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Naren Chaudhary (LinkedIn) ↗</a>.
+          by <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Narender Chaudhary (LinkedIn) ↗</a>.
         </p>
 
         <h2>Tool requests</h2>

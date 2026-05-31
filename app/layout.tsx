@@ -38,7 +38,7 @@ const orgJsonLd = {
       url: SITE,
       description:
         "Free, privacy-first online tools for Indian exam and job applicants — image resize/compress, PDF tools, resume and biodata makers, and more.",
-      founder: { "@type": "Person", name: "Naren Chaudhary", sameAs: [LINKEDIN] },
+      founder: { "@type": "Person", name: "Narender Chaudhary", sameAs: [LINKEDIN] },
       knowsAbout: ["Image compression", "PDF tools", "Government exam form requirements", "Resume building"],
     },
     {
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </p>
               <p className="footer-managed">
                 Managed by <strong>AdMatrix</strong> · Editorial by{" "}
-                <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Naren Chaudhary ↗</a>
+                <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">Narender Chaudhary ↗</a>
               </p>
             </div>
             <div className="footer-col">

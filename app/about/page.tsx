@@ -21,7 +21,7 @@ export default function Page() {
       url: "https://toolskaro.com",
       founder: {
         "@type": "Person",
-        name: "Naren Chaudhary",
+        name: "Narender Chaudhary",
         jobTitle: "Editorial & Product Lead",
         sameAs: [LINKEDIN],
       },
@@ -54,12 +54,12 @@ export default function Page() {
         <p>
           ToolsKaro is operated and managed by <strong>AdMatrix</strong>, a digital media agency
           responsible for the platform&apos;s development, maintenance and growth. Editorial and
-          product direction is led by Naren Chaudhary.
+          product direction is led by Narender Chaudhary.
         </p>
         <div className="team-card">
           <div className="team-avatar">NC</div>
           <div>
-            <strong>Naren Chaudhary</strong>
+            <strong>Narender Chaudhary</strong>
             <div style={{ color: "#5b6473", fontSize: 14 }}>Editorial &amp; Product Lead</div>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">View LinkedIn profile ↗</a>
           </div>
