@@ -41,6 +41,8 @@ const CATEGORIES: Category[] = [
     tools: [
       { href: "/resume-maker/", icon: "📝", t: "Resume / CV Maker", d: "Build a resume and export to PDF.", vol: "450K/mo", ready: true },
       { href: "/marriage-biodata-maker/", icon: "💍", t: "Marriage Biodata Maker", d: "Hindi & English biodata templates.", vol: "110K/mo", ready: true },
+      { href: "/cover-letter-generator/", icon: "✉️", t: "Cover Letter Generator", d: "Professional cover letter to PDF.", vol: "", ready: true },
+      { href: "/invoice-generator/", icon: "🧾", t: "Invoice Generator", d: "GST invoice maker, export to PDF.", vol: "", ready: true },
     ],
   },
   {

@@ -27,6 +27,8 @@ const ROUTES = [
   "date-difference-calculator",
   "resume-maker",
   "marriage-biodata-maker",
+  "cover-letter-generator",
+  "invoice-generator",
   "pdf/jpg-to-pdf",
   "pdf/pdf-to-jpg",
   "pdf/merge",
