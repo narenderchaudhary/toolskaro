@@ -18,6 +18,7 @@ const CATEGORIES: Category[] = [
       { href: "/crop-image/", icon: "✂️", t: "Crop Image", d: "Drag to crop, or use ratio presets.", vol: "", ready: true },
       { href: "/image-converter/", icon: "🔁", t: "Image Converter", d: "PNG ↔ JPG ↔ WebP with quality.", vol: "", ready: true },
       { href: "/photo-signature-combiner/", icon: "🧩", t: "Photo + Signature", d: "Combine photo & signature in one image.", vol: "", ready: true },
+      { href: "/photo-joiner/", icon: "🖼️", t: "Photo Joiner", d: "Combine photos side by side, stacked or grid.", vol: "", ready: true },
     ],
   },
   {

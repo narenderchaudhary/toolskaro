@@ -13,6 +13,7 @@ const ROUTES = [
   "crop-image",
   "image-converter",
   "photo-signature-combiner",
+  "photo-joiner",
   "age-calculator",
   "qr-code-generator",
   "word-counter",
