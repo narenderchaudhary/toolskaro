@@ -4,7 +4,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "EMI Calculator — Home, Car & Personal Loan EMI Online (Free)",
+  title: "EMI Calculator — Home, Car & Personal Loan EMI",
   description:
     "Calculate your monthly loan EMI, total interest and total payment for home, car, personal or any loan. Free online EMI calculator — instant and accurate.",
   alternates: { canonical: "/emi-calculator/" },

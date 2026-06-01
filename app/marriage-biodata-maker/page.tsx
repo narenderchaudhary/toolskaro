@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Marriage Biodata Maker — Free Online (Hindi & English) Download PDF",
+  title: "Marriage Biodata Maker — Hindi & English, Free",
   description:
     "Create a marriage biodata in Hindi or English with a traditional header and download it as a PDF. Free, no signup, and 100% in your browser.",
   alternates: { canonical: "/marriage-biodata-maker/" },

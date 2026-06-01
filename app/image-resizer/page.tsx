@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Image Resizer — Resize Photo by Pixels for Exam Forms (Free, No Upload)",
+  title: "Image Resizer — Resize Photo by Pixels, Free",
   description:
     "Resize your photo or signature to exact pixel dimensions for SSC, UPSC, Bank and Railway exam forms. Presets for passport size and signature. Free and 100% in your browser.",
   alternates: { canonical: "/image-resizer/" },

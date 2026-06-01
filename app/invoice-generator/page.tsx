@@ -5,7 +5,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Invoice Generator — Free Online Invoice Maker (Download PDF)",
+  title: "Invoice Generator — Free GST Invoice Maker (PDF)",
   description:
     "Create professional GST invoices online and download as PDF. Add items, tax and notes — free, no signup, and 100% in your browser.",
   alternates: { canonical: "/invoice-generator/" },

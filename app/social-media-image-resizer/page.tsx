@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Social Media Image Resizer — Instagram, Facebook, WhatsApp, LinkedIn (Free)",
+  title: "Social Media Image Resizer — All Platforms",
   description:
     "Resize any image to the exact size for Instagram, Facebook, WhatsApp, LinkedIn, X (Twitter), YouTube and Pinterest. Free, no upload, 100% in your browser.",
   alternates: { canonical: "/social-media-image-resizer/" },

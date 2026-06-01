@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const exam = examFromSlug(slug);
   if (exam) {
     return {
-      title: `${exam.name} Photo & Signature Resize — Size & KB (Free)`,
+      title: `${exam.name} Photo & Signature — Size & KB (Free)`,
       description: `Resize and compress your photo and signature for the ${exam.name} application form. Free, no signup, 100% in your browser.`,
       alternates: { canonical: `/${slug}/` },
     };

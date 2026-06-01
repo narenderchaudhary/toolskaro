@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Age Calculator — Find Your Exact Age in Years, Months & Days",
+  title: "Age Calculator — Exact Age in Years, Months, Days",
   description:
     "Free online age calculator. Enter your date of birth to find your exact age in years, months, days, weeks and total days — plus days to your next birthday. Useful for exam eligibility.",
   alternates: { canonical: "/age-calculator/" },

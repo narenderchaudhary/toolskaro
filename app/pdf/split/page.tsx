@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Split PDF — Extract Pages or Split into Separate PDFs (Free)",
+  title: "Split PDF — Extract or Split Pages, Free",
   description:
     "Split a PDF online: extract a page range into a new PDF, or split every page into separate files. Free, no upload, 100% in your browser.",
   alternates: { canonical: "/pdf/split/" },

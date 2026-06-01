@@ -4,7 +4,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Marks Percentage & CGPA Calculator — CGPA to Percentage (Free)",
+  title: "Marks Percentage & CGPA Calculator — Free",
   description:
     "Calculate your marks percentage, convert CGPA to percentage, and percentage to CGPA. Free online calculator for students and exam applicants.",
   alternates: { canonical: "/marks-percentage-calculator/" },

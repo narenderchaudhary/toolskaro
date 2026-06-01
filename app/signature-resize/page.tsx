@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Signature Resize — Resize Signature to KB & Size for Exam Forms (Free)",
+  title: "Signature Resize — Exact Size & KB for Exams",
   description:
     "Resize your signature to the exact pixel size and KB limit required by SSC, UPSC, Bank and Railway exam forms (e.g. 10–20 KB). Free, no signup, 100% in your browser.",
   alternates: { canonical: "/signature-resize/" },

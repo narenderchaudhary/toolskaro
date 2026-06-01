@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Compress Image to 20KB / 50KB / 100KB — Free Online (No Upload)",
+  title: "Compress Image to 20KB, 50KB, 100KB — Free Online",
   description:
     "Compress JPG or PNG to an exact KB size for SSC, UPSC, Bank & Railway exam forms. Free, no signup, and 100% in your browser — your photo is never uploaded.",
   alternates: { canonical: "/image-compressor/" },

@@ -12,8 +12,8 @@ const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolsKaro — Free Photo, Signature & PDF Tools for Indian Govt Forms",
-    template: "%s | ToolsKaro",
+    default: "ToolsKaro — Free Photo, Signature & PDF Tools for Exams",
+    template: "%s",
   },
   description:
     "Free online tools for Indian exam & job applicants: resize and compress photo/signature to exact KB, JPG to PDF, merge & compress PDF, and more. 100% in your browser — files never uploaded.",

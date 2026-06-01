@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Passport Size Photo Maker — Free Online (3.5×4.5 cm, White Background)",
+  title: "Passport Size Photo Maker — White Background",
   description:
     "Make a passport-size photo online for exam forms, visa and ID. Choose 3.5×4.5 cm, 2×2 inch or form sizes with a white background. Free, no signup, 100% in your browser.",
   alternates: { canonical: "/passport-photo-maker/" },

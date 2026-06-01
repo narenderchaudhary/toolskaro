@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Remove Background from Image — Free Online (No Upload, In-Browser)",
+  title: "Remove Background from Image — Free, No Upload",
   description:
     "Erase the background from any photo automatically, right in your browser. Download a transparent PNG — free, no signup, and your image is never uploaded to a server.",
   alternates: { canonical: "/remove-background/" },

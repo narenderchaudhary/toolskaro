@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Image Converter — PNG to JPG, JPG to PNG, WebP Online (Free)",
+  title: "Image Converter — PNG, JPG & WebP, Free",
   description:
     "Convert images between PNG, JPG and WebP online for free. Adjust quality and download instantly — 100% in your browser, no upload, no signup.",
   alternates: { canonical: "/image-converter/" },

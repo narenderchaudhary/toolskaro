@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Photo Joiner — Combine Photos Side by Side or Stacked (Free)",
+  title: "Photo Joiner — Combine Photos Side by Side, Free",
   description:
     "Join two or more photos into one image — side by side, stacked, or in a grid. Free online photo combiner, no upload, 100% in your browser.",
   alternates: { canonical: "/photo-joiner/" },

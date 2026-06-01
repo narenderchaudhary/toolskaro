@@ -4,7 +4,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Text Case Converter — UPPERCASE, lowercase, Title Case (Free)",
+  title: "Text Case Converter — UPPERCASE & lowercase",
   description:
     "Convert text to UPPERCASE, lowercase, Title Case, Sentence case and more, instantly. Free online text case converter — 100% in your browser.",
   alternates: { canonical: "/text-case-converter/" },

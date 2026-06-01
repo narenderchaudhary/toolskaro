@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Word Counter — Count Words, Characters & Reading Time Online Free",
+  title: "Word Counter — Words, Characters & Reading Time",
   description:
     "Free online word counter. Instantly count words, characters, sentences, paragraphs and reading time as you type or paste. 100% in your browser.",
   alternates: { canonical: "/word-counter/" },

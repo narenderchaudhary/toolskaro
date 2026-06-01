@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Photo & Signature Combiner — Join Photo and Signature in One Image (Free)",
+  title: "Photo & Signature Combiner — Join in One Image",
   description:
     "Combine your photo and signature into a single image for exam forms. Stacked or side-by-side on a white background. Free, no upload, 100% in your browser.",
   alternates: { canonical: "/photo-signature-combiner/" },

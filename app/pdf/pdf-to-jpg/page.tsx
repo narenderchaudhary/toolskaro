@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "PDF to JPG — Convert PDF Pages to Images Online Free (No Upload)",
+  title: "PDF to JPG — Convert PDF Pages to Images, Free",
   description:
     "Convert every page of a PDF into high-quality JPG images and download them. Free, no signup, and 100% in your browser — your PDF is never uploaded.",
   alternates: { canonical: "/pdf/pdf-to-jpg/" },

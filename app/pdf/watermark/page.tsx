@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Watermark PDF — Add a Text Watermark Online Free (No Upload)",
+  title: "Watermark PDF — Add a Text Watermark, Free",
   description:
     "Add a text watermark to every page of a PDF — choose text, size, colour, opacity and diagonal angle. Free, no signup, 100% in your browser.",
   alternates: { canonical: "/pdf/watermark/" },

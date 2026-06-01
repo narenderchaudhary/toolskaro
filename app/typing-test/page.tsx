@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Typing Test — English & Hindi Typing Speed Test (WPM) Online Free",
+  title: "Typing Test — English & Hindi WPM Test, Free",
   description:
     "Free online typing test in English and Hindi. Measure your typing speed (WPM) and accuracy in real time — great practice for government skill tests. 100% in your browser.",
   alternates: { canonical: "/typing-test/" },

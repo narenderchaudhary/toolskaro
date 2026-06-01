@@ -6,7 +6,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Resume / CV Maker — Free Online Resume Builder (Download PDF)",
+  title: "Resume / CV Maker — Free Online (PDF)",
   description:
     "Build a clean, professional resume in minutes and download it as a PDF. Free, no signup, and 100% in your browser — your details are never uploaded.",
   alternates: { canonical: "/resume-maker/" },

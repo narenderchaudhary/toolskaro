@@ -4,7 +4,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Interest Calculator — Simple & Compound Interest Online (Free)",
+  title: "Interest Calculator — Simple & Compound, Free",
   description:
     "Calculate simple and compound interest instantly. Enter principal, rate and time to see your interest and total amount. Free online interest calculator.",
   alternates: { canonical: "/interest-calculator/" },
