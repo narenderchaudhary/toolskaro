@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import SocialLinks from "@/app/components/Social";
 import "./globals.css";
 
@@ -150,7 +150,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span>Not affiliated with any government body or examination authority.</span>
           </div>
         </footer>
-        <GoogleAnalytics gaId="G-98K21RL284" />
+        <Script id="ga-src" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-98K21RL284" />
+        <Script id="ga-init" strategy="lazyOnload">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-98K21RL284');`}</Script>
       </body>
     </html>
   );
