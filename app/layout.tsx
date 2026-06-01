@@ -106,6 +106,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="container">{children}</main>
 
+        <section className="join-band">
+          <div className="container">
+            <span className="join-label">Join us on Telegram &amp; WhatsApp for the latest updates</span>
+            <div className="join-social"><SocialLinks /></div>
+          </div>
+        </section>
+
         <footer className="site">
           <div className="container footer-cols">
             <div className="footer-col footer-brand">
@@ -117,7 +124,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="footer-managed">
                 Managed by <strong>AdMatrix Media Agency</strong>
               </p>
-              <div className="footer-social"><SocialLinks /></div>
             </div>
             <div className="footer-col">
               <div className="footer-h">Image Tools</div>
