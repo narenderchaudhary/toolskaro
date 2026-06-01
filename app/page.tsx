@@ -19,6 +19,7 @@ const CATEGORIES: Category[] = [
       { href: "/image-converter/", icon: "🔁", t: "Image Converter", d: "PNG ↔ JPG ↔ WebP with quality.", vol: "", ready: true },
       { href: "/photo-signature-combiner/", icon: "🧩", t: "Photo + Signature", d: "Combine photo & signature in one image.", vol: "", ready: true },
       { href: "/photo-joiner/", icon: "🖼️", t: "Photo Joiner", d: "Combine photos side by side, stacked or grid.", vol: "", ready: true },
+      { href: "/social-media-image-resizer/", icon: "📱", t: "Social Media Resizer", d: "Exact sizes for Instagram, FB, WhatsApp, LinkedIn.", vol: "", ready: true },
     ],
   },
   {

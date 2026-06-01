@@ -14,6 +14,7 @@ const ROUTES = [
   "image-converter",
   "photo-signature-combiner",
   "photo-joiner",
+  "social-media-image-resizer",
   "age-calculator",
   "qr-code-generator",
   "word-counter",
