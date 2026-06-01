@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Faq from "@/app/components/Faq";
+import SocialLinks from "@/app/components/Social";
 
 type Tool = { href: string; icon: string; t: string; d: string; vol: string; ready?: boolean };
 type Category = { name: string; color: string; tint: string; tools: Tool[] };
@@ -121,6 +122,7 @@ export default function Home() {
           <span className="badge">⚡ No sign-up</span>
           <span className="badge">🆓 {total} free tools</span>
         </div>
+        <div className="hero-social"><SocialLinks /></div>
       </section>
 
       {CATEGORIES.map((cat) => (
