@@ -6,6 +6,9 @@ const nextConfig = {
   // ISR) without reconfiguring. All tool processing runs client-side.
   trailingSlash: true,
 
+  // Inline critical CSS and defer the rest (removes render-blocking stylesheet).
+  experimental: { optimizeCss: true },
+
   // Security hardening headers (Lighthouse "Trust and Safety").
   async headers() {
     return [
