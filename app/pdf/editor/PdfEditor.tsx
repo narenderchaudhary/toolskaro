@@ -8,7 +8,7 @@ type PageImg = { url: string; pdfW: number; pdfH: number };
 type Ann = {
   id: number;
   page: number;
-  type: "text" | "image";
+  type: "text" | "image" | "cover";
   fx: number; // top-left x as fraction of page width
   fy: number; // top-left y as fraction of page height
   text?: string;
@@ -17,7 +17,8 @@ type Ann = {
   src?: string; // image data URL
   imgW?: number; // natural px
   imgH?: number;
-  fw?: number; // image width as fraction of page width
+  fw?: number; // width as fraction of page width (image / cover)
+  fh?: number; // height as fraction of page height (cover)
 };
 
 function hexToRgb01(hex: string) {
@@ -91,6 +92,11 @@ export default function PdfEditor() {
     setAnns((a) => [...a, { id, page: activePage(), type: "text", fx: 0.1, fy: 0.1, text: "Type here", size: 18, color: "#111111" }]);
     setSelected(id);
   }
+  function addCover() {
+    const id = idc.current++;
+    setAnns((a) => [...a, { id, page: activePage(), type: "cover", fx: 0.15, fy: 0.15, fw: 0.3, fh: 0.035, color: "#ffffff" }]);
+    setSelected(id);
+  }
   function addImage(f: File | null) {
     if (!f) return;
     const url = URL.createObjectURL(f);
@@ -135,12 +141,19 @@ export default function PdfEditor() {
       const doc = await PDFDocument.load(await file.arrayBuffer());
       const font = await doc.embedFont(StandardFonts.Helvetica);
       const docPages = doc.getPages();
-      for (const a of anns) {
+      // Draw covers first (so added text/images sit on top of whited-out areas)
+      const ordered = [...anns.filter((a) => a.type === "cover"), ...anns.filter((a) => a.type !== "cover")];
+      for (const a of ordered) {
         const p = docPages[a.page]; if (!p) continue;
         const { width: pw, height: ph } = p.getSize();
         const el = pageEls.current[a.page];
         const dispH = el ? el.clientHeight : ph;
-        if (a.type === "text" && a.text) {
+        if (a.type === "cover") {
+          const c = hexToRgb01(a.color || "#ffffff");
+          const w = (a.fw || 0.3) * pw;
+          const h = (a.fh || 0.035) * ph;
+          p.drawRectangle({ x: a.fx * pw, y: ph - a.fy * ph - h, width: w, height: h, color: rgb(c.r, c.g, c.b) });
+        } else if (a.type === "text" && a.text) {
           const fontSize = (a.size || 18) * (ph / dispH);
           const c = hexToRgb01(a.color || "#111111");
           p.drawText(a.text, { x: a.fx * pw, y: ph - a.fy * ph - fontSize, size: fontSize, font, color: rgb(c.r, c.g, c.b) });
@@ -174,6 +187,7 @@ export default function PdfEditor() {
     <div className="card">
       <div style={{ position: "sticky", top: 70, zIndex: 5, background: "var(--card)", padding: "10px 0", borderBottom: "1px solid var(--border)", display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginBottom: 14 }}>
         <button className="chip" onClick={addText}>➕ Add text</button>
+        <button className="chip" onClick={addCover}>⬜ Whiteout / cover</button>
         <button className="chip" onClick={() => imgInputRef.current?.click()}>🖼️ Add signature / image</button>
         <input ref={imgInputRef} type="file" accept="image/*" hidden onChange={(e) => addImage(e.target.files?.[0] ?? null)} />
         <button className="btn" disabled={busy} onClick={download} style={{ marginLeft: "auto" }}>{busy ? "Working…" : "⬇ Download edited PDF"}</button>
@@ -181,20 +195,31 @@ export default function PdfEditor() {
 
       {sel && (
         <div className="result" style={{ marginTop: 0, marginBottom: 14 }}>
-          {sel.type === "text" ? (
+          {sel.type === "text" && (
             <div className="row" style={{ alignItems: "flex-end" }}>
               <div style={{ flex: 2 }}><label style={{ margin: "0 0 4px" }}>Text</label><input value={sel.text} onChange={(e) => upd({ text: e.target.value })} /></div>
               <div><label style={{ margin: "0 0 4px" }}>Size</label><input type="number" min={6} max={96} value={sel.size} onChange={(e) => upd({ size: Number(e.target.value) || 18 })} /></div>
               <div><label style={{ margin: "0 0 4px" }}>Colour</label><input type="color" value={sel.color} onChange={(e) => upd({ color: e.target.value })} style={{ height: 42, padding: 4 }} /></div>
               <button className="chip" onClick={del}>Delete</button>
             </div>
-          ) : (
+          )}
+          {sel.type === "cover" && (
+            <div className="row" style={{ alignItems: "flex-end" }}>
+              <div><label style={{ margin: "0 0 4px" }}>Width: {Math.round((sel.fw || 0.3) * 100)}%</label><input type="range" min={3} max={95} value={Math.round((sel.fw || 0.3) * 100)} onChange={(e) => upd({ fw: Number(e.target.value) / 100 })} /></div>
+              <div><label style={{ margin: "0 0 4px" }}>Height: {Math.round((sel.fh || 0.035) * 100)}%</label><input type="range" min={1} max={40} value={Math.round((sel.fh || 0.035) * 100)} onChange={(e) => upd({ fh: Number(e.target.value) / 100 })} /></div>
+              <div><label style={{ margin: "0 0 4px" }}>Colour</label><input type="color" value={sel.color} onChange={(e) => upd({ color: e.target.value })} style={{ height: 42, padding: 4 }} /></div>
+              <button className="chip" onClick={del}>Delete</button>
+            </div>
+          )}
+          {sel.type === "image" && (
             <div className="row" style={{ alignItems: "flex-end" }}>
               <div style={{ flex: 2 }}><label style={{ margin: "0 0 4px" }}>Size: {Math.round((sel.fw || 0.3) * 100)}% of page width</label><input type="range" min={5} max={90} value={Math.round((sel.fw || 0.3) * 100)} onChange={(e) => upd({ fw: Number(e.target.value) / 100 })} style={{ width: "100%" }} /></div>
               <button className="chip" onClick={del}>Delete</button>
             </div>
           )}
-          <p className="muted-note" style={{ marginTop: 8 }}>Drag the item on the page to position it.</p>
+          <p className="muted-note" style={{ marginTop: 8 }}>
+            {sel.type === "cover" ? "Drag the white box over the old text to hide it, then use ‘Add text’ to type the new value on top." : "Drag the item on the page to position it."}
+          </p>
         </div>
       )}
 
@@ -215,14 +240,17 @@ export default function PdfEditor() {
                 onPointerUp={endDrag}
                 style={{
                   position: "absolute", left: `${a.fx * 100}%`, top: `${a.fy * 100}%`, cursor: "move",
-                  outline: selected === a.id ? "2px dashed var(--brand)" : "1px dashed rgba(0,0,0,0.25)",
-                  background: a.type === "text" ? "rgba(255,255,255,0.4)" : "transparent",
-                  width: a.type === "image" ? `${(a.fw || 0.3) * 100}%` : "auto", maxWidth: "95%",
+                  outline: selected === a.id ? "2px dashed var(--brand)" : a.type === "cover" ? "1px dashed rgba(0,0,0,0.35)" : "1px dashed rgba(0,0,0,0.25)",
+                  background: a.type === "cover" ? a.color : a.type === "text" ? "rgba(255,255,255,0.4)" : "transparent",
+                  width: a.type === "image" ? `${(a.fw || 0.3) * 100}%` : a.type === "cover" ? `${(a.fw || 0.3) * 100}%` : "auto",
+                  height: a.type === "cover" ? `${(a.fh || 0.035) * 100}%` : "auto",
+                  maxWidth: "95%",
                 }}
               >
-                {a.type === "text" ? (
+                {a.type === "text" && (
                   <span style={{ fontSize: a.size, color: a.color, lineHeight: 1.1, whiteSpace: "nowrap", fontFamily: "Helvetica, Arial, sans-serif", padding: "0 1px" }}>{a.text || " "}</span>
-                ) : (
+                )}
+                {a.type === "image" && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={a.src} alt="overlay" style={{ width: "100%", display: "block", pointerEvents: "none" }} draggable={false} />
                 )}

@@ -20,6 +20,7 @@ const steps = [
 const features = [
   { icon: "✍️", title: "Add text anywhere", text: "Place text boxes to fill forms or annotate — set size and colour." },
   { icon: "🖊️", title: "Add your signature", text: "Drop a signature or any image onto the page and position it." },
+  { icon: "⬜", title: "Whiteout & replace", text: "Cover an old word or number with a white box and type the new value — edits any value." },
   { icon: "🖱️", title: "Drag to position", text: "Move each item exactly where you want it on any page." },
   { icon: "🔒", title: "Private", text: "Editing runs entirely in your browser — your PDF is never uploaded." },
   { icon: "📄", title: "Multi-page", text: "Works across every page of your document." },
@@ -30,7 +31,7 @@ const faqs = [
   { q: "Can I sign a PDF?", a: "Yes. Sign on white paper and photograph or scan it (or use our Signature Resize tool), then click ‘Add signature / image’, place it on the page, and resize with the slider." },
   { q: "Is my PDF uploaded to a server?", a: "No. The PDF is rendered and edited entirely in your browser, so your document never leaves your device." },
   { q: "Will my changes be permanent in the file?", a: "Yes. When you download, the text and images are written into the PDF itself, so they appear in any PDF viewer." },
-  { q: "Can I edit existing text in the PDF?", a: "This editor adds new text and images on top of the page (ideal for filling forms and signing). Editing the original embedded text of a PDF is not supported, as that often isn’t editable by design." },
+  { q: "Can I change / edit existing text or numbers in the PDF?", a: "Yes — click ‘Whiteout / cover’, drag the white box over the old word or number and size it to cover it, then click ‘Add text’ and type the new value on top. (PDFs store text as fixed glyphs, so no online tool can truly re-type the original text — this cover-and-retype method is how it is done, and the result looks and prints like a real edit.)" },
   { q: "Is it free?", a: "Yes — free, no sign-up and no watermark." },
 ];
 
