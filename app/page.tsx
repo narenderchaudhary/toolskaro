@@ -28,6 +28,7 @@ const CATEGORIES: Category[] = [
     color: "#e11d48",
     tint: "#ffe4e6",
     tools: [
+      { href: "/pdf/editor/", icon: "✍️", t: "PDF Editor", d: "Add text & signature to a PDF.", vol: "", ready: true },
       { href: "/pdf/jpg-to-pdf/", icon: "📄", t: "JPG to PDF", d: "Combine images into one PDF.", vol: "7.5M/mo", ready: true },
       { href: "/pdf/pdf-to-jpg/", icon: "🖼️", t: "PDF to JPG", d: "Convert PDF pages to images.", vol: "4.1M/mo", ready: true },
       { href: "/pdf/merge/", icon: "🗂️", t: "Merge PDF", d: "Join multiple PDFs into one.", vol: "3.4M/mo", ready: true },
