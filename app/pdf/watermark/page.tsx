@@ -57,7 +57,7 @@ export default function Page() {
         <p>It all runs in your browser, so your document is never uploaded.</p>
       </div>
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Watermark, edit, merge and compress — free and private." links={[["/pdf/editor/", "PDF Editor"], ["/pdf/merge/", "Merge PDF"], ["/pdf/organize/", "Organize PDF"], ["/pdf/compress/", "Compress PDF"]]} />
+      <CtaBand heading="All your PDF tools in one place" text="Watermark, organize, merge and compress — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/organize/", "Organize PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/split/", "Split PDF"]]} />
     </>
   );
 }

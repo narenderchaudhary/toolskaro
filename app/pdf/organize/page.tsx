@@ -57,7 +57,7 @@ export default function Page() {
         <p>It runs entirely in your browser, keeping your document private.</p>
       </div>
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Organize, edit, merge and split — free and private." links={[["/pdf/editor/", "PDF Editor"], ["/pdf/merge/", "Merge PDF"], ["/pdf/split/", "Split PDF"], ["/pdf/watermark/", "Watermark PDF"]]} />
+      <CtaBand heading="All your PDF tools in one place" text="Organize, merge, split and compress — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/split/", "Split PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/watermark/", "Watermark PDF"]]} />
     </>
   );
 }
