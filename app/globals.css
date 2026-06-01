@@ -51,11 +51,28 @@ header.site .container { display: flex; align-items: center; justify-content: sp
 .nav { display: flex; gap: 2px; }
 .nav a { font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 13px; border-radius: 9px; transition: all .15s; }
 .nav a:hover { color: var(--brand); background: #f0f1fe; text-decoration: none; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.header-social { display: flex; gap: 6px; }
+.hsocial { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex: none; }
+.hsocial svg { width: 18px; height: 18px; fill: currentColor; }
+.hsocial.tg { background: #229ED9; }
+.hsocial.wa { background: #25D366; }
+.hsocial:hover { filter: brightness(1.08); text-decoration: none; }
 @media (max-width: 640px) {
-  .nav a { padding: 7px 9px; font-size: 13px; }
+  .nav a { padding: 7px 8px; font-size: 13px; }
   .nav .hide-sm { display: none; }
   .logo-text { font-size: 18px; }
+  .header-right { gap: 6px; }
+  .hsocial { width: 32px; height: 32px; }
 }
+
+/* Footer follow buttons */
+.footer-social { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.fsocial { display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border-radius: 999px; color: #fff; font-size: 13.5px; font-weight: 600; }
+.fsocial svg { width: 16px; height: 16px; fill: currentColor; }
+.fsocial.tg { background: #229ED9; }
+.fsocial.wa { background: #25D366; }
+.fsocial:hover { filter: brightness(1.08); text-decoration: none; }
 
 /* ---------- Hero ---------- */
 .hero { text-align: center; padding: 54px 0 40px; position: relative; }
