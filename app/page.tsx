@@ -37,6 +37,8 @@ const CATEGORIES: Category[] = [
       { href: "/pdf/rotate/", icon: "🔄", t: "Rotate PDF", d: "Rotate pages 90/180/270°.", vol: "", ready: true },
       { href: "/pdf/delete-pages/", icon: "🗑️", t: "Delete PDF Pages", d: "Remove unwanted pages.", vol: "", ready: true },
       { href: "/pdf/page-numbers/", icon: "🔢", t: "Add Page Numbers", d: "Number pages in any position.", vol: "", ready: true },
+      { href: "/pdf/watermark/", icon: "💧", t: "Watermark PDF", d: "Add a text watermark to every page.", vol: "", ready: true },
+      { href: "/pdf/organize/", icon: "🔀", t: "Organize PDF", d: "Reorder, rotate & delete pages.", vol: "", ready: true },
     ],
   },
   {

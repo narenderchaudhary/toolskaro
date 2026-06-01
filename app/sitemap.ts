@@ -41,6 +41,8 @@ const ROUTES = [
   "pdf/rotate",
   "pdf/delete-pages",
   "pdf/page-numbers",
+  "pdf/watermark",
+  "pdf/organize",
   "about",
   "contact",
   "privacy-policy",
