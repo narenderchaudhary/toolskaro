@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import SocialLinks from "@/app/components/Social";
 import "./globals.css";
 
@@ -149,6 +150,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span>Not affiliated with any government body or examination authority.</span>
           </div>
         </footer>
+        <GoogleAnalytics gaId="G-98K21RL284" />
       </body>
     </html>
   );
