@@ -62,6 +62,7 @@ const CATEGORIES: Category[] = [
       { href: "/interest-calculator/", icon: "💰", t: "Interest Calculator", d: "Simple & compound interest.", vol: "", ready: true },
       { href: "/percentage-calculator/", icon: "％", t: "Percentage Calculator", d: "Find %, of, increase/decrease.", vol: "", ready: true },
       { href: "/marks-percentage-calculator/", icon: "🎓", t: "Marks % & CGPA", d: "Marks %, CGPA ↔ percentage.", vol: "", ready: true },
+      { href: "/tdee-calculator/", icon: "🔥", t: "TDEE Calculator", d: "Daily calories to maintain, lose or gain.", vol: "", ready: true },
     ],
   },
   {

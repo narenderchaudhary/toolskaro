@@ -25,6 +25,7 @@ const ROUTES = [
   "interest-calculator",
   "percentage-calculator",
   "marks-percentage-calculator",
+  "tdee-calculator",
   "password-generator",
   "text-case-converter",
   "date-difference-calculator",
