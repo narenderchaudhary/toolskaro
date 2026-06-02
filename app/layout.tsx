@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
+import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
@@ -68,6 +69,27 @@ const PDF_TOOLS = [
   ["/pdf/pdf-to-jpg/", "PDF to JPG"],
   ["/pdf/merge/", "Merge PDF"],
   ["/pdf/compress/", "Compress PDF"],
+  ["/pdf/split/", "Split PDF"],
+];
+const DOC_TOOLS = [
+  ["/resume-maker/", "Resume Maker"],
+  ["/marriage-biodata-maker/", "Marriage Biodata"],
+  ["/cover-letter-generator/", "Cover Letter"],
+  ["/invoice-generator/", "Invoice Generator"],
+];
+const CALC_TOOLS = [
+  ["/emi-calculator/", "EMI Calculator"],
+  ["/sip-calculator/", "SIP Calculator"],
+  ["/gst-calculator/", "GST Calculator"],
+  ["/percentage-calculator/", "Percentage Calculator"],
+  ["/age-calculator/", "Age Calculator"],
+];
+const UTIL_TOOLS = [
+  ["/qr-code-generator/", "QR Code Generator"],
+  ["/word-counter/", "Word Counter"],
+  ["/typing-test/", "Typing Test"],
+  ["/password-generator/", "Password Generator"],
+  ["/text-case-converter/", "Text Case Converter"],
 ];
 const COMPANY = [
   ["/about/", "About / Our Team"],
@@ -107,7 +129,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        <main className="container">{children}</main>
+        <main className="container">
+          <AutoBreadcrumbs />
+          {children}
+        </main>
 
         <section className="join-band">
           <div className="container">
@@ -137,6 +162,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="footer-col">
               <div className="footer-h">PDF Tools</div>
               {PDF_TOOLS.map(([href, label]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+            <div className="footer-col">
+              <div className="footer-h">Documents</div>
+              {DOC_TOOLS.map(([href, label]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+            <div className="footer-col">
+              <div className="footer-h">Calculators</div>
+              {CALC_TOOLS.map(([href, label]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+            <div className="footer-col">
+              <div className="footer-h">Utilities</div>
+              {UTIL_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
