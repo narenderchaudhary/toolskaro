@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Compressor from "@/app/image-compressor/Compressor";
 import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 import { ALL_SLUGS, EXAMS, KB_VALUES, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
@@ -62,6 +63,7 @@ function KbPage({ kb }: { kb: number }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(`Compress Image to ${kb} KB`, faqs)) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Image Compressor", href: "/image-compressor/" }, { name: `Compress to ${kb} KB`, href: `/compress-image-to-${kb}kb/` }]} />
       <div className="tool-hero">
         <h1>Compress image to <span className="grad">{kb} KB</span></h1>
         <p className="lede">Shrink your JPG or PNG to {kb}&nbsp;KB online — free, no signup, and 100% in your browser. The target is preset to {kb}&nbsp;KB for you.</p>
@@ -96,6 +98,7 @@ function ExamPage({ exam }: { exam: Exam }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(`${exam.name} Photo & Signature Resizer`, faqs)) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Image Compressor", href: "/image-compressor/" }, { name: `${exam.name} Photo & Signature`, href: `/${exam.slug}/` }]} />
       <div className="tool-hero">
         <h1>Photo &amp; signature for <span className="grad">{exam.name}</span></h1>
         <p className="lede">Resize and compress your photo and signature for the {exam.name} application form — free, no signup, in your browser.</p>

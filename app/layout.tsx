@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
-import SocialLinks from "@/app/components/Social";
+import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
@@ -16,18 +16,12 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Free online tools for Indian exam & job applicants: resize and compress photo/signature to exact KB, JPG to PDF, merge & compress PDF, and more. 100% in your browser — files never uploaded.",
+    "Free tools for Indian exam & job applicants: resize & compress photo/signature to an exact KB, convert PDFs, build a resume — 100% in your browser, no upload.",
   metadataBase: new URL(SITE),
   alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    siteName: "ToolsKaro",
-    url: SITE,
-    title: "ToolsKaro — Free Photo, Signature & PDF Tools for Indian Govt Forms",
-    description:
-      "Resize & compress photo and signature to exact KB, convert PDFs, and more — free, no login, 100% in your browser.",
-  },
-  twitter: { card: "summary_large_image", title: "ToolsKaro", description: "Free in-browser tools for Indian exam & job applicants." },
+  // Only type + siteName here, so each page auto-fills its own og:title/description from its metadata.
+  openGraph: { type: "website", siteName: "ToolsKaro" },
+  twitter: { card: "summary_large_image" },
 };
 
 const orgJsonLd = {
@@ -38,9 +32,17 @@ const orgJsonLd = {
       "@id": `${SITE}/#organization`,
       name: "ToolsKaro",
       url: SITE,
+      logo: { "@type": "ImageObject", url: `${SITE}/apple-icon`, width: 180, height: 180 },
       description:
         "Free, privacy-first online tools for Indian exam and job applicants — image resize/compress, PDF tools, resume and biodata makers, and more.",
-      founder: { "@type": "Person", name: "Narender Chaudhary", sameAs: [LINKEDIN] },
+      sameAs: [TELEGRAM, WHATSAPP, LINKEDIN],
+      founder: {
+        "@type": "Person",
+        "@id": `${SITE}/#founder`,
+        name: "Narender Chaudhary",
+        jobTitle: "Editorial & Product Lead",
+        sameAs: [LINKEDIN],
+      },
       knowsAbout: ["Image compression", "PDF tools", "Government exam form requirements", "Resume building"],
     },
     {
@@ -89,7 +91,7 @@ function Logo() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={jakarta.variable}>
+    <html lang="en-IN" className={jakarta.variable}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <header className="site">

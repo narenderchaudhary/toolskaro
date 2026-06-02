@@ -1,0 +1,64 @@
+# ToolsKaro
+
+> Free in-browser tools for Indian exam and government job applicants. Resize and compress photos and signatures to an exact KB/size, convert and edit PDFs, build resumes and biodata, and run everyday calculators. All processing happens locally in the browser — no uploads, no signup, no watermark.
+
+ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
+
+## Image tools
+- [Image Compressor](https://toolskaro.com/image-compressor/): Compress JPG/PNG to an exact KB (20, 50, 100 KB) for exam portals.
+- [Image Resizer](https://toolskaro.com/image-resizer/): Resize images to exact pixel dimensions, with passport/signature presets.
+- [Passport Photo Maker](https://toolskaro.com/passport-photo-maker/): White-background passport-size photo (3.5×4.5 cm, 2×2 in).
+- [Signature Resize](https://toolskaro.com/signature-resize/): Resize a signature to the size and KB exam forms require.
+- [Remove Background](https://toolskaro.com/remove-background/): In-browser AI background removal to a transparent PNG.
+- [Crop Image](https://toolskaro.com/crop-image/): Crop with drag-select or aspect-ratio presets.
+- [Image Converter](https://toolskaro.com/image-converter/): Convert between PNG, JPG and WebP.
+- [Photo + Signature Combiner](https://toolskaro.com/photo-signature-combiner/): Combine photo and signature into one image.
+- [Photo Joiner](https://toolskaro.com/photo-joiner/): Combine photos side by side, stacked or in a grid.
+- [Social Media Image Resizer](https://toolskaro.com/social-media-image-resizer/): Exact sizes for Instagram, Facebook, WhatsApp, LinkedIn, X, YouTube, Pinterest.
+
+## PDF tools
+- [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.
+- [PDF to JPG](https://toolskaro.com/pdf/pdf-to-jpg/): Convert PDF pages to JPG images.
+- [Merge PDF](https://toolskaro.com/pdf/merge/): Combine multiple PDFs into one.
+- [Compress PDF](https://toolskaro.com/pdf/compress/): Reduce PDF file size for uploads.
+- [Split PDF](https://toolskaro.com/pdf/split/): Extract pages or split into separate files.
+- [Rotate PDF](https://toolskaro.com/pdf/rotate/): Rotate pages 90/180/270°.
+- [Delete PDF Pages](https://toolskaro.com/pdf/delete-pages/): Remove pages from a PDF.
+- [Add Page Numbers](https://toolskaro.com/pdf/page-numbers/): Number PDF pages in any position.
+- [Watermark PDF](https://toolskaro.com/pdf/watermark/): Add a text watermark to every page.
+- [Organize PDF](https://toolskaro.com/pdf/organize/): Reorder, rotate and delete pages with thumbnails.
+
+## Documents
+- [Resume / CV Maker](https://toolskaro.com/resume-maker/): Build a resume and export to PDF.
+- [Marriage Biodata Maker](https://toolskaro.com/marriage-biodata-maker/): Hindi & English marriage biodata to PDF.
+- [Cover Letter Generator](https://toolskaro.com/cover-letter-generator/): Professional cover letter to PDF.
+- [Invoice Generator](https://toolskaro.com/invoice-generator/): GST invoice maker, export to PDF.
+
+## Calculators
+- [EMI Calculator](https://toolskaro.com/emi-calculator/): Home, car and personal loan EMI.
+- [SIP Calculator](https://toolskaro.com/sip-calculator/): Mutual fund SIP returns.
+- [GST Calculator](https://toolskaro.com/gst-calculator/): Add or remove GST with CGST/SGST split.
+- [Interest Calculator](https://toolskaro.com/interest-calculator/): Simple and compound interest.
+- [Percentage Calculator](https://toolskaro.com/percentage-calculator/): Percentage, of, increase/decrease.
+- [Marks % & CGPA Calculator](https://toolskaro.com/marks-percentage-calculator/): Marks percentage and CGPA ↔ percentage.
+
+## Utilities
+- [Age Calculator](https://toolskaro.com/age-calculator/): Exact age and age-as-on exam cut-off date.
+- [QR Code Generator](https://toolskaro.com/qr-code-generator/): Make a QR code from any link or text.
+- [Word Counter](https://toolskaro.com/word-counter/): Count words, characters and reading time.
+- [Typing Test](https://toolskaro.com/typing-test/): English and Hindi typing speed test (WPM).
+- [Password Generator](https://toolskaro.com/password-generator/): Strong random passwords.
+- [Text Case Converter](https://toolskaro.com/text-case-converter/): UPPERCASE, lowercase, Title Case and more.
+- [Date Difference Calculator](https://toolskaro.com/date-difference-calculator/): Days between two dates.
+
+## Exam-specific guides
+- [Compress image to 50 KB](https://toolskaro.com/compress-image-to-50kb/): The common 50 KB photo limit for SSC, UPSC and state PSC forms.
+- [Photo & signature for SSC CGL](https://toolskaro.com/photo-resize-for-ssc-cgl/): Photo and signature requirements for the SSC CGL form.
+- [Photo & signature for IBPS PO](https://toolskaro.com/photo-resize-for-ibps-po/): Bank exam photo and signature requirements.
+- [Photo & signature for UPSC](https://toolskaro.com/photo-resize-for-upsc/): UPSC Civil Services photo and signature requirements.
+
+## About
+- [About / Our Team](https://toolskaro.com/about/): About ToolsKaro and the team.
+- [Contact](https://toolskaro.com/contact/): Contact us at contact@toolskaro.com.
+- [Privacy Policy](https://toolskaro.com/privacy-policy/): How we handle data (files are never uploaded).
+- [Disclaimer](https://toolskaro.com/disclaimer/): Not affiliated with any government body; verify official notifications.

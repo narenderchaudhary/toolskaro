@@ -8,7 +8,7 @@ const POPULAR: [string, string, string][] = [
   ["/passport-photo-maker/", "🪪", "Passport Photo Maker"],
   ["/remove-background/", "🪄", "Remove Background"],
   ["/pdf/merge/", "🗂️", "Merge PDF"],
-  ["/pdf/editor/", "✍️", "PDF Editor"],
+  ["/crop-image/", "✂️", "Crop Image"],
   ["/resume-maker/", "📝", "Resume Maker"],
   ["/age-calculator/", "🎂", "Age Calculator"],
 ];
