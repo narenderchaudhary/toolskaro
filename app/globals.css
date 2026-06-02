@@ -99,7 +99,11 @@ header.site .container { display: flex; align-items: center; justify-content: sp
 .section-head { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
 .section-head .dot { width: 10px; height: 10px; border-radius: 50%; }
 .section-head h2 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+.section-head h2 a { color: inherit; }
+.section-head h2 a:hover { color: var(--brand); text-decoration: none; }
 .section-head .count { font-size: 13px; color: var(--muted); font-weight: 500; }
+.section-head .count-link { margin-left: auto; color: var(--brand); font-weight: 600; white-space: nowrap; }
+.section-head .count-link:hover { text-decoration: none; }
 
 .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(264px, 1fr)); gap: 16px; }
 .tool-card {
@@ -252,7 +256,8 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
 footer.site { border-top: 1px solid var(--border); margin-top: 0; background: var(--card); padding: 42px 0 0; color: var(--muted); font-size: 14px; }
 .footer-cols { display: grid; grid-template-columns: repeat(6, 1fr); gap: 30px 24px; }
 .footer-brand { grid-column: 1 / -1; }
-.footer-col .footer-h { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink); margin: 0 0 13px; font-weight: 700; }
+.footer-col .footer-h { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink); margin: 0 0 10px; padding: 0; font-weight: 700; }
+.footer-col a.footer-h:hover { color: var(--brand); }
 .footer-col a { display: block; color: var(--muted); padding: 3px 0; font-size: 14px; }
 .footer-col a:hover { color: var(--brand); text-decoration: none; }
 .footer-brand .logo { margin-bottom: 4px; }

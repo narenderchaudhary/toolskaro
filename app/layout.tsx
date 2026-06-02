@@ -154,31 +154,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </p>
             </div>
             <div className="footer-col">
-              <div className="footer-h">Image Tools</div>
+              <Link href="/image-tools/" className="footer-h">Image Tools</Link>
               {IMAGE_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <div className="footer-h">PDF Tools</div>
+              <Link href="/pdf-tools/" className="footer-h">PDF Tools</Link>
               {PDF_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <div className="footer-h">Documents</div>
+              <Link href="/document-tools/" className="footer-h">Documents</Link>
               {DOC_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <div className="footer-h">Calculators</div>
+              <Link href="/calculators/" className="footer-h">Calculators</Link>
               {CALC_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
             <div className="footer-col">
-              <div className="footer-h">Utilities</div>
+              <Link href="/utilities/" className="footer-h">Utilities</Link>
               {UTIL_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}

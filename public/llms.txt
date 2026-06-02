@@ -4,6 +4,13 @@
 
 ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
 
+## Tool hubs (categories)
+- [Image Tools](https://toolskaro.com/image-tools/): All photo and signature tools — compress, resize, passport photo, remove background, convert.
+- [PDF Tools](https://toolskaro.com/pdf-tools/): Full PDF toolkit — merge, split, compress, convert, rotate, organize.
+- [Document Makers](https://toolskaro.com/document-tools/): Resume, marriage biodata, cover letter and GST invoice makers.
+- [Calculators](https://toolskaro.com/calculators/): EMI, SIP, GST, interest, percentage, CGPA, age and TDEE calculators.
+- [Utility Tools](https://toolskaro.com/utilities/): Typing test, QR generator, word counter, password generator and more.
+
 ## Image tools
 - [Image Compressor](https://toolskaro.com/image-compressor/): Compress JPG/PNG to an exact KB (20, 50, 100 KB) for exam portals.
 - [Image Resizer](https://toolskaro.com/image-resizer/): Resize images to exact pixel dimensions, with passport/signature presets.

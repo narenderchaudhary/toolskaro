@@ -5,6 +5,11 @@ const BASE = "https://toolskaro.com";
 
 const ROUTES = [
   "",
+  "image-tools",
+  "pdf-tools",
+  "document-tools",
+  "calculators",
+  "utilities",
   "image-compressor",
   "image-resizer",
   "passport-photo-maker",
