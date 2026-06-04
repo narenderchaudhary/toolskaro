@@ -124,7 +124,7 @@ export default function Pregnancy() {
       )}
 
       <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 14 }}>
-        This is an <strong>estimate</strong> based on a standard 40-week pregnancy (Naegele&apos;s rule).
+        This is an <strong>estimate</strong>{" "}based on a standard 40-week pregnancy (Naegele&apos;s rule).
         Only about 5% of babies arrive on the exact due date. It is not medical advice — please confirm
         your dates and care with your doctor, midwife or an ultrasound scan.
       </p>

@@ -201,10 +201,52 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
 .goal-sub { font-size: 12px; color: var(--muted); }
 @media (max-width: 520px) { .goal-grid { grid-template-columns: 1fr; } }
 
-.preg-bar { margin-top: 16px; height: 12px; border-radius: 999px; background: #eef2ff; overflow: hidden; }
-.preg-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #818cf8, #6366f1); transition: width .3s; }
-.preg-tri { display: flex; justify-content: space-between; margin-top: 6px; font-size: 12px; color: var(--muted); }
-.preg-tri span.on { color: var(--brand); font-weight: 700; }
+/* ---------- Pregnancy calculator — soft feminine theme (scoped) ---------- */
+.preg-theme { --rose: #db2777; --rose-soft: #ec4899; --blush: #fbcfe8; --blush-bg: #fff5fa; }
+.preg-hero {
+  background:
+    radial-gradient(900px 320px at 50% -120px, #ffe4f1 0%, rgba(255,228,241,0) 70%),
+    linear-gradient(180deg, #fff5fa 0%, #ffffff 100%);
+  border: 1px solid #fbd6e7;
+  border-radius: 26px;
+  padding: 30px 20px 26px;
+  margin-bottom: 22px;
+  box-shadow: 0 14px 40px rgba(219, 39, 119, 0.08);
+}
+.preg-badge {
+  display: inline-block; margin-bottom: 14px;
+  background: #fff; color: #be185d;
+  border: 1px solid #fbcfe8; border-radius: 999px;
+  padding: 7px 16px; font-size: 13px; font-weight: 700;
+  box-shadow: 0 3px 12px rgba(219, 39, 119, 0.10);
+}
+.preg-theme .tool-hero h1 .grad {
+  background: linear-gradient(120deg, #f472b6, #db2777);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.preg-theme .card { border-color: #fbd6e7; box-shadow: 0 10px 34px rgba(219, 39, 119, 0.07); }
+.preg-theme label { color: #9d174d; font-weight: 600; }
+.preg-theme input:focus, .preg-theme select:focus {
+  border-color: var(--rose-soft);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.16);
+}
+.preg-theme .result {
+  background: linear-gradient(135deg, #fff1f7 0%, #fce7f3 100%);
+  border: 1px solid var(--blush);
+}
+.preg-theme .result .stat b { color: var(--rose); }
+.preg-theme .content h2 { color: #9d174d; }
+
+.preg-bar { margin-top: 18px; height: 14px; border-radius: 999px; background: #fce7f3; overflow: hidden; box-shadow: inset 0 1px 2px rgba(219, 39, 119, 0.12); }
+.preg-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #f9a8d4, #ec4899, #db2777); transition: width .4s ease; }
+.preg-tri { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.preg-tri span { flex: 1; text-align: center; }
+.preg-tri span.on { color: var(--rose); font-weight: 800; }
+.preg-theme .cta-band { background: linear-gradient(135deg, #fff1f7, #fde7f1); border: 1px solid #fbd6e7; box-shadow: 0 12px 36px rgba(219, 39, 119, 0.10); }
+.preg-theme .cta-band h2 { color: #9d174d; }
+.preg-theme .cta-band p { color: #b03a73; }
+.preg-theme .cta-links a { background: #fff; border: 1px solid #fbcfe8; color: #9d174d; }
+.preg-theme .cta-links a:hover { background: var(--rose); border-color: var(--rose); color: #fff; }
 
 .steps { padding-left: 20px; color: var(--muted); font-size: 14.5px; }
 .steps li { margin: 6px 0; }

@@ -29,8 +29,10 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="tool-hero">
-        <h1>Pregnancy <span className="grad">Due Date Calculator</span></h1>
+      <div className="preg-theme">
+      <div className="tool-hero preg-hero">
+        <span className="preg-badge">🌸 Made with care for expecting mums</span>
+        <h1>Pregnancy <span className="grad">Due&nbsp;Date Calculator</span></h1>
         <p className="lede">Find your estimated due date and see exactly how many weeks pregnant you are, your trimester and how many days to go — free, instant and private.</p>
       </div>
 
@@ -61,6 +63,7 @@ export default function Page() {
         text="Plan your health, dates and money with our other instant calculators."
         links={[["/age-calculator/", "Age Calculator"], ["/tdee-calculator/", "TDEE Calculator"], ["/date-difference-calculator/", "Date Difference"], ["/calculators/", "All Calculators"]]}
       />
+      </div>
     </>
   );
 }
