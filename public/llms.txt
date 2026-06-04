@@ -49,6 +49,7 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Percentage Calculator](https://toolskaro.com/percentage-calculator/): Percentage, of, increase/decrease.
 - [Marks % & CGPA Calculator](https://toolskaro.com/marks-percentage-calculator/): Marks percentage and CGPA ↔ percentage.
 - [TDEE Calculator](https://toolskaro.com/tdee-calculator/): Total Daily Energy Expenditure and BMR, with daily calorie targets to lose, maintain or gain weight.
+- [Pregnancy Due Date Calculator](https://toolskaro.com/pregnancy-calculator/): Estimated due date and week-by-week pregnancy tracker from LMP, conception or IVF transfer date.
 
 ## Utilities
 - [Age Calculator](https://toolskaro.com/age-calculator/): Exact age and age-as-on exam cut-off date.

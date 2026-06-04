@@ -31,6 +31,7 @@ const ROUTES = [
   "percentage-calculator",
   "marks-percentage-calculator",
   "tdee-calculator",
+  "pregnancy-calculator",
   "password-generator",
   "text-case-converter",
   "date-difference-calculator",

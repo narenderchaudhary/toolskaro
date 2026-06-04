@@ -77,6 +77,7 @@ export const CATEGORIES: Category[] = [
       { href: "/percentage-calculator/", icon: "％", t: "Percentage Calculator", d: "Find %, of, increase/decrease.", vol: "", ready: true },
       { href: "/marks-percentage-calculator/", icon: "🎓", t: "Marks % & CGPA", d: "Marks %, CGPA ↔ percentage.", vol: "", ready: true },
       { href: "/tdee-calculator/", icon: "🔥", t: "TDEE Calculator", d: "Daily calories to maintain, lose or gain.", vol: "", ready: true },
+      { href: "/pregnancy-calculator/", icon: "🤰", t: "Pregnancy Calculator", d: "Due date & week-by-week tracker.", vol: "", ready: true },
     ],
   },
   {

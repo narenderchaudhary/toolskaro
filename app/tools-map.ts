@@ -38,6 +38,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/percentage-calculator/": { name: "Percentage Calculator", cat: "calc" },
   "/marks-percentage-calculator/": { name: "Marks % & CGPA Calculator", cat: "calc" },
   "/tdee-calculator/": { name: "TDEE Calculator", cat: "calc" },
+  "/pregnancy-calculator/": { name: "Pregnancy Calculator", cat: "calc" },
   // Utilities
   "/age-calculator/": { name: "Age Calculator", cat: "util" },
   "/qr-code-generator/": { name: "QR Code Generator", cat: "util" },
