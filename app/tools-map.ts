@@ -30,6 +30,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/marriage-biodata-maker/": { name: "Marriage Biodata Maker", cat: "doc" },
   "/cover-letter-generator/": { name: "Cover Letter Generator", cat: "doc" },
   "/invoice-generator/": { name: "Invoice Generator", cat: "doc" },
+  "/email-signature-maker/": { name: "Email Signature Maker", cat: "doc" },
   // Calculators
   "/emi-calculator/": { name: "EMI Calculator", cat: "calc" },
   "/sip-calculator/": { name: "SIP Calculator", cat: "calc" },

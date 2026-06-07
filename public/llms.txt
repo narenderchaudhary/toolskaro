@@ -40,6 +40,7 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Marriage Biodata Maker](https://toolskaro.com/marriage-biodata-maker/): Hindi & English marriage biodata to PDF.
 - [Cover Letter Generator](https://toolskaro.com/cover-letter-generator/): Professional cover letter to PDF.
 - [Invoice Generator](https://toolskaro.com/invoice-generator/): GST invoice maker, export to PDF.
+- [Email Signature Maker](https://toolskaro.com/email-signature-maker/): Create a professional email signature with photo, designation, company and social icons; copy to Gmail or Outlook.
 
 ## Calculators
 - [EMI Calculator](https://toolskaro.com/emi-calculator/): Home, car and personal loan EMI.

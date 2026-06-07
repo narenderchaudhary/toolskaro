@@ -39,6 +39,7 @@ const ROUTES = [
   "marriage-biodata-maker",
   "cover-letter-generator",
   "invoice-generator",
+  "email-signature-maker",
   "pdf/jpg-to-pdf",
   "pdf/pdf-to-jpg",
   "pdf/merge",
