@@ -13,6 +13,7 @@ export default function Marks() {
   const [factor, setFactor] = useState(9.5);
   // Percentage → CGPA
   const [pct, setPct] = useState(75);
+  const [divFactor, setDivFactor] = useState(9.5);
 
   const marksPct = total === 0 ? 0 : (obtained / total) * 100;
 
@@ -35,9 +36,9 @@ export default function Marks() {
       <h3 style={{ marginTop: 22 }}>Percentage to CGPA</h3>
       <div className="row">
         <div><label>Percentage (%)</label><input type="number" min={0} value={pct} onChange={(e) => setPct(Math.max(0, Number(e.target.value) || 0))} /></div>
-        <div><label>Dividing factor</label><input type="number" min={1} step={0.1} value={factor} onChange={(e) => setFactor(Math.max(1, Number(e.target.value) || 1))} /></div>
+        <div><label>Dividing factor</label><input type="number" min={1} step={0.1} value={divFactor} onChange={(e) => setDivFactor(Math.max(1, Number(e.target.value) || 1))} /></div>
       </div>
-      <p className="stat" style={{ marginTop: 8 }}>CGPA: <b>{r2(pct / factor)}</b></p>
+      <p className="stat" style={{ marginTop: 8 }}>CGPA: <b>{r2(pct / divFactor)}</b></p>
     </div>
   );
 }

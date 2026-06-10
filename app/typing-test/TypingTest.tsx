@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
 const PASSAGES: Record<"en" | "hi", string> = {
   en: "The journey of a thousand miles begins with a single step. Practice typing every day to improve your speed and accuracy. Government skill tests often require a minimum words per minute, so focus on steady, error free typing rather than rushing through the passage.",
@@ -12,28 +12,24 @@ export default function TypingTest() {
   const [typed, setTyped] = useState("");
   const [startedAt, setStartedAt] = useState<number | null>(null);
   const [elapsed, setElapsed] = useState(0);
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const passage = PASSAGES[lang];
 
   function reset(newLang = lang) {
-    if (timer.current) clearInterval(timer.current);
-    timer.current = null;
     setTyped("");
     setStartedAt(null);
     setElapsed(0);
     setLang(newLang);
   }
 
+  // Time is measured between the first and the most recent keystroke. This freezes when the user
+  // pauses (no continuous interval inflating the time and decaying the WPM toward zero).
   function onChange(value: string) {
-    if (startedAt === null && value.length > 0) {
-      const start = performance.now();
+    let start = startedAt;
+    if (start === null && value.length > 0) {
+      start = performance.now();
       setStartedAt(start);
-      timer.current = setInterval(() => setElapsed((performance.now() - start) / 1000), 200);
     }
-    if (value.length >= passage.length && timer.current) {
-      clearInterval(timer.current);
-      timer.current = null;
-    }
+    if (start !== null) setElapsed((performance.now() - start) / 1000);
     setTyped(value);
   }
 

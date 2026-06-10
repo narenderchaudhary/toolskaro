@@ -9,15 +9,27 @@ const SETS = {
   sym: "!@#$%^&*()-_=+[]{};:,.?",
 };
 
+function rand(n: number) {
+  const a = new Uint32Array(1);
+  crypto.getRandomValues(a);
+  return a[0] % n;
+}
+
 function generate(len: number, opts: Record<keyof typeof SETS, boolean>) {
-  let pool = "";
-  (Object.keys(SETS) as (keyof typeof SETS)[]).forEach((k) => { if (opts[k]) pool += SETS[k]; });
-  if (!pool) return "";
-  const arr = new Uint32Array(len);
-  crypto.getRandomValues(arr);
-  let out = "";
-  for (let i = 0; i < len; i++) out += pool[arr[i] % pool.length];
-  return out;
+  const sets = (Object.keys(SETS) as (keyof typeof SETS)[]).filter((k) => opts[k]).map((k) => SETS[k]);
+  if (!sets.length || len <= 0) return "";
+  const pool = sets.join("");
+  const chars: string[] = [];
+  // Guarantee at least one character from each selected set (when length allows).
+  for (const s of sets) if (chars.length < len) chars.push(s[rand(s.length)]);
+  // Fill the remainder from the full pool.
+  while (chars.length < len) chars.push(pool[rand(pool.length)]);
+  // Fisher–Yates shuffle so the guaranteed characters aren't always at the front.
+  for (let i = chars.length - 1; i > 0; i--) {
+    const j = rand(i + 1);
+    [chars[i], chars[j]] = [chars[j], chars[i]];
+  }
+  return chars.join("");
 }
 
 export default function PasswordGen() {

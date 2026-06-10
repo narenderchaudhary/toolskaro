@@ -20,7 +20,8 @@ export default function ResumeMaker() {
   const add = (set: typeof setExp, list: Entry[]) => set([...list, { title: "", sub: "", detail: "" }]);
   const del = (set: typeof setExp, list: Entry[], i: number) => set(list.filter((_, idx) => idx !== i));
 
-  const EntryEditor = ({ label, list, set }: { label: string; list: Entry[]; set: typeof setExp }) => (
+  // Render function (NOT a nested component) so React doesn't remount inputs on every keystroke.
+  const renderEntries = (label: string, list: Entry[], set: typeof setExp) => (
     <div style={{ marginTop: 14 }}>
       <label>{label}</label>
       {list.map((e, i) => (
@@ -46,8 +47,8 @@ export default function ResumeMaker() {
         <input style={field} value={contact} onChange={(e) => setContact(e.target.value)} />
         <label>Summary</label>
         <textarea style={{ ...field, resize: "vertical" }} rows={3} value={summary} onChange={(e) => setSummary(e.target.value)} />
-        <EntryEditor label="Experience" list={exp} set={setExp} />
-        <EntryEditor label="Education" list={edu} set={setEdu} />
+        {renderEntries("Experience", exp, setExp)}
+        {renderEntries("Education", edu, setEdu)}
         <label>Skills (comma separated)</label>
         <input style={field} value={skills} onChange={(e) => setSkills(e.target.value)} />
         <div style={{ marginTop: 16 }}>

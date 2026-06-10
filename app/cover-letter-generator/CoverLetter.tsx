@@ -43,7 +43,7 @@ export default function CoverLetter() {
             <div style={{ color: "#555", fontSize: 14 }}>{contact}</div>
           </div>
           {date && <p style={{ margin: "0 0 14px" }}>{date}</p>}
-          <p style={{ margin: "0 0 4px" }}>{toName},</p>
+          <p style={{ margin: "0 0 2px" }}>{toName}</p>
           <p style={{ margin: "0 0 14px", color: "#555" }}>{company}</p>
           <p style={{ marginTop: 0 }}>Dear {toName},</p>
           <p>Re: Application for {role}</p>
