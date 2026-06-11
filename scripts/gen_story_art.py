@@ -32,8 +32,8 @@ GLOWS = {
 
 def lerp(a, b, t): return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
 
-def base(w, h, glow):
-    """Warm charcoal vertical gradient + soft top colour glow."""
+def base(w, h, glow, gxf=0.28, gyf=0.16, grf=0.9):
+    """Warm charcoal vertical gradient + soft colour glow."""
     img = Image.new("RGB", (w, h))
     top, bot = (34, 29, 46), (22, 19, 24)
     px = img.load()
@@ -41,10 +41,9 @@ def base(w, h, glow):
         c = lerp(top, bot, y / (h - 1))
         for x in range(w):
             px[x, y] = c
-    # radial glow near top-left
     glow_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow_layer)
-    gx, gy, gr = int(w * 0.28), int(h * 0.16), int(w * 0.9)
+    gx, gy, gr = int(w * gxf), int(h * gyf), int(w * grf)
     for r in range(gr, 0, -6):
         a = int(46 * (1 - r / gr) ** 2)
         gd.ellipse([gx - r, gy - r, gx + r, gy + r], fill=glow + (a,))
@@ -171,7 +170,47 @@ def make_bg(theme):
     img.convert("RGB").save(os.path.join(OUT, f"{theme}-bg.png"))
     print("wrote", f"{theme}-bg.png")
 
+APP = os.path.join(os.path.dirname(__file__), "..", "app")
+
+def make_og():
+    """Landscape social / OG preview (1200x630) with relevant motif on the right."""
+    w, h = 1200, 630
+    img = base(w, h, GLOWS["compress"], 0.75, 0.46, 0.6)
+    layer, d = motif_layer(w, h)
+    cx = int(w * 0.75)
+    fw, fh = 300, 250
+    fx, fy = cx - fw // 2, 150
+    d.rounded_rectangle([fx, fy, fx + fw, fy + fh], radius=22, outline=VIOLET, width=8)
+    m_person(d, cx, fy + int(fh * 0.16), 1.12)
+    m_signature(d, fx, fy + fh + 48, fw)
+    img = stamp(img, layer, alpha=54)
+
+    d = ImageDraw.Draw(img)
+    pad = 80
+    logo_chip(d, pad, 62, 66)
+    d.text((pad + 84, 76), "ToolsKaro", font=font(46), fill=INK)
+    hf = font(60)
+    ty = 190
+    for ln in wrap(d, "Free tools for Indian exam & job applicants", hf, 600):
+        d.text((pad, ty), ln, font=hf, fill=INK); ty += 72
+    d.text((pad, ty + 10), "Resize & compress photo & signature, PDFs", font=font(27), fill=MUTED)
+    d.text((pad, ty + 46), "and build a resume — 100% in your browser.", font=font(27), fill=MUTED)
+
+    chips = ["Compress", "Passport Photo", "Remove BG", "PDF", "Resume"]
+    cf = font(24)
+    cxp, cyp = pad, h - 92
+    for c in chips:
+        pw = d.textlength(c, font=cf) + 40
+        d.rounded_rectangle([cxp, cyp, cxp + pw, cyp + 50], radius=25, fill=(139, 124, 245, 30), outline=(139, 124, 245, 95), width=2)
+        d.text((cxp + 20, cyp + 11), c, font=cf, fill=(212, 207, 250))
+        cxp += pw + 14
+
+    img.convert("RGB").save(os.path.join(APP, "opengraph-image.png"))
+    img.convert("RGB").save(os.path.join(APP, "twitter-image.png"))
+    print("wrote app/opengraph-image.png + app/twitter-image.png")
+
 for th, title in POSTERS.items():
     make_poster(th, title)
     make_bg(th)
+make_og()
 print("done")
