@@ -30,6 +30,9 @@ const features = [
 const faqs = [
   { q: "What is the size of a passport size photo?", a: "The standard passport size photo in India is 3.5×4.5 cm (about 413×531 px at 300 DPI). For US visa, OCI and Green Card applications it is 2×2 inch (5.1×5.1 cm, 600×600 px). Schengen and UK visas also use 3.5×4.5 cm. Always confirm the exact size in the official instructions." },
   { q: "What is the passport size photo measurement in pixels?", a: "At 300 DPI, a 3.5×4.5 cm passport photo is about 413×531 pixels, and a 2×2 inch photo is 600×600 pixels. The maker above outputs these pixel dimensions automatically when you pick the matching preset." },
+  { q: "What is the passport size photo size in cm?", a: "In India it is 3.5 cm wide by 4.5 cm tall (3.5×4.5 cm). The US 2-inch photo is 5.1×5.1 cm. Choose the matching preset and the tool sizes your photo exactly." },
+  { q: "What is the ratio of a passport size photo?", a: "A 3.5×4.5 cm passport photo has an aspect ratio of about 7:9 (0.78) — slightly taller than wide. A 2×2 inch US photo is a 1:1 square ratio." },
+  { q: "What is the photo size for an Indian passport?", a: "For an Indian passport the photo is 3.5×4.5 cm (about 1.38×1.77 inches, ≈413×531 px at 300 DPI) on a plain white background, with the face clearly visible. The maker above has this preset built in." },
   { q: "Can I get a white background?", a: "Yes — choose the white background option (light blue and grey are also available). For photos shot against a busy background, remove the background first using our Remove Background tool, then make the passport photo." },
   { q: "How do I make a passport photo from a normal selfie?", a: "Upload your photo, pick the size preset your application needs, choose a background colour, and select ‘Crop to fill’ so your face fills the frame. Click Make passport photo and download it." },
   { q: "Will this meet the file size limit for my exam form?", a: "This tool sets the correct dimensions and background. If your form also has a KB limit (e.g. 20–50 KB), pass the downloaded photo through our Image Compressor to hit that exact size." },
@@ -74,6 +77,15 @@ export default function Page() {
             </tbody>
           </table>
         </div>
+        <h3>Passport size photo in cm, inches &amp; ratio</h3>
+        <p>
+          In India, a passport size photo is <strong>3.5 cm wide × 4.5 cm tall</strong> — the same as
+          <strong> 1.38 × 1.77 inches</strong>. That works out to an aspect <strong>ratio of about 7:9</strong>
+          (0.78), so the photo is slightly taller than it is wide. For an <strong>Indian passport</strong> and
+          most Indian exam forms, 3.5 × 4.5 cm is the standard; US visa, OCI and Green Card photos instead use
+          the square <strong>2 × 2 inch (5.1 × 5.1 cm, 1:1 ratio)</strong> size. Pick the matching preset above and
+          the maker outputs the exact dimensions for you.
+        </p>
         <p className="muted-note">⚠️ Sizes and file limits vary between forms — always confirm the exact measurement in the official instructions before you upload or print.</p>
       </div>
 
