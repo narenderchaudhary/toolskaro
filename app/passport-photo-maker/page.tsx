@@ -6,9 +6,9 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Passport Size Photo Maker — White Background",
+  title: "Passport Size Photo — Size, Dimensions & Maker (Free)",
   description:
-    "Make a passport-size photo online for exam forms, visa and ID. Choose 3.5×4.5 cm, 2×2 inch or form sizes with a white background. Free, no signup, 100% in your browser.",
+    "Passport size photo dimensions & free maker: India 3.5×4.5 cm (≈413×531 px), US visa 2×2 inch (600×600 px). Make a passport-size photo with a white background in your browser.",
   alternates: { canonical: "/passport-photo-maker/" },
 };
 
@@ -28,7 +28,8 @@ const features = [
 ];
 
 const faqs = [
-  { q: "What is the correct passport photo size in India?", a: "The standard passport photo is 3.5×4.5 cm (about 413×531 px at 300 DPI). Many exam forms also accept it. For US visa and some applications, a 2×2 inch (51×51 mm) photo is required. Always confirm the exact size in the official instructions." },
+  { q: "What is the size of a passport size photo?", a: "The standard passport size photo in India is 3.5×4.5 cm (about 413×531 px at 300 DPI). For US visa, OCI and Green Card applications it is 2×2 inch (5.1×5.1 cm, 600×600 px). Schengen and UK visas also use 3.5×4.5 cm. Always confirm the exact size in the official instructions." },
+  { q: "What is the passport size photo measurement in pixels?", a: "At 300 DPI, a 3.5×4.5 cm passport photo is about 413×531 pixels, and a 2×2 inch photo is 600×600 pixels. The maker above outputs these pixel dimensions automatically when you pick the matching preset." },
   { q: "Can I get a white background?", a: "Yes — choose the white background option (light blue and grey are also available). For photos shot against a busy background, remove the background first using our Remove Background tool, then make the passport photo." },
   { q: "How do I make a passport photo from a normal selfie?", a: "Upload your photo, pick the size preset your application needs, choose a background colour, and select ‘Crop to fill’ so your face fills the frame. Click Make passport photo and download it." },
   { q: "Will this meet the file size limit for my exam form?", a: "This tool sets the correct dimensions and background. If your form also has a KB limit (e.g. 20–50 KB), pass the downloaded photo through our Image Compressor to hit that exact size." },
@@ -52,6 +53,29 @@ export default function Page() {
       </div>
 
       <PassportPhoto />
+
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>Passport size photo dimensions &amp; measurements</h2>
+        <p>
+          A <strong>passport size photo</strong> has a standard size, but it varies by country and
+          purpose. Here are the most common passport photo dimensions and measurements — the maker above
+          has presets for each:
+        </p>
+        <div className="size-table-wrap">
+          <table className="size-table">
+            <thead>
+              <tr><th>Used for</th><th>Centimetres</th><th>Inches</th><th>Pixels (300 DPI)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>India passport &amp; most exam forms</td><td>3.5 × 4.5 cm</td><td>1.38 × 1.77 in</td><td>≈ 413 × 531 px</td></tr>
+              <tr><td>US visa, OCI, Green Card</td><td>5.1 × 5.1 cm</td><td>2 × 2 in</td><td>600 × 600 px</td></tr>
+              <tr><td>Stamp size (some forms)</td><td>2 × 2.5 cm</td><td>0.8 × 1 in</td><td>≈ 236 × 295 px</td></tr>
+              <tr><td>Schengen / UK visa</td><td>3.5 × 4.5 cm</td><td>1.38 × 1.77 in</td><td>≈ 413 × 531 px</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="muted-note">⚠️ Sizes and file limits vary between forms — always confirm the exact measurement in the official instructions before you upload or print.</p>
+      </div>
 
       <Steps heading={<>Make it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">passport photo maker</span></>} items={features} />

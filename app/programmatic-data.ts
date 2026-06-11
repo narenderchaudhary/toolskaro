@@ -6,6 +6,10 @@ export const KB_VALUES = [10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 300, 50
 
 export const kbSlug = (n: number) => `compress-image-to-${n}kb`;
 
+// PDF compress-to-KB programmatic targets (high-volume Indian queries, e.g. "compress pdf to 200kb").
+export const PDF_KB_VALUES = [100, 200, 300, 500];
+export const pdfKbSlug = (n: number) => `compress-pdf-to-${n}kb`;
+
 export type KbInfo = {
   usedFor: string;
   bestFor: string; // short tag for the quick-facts strip
@@ -341,4 +345,4 @@ export const EXAMS: Exam[] = [
   },
 ];
 
-export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...EXAMS.map((e) => e.slug)];
+export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...PDF_KB_VALUES.map(pdfKbSlug), ...EXAMS.map((e) => e.slug)];

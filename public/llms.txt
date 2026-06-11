@@ -22,12 +22,19 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Photo + Signature Combiner](https://toolskaro.com/photo-signature-combiner/): Combine photo and signature into one image.
 - [Photo Joiner](https://toolskaro.com/photo-joiner/): Combine photos side by side, stacked or in a grid.
 - [Social Media Image Resizer](https://toolskaro.com/social-media-image-resizer/): Exact sizes for Instagram, Facebook, WhatsApp, LinkedIn, X, YouTube, Pinterest.
+- [JPEG to JPG Converter](https://toolskaro.com/jpeg-to-jpg/): Convert JPEG (or PNG/WebP) to a JPG file in the browser.
+- [PNG to JPG Converter](https://toolskaro.com/png-to-jpg/): Convert PNG to a smaller JPG, transparency flattened to white.
+- [Resize Image in KB](https://toolskaro.com/resize-image-in-kb/): Reduce a photo to an exact KB size (20 KB, 50 KB, 100 KB or any target).
 
 ## PDF tools
 - [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.
 - [PDF to JPG](https://toolskaro.com/pdf/pdf-to-jpg/): Convert PDF pages to JPG images.
 - [Merge PDF](https://toolskaro.com/pdf/merge/): Combine multiple PDFs into one.
 - [Compress PDF](https://toolskaro.com/pdf/compress/): Reduce PDF file size for uploads.
+- [Compress PDF to 100 KB](https://toolskaro.com/compress-pdf-to-100kb/): Get a PDF under a 100 KB limit.
+- [Compress PDF to 200 KB](https://toolskaro.com/compress-pdf-to-200kb/): Get a PDF under a 200 KB limit.
+- [Compress PDF to 300 KB](https://toolskaro.com/compress-pdf-to-300kb/): Get a PDF under a 300 KB limit.
+- [Compress PDF to 500 KB](https://toolskaro.com/compress-pdf-to-500kb/): Get a PDF under a 500 KB limit.
 - [Split PDF](https://toolskaro.com/pdf/split/): Extract pages or split into separate files.
 - [Rotate PDF](https://toolskaro.com/pdf/rotate/): Rotate pages 90/180/270°.
 - [Delete PDF Pages](https://toolskaro.com/pdf/delete-pages/): Remove pages from a PDF.

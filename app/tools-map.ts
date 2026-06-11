@@ -14,6 +14,9 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/photo-signature-combiner/": { name: "Photo & Signature Combiner", cat: "image" },
   "/photo-joiner/": { name: "Photo Joiner", cat: "image" },
   "/social-media-image-resizer/": { name: "Social Media Image Resizer", cat: "image" },
+  "/jpeg-to-jpg/": { name: "JPEG to JPG Converter", cat: "image" },
+  "/png-to-jpg/": { name: "PNG to JPG Converter", cat: "image" },
+  "/resize-image-in-kb/": { name: "Resize Image in KB", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },

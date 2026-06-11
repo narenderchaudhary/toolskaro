@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Compressor from "@/app/image-compressor/Compressor";
+import CompressPdfToKb from "@/app/pdf/compress/CompressPdfToKb";
 import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
-import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
+import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
 
@@ -21,6 +22,12 @@ function kbFromSlug(slug: string): number | null {
 function examFromSlug(slug: string): Exam | null {
   return EXAMS.find((e) => e.slug === slug) ?? null;
 }
+function pdfKbFromSlug(slug: string): number | null {
+  const m = slug.match(/^compress-pdf-to-(\d+)kb$/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return PDF_KB_VALUES.includes(n) ? n : null;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -30,6 +37,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `Compress Image to ${kb} KB Online — Free, No Upload`,
       description: `Compress a JPG or PNG to ${kb} KB free in your browser — ideal for ${info.usedFor}. No signup, no watermark, files never uploaded.`,
+      alternates: { canonical: `/${slug}/` },
+    };
+  }
+  const pkb = pdfKbFromSlug(slug);
+  if (pkb !== null) {
+    return {
+      title: `Compress PDF to ${pkb} KB Online — Free, No Upload`,
+      description: `Compress a PDF to ${pkb} KB online free in your browser. Get your PDF under the ${pkb} KB limit for exam, bank and job portals — no signup, no watermark, files never uploaded.`,
       alternates: { canonical: `/${slug}/` },
     };
   }
@@ -86,6 +101,43 @@ function KbPage({ kb }: { kb: number }) {
       </div>
       <Faq items={faqs} />
       <CtaBand heading="Need a different size?" text="Compress to any KB target, or resize to exact dimensions." links={[["/image-compressor/", "Image Compressor"], ["/image-resizer/", "Image Resizer"], ["/passport-photo-maker/", "Passport Photo"], ["/signature-resize/", "Signature Resize"]]} />
+    </>
+  );
+}
+
+function PdfKbPage({ kb }: { kb: number }) {
+  const faqs = [
+    { q: `How do I compress a PDF to ${kb} KB?`, a: `Upload your PDF above — the target is preset to ${kb} KB. The tool rasterises the pages and lowers the quality just enough to bring the file at or under ${kb} KB, then lets you download it. Everything runs in your browser; nothing is uploaded.` },
+    { q: `Why won't my PDF upload to the exam/bank portal?`, a: `Most portals cap the PDF size — often ${kb} KB or a similar limit — and a scanned or image-heavy PDF is usually far larger. Compressing it below ${kb} KB lets the form accept it.` },
+    { q: "Will the text still be readable after compression?", a: `Yes — the tool keeps the highest quality that fits under ${kb} KB, so the pages stay legible. Very small targets on a heavy scan will look softer; scanning in greyscale first helps a lot.` },
+    { q: "Is it free and private?", a: "Completely free with no sign-up or watermark, and the PDF is processed entirely on your device — it is never uploaded to a server." },
+  ];
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(`Compress PDF to ${kb} KB`, faqs)) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "PDF Tools", href: "/pdf-tools/" }, { name: "Compress PDF", href: "/pdf/compress/" }, { name: `to ${kb} KB`, href: `/compress-pdf-to-${kb}kb/` }]} />
+      <div className="tool-hero">
+        <h1>Compress PDF to <span className="grad">{kb} KB</span></h1>
+        <p className="lede">Reduce your PDF below {kb}&nbsp;KB online — free, no signup, 100% in your browser. The target is preset to {kb}&nbsp;KB, so just drop your file and download.</p>
+      </div>
+      <CompressPdfToKb targetKb={kb} />
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>Get your PDF under {kb} KB for any form</h2>
+        <p>
+          Exam, bank and job portals cap how large an uploaded PDF can be, and a <strong>{kb} KB</strong>{" "}
+          limit is a common one. A scanned document or an image-heavy PDF from your phone is usually far
+          bigger, so the form rejects it. This page presets the compressor to {kb}&nbsp;KB and shrinks your
+          file to fit, keeping the pages as clear as possible.
+        </p>
+        <p>
+          It works best on scanned and photo-based PDFs (the kind portals reject). Need a different limit
+          or a general compressor? Use <a href="/pdf/compress/">Compress PDF</a>, and for the rest of your
+          application try our <a href="/pdf-tools/">full PDF toolkit</a>. Your file never leaves your device.
+        </p>
+        <p className="muted-note">⚠️ Upload limits vary between portals — always confirm the exact maximum size in the official instructions.</p>
+      </div>
+      <Faq items={faqs} />
+      <CtaBand heading="More free PDF tools" text="Merge, split, convert and compress — all in your browser." links={[["/pdf/compress/", "Compress PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
     </>
   );
 }
@@ -179,6 +231,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const kb = kbFromSlug(slug);
   if (kb !== null) return <KbPage kb={kb} />;
+  const pkb = pdfKbFromSlug(slug);
+  if (pkb !== null) return <PdfKbPage kb={pkb} />;
   const exam = examFromSlug(slug);
   if (exam) return <ExamPage exam={exam} />;
   notFound();

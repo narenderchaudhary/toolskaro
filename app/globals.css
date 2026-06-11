@@ -381,6 +381,15 @@ input:focus, select:focus, textarea:focus {
 .steps { padding-left: 20px; color: var(--muted); font-size: 14.5px; }
 .steps li { margin: 6px 0; }
 
+/* Reference size table (passport dimensions etc.) */
+.size-table-wrap { overflow-x: auto; margin: 8px 0 4px; }
+.size-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+.size-table th, .size-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.size-table thead th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--brand); font-weight: 700; }
+.size-table tbody td { color: var(--body); }
+.size-table tbody td:first-child { font-weight: 600; color: var(--ink); }
+.size-table tbody tr:last-child td { border-bottom: none; }
+
 /* Long-form content blocks on tool pages */
 .content p, .content li { color: var(--body); font-size: 15px; line-height: 1.75; }
 .content p { margin: 0 0 12px; }
