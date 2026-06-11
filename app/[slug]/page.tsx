@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (exam) {
     return {
       title: `${exam.name} Photo & Signature Size (KB & Dimensions)`,
-      description: `Exact photo and signature size for the ${exam.name} form (${exam.authority}): dimensions, KB limits${exam.extras.length ? " and the extra uploads it needs" : ""}. Resize & compress free in your browser.`,
+      description: `Exact photo and signature size for the ${exam.name} form (${exam.authority}): dimensions, KB limits${exam.uploads.length > 2 ? " and the extra uploads it needs" : ""}. Resize & compress free in your browser.`,
       alternates: { canonical: `/${slug}/` },
     };
   }
@@ -69,6 +69,12 @@ function KbPage({ kb }: { kb: number }) {
       <div className="tool-hero">
         <h1>Compress image to <span className="grad">{kb} KB</span></h1>
         <p className="lede">Shrink your JPG or PNG to {kb}&nbsp;KB online — free, no signup, 100% in your browser. The target is preset to {kb}&nbsp;KB, so just upload and download.</p>
+        <div className="quickfacts">
+          <span className="qf"><b>{kb} KB</b> target</span>
+          <span className="qf"><b>JPG / PNG</b> supported</span>
+          <span className="qf">Best for <b>{info.bestFor}</b></span>
+          <span className="qf">🔒 <b>No upload</b></span>
+        </div>
       </div>
       <Compressor initialTarget={kb} />
       <div className="card content">
@@ -97,33 +103,69 @@ function ExamPage({ exam }: { exam: Exam }) {
       <div className="tool-hero">
         <h1>Photo &amp; signature for <span className="grad">{exam.name}</span></h1>
         <p className="lede">Exact photo and signature sizes for the {exam.name} application form ({exam.authority}) — resize and compress free, in your browser.</p>
+        <div className="quickfacts">
+          <span className="qf"><b>{exam.uploads.length}</b> files to upload</span>
+          <span className="qf">Photo <b>{exam.uploads[0].kb}</b></span>
+          <span className="qf">Portal <b>{exam.portal}</b></span>
+          <span className="qf">🔒 <b>No upload</b></span>
+        </div>
       </div>
 
-      <div className="card content">
-        <h2 style={{ marginTop: 0 }}>{exam.name} photo &amp; signature requirements</h2>
-        <p>{exam.blurb} It recruits for {exam.posts}, and the online application on <strong>{exam.portal}</strong> asks you to upload images within set dimensions and file sizes.</p>
-        <ul>
-          <li><strong>Photograph:</strong> {exam.photo}</li>
-          <li><strong>Signature:</strong> {exam.signature}</li>
-          {exam.extras.map((x, i) => (
-            <li key={i}>{x}</li>
-          ))}
-        </ul>
-        <p>{exam.unique}</p>
-        <p className="muted-note">⚠️ These figures are common, well-cited values — but exam requirements change between cycles. Always confirm the exact size and dimensions in the official {exam.authority} notification on {exam.portal} before uploading.</p>
+      {/* Elegant spec-sheet: one card per required upload */}
+      <h2 className="section-center" style={{ marginTop: 30 }}>What you need to <span className="g">upload</span></h2>
+      <div className="spec-grid">
+        {exam.uploads.map((u) => (
+          <div key={u.label} className="spec-card">
+            <div className="spec-top">
+              <span className="spec-ic">{u.icon}</span>
+              <span className="spec-kb">{u.kb}</span>
+            </div>
+            <div className="spec-label">{u.label}</div>
+            <dl className="spec-meta">
+              {u.dims !== "—" && <div><dt>Dimensions</dt><dd>{u.dims}</dd></div>}
+              <div><dt>Format</dt><dd>{u.format}</dd></div>
+            </dl>
+            <p className="spec-note">{u.note}</p>
+          </div>
+        ))}
       </div>
 
+      {/* Do / Don't checklist */}
+      <div className="checklist">
+        <div className="check check-do">
+          <h3>✓ Do</h3>
+          <ul>
+            <li>{exam.do}</li>
+            <li>Use a plain, light, evenly-lit background</li>
+            <li>Face the camera squarely with a neutral expression</li>
+            <li>Save as JPG before compressing to the target size</li>
+          </ul>
+        </div>
+        <div className="check check-dont">
+          <h3>✗ Avoid</h3>
+          <ul>
+            <li>{exam.dont}</li>
+            <li>Selfies, filters or beautify modes</li>
+            <li>Caps, sunglasses or shadows on the face</li>
+            <li>Busy, dark or coloured backgrounds</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="section-center" style={{ marginTop: 34 }}>Compress your photo to <span className="g">{exam.target} KB</span></h2>
       <Compressor initialTarget={exam.target} />
 
       <div className="card content">
-        <h2 style={{ marginTop: 0 }}>Prepare every file in minutes</h2>
+        <h2 style={{ marginTop: 0 }}>About the {exam.name} application</h2>
+        <p>{exam.blurb} It recruits for {exam.posts}, and the online form on <strong>{exam.portal}</strong> requires the images listed above.</p>
+        <p>{exam.unique}</p>
+        <p className="muted-note">⚠️ These figures are common, well-cited values — but exam requirements change between cycles. Always confirm the exact size and dimensions in the official {exam.authority} notification on {exam.portal} before uploading.</p>
         <p>
-          Upload your photo above and compress it to the size {exam.name} needs. For an exact pixel
-          size, run it through the <a href="/image-resizer/">Image Resizer</a> first. Size your
-          signature with <a href="/signature-resize/">Signature Resize</a>, get a clean
-          white-background photo from the <a href="/passport-photo-maker/">Passport Photo Maker</a>,
-          and combine both into one image with the{" "}
-          <a href="/photo-signature-combiner/">Photo + Signature Combiner</a>.
+          Need the rest of your application ready? Set exact pixel sizes with the{" "}
+          <a href="/image-resizer/">Image Resizer</a>, size your signature with{" "}
+          <a href="/signature-resize/">Signature Resize</a>, get a clean white background from the{" "}
+          <a href="/passport-photo-maker/">Passport Photo Maker</a>, and merge photo and signature
+          into one image with the <a href="/photo-signature-combiner/">Photo + Signature Combiner</a>.
         </p>
       </div>
 

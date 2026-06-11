@@ -295,6 +295,38 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, textarea:foc
   .esig-row2 { grid-template-columns: 1fr; }
 }
 
+/* ---------- Programmatic exam / KB pages — spec sheet ---------- */
+.quickfacts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.qf { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 7px 15px; font-size: 13px; color: var(--muted); box-shadow: var(--shadow-sm); }
+.qf b { color: var(--ink); font-weight: 700; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; margin: 4px 0 8px; }
+.spec-card { border: 1px solid var(--border); border-radius: 16px; padding: 18px; background: linear-gradient(180deg, #fbfcff 0%, #ffffff 60%); box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s; }
+.spec-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.spec-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.spec-ic { font-size: 26px; line-height: 1; }
+.spec-kb { background: #eef2ff; color: var(--brand-dark); font-weight: 800; font-size: 13px; padding: 5px 11px; border-radius: 999px; white-space: nowrap; }
+.spec-label { font-weight: 700; font-size: 16px; color: var(--ink); letter-spacing: -0.01em; }
+.spec-meta { margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.spec-meta div { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; }
+.spec-meta dt { color: var(--muted); margin: 0; }
+.spec-meta dd { margin: 0; color: var(--ink); font-weight: 600; text-align: right; }
+.spec-note { margin: 11px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 9px; }
+
+.checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.check { border-radius: 16px; padding: 18px 20px; border: 1px solid var(--border); }
+.check h3 { margin: 0 0 10px; font-size: 15px; }
+.check ul { margin: 0; padding-left: 4px; list-style: none; }
+.check li { position: relative; padding: 5px 0 5px 24px; font-size: 14px; line-height: 1.5; color: #374151; }
+.check li::before { position: absolute; left: 0; top: 5px; font-weight: 800; }
+.check-do { background: #f0fdf4; border-color: #bbf7d0; }
+.check-do h3 { color: #15803d; }
+.check-do li::before { content: "✓"; color: #16a34a; }
+.check-dont { background: #fef2f2; border-color: #fecaca; }
+.check-dont h3 { color: #b91c1c; }
+.check-dont li::before { content: "✗"; color: #dc2626; }
+@media (max-width: 600px) { .checklist { grid-template-columns: 1fr; } }
+
 .steps { padding-left: 20px; color: var(--muted); font-size: 14.5px; }
 .steps li { margin: 6px 0; }
 
