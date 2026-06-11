@@ -60,13 +60,16 @@ const ROUTES = [
 const LOW_PRIORITY = new Set(["about", "contact", "privacy-policy", "disclaimer", "terms"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date(); // build time — refreshes on every deploy
   const main = ROUTES.map((path) => ({
     url: `${BASE}/${path}${path ? "/" : ""}`,
+    lastModified,
     changeFrequency: (LOW_PRIORITY.has(path) ? "monthly" : "weekly") as "monthly" | "weekly",
     priority: path === "" ? 1 : LOW_PRIORITY.has(path) ? 0.3 : 0.8,
   }));
   const programmatic = ALL_SLUGS.map((slug) => ({
     url: `${BASE}/${slug}/`,
+    lastModified,
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
@@ -75,6 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     `${BASE}/web-stories/compress-photo-to-50kb.html`,
     `${BASE}/web-stories/resize-photo-and-signature-for-exam.html`,
     `${BASE}/web-stories/make-passport-size-photo.html`,
-  ].map((url) => ({ url, changeFrequency: "monthly" as const, priority: 0.5 }));
+  ].map((url) => ({ url, lastModified, changeFrequency: "monthly" as const, priority: 0.5 }));
   return [...main, ...programmatic, ...stories];
 }
