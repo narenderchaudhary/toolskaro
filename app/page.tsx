@@ -13,10 +13,11 @@ function ToolCard({ tool, tint, color }: { tool: Tool; tint: string; color: stri
       </div>
     </>
   );
+  const accent = { ["--cat" as string]: color } as React.CSSProperties;
   return tool.ready ? (
-    <Link href={tool.href} className="tool-card">{inner}</Link>
+    <Link href={tool.href} className="tool-card" style={accent}>{inner}</Link>
   ) : (
-    <div className="tool-card soon">{inner}</div>
+    <div className="tool-card soon" style={accent}>{inner}</div>
   );
 }
 
@@ -53,7 +54,7 @@ export default function Home() {
       {CATEGORIES.map((cat) => (
         <section key={cat.name} className="tools-section">
           <div className="section-head">
-            <span className="dot" style={{ background: cat.color }} />
+            <span className="dot" style={{ background: cat.color, color: cat.color }} />
             <h2><Link href={cat.hubHref}>{cat.name}</Link></h2>
             <Link href={cat.hubHref} className="count count-link">View all {cat.tools.length} →</Link>
           </div>

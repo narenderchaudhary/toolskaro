@@ -61,7 +61,7 @@ export default function Hub({
 
       <div className="tool-grid">
         {cat.tools.map((tool) => (
-          <Link key={tool.href} href={tool.href} className="tool-card">
+          <Link key={tool.href} href={tool.href} className="tool-card" style={{ ["--cat" as string]: cat.color } as React.CSSProperties}>
             <div className="tool-icon" style={{ background: cat.tint, color: cat.color }}>{tool.icon}</div>
             <div>
               <div className="t">{tool.t}</div>

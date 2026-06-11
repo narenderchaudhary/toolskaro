@@ -4,7 +4,11 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
+import ThemeToggle from "@/app/components/ThemeToggle";
 import "./globals.css";
+
+// Set the theme before first paint (no flash). Honours a saved choice, else system preference.
+const THEME_INIT = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
 
@@ -115,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" className={jakarta.variable}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <header className="site">
           <div className="container">
@@ -125,6 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/remove-background/" className="hide-sm">Remove BG</Link>
               <Link href="/pdf/merge/">PDF</Link>
               <Link href="/about/" className="hide-sm">About</Link>
+              <ThemeToggle />
             </nav>
           </div>
         </header>
