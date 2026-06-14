@@ -2,7 +2,7 @@
 
 > Free in-browser tools for Indian exam and government job applicants. Resize and compress photos and signatures to an exact KB/size, convert and edit PDFs, build resumes and biodata, and run everyday calculators. All processing happens locally in the browser — no uploads, no signup, no watermark.
 
-ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
+ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/company/admatrix-media); editorial and product direction by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
 
 ## Tool hubs (categories)
 - [Image Tools](https://toolskaro.com/image-tools/): All photo and signature tools — compress, resize, passport photo, remove background, convert.

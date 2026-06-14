@@ -15,6 +15,7 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variabl
 
 const SITE = "https://toolskaro.com";
 const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
+const AGENCY_LINKEDIN = "https://www.linkedin.com/company/admatrix-media";
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +49,14 @@ const orgJsonLd = {
         name: "Narender Chaudhary",
         jobTitle: "Editorial & Product Lead",
         sameAs: [LINKEDIN],
+      },
+      parentOrganization: {
+        "@type": "Organization",
+        "@id": "https://www.admatrixmedia.com/#agency",
+        name: "AdMatrix Media",
+        description: "Digital media agency that builds and maintains ToolsKaro.",
+        url: AGENCY_LINKEDIN,
+        sameAs: [AGENCY_LINKEDIN],
       },
       knowsAbout: ["Image compression", "PDF tools", "Government exam form requirements", "Resume building"],
     },
@@ -160,7 +169,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 runs entirely in your browser — your files are never uploaded to any server.
               </p>
               <p className="footer-managed">
-                Managed by <strong>AdMatrix Media Agency</strong>
+                Crafted &amp; maintained by{" "}
+                <a href={AGENCY_LINKEDIN} target="_blank" rel="noopener noreferrer"><strong>AdMatrix Media</strong></a>
               </p>
             </div>
             <div className="footer-col">

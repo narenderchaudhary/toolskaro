@@ -3,6 +3,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const SITE = "https://toolskaro.com";
 const LINKEDIN = "https://www.linkedin.com/in/naren-chaudhary/";
+const AGENCY_LINKEDIN = "https://www.linkedin.com/company/admatrix-media";
 
 export const metadata: Metadata = {
   title: "About ToolsKaro & Our Team",
@@ -34,6 +35,13 @@ export default function Page() {
         jobTitle: "Editorial & Product Lead",
         worksFor: { "@id": `${SITE}/#organization` },
         sameAs: [LINKEDIN],
+      },
+      parentOrganization: {
+        "@type": "Organization",
+        name: "AdMatrix Media",
+        description: "Digital media agency that builds and maintains ToolsKaro.",
+        url: AGENCY_LINKEDIN,
+        sameAs: [AGENCY_LINKEDIN],
       },
     },
   };
@@ -82,9 +90,10 @@ export default function Page() {
 
         <h2>Our team</h2>
         <p>
-          ToolsKaro is operated and managed by <strong>AdMatrix Media Agency</strong>, which is
-          responsible for the platform&apos;s development, maintenance and growth. Editorial and
-          product direction is led by Narender Chaudhary.
+          ToolsKaro is crafted and maintained by{" "}
+          <a href={AGENCY_LINKEDIN} target="_blank" rel="noopener noreferrer">AdMatrix Media</a>, a digital
+          media agency responsible for the platform&apos;s development, maintenance and growth. Editorial
+          and product direction is led by Narender Chaudhary.
         </p>
         <div className="team-card">
           <div className="team-avatar">NC</div>
