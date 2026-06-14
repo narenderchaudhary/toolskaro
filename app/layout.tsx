@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
+import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import "./globals.css";
 
@@ -138,6 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="container">
           <AutoBreadcrumbs />
           {children}
+          <AutoByline />
         </main>
 
         <section className="join-band">

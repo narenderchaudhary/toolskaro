@@ -5,6 +5,7 @@ import CompressPdfToKb from "@/app/pdf/compress/CompressPdfToKb";
 import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import Byline from "@/app/components/Byline";
 import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
@@ -100,6 +101,7 @@ function KbPage({ kb }: { kb: number }) {
         <p className="muted-note">⚠️ File-size rules vary between forms and change between exam cycles — always confirm the exact limit in the official notification before you upload.</p>
       </div>
       <Faq items={faqs} />
+      <Byline />
       <CtaBand heading="Need a different size?" text="Compress to any KB target, or resize to exact dimensions." links={[["/image-compressor/", "Image Compressor"], ["/image-resizer/", "Image Resizer"], ["/passport-photo-maker/", "Passport Photo"], ["/signature-resize/", "Signature Resize"]]} />
     </>
   );
@@ -135,6 +137,7 @@ function PdfKbPage({ kb }: { kb: number }) {
         <p className="muted-note">⚠️ Upload limits vary between portals — always confirm the exact maximum size in the official instructions.</p>
       </div>
       <Faq items={faqs} />
+      <Byline />
       <CtaBand heading="More free PDF tools" text="Merge, split, convert and compress — all in your browser." links={[["/pdf/compress/", "Compress PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
     </>
   );
@@ -220,6 +223,7 @@ function ExamPage({ exam }: { exam: Exam }) {
       </div>
 
       <Faq items={faqs} />
+      <Byline />
       <CtaBand heading="Finish your application" text="Photo, signature and documents — sized and ready." links={[["/image-resizer/", "Image Resizer"], ["/signature-resize/", "Signature Resize"], ["/passport-photo-maker/", "Passport Photo"], ["/photo-signature-combiner/", "Photo + Signature"]]} />
     </>
   );

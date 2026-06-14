@@ -416,6 +416,9 @@ input:focus, select:focus, textarea:focus {
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item .faq-a { padding: 0 0 16px; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
 .muted-note { font-size: 13px; color: var(--muted); }
+.byline { font-size: 13px; color: var(--muted); margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
+.byline a { color: var(--brand); font-weight: 600; }
+@media print { .byline { display: none !important; } }
 .crumbs { font-size: 13px; color: var(--muted); padding: 14px 0 0; }
 .crumbs a { color: var(--muted); }
 .crumbs a:hover { color: var(--brand); }
