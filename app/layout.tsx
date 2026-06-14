@@ -131,6 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/image-resizer/">Resize</Link>
               <Link href="/remove-background/" className="hide-sm">Remove BG</Link>
               <Link href="/pdf/merge/">PDF</Link>
+              <Link href="/blog/">Blog</Link>
               <Link href="/about/" className="hide-sm">About</Link>
               <ThemeToggle />
             </nav>
