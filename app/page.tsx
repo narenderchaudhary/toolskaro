@@ -153,10 +153,55 @@ export default function Home() {
           <Link href="/password-generator/">password generator</Link>.
         </p>
 
+        <h3>Resize or compress a photo to any KB size</h3>
+        <p>
+          Different forms ask for different file sizes, so we have a one-click page for each common
+          target — compress to <Link href="/compress-image-to-20kb/">20&nbsp;KB</Link>,{" "}
+          <Link href="/compress-image-to-50kb/">50&nbsp;KB</Link>,{" "}
+          <Link href="/compress-image-to-100kb/">100&nbsp;KB</Link> or{" "}
+          <Link href="/compress-image-to-200kb/">200&nbsp;KB</Link> — or simply{" "}
+          <Link href="/resize-image-in-kb/">resize an image in KB</Link> to any number you type. Need
+          exact pixels instead? The <Link href="/image-resizer/">image resizer</Link> sets the width and
+          height your form specifies, down to the pixel.
+        </p>
+
+        <h3>Convert between image formats</h3>
+        <p>
+          Switch formats in a click: <Link href="/jpeg-to-jpg/">JPEG to JPG</Link>,{" "}
+          <Link href="/png-to-jpg/">PNG to JPG</Link>, or use the full{" "}
+          <Link href="/image-converter/">image converter</Link> for PNG, JPG and WebP. You can also{" "}
+          <Link href="/remove-background/">remove a photo background</Link>,{" "}
+          <Link href="/crop-image/">crop to any ratio</Link> and{" "}
+          <Link href="/photo-signature-combiner/">combine your photo and signature</Link> into one image.
+        </p>
+
+        <h3>Photo &amp; signature size for your exam</h3>
+        <p>
+          Not sure of the exact requirements? We list the photo and signature size for each major exam —{" "}
+          <Link href="/photo-resize-for-ssc-cgl/">SSC CGL</Link>,{" "}
+          <Link href="/photo-resize-for-ibps-po/">IBPS PO</Link>,{" "}
+          <Link href="/photo-resize-for-sbi-po/">SBI PO</Link>,{" "}
+          <Link href="/photo-resize-for-upsc/">UPSC</Link>,{" "}
+          <Link href="/photo-resize-for-rrb-ntpc/">RRB NTPC</Link> and more — including the extra uploads
+          that bank exams require, such as a left thumb impression and a handwritten declaration.
+        </p>
+
+        <h3>Compress a PDF below an upload limit</h3>
+        <p>
+          Scanned documents are often too large for portals. Shrink a PDF under a set size with our
+          compress-PDF pages — <Link href="/compress-pdf-to-100kb/">100&nbsp;KB</Link>,{" "}
+          <Link href="/compress-pdf-to-200kb/">200&nbsp;KB</Link>,{" "}
+          <Link href="/compress-pdf-to-300kb/">300&nbsp;KB</Link> or{" "}
+          <Link href="/compress-pdf-to-500kb/">500&nbsp;KB</Link> — or use the full{" "}
+          <Link href="/pdf-tools/">PDF toolkit</Link> to merge, split and convert your pages first.
+        </p>
+
         <h3>100% free, no watermark</h3>
         <p>
           Every tool is completely free with no sign-up, no watermark and no hidden limits. Use them
-          as often as you need on any device — desktop, tablet or phone.
+          as often as you need on any device — desktop, tablet or phone. ToolsKaro is an independent
+          platform and is not affiliated with any government body; always confirm exact photo, signature
+          and file-size rules in the official exam notification.
         </p>
       </section>
 
@@ -171,4 +216,8 @@ const homeFaqs = [
   { q: "Can I resize and compress my photo and signature for exam forms?", a: "Yes. Use the Image Resizer to set the exact dimensions, the Image Compressor to hit a KB limit (like 20–50 KB), the Passport Photo Maker for a white background, and the Signature Resize tool for your signature. Always confirm the exact requirements in the official exam notification." },
   { q: "What kinds of tools does ToolsKaro have?", a: "Image tools (compress, resize, crop, convert, remove background, passport photo), a full PDF suite (merge, split, compress, convert, rotate, page numbers), document makers (resume, cover letter, biodata, invoice), calculators (EMI, SIP, GST, percentage, CGPA, age) and utilities (typing test, QR generator, word counter, password generator)." },
   { q: "Does ToolsKaro work on mobile?", a: "Yes. The site is fully responsive and every tool works on phones, tablets and desktops in any modern browser." },
+  { q: "How do I convert JPEG to JPG?", a: "JPEG and JPG are the same image format with different extensions. Open the JPEG to JPG converter, upload your image, keep JPG as the output, and download — it re-saves your file as a .jpg entirely in your browser." },
+  { q: "How do I compress a PDF to 200 KB?", a: "Open the Compress PDF to 200 KB page and drop in your file. The tool reduces the quality just enough to bring the PDF at or under 200 KB while keeping the pages readable, then lets you download it. Pages for 100 KB, 300 KB and 500 KB are also available." },
+  { q: "What is the passport size photo dimension in India?", a: "A standard Indian passport size photo is 3.5×4.5 cm (about 413×531 pixels at 300 DPI) on a plain white background. US visa and OCI photos are 2×2 inch (600×600 px). The Passport Photo Maker has one-tap presets for both." },
+  { q: "Is ToolsKaro affiliated with the government?", a: "No. ToolsKaro is an independent platform and is not affiliated with, endorsed by, or connected to any government department or examination authority. Always confirm official requirements in the exam notification." },
 ];
