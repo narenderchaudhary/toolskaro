@@ -10,6 +10,35 @@ export const kbSlug = (n: number) => `compress-image-to-${n}kb`;
 export const PDF_KB_VALUES = [100, 200, 300, 500];
 export const pdfKbSlug = (n: number) => `compress-pdf-to-${n}kb`;
 
+// Unique per-target content so each PDF-KB page is genuinely differentiated (not a near-duplicate
+// template) — important under Google's scaled-content-abuse policy.
+export const PDF_KB_INFO: Record<number, { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }> = {
+  100: {
+    usedFor: "single-page certificates, the bank-exam handwritten declaration, and tight form limits",
+    intro: "A 100 KB cap is one of the strictest PDF limits — common for a single scanned certificate, a mark sheet page, or the handwritten-declaration PDF some bank exams ask for. A colour phone scan is usually several times this size, so it needs real compression.",
+    tip: "Scan or save the document in greyscale rather than full colour where the form allows it — greyscale holds text clearly while dropping to 100 KB far more easily than a colour scan.",
+    faq: { q: "Can a scanned certificate really fit in 100 KB?", a: "Yes, for a single page. Scan at a moderate resolution, keep it greyscale if colour isn't required, and the tool brings it under 100 KB while keeping the text readable — which is what verifiers check." },
+  },
+  200: {
+    usedFor: "the most common exam, bank and job-portal PDF upload limit",
+    intro: "200 KB is the single most common PDF size limit across Indian exam and recruitment portals — if a form caps your PDF, it is very often at 200 KB. It fits a short multi-page document or a detailed single-page scan with stamps.",
+    tip: "If your PDF is only slightly over, deleting blank or duplicate pages first (with our Delete Pages tool) can get you under 200 KB without losing any quality at all.",
+    faq: { q: "Why do so many forms use a 200 KB PDF limit?", a: "200 KB balances legibility and upload speed — large enough for a clear, verifiable scanned document, small enough to upload reliably on slow connections — so most Indian portals standardised on it." },
+  },
+  300: {
+    usedFor: "multi-page documents, combined certificates and detailed scans",
+    intro: "A 300 KB limit gives more room for a multi-page PDF — a set of certificates, a combined mark sheet, or a scan with coloured seals that must stay visible. It is common on admission and document-verification portals.",
+    tip: "Combine your pages into one PDF first (with our Merge or JPG-to-PDF tools), then compress the whole document to 300 KB in one go — that keeps every page consistent and under the limit.",
+    faq: { q: "Will coloured stamps stay visible after compressing to 300 KB?", a: "Yes. 300 KB is generous enough to keep coloured seals and signatures clear across a few pages while still meeting the upload limit." },
+  },
+  500: {
+    usedFor: "full document sets, resumes and detailed multi-page scans",
+    intro: "A 500 KB cap is one of the more generous PDF limits — it suits a full document set, a resume with graphics, or a detailed multi-page scan. Many portals that accept richer attachments use a 500 KB ceiling.",
+    tip: "At 500 KB you have headroom, so scan at a higher resolution for maximum legibility and simply confirm the final file lands under 500 KB — no need to over-compress.",
+    faq: { q: "Do I even need to compress for a 500 KB limit?", a: "Often a multi-page phone scan already exceeds 500 KB, so a light compression brings it under the cap while keeping excellent, fully readable quality." },
+  },
+};
+
 export type KbInfo = {
   usedFor: string;
   bestFor: string; // short tag for the quick-facts strip

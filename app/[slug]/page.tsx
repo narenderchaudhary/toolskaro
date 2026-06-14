@@ -5,7 +5,7 @@ import CompressPdfToKb from "@/app/pdf/compress/CompressPdfToKb";
 import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
-import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, kbSlug, type Exam } from "@/app/programmatic-data";
+import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
 
@@ -106,9 +106,10 @@ function KbPage({ kb }: { kb: number }) {
 }
 
 function PdfKbPage({ kb }: { kb: number }) {
+  const info = PDF_KB_INFO[kb];
   const faqs = [
+    info.faq,
     { q: `How do I compress a PDF to ${kb} KB?`, a: `Upload your PDF above — the target is preset to ${kb} KB. The tool rasterises the pages and lowers the quality just enough to bring the file at or under ${kb} KB, then lets you download it. Everything runs in your browser; nothing is uploaded.` },
-    { q: `Why won't my PDF upload to the exam/bank portal?`, a: `Most portals cap the PDF size — often ${kb} KB or a similar limit — and a scanned or image-heavy PDF is usually far larger. Compressing it below ${kb} KB lets the form accept it.` },
     { q: "Will the text still be readable after compression?", a: `Yes — the tool keeps the highest quality that fits under ${kb} KB, so the pages stay legible. Very small targets on a heavy scan will look softer; scanning in greyscale first helps a lot.` },
     { q: "Is it free and private?", a: "Completely free with no sign-up or watermark, and the PDF is processed entirely on your device — it is never uploaded to a server." },
   ];
@@ -122,17 +123,14 @@ function PdfKbPage({ kb }: { kb: number }) {
       </div>
       <CompressPdfToKb targetKb={kb} />
       <div className="card content">
-        <h2 style={{ marginTop: 0 }}>Get your PDF under {kb} KB for any form</h2>
+        <h2 style={{ marginTop: 0 }}>When you need a PDF under {kb} KB</h2>
+        <p>A <strong>{kb} KB</strong> PDF limit is typically used for <strong>{info.usedFor}</strong>. {info.intro}</p>
+        <h3>Tip for getting under {kb} KB</h3>
+        <p>{info.tip}</p>
         <p>
-          Exam, bank and job portals cap how large an uploaded PDF can be, and a <strong>{kb} KB</strong>{" "}
-          limit is a common one. A scanned document or an image-heavy PDF from your phone is usually far
-          bigger, so the form rejects it. This page presets the compressor to {kb}&nbsp;KB and shrinks your
-          file to fit, keeping the pages as clear as possible.
-        </p>
-        <p>
-          It works best on scanned and photo-based PDFs (the kind portals reject). Need a different limit
-          or a general compressor? Use <a href="/pdf/compress/">Compress PDF</a>, and for the rest of your
-          application try our <a href="/pdf-tools/">full PDF toolkit</a>. Your file never leaves your device.
+          Need a different limit or a general compressor? Use <a href="/pdf/compress/">Compress PDF</a>, and
+          for the rest of your application try our <a href="/pdf-tools/">full PDF toolkit</a> — merge, split
+          and convert. Your file never leaves your device.
         </p>
         <p className="muted-note">⚠️ Upload limits vary between portals — always confirm the exact maximum size in the official instructions.</p>
       </div>
