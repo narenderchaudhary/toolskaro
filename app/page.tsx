@@ -21,8 +21,24 @@ function ToolCard({ tool, tint, color }: { tool: Tool; tint: string; color: stri
   );
 }
 
+const FEATURED: { href: string; tag?: "HOT" | "NEW" }[] = [
+  { href: "/image-compressor/", tag: "HOT" },
+  { href: "/resize-image-in-kb/", tag: "NEW" },
+  { href: "/passport-photo-maker/", tag: "HOT" },
+  { href: "/remove-background/", tag: "HOT" },
+  { href: "/jpeg-to-jpg/", tag: "NEW" },
+  { href: "/pdf/jpg-to-pdf/", tag: "HOT" },
+  { href: "/resume-maker/" },
+  { href: "/email-signature-maker/", tag: "NEW" },
+];
+const ALL_TOOLS = CATEGORIES.flatMap((c) => c.tools.map((t) => ({ ...t, color: c.color, tint: c.tint })));
+
 export default function Home() {
   const total = CATEGORIES.reduce((n, c) => n + c.tools.length, 0);
+  const featured = FEATURED.map((f) => {
+    const t = ALL_TOOLS.find((x) => x.href === f.href);
+    return t ? { ...t, tag: f.tag } : null;
+  }).filter(Boolean) as (Tool & { color: string; tint: string; tag?: "HOT" | "NEW" })[];
   return (
     <>
       <script
@@ -51,6 +67,23 @@ export default function Home() {
         <div className="hero-social"><SocialLinks /></div>
       </section>
 
+      <section className="featured">
+        <div className="section-head">
+          <span className="dot" style={{ background: "#f59e0b", color: "#f59e0b" }} />
+          <h2>Most popular tools</h2>
+        </div>
+        <div className="featured-grid">
+          {featured.map((t) => (
+            <Link key={t.href} href={t.href} className="featured-card" style={{ ["--cat" as string]: t.color } as React.CSSProperties}>
+              {t.tag && <span className={`tool-tag ${t.tag.toLowerCase()}`}>{t.tag}</span>}
+              <div className="featured-icon" style={{ background: t.tint, color: t.color }}>{t.icon}</div>
+              <div className="featured-t">{t.t}</div>
+              <div className="featured-d">{t.d}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {CATEGORIES.map((cat) => (
         <section key={cat.name} className="tools-section">
           <div className="section-head">
@@ -66,6 +99,12 @@ export default function Home() {
         </section>
       ))}
 
+      <section className="trust-band">
+        <div className="trust-item"><span className="trust-ic">🔒</span><div><b>Files never uploaded</b><p>Every tool runs in your browser — your photos and documents stay on your device.</p></div></div>
+        <div className="trust-item"><span className="trust-ic">🆓</span><div><b>Free, no watermark</b><p>No sign-up, no watermark and no hidden limits — use every tool as much as you like.</p></div></div>
+        <div className="trust-item"><span className="trust-ic">⚡</span><div><b>Fast &amp; works anywhere</b><p>Instant results on phone, tablet or desktop in any modern browser.</p></div></div>
+        <div className="trust-item"><span className="trust-ic">🇮🇳</span><div><b>Made for Indian forms</b><p>Built around SSC, UPSC, Bank and Railway photo, signature and document rules.</p></div></div>
+      </section>
 
       <section className="card content" style={{ marginTop: 8 }}>
         <h2 style={{ marginTop: 0 }}>Free online tools for Indian exam &amp; job applicants</h2>
