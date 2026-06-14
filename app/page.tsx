@@ -169,7 +169,9 @@ export default function Home() {
         <p>
           Switch formats in a click: <Link href="/jpeg-to-jpg/">JPEG to JPG</Link>,{" "}
           <Link href="/png-to-jpg/">PNG to JPG</Link>, or use the full{" "}
-          <Link href="/image-converter/">image converter</Link> for PNG, JPG and WebP. You can also{" "}
+          <Link href="/image-converter/">image converter</Link> for PNG, JPG and WebP. On an iPhone?
+          Convert with <Link href="/heic-to-jpg/">HEIC to JPG</Link> or{" "}
+          <Link href="/webp-to-jpg/">WebP to JPG</Link>. You can also{" "}
           <Link href="/remove-background/">remove a photo background</Link>,{" "}
           <Link href="/crop-image/">crop to any ratio</Link> and{" "}
           <Link href="/photo-signature-combiner/">combine your photo and signature</Link> into one image.
@@ -193,7 +195,10 @@ export default function Home() {
           <Link href="/compress-pdf-to-200kb/">200&nbsp;KB</Link>,{" "}
           <Link href="/compress-pdf-to-300kb/">300&nbsp;KB</Link> or{" "}
           <Link href="/compress-pdf-to-500kb/">500&nbsp;KB</Link> — or use the full{" "}
-          <Link href="/pdf-tools/">PDF toolkit</Link> to merge, split and convert your pages first.
+          <Link href="/pdf-tools/">PDF toolkit</Link> to merge, split and convert your pages first. For
+          specific needs, try <Link href="/compress-pdf-for-uscis/">compress PDF for USCIS</Link>,{" "}
+          <Link href="/compress-resume-pdf/">compress your resume PDF</Link>, or{" "}
+          <Link href="/combine-bank-statements-pdf/">combine bank statements into one PDF</Link>.
         </p>
 
         <h3>100% free, no watermark</h3>

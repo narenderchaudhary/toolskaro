@@ -30,6 +30,16 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Change Image DPI](https://toolskaro.com/change-image-dpi/): Set a photo's DPI (e.g. 300 DPI) for exam forms and printing.
 - [WhatsApp DP Resizer](https://toolskaro.com/resize-image-for-whatsapp-dp/): Square-crop and resize a photo for a WhatsApp display picture.
 - [PAN Card Photo](https://toolskaro.com/resize-for-pan-card/): Resize and compress a photo & signature for a PAN card application.
+- [HEIC to JPG](https://toolskaro.com/heic-to-jpg/): Convert iPhone HEIC/HEIF photos to standard JPG, no watermark.
+- [HEIC to PDF](https://toolskaro.com/heic-to-pdf/): Convert iPhone HEIC photos into one PDF.
+- [WebP to JPG](https://toolskaro.com/webp-to-jpg/): Convert WebP images to JPG.
+- [WebP to PDF](https://toolskaro.com/webp-to-pdf/): Convert WebP images into one PDF.
+
+## Document use-case pages
+- [Compress PDF for USCIS](https://toolskaro.com/compress-pdf-for-uscis/): Reduce documents below the myUSCIS upload limit.
+- [Compress Resume PDF](https://toolskaro.com/compress-resume-pdf/): Shrink a CV to fit a job-portal or email limit.
+- [Combine Bank Statements into PDF](https://toolskaro.com/combine-bank-statements-pdf/): Merge monthly statements into one PDF.
+- [Reduce PDF Size for Visa Application](https://toolskaro.com/reduce-pdf-size-for-visa-application/): Compress documents below a visa portal limit.
 
 ## PDF tools
 - [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.

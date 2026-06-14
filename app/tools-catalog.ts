@@ -37,6 +37,8 @@ export const CATEGORIES: Category[] = [
       { href: "/change-image-dpi/", icon: "🎯", t: "Change Image DPI", d: "Set a photo to 300 DPI or any DPI.", vol: "", ready: true },
       { href: "/resize-image-for-whatsapp-dp/", icon: "💬", t: "WhatsApp DP Resizer", d: "Square crop & resize for your WhatsApp DP.", vol: "", ready: true },
       { href: "/resize-for-pan-card/", icon: "🪪", t: "PAN Card Photo", d: "Photo & signature size for a PAN card.", vol: "", ready: true },
+      { href: "/heic-to-jpg/", icon: "📱", t: "HEIC to JPG", d: "Convert iPhone HEIC photos to JPG.", vol: "", ready: true },
+      { href: "/webp-to-jpg/", icon: "🔄", t: "WebP to JPG", d: "Convert WebP images to JPG.", vol: "", ready: true },
     ],
   },
   {
@@ -57,6 +59,8 @@ export const CATEGORIES: Category[] = [
       { href: "/pdf/watermark/", icon: "💧", t: "Watermark PDF", d: "Add a text watermark to every page.", vol: "", ready: true },
       { href: "/pdf/organize/", icon: "🔀", t: "Organize PDF", d: "Reorder, rotate & delete pages.", vol: "", ready: true },
       { href: "/resize-pdf/", icon: "📐", t: "Resize PDF", d: "Fit pages to A4, Letter, Legal & more.", vol: "", ready: true },
+      { href: "/heic-to-pdf/", icon: "📱", t: "HEIC to PDF", d: "Convert iPhone HEIC photos to one PDF.", vol: "", ready: true },
+      { href: "/webp-to-pdf/", icon: "🖼️", t: "WebP to PDF", d: "Convert WebP images into one PDF.", vol: "", ready: true },
     ],
   },
   {

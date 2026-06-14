@@ -22,6 +22,8 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/change-image-dpi/": { name: "Change Image DPI", cat: "image" },
   "/resize-image-for-whatsapp-dp/": { name: "WhatsApp DP Resizer", cat: "image" },
   "/resize-for-pan-card/": { name: "PAN Card Photo", cat: "image" },
+  "/heic-to-jpg/": { name: "HEIC to JPG Converter", cat: "image" },
+  "/webp-to-jpg/": { name: "WebP to JPG Converter", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },
@@ -34,6 +36,12 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/pdf/watermark/": { name: "Watermark PDF", cat: "pdf" },
   "/pdf/organize/": { name: "Organize PDF", cat: "pdf" },
   "/resize-pdf/": { name: "Resize PDF", cat: "pdf" },
+  "/heic-to-pdf/": { name: "HEIC to PDF Converter", cat: "pdf" },
+  "/webp-to-pdf/": { name: "WebP to PDF Converter", cat: "pdf" },
+  "/compress-pdf-for-uscis/": { name: "Compress PDF for USCIS", cat: "pdf" },
+  "/compress-resume-pdf/": { name: "Compress Resume PDF", cat: "pdf" },
+  "/combine-bank-statements-pdf/": { name: "Combine Bank Statements PDF", cat: "pdf" },
+  "/reduce-pdf-size-for-visa-application/": { name: "Reduce PDF Size for Visa", cat: "pdf" },
   // Documents
   "/resume-maker/": { name: "Resume Maker", cat: "doc" },
   "/marriage-biodata-maker/": { name: "Marriage Biodata Maker", cat: "doc" },
