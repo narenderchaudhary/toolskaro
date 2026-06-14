@@ -17,6 +17,8 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/jpeg-to-jpg/": { name: "JPEG to JPG Converter", cat: "image" },
   "/png-to-jpg/": { name: "PNG to JPG Converter", cat: "image" },
   "/resize-image-in-kb/": { name: "Resize Image in KB", cat: "image" },
+  "/increase-image-size-in-kb/": { name: "Increase Image Size in KB", cat: "image" },
+  "/resize-image-in-cm/": { name: "Resize Image in CM", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },
@@ -28,6 +30,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/pdf/page-numbers/": { name: "Add Page Numbers to PDF", cat: "pdf" },
   "/pdf/watermark/": { name: "Watermark PDF", cat: "pdf" },
   "/pdf/organize/": { name: "Organize PDF", cat: "pdf" },
+  "/resize-pdf/": { name: "Resize PDF", cat: "pdf" },
   // Documents
   "/resume-maker/": { name: "Resume Maker", cat: "doc" },
   "/marriage-biodata-maker/": { name: "Marriage Biodata Maker", cat: "doc" },

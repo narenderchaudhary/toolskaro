@@ -25,6 +25,8 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [JPEG to JPG Converter](https://toolskaro.com/jpeg-to-jpg/): Convert JPEG (or PNG/WebP) to a JPG file in the browser.
 - [PNG to JPG Converter](https://toolskaro.com/png-to-jpg/): Convert PNG to a smaller JPG, transparency flattened to white.
 - [Resize Image in KB](https://toolskaro.com/resize-image-in-kb/): Reduce a photo to an exact KB size (20 KB, 50 KB, 100 KB or any target).
+- [Increase Image Size in KB](https://toolskaro.com/increase-image-size-in-kb/): Increase a photo's file size to a minimum KB for forms that require a minimum.
+- [Resize Image in CM](https://toolskaro.com/resize-image-in-cm/): Resize a photo to exact centimetres at a chosen DPI (e.g. 3.5×4.5 cm at 300 DPI).
 
 ## PDF tools
 - [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.
@@ -41,6 +43,7 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Add Page Numbers](https://toolskaro.com/pdf/page-numbers/): Number PDF pages in any position.
 - [Watermark PDF](https://toolskaro.com/pdf/watermark/): Add a text watermark to every page.
 - [Organize PDF](https://toolskaro.com/pdf/organize/): Reorder, rotate and delete pages with thumbnails.
+- [Resize PDF](https://toolskaro.com/resize-pdf/): Fit every page to A4, Letter, Legal, A5 or A3 page size.
 
 ## Documents
 - [Resume / CV Maker](https://toolskaro.com/resume-maker/): Build a resume and export to PDF.

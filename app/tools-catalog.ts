@@ -32,6 +32,8 @@ export const CATEGORIES: Category[] = [
       { href: "/jpeg-to-jpg/", icon: "🔄", t: "JPEG to JPG", d: "Convert JPEG / PNG / WebP to JPG.", vol: "", ready: true },
       { href: "/png-to-jpg/", icon: "🖼️", t: "PNG to JPG", d: "Convert PNG to a smaller JPG.", vol: "", ready: true },
       { href: "/resize-image-in-kb/", icon: "⚖️", t: "Resize Image in KB", d: "Reduce a photo to an exact KB size.", vol: "", ready: true },
+      { href: "/increase-image-size-in-kb/", icon: "➕", t: "Increase Image Size in KB", d: "Make a photo meet a minimum KB.", vol: "", ready: true },
+      { href: "/resize-image-in-cm/", icon: "📏", t: "Resize Image in CM", d: "Resize a photo to exact centimetres.", vol: "", ready: true },
     ],
   },
   {
@@ -51,6 +53,7 @@ export const CATEGORIES: Category[] = [
       { href: "/pdf/page-numbers/", icon: "🔢", t: "Add Page Numbers", d: "Number pages in any position.", vol: "", ready: true },
       { href: "/pdf/watermark/", icon: "💧", t: "Watermark PDF", d: "Add a text watermark to every page.", vol: "", ready: true },
       { href: "/pdf/organize/", icon: "🔀", t: "Organize PDF", d: "Reorder, rotate & delete pages.", vol: "", ready: true },
+      { href: "/resize-pdf/", icon: "📐", t: "Resize PDF", d: "Fit pages to A4, Letter, Legal & more.", vol: "", ready: true },
     ],
   },
   {
