@@ -97,6 +97,7 @@ const UTIL_TOOLS = [
   ["/text-case-converter/", "Text Case Converter"],
 ];
 const COMPANY = [
+  ["/blog/", "Blog"],
   ["/about/", "About / Our Team"],
   ["/web-stories/", "Web Stories"],
   ["/privacy-policy/", "Privacy Policy"],

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ALL_SLUGS } from "./programmatic-data";
+import { POST_SLUGS } from "./blog/blog-data";
 
 const BASE = "https://toolskaro.com";
 
@@ -67,6 +68,7 @@ const ROUTES = [
   "pdf/page-numbers",
   "pdf/watermark",
   "pdf/organize",
+  "blog",
   "about",
   "contact",
   "privacy-policy",
@@ -96,5 +98,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     `${BASE}/web-stories/resize-photo-and-signature-for-exam.html`,
     `${BASE}/web-stories/make-passport-size-photo.html`,
   ].map((url) => ({ url, lastModified, changeFrequency: "monthly" as const, priority: 0.5 }));
-  return [...main, ...programmatic, ...stories];
+  const blog = POST_SLUGS.map((slug) => ({
+    url: `${BASE}/blog/${slug}/`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  return [...main, ...programmatic, ...blog, ...stories];
 }

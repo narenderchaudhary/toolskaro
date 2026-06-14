@@ -92,6 +92,9 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Photo & signature for IBPS PO](https://toolskaro.com/photo-resize-for-ibps-po/): Bank exam photo and signature requirements.
 - [Photo & signature for UPSC](https://toolskaro.com/photo-resize-for-upsc/): UPSC Civil Services photo and signature requirements.
 
+## Blog
+- [Blog](https://toolskaro.com/blog/): Guides on exam-form photos & signatures, compressing images/PDFs to an exact size, image formats (JPG/PNG/WebP/HEIC), and more.
+
 ## About
 - [About / Our Team](https://toolskaro.com/about/): About ToolsKaro and the team.
 - [Contact](https://toolskaro.com/contact/): Contact us at contact@toolskaro.com.
