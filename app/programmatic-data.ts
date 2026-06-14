@@ -374,4 +374,22 @@ export const EXAMS: Exam[] = [
   },
 ];
 
-export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...PDF_KB_VALUES.map(pdfKbSlug), ...EXAMS.map((e) => e.slug)];
+// PDF compress to a megabyte target ("compress pdf to 1mb / 2mb").
+export const PDF_MB_VALUES = [1, 2];
+export const pdfMbSlug = (n: number) => `compress-pdf-to-${n}mb`;
+export const PDF_MB_INFO: Record<number, { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }> = {
+  1: {
+    usedFor: "larger multi-page documents, résumés and combined certificate sets",
+    intro: "A 1 MB (about 1024 KB) limit is generous — it comfortably fits a multi-page scanned document, a résumé with graphics, or several certificates combined into one PDF. It is a common ceiling on portals that accept richer attachments.",
+    tip: "Merge all your pages into one PDF first (with our Merge or JPG-to-PDF tools), then compress the whole document to 1 MB in one pass so every page stays consistent.",
+    faq: { q: "Is 1 MB enough for a multi-page PDF?", a: "Yes. 1 MB easily holds several scanned pages at readable quality. If your document is much larger, this tool reduces it under 1 MB while keeping the text legible." },
+  },
+  2: {
+    usedFor: "full document sets and high-resolution multi-page scans",
+    intro: "A 2 MB (about 2048 KB) limit is one of the more generous PDF caps — it suits a complete document set or a high-resolution multi-page scan with colour seals. You rarely need to compress hard to fit it.",
+    tip: "Because 2 MB allows good quality, scan at a higher resolution for maximum legibility and just confirm the final file lands under 2 MB.",
+    faq: { q: "Do I need to compress for a 2 MB limit?", a: "Often a long colour scan or a graphics-heavy PDF exceeds 2 MB, so a light compression brings it under the cap while keeping excellent, fully readable quality." },
+  },
+};
+
+export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...PDF_KB_VALUES.map(pdfKbSlug), ...PDF_MB_VALUES.map(pdfMbSlug), ...EXAMS.map((e) => e.slug)];

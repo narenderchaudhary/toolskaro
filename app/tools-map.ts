@@ -19,6 +19,9 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/resize-image-in-kb/": { name: "Resize Image in KB", cat: "image" },
   "/increase-image-size-in-kb/": { name: "Increase Image Size in KB", cat: "image" },
   "/resize-image-in-cm/": { name: "Resize Image in CM", cat: "image" },
+  "/change-image-dpi/": { name: "Change Image DPI", cat: "image" },
+  "/resize-image-for-whatsapp-dp/": { name: "WhatsApp DP Resizer", cat: "image" },
+  "/resize-for-pan-card/": { name: "PAN Card Photo", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },

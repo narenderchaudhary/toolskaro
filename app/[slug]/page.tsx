@@ -6,7 +6,7 @@ import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import Byline from "@/app/components/Byline";
-import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
+import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, PDF_MB_VALUES, PDF_MB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
 
@@ -29,6 +29,12 @@ function pdfKbFromSlug(slug: string): number | null {
   const n = Number(m[1]);
   return PDF_KB_VALUES.includes(n) ? n : null;
 }
+function pdfMbFromSlug(slug: string): number | null {
+  const m = slug.match(/^compress-pdf-to-(\d+)mb$/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return PDF_MB_VALUES.includes(n) ? n : null;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -46,6 +52,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `Compress PDF to ${pkb} KB Online — Free, No Upload`,
       description: `Compress a PDF to ${pkb} KB online free in your browser. Get your PDF under the ${pkb} KB limit for exam, bank and job portals — no signup, no watermark, files never uploaded.`,
+      alternates: { canonical: `/${slug}/` },
+    };
+  }
+  const pmb = pdfMbFromSlug(slug);
+  if (pmb !== null) {
+    return {
+      title: `Compress PDF to ${pmb} MB Online — Free, No Upload`,
+      description: `Compress a PDF to ${pmb} MB online free in your browser. Get your PDF under the ${pmb} MB limit for portals that accept larger documents — no signup, files never uploaded.`,
       alternates: { canonical: `/${slug}/` },
     };
   }
@@ -143,6 +157,42 @@ function PdfKbPage({ kb }: { kb: number }) {
   );
 }
 
+function PdfMbPage({ mb }: { mb: number }) {
+  const info = PDF_MB_INFO[mb];
+  const faqs = [
+    info.faq,
+    { q: `How do I compress a PDF to ${mb} MB?`, a: `Upload your PDF above — the target is preset to ${mb} MB (${mb * 1024} KB). The tool rasterises the pages and lowers the quality just enough to bring the file at or under ${mb} MB, then lets you download it. Everything runs in your browser; nothing is uploaded.` },
+    { q: "Will the pages stay readable?", a: `Yes — at a ${mb} MB target the tool keeps high quality, so the pages stay sharp. ${mb} MB is generous, so most documents compress with little visible change.` },
+    { q: "Is it free and private?", a: "Completely free with no sign-up or watermark, and the PDF is processed entirely on your device — it is never uploaded to a server." },
+  ];
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(`Compress PDF to ${mb} MB`, faqs)) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "PDF Tools", href: "/pdf-tools/" }, { name: "Compress PDF", href: "/pdf/compress/" }, { name: `to ${mb} MB`, href: `/compress-pdf-to-${mb}mb/` }]} />
+      <div className="tool-hero">
+        <h1>Compress PDF to <span className="grad">{mb} MB</span></h1>
+        <p className="lede">Reduce your PDF below {mb}&nbsp;MB online — free, no signup, 100% in your browser. The target is preset to {mb}&nbsp;MB, so just drop your file and download.</p>
+      </div>
+      <CompressPdfToKb targetKb={mb * 1024} />
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>When you need a PDF under {mb} MB</h2>
+        <p>A <strong>{mb} MB</strong> PDF limit is typically used for <strong>{info.usedFor}</strong>. {info.intro}</p>
+        <h3>Tip for getting under {mb} MB</h3>
+        <p>{info.tip}</p>
+        <p>
+          Need a smaller target instead? Try <a href="/compress-pdf-to-500kb/">500&nbsp;KB</a> or{" "}
+          <a href="/compress-pdf-to-200kb/">200&nbsp;KB</a>, or use the full{" "}
+          <a href="/pdf-tools/">PDF toolkit</a> to merge and split first. Your file never leaves your device.
+        </p>
+        <p className="muted-note">⚠️ Upload limits vary between portals — always confirm the exact maximum size in the official instructions.</p>
+      </div>
+      <Faq items={faqs} />
+      <Byline />
+      <CtaBand heading="More free PDF tools" text="Merge, split, convert and compress — all in your browser." links={[["/pdf/compress/", "Compress PDF"], ["/resize-pdf/", "Resize PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
+    </>
+  );
+}
+
 function ExamPage({ exam }: { exam: Exam }) {
   const faqs = [
     ...exam.uniqueFaqs,
@@ -235,6 +285,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (kb !== null) return <KbPage kb={kb} />;
   const pkb = pdfKbFromSlug(slug);
   if (pkb !== null) return <PdfKbPage kb={pkb} />;
+  const pmb = pdfMbFromSlug(slug);
+  if (pmb !== null) return <PdfMbPage mb={pmb} />;
   const exam = examFromSlug(slug);
   if (exam) return <ExamPage exam={exam} />;
   notFound();

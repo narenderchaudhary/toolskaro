@@ -34,6 +34,9 @@ export const CATEGORIES: Category[] = [
       { href: "/resize-image-in-kb/", icon: "⚖️", t: "Resize Image in KB", d: "Reduce a photo to an exact KB size.", vol: "", ready: true },
       { href: "/increase-image-size-in-kb/", icon: "➕", t: "Increase Image Size in KB", d: "Make a photo meet a minimum KB.", vol: "", ready: true },
       { href: "/resize-image-in-cm/", icon: "📏", t: "Resize Image in CM", d: "Resize a photo to exact centimetres.", vol: "", ready: true },
+      { href: "/change-image-dpi/", icon: "🎯", t: "Change Image DPI", d: "Set a photo to 300 DPI or any DPI.", vol: "", ready: true },
+      { href: "/resize-image-for-whatsapp-dp/", icon: "💬", t: "WhatsApp DP Resizer", d: "Square crop & resize for your WhatsApp DP.", vol: "", ready: true },
+      { href: "/resize-for-pan-card/", icon: "🪪", t: "PAN Card Photo", d: "Photo & signature size for a PAN card.", vol: "", ready: true },
     ],
   },
   {

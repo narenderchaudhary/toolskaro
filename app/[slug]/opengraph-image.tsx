@@ -14,6 +14,8 @@ function info(slug: string): { label: string; title: string } {
   if (m) return { label: "IMAGE COMPRESSOR", title: `Compress image to ${m[1]} KB` };
   m = slug.match(/^compress-pdf-to-(\d+)kb$/);
   if (m) return { label: "PDF COMPRESSOR", title: `Compress PDF to ${m[1]} KB` };
+  m = slug.match(/^compress-pdf-to-(\d+)mb$/);
+  if (m) return { label: "PDF COMPRESSOR", title: `Compress PDF to ${m[1]} MB` };
   const exam = EXAMS.find((e) => e.slug === slug);
   if (exam) return { label: "PHOTO & SIGNATURE", title: `${exam.name} photo & signature size` };
   return { label: "TOOLSKARO", title: "Free tools for Indian exam & job applicants" };

@@ -27,6 +27,9 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Resize Image in KB](https://toolskaro.com/resize-image-in-kb/): Reduce a photo to an exact KB size (20 KB, 50 KB, 100 KB or any target).
 - [Increase Image Size in KB](https://toolskaro.com/increase-image-size-in-kb/): Increase a photo's file size to a minimum KB for forms that require a minimum.
 - [Resize Image in CM](https://toolskaro.com/resize-image-in-cm/): Resize a photo to exact centimetres at a chosen DPI (e.g. 3.5×4.5 cm at 300 DPI).
+- [Change Image DPI](https://toolskaro.com/change-image-dpi/): Set a photo's DPI (e.g. 300 DPI) for exam forms and printing.
+- [WhatsApp DP Resizer](https://toolskaro.com/resize-image-for-whatsapp-dp/): Square-crop and resize a photo for a WhatsApp display picture.
+- [PAN Card Photo](https://toolskaro.com/resize-for-pan-card/): Resize and compress a photo & signature for a PAN card application.
 
 ## PDF tools
 - [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.
@@ -37,6 +40,8 @@ ToolsKaro is operated by AdMatrix Media Agency; editorial by Narender Chaudhary.
 - [Compress PDF to 200 KB](https://toolskaro.com/compress-pdf-to-200kb/): Get a PDF under a 200 KB limit.
 - [Compress PDF to 300 KB](https://toolskaro.com/compress-pdf-to-300kb/): Get a PDF under a 300 KB limit.
 - [Compress PDF to 500 KB](https://toolskaro.com/compress-pdf-to-500kb/): Get a PDF under a 500 KB limit.
+- [Compress PDF to 1 MB](https://toolskaro.com/compress-pdf-to-1mb/): Get a PDF under a 1 MB limit.
+- [Compress PDF to 2 MB](https://toolskaro.com/compress-pdf-to-2mb/): Get a PDF under a 2 MB limit.
 - [Split PDF](https://toolskaro.com/pdf/split/): Extract pages or split into separate files.
 - [Rotate PDF](https://toolskaro.com/pdf/rotate/): Rotate pages 90/180/270°.
 - [Delete PDF Pages](https://toolskaro.com/pdf/delete-pages/): Remove pages from a PDF.
