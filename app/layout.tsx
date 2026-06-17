@@ -242,6 +242,55 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
           </div>
+          <div className="container footer-seo">
+            <div className="footer-seo-h">Free online tools for photos, signatures, PDFs, documents &amp; developers</div>
+            <p>
+              ToolsKaro brings together more than {TOTAL_TOOLS} free online tools in one fast,
+              privacy-first place. Resize an image to exact pixel dimensions or compress a photo to a
+              specific KB with the <Link href="/image-compressor/">image compressor</Link> and{" "}
+              <Link href="/image-resizer/">image resizer</Link>, make a white-background{" "}
+              <Link href="/passport-photo-maker/">passport size photo</Link>, and prepare your{" "}
+              <Link href="/photo-resize-for-ssc-cgl/">photo and signature for exam forms</Link> in the
+              exact size every government application form demands. Convert files in a single click —{" "}
+              <Link href="/pdf/jpg-to-pdf/">JPG to PDF</Link>,{" "}
+              <Link href="/pdf/pdf-to-jpg/">PDF to JPG</Link>,{" "}
+              <Link href="/heic-to-jpg/">HEIC to JPG</Link> and{" "}
+              <Link href="/png-to-jpg/">PNG to JPG</Link> — or open the full PDF toolkit to{" "}
+              <Link href="/pdf/merge/">merge PDF</Link>, split,{" "}
+              <Link href="/pdf/compress/">compress PDF</Link> and rotate pages. You can also{" "}
+              <Link href="/remove-background/">remove a photo background</Link>, crop to any aspect
+              ratio, and convert images between PNG, JPG and WebP.
+            </p>
+            <p>
+              Need an exact file size? Compress an image to{" "}
+              <Link href="/compress-image-to-20kb/">20 KB</Link>,{" "}
+              <Link href="/compress-image-to-50kb/">50 KB</Link>,{" "}
+              <Link href="/compress-image-to-100kb/">100 KB</Link> or 200 KB, or reduce a PDF to{" "}
+              <Link href="/compress-pdf-to-100kb/">100 KB</Link>, 200 KB, 500 KB, 1 MB or 2 MB to fit
+              any upload limit on an exam, job, visa or bank portal. Build a professional CV with the{" "}
+              <Link href="/resume-maker/">resume maker</Link>, create a{" "}
+              <Link href="/marriage-biodata-maker/">marriage biodata</Link>,{" "}
+              <Link href="/cover-letter-generator/">cover letter</Link> or{" "}
+              <Link href="/invoice-generator/">GST invoice</Link>, and use everyday{" "}
+              <Link href="/calculators/">calculators</Link> for EMI, SIP, GST, percentage, age and
+              TDEE. Developers get a <Link href="/json-formatter/">JSON formatter</Link>,{" "}
+              <Link href="/base64-encode-decode/">Base64</Link> and{" "}
+              <Link href="/url-encode-decode/">URL encode/decode</Link>, a{" "}
+              <Link href="/hash-generator/">hash generator</Link>,{" "}
+              <Link href="/uuid-generator/">UUID generator</Link>,{" "}
+              <Link href="/timestamp-converter/">timestamp converter</Link> and{" "}
+              <Link href="/color-converter/">color converter</Link>. Every tool runs entirely in your
+              browser, so your photos, signatures and documents are never uploaded to a server —
+              keeping ToolsKaro free, fast, private and available on any device, with no sign-up and no
+              watermark.
+            </p>
+            <p>
+              Whether you are filling a government recruitment form, applying for a passport, OCI or
+              visa, submitting a job or bank application, or simply organising everyday photos and
+              documents, ToolsKaro gives you a complete, reliable online toolkit that loads instantly
+              and works on both mobile and desktop — with no software to install and nothing to pay.
+            </p>
+          </div>
           <div className="container footer-bottom">
             <span>© 2026 ToolsKaro. All rights reserved.</span>
             <span>Not affiliated with any government body or examination authority.</span>
