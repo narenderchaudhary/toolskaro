@@ -1,6 +1,6 @@
 # ToolsKaro
 
-> Free in-browser tools for Indian exam and government job applicants. Resize and compress photos and signatures to an exact KB/size, convert and edit PDFs, build resumes and biodata, and run everyday calculators. All processing happens locally in the browser — no uploads, no signup, no watermark.
+> Free in-browser tools for photos, signatures, PDFs and documents. Resize and compress photos and signatures to an exact KB/size, convert between formats (JPEG, PNG, WebP, HEIC), convert and compress PDFs, build resumes, and run everyday calculators. Used for exam forms, job applications, visa documents and everyday files. All processing happens locally in the browser — no uploads, no signup, no watermark.
 
 ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/company/admatrix-media); editorial and product direction by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
 

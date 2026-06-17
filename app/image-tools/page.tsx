@@ -27,7 +27,7 @@ export default function Page() {
     >
       <h2 style={{ marginTop: 0 }}>Everything you need to prepare a photo & signature</h2>
       <p>
-        Indian exam and job portals are strict about images: your photograph and signature must be a
+        Exam and job application portals are strict about images: your photograph and signature must be a
         precise size in pixels and a specific file weight in KB, or the form is rejected. This image
         toolkit covers the whole job — set exact dimensions with the{" "}
         <Link href="/image-resizer/">Image Resizer</Link>, hit a KB limit with the{" "}

@@ -8,7 +8,7 @@ const AGENCY_LINKEDIN = "https://www.linkedin.com/company/admatrix-media";
 export const metadata: Metadata = {
   title: "About ToolsKaro & Our Team",
   description:
-    "About ToolsKaro — free, privacy-first online tools for Indian exam and job applicants. Our mission, how we keep exam requirements accurate, and the team behind it.",
+    "About ToolsKaro — free, privacy-first online tools for photos, signatures, PDFs and documents. Our mission, how we keep form requirements accurate, and the team behind it.",
   alternates: { canonical: "/about/" },
 };
 
@@ -19,7 +19,7 @@ export default function Page() {
     name: "About ToolsKaro",
     url: `${SITE}/about/`,
     description:
-      "About ToolsKaro — free, privacy-first browser tools built for Indian exam and job applicants, operated by AdMatrix Media Agency.",
+      "About ToolsKaro — free, privacy-first browser tools for photos, signatures, PDFs and documents, built and maintained by AdMatrix Media.",
     mainEntity: {
       "@type": "Organization",
       "@id": `${SITE}/#organization`,
@@ -53,20 +53,20 @@ export default function Page() {
       <h1>About ToolsKaro</h1>
       <div className="prose">
         <p>
-          ToolsKaro is a free collection of in-browser tools built for India&apos;s students, exam
-          aspirants and job applicants. Launched in 2026 and operated by{" "}
-          <strong>AdMatrix Media Agency</strong>, it brings together more than 35 utilities — image
+          ToolsKaro is a free collection of in-browser tools for students, job seekers and anyone
+          preparing photos, signatures and documents for forms and applications. Launched in 2026 and
+          built by <strong>AdMatrix Media</strong>, it brings together more than 35 utilities — image
           resize and compress, passport-photo and signature tools, a full PDF suite, resume and
           biodata makers, and everyday calculators — in one fast, private place.
         </p>
 
         <h2>Our mission</h2>
         <p>
-          We exist to make the everyday paperwork of Indian exam and job applications effortless.
-          Every SSC, UPSC, IBPS, SBI, RRB and State PSC form demands a photograph and signature in an
-          exact size and file weight, documents in specific formats, and more. We turn those fiddly,
-          rejection-prone requirements into one-click tools — completely free, with no account and no
-          watermark.
+          We exist to make the everyday paperwork of forms and applications effortless. From government
+          exams such as SSC, UPSC and IBPS to job, visa and document portals around the world, forms
+          demand a photograph and signature in an exact size and file weight, documents in specific
+          formats, and more. We turn those fiddly, rejection-prone requirements into one-click tools —
+          completely free, with no account and no watermark.
         </p>
 
         <h2>Privacy comes first</h2>

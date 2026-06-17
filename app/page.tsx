@@ -53,11 +53,11 @@ export default function Home() {
       />
       <section className="hero">
         <h1>
-          Free tools for Indian <span className="grad">exam &amp; job applicants</span>
+          Free online tools for <span className="grad">photos, signatures &amp; PDFs</span>
         </h1>
         <p className="hero-sub">
-          Resize &amp; compress your photo and signature to the exact size every government form
-          needs — plus PDF, resume and biodata tools. Free, no login, and 100% in your browser.
+          Resize &amp; compress your photo and signature to the exact size any form needs, convert and
+          compress PDFs, build a resume and more — free, no login, and 100% in your browser.
         </p>
         <div className="hero-badges">
           <span className="badge">🔒 Files never uploaded</span>
@@ -103,17 +103,16 @@ export default function Home() {
         <div className="trust-item"><span className="trust-ic">🔒</span><div><b>Files never uploaded</b><p>Every tool runs in your browser — your photos and documents stay on your device.</p></div></div>
         <div className="trust-item"><span className="trust-ic">🆓</span><div><b>Free, no watermark</b><p>No sign-up, no watermark and no hidden limits — use every tool as much as you like.</p></div></div>
         <div className="trust-item"><span className="trust-ic">⚡</span><div><b>Fast &amp; works anywhere</b><p>Instant results on phone, tablet or desktop in any modern browser.</p></div></div>
-        <div className="trust-item"><span className="trust-ic">🇮🇳</span><div><b>Made for Indian forms</b><p>Built around SSC, UPSC, Bank and Railway photo, signature and document rules.</p></div></div>
+        <div className="trust-item"><span className="trust-ic">📄</span><div><b>For any form or document</b><p>Built for exam forms, job applications, visa documents and everyday files.</p></div></div>
       </section>
 
       <section className="card content" style={{ marginTop: 8 }}>
-        <h2 style={{ marginTop: 0 }}>Free online tools for Indian exam &amp; job applicants</h2>
+        <h2 style={{ marginTop: 0 }}>Free online tools for photos, signatures, PDFs &amp; documents</h2>
         <p>
-          ToolsKaro is a free collection of {total}+ online tools built for India&apos;s students,
-          job seekers and exam applicants. From resizing and compressing your photo and signature
-          for government forms to converting and merging PDFs, building a resume, and everyday
-          calculators — every tool works instantly in your web browser, with no sign-up and nothing
-          to install.
+          ToolsKaro is a free collection of {total}+ online tools for students, job seekers and anyone
+          handling forms and documents. From resizing and compressing your photo and signature for
+          application forms to converting and merging PDFs, building a resume, and everyday calculators —
+          every tool works instantly in your web browser, with no sign-up and nothing to install.
         </p>
 
         <h3>Made for government exam forms</h3>

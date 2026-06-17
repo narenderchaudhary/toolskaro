@@ -19,11 +19,11 @@ const AGENCY_LINKEDIN = "https://www.linkedin.com/company/admatrix-media";
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolsKaro — Free Photo, Signature & PDF Tools for Exams",
+    default: "ToolsKaro — Free Online Photo, Signature & PDF Tools",
     template: "%s",
   },
   description:
-    "Free tools for Indian exam & job applicants: resize & compress photo/signature to an exact KB, convert PDFs, build a resume — 100% in your browser, no upload.",
+    "Free online tools to resize & compress photos and signatures to an exact KB, convert and compress PDFs, build a resume and more — 100% in your browser, no upload, no sign-up.",
   metadataBase: new URL(SITE),
   alternates: { canonical: "/" },
   // Only type + siteName here, so each page auto-fills its own og:title/description from its metadata.
@@ -41,7 +41,7 @@ const orgJsonLd = {
       url: SITE,
       logo: { "@type": "ImageObject", url: `${SITE}/apple-icon`, width: 180, height: 180 },
       description:
-        "Free, privacy-first online tools for Indian exam and job applicants — image resize/compress, PDF tools, resume and biodata makers, and more.",
+        "Free, privacy-first online tools to resize and compress photos and signatures, convert and compress PDFs, build resumes and more — all in your browser.",
       sameAs: [TELEGRAM, WHATSAPP, LINKEDIN],
       founder: {
         "@type": "Person",
@@ -165,8 +165,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="footer-col footer-brand">
               <Logo />
               <p>
-                Free, privacy-first online tools for Indian exam &amp; job applicants. Every tool
-                runs entirely in your browser — your files are never uploaded to any server.
+                Free, privacy-first online tools to resize &amp; compress photos and signatures,
+                convert PDFs, build resumes and more. Every tool runs entirely in your browser —
+                your files are never uploaded to any server.
               </p>
               <p className="footer-managed">
                 Crafted &amp; maintained by{" "}

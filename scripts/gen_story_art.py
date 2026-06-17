@@ -191,7 +191,7 @@ def make_og():
     d.text((pad + 84, 76), "ToolsKaro", font=font(46), fill=INK)
     hf = font(60)
     ty = 190
-    for ln in wrap(d, "Free tools for Indian exam & job applicants", hf, 600):
+    for ln in wrap(d, "Free online tools for photos, signatures & PDFs", hf, 600):
         d.text((pad, ty), ln, font=hf, fill=INK); ty += 72
     d.text((pad, ty + 10), "Resize & compress photo & signature, PDFs", font=font(27), fill=MUTED)
     d.text((pad, ty + 46), "and build a resume — 100% in your browser.", font=font(27), fill=MUTED)
