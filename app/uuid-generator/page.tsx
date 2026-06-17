@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Uuid from "./Uuid";
 import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
@@ -15,6 +16,10 @@ const faqs = [
   { q: "Can I generate many UUIDs at once?", a: "Yes. Set any count from 1 to 100 and generate them all instantly, then copy the whole list with one click." },
   { q: "Are the UUIDs unique?", a: "Version 4 UUIDs are random with 122 bits of entropy, so the chance of a collision is astronomically small — they are safe to use as database keys, request IDs and file names." },
   { q: "Is this private?", a: "Yes. UUIDs are generated locally in your browser using a secure random source; nothing is sent to a server." },
+  { q: "What is the difference between UUID v1 and v4?", a: "Version 1 UUIDs are built from a timestamp and the machine's MAC address, so they leak some metadata and ordering. Version 4 UUIDs are fully random, which makes them unpredictable and the safest default for most applications — and that is what this tool generates." },
+  { q: "Can I really use these as database primary keys?", a: "Yes. Random v4 UUIDs are widely used as primary keys because they can be generated anywhere without coordination, avoiding the collisions you risk with auto-incrementing IDs across distributed services. Just index them appropriately for performance." },
+  { q: "What does the uppercase toggle do?", a: "It switches the hex digits between lowercase (the canonical form) and uppercase. Some legacy systems and databases expect uppercase UUIDs, so the toggle lets you match whatever format your target requires." },
+  { q: "How unlikely is a collision, really?", a: "A v4 UUID has 122 random bits. You would need to generate billions of UUIDs before the probability of a single collision became meaningful, which is why they are treated as practically unique without a central authority." },
 ];
 
 export default function Page() {
@@ -41,6 +46,21 @@ export default function Page() {
         <p>
           Toggle uppercase if your system expects it, then copy the whole batch with a single click.
           Everything is generated locally; nothing is uploaded.
+        </p>
+        <h3>How to generate UUIDs</h3>
+        <p>
+          Set how many identifiers you need (1 to 100), flip the uppercase switch if required, and click
+          Generate. The whole list appears at once and copies with a single button, ready to paste into
+          a seed script, a test fixture, an API request or a spreadsheet. Generate another batch any time
+          you need fresh values — each one is drawn from a secure random source.
+        </p>
+        <h3>Where v4 UUIDs are used</h3>
+        <p>
+          Teams use random UUIDs as database keys, request and trace IDs for debugging, idempotency keys,
+          file names and message identifiers in queues. If you also need one-way fingerprints or random
+          secrets, pair this with the <Link href="/hash-generator/">hash generator</Link> and{" "}
+          <Link href="/password-generator/">password generator</Link>. The complete toolkit is on the{" "}
+          <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
       <Faq items={faqs} />

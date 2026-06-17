@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PassportPhoto from "./PassportPhoto";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -37,6 +38,10 @@ const faqs = [
   { q: "How do I make a passport photo from a normal selfie?", a: "Upload your photo, pick the size preset your application needs, choose a background colour, and select ‘Crop to fill’ so your face fills the frame. Click Make passport photo and download it." },
   { q: "Will this meet the file size limit for my exam form?", a: "This tool sets the correct dimensions and background. If your form also has a KB limit (e.g. 20–50 KB), pass the downloaded photo through our Image Compressor to hit that exact size." },
   { q: "Is it free and private?", a: "Completely free, with no watermark or sign-up. Your photo is processed entirely in your browser and never uploaded to a server." },
+  { q: "What background colour should a passport photo have?", a: "Plain white is the safe, standard choice for passports, visas and almost all exam forms. Light blue or light grey are accepted by a few authorities, but always check the official instructions. If your photo was shot against a coloured or busy wall, remove the background first, then apply a clean white one here." },
+  { q: "How many pixels is a passport photo at 600 DPI?", a: "DPI changes the pixel count for the same physical size. A 3.5×4.5 cm photo is about 413×531 px at 300 DPI but roughly 827×1063 px at 600 DPI. Most online forms expect 300 DPI, so use that unless your instructions say otherwise; for print you can raise the DPI for a sharper result." },
+  { q: "What are common mistakes that make a passport photo rejected?", a: "Frequent reasons are a tilted or turned head, shadows on the face or behind it, glasses glare, a non-white or busy background, and the face being too small or too large in the frame. Use even, front-on lighting, keep a neutral expression, and crop so the head fills most of the height." },
+  { q: "How do I crop my photo so the face fits correctly?", a: "Pick the size preset your application needs and choose ‘Crop to fill’, which centres your face and fills the frame to the right ratio automatically. Position yourself so the head and the top of the shoulders are visible, with a little space above the hair, before you upload." },
 ];
 
 export default function Page() {
@@ -105,6 +110,36 @@ export default function Page() {
           clean background, with the face centred. For the sharpest result, start from a well-lit
           photo taken against a plain wall. If the background is messy, run it through our Remove
           Background tool first, then come back here to set the size and white background.
+        </p>
+        <h3>How to take a good photo at home</h3>
+        <p>
+          The maker handles size and background, but a clean source photo does the rest. Stand a step
+          away from a plain light-coloured wall and face a window so soft daylight falls evenly on
+          your face with no harsh shadows. Hold the camera at eye level, keep a neutral expression
+          with your eyes open, and avoid hats or tinted glasses. Once you have a sharp, well-lit
+          frame, upload it here and select the size your application needs. If the wall behind you is
+          patterned, run the shot through our
+          {" "}<Link href="/remove-background/">Remove Background</Link> tool first, then set a clean
+          white background.
+        </p>
+        <h3>Meeting the file size and print rules</h3>
+        <p>
+          Setting the right dimensions is only half the job — many online forms also enforce a KB
+          ceiling, often 20–50&nbsp;KB. After you download your photo, send it to the
+          {" "}<Link href="/image-compressor/">Image Compressor</Link> to land on the exact size your
+          portal demands, or use a one-tap preset such as
+          {" "}<Link href="/compress-image-to-50kb/">compress to 50&nbsp;KB</Link>. If you instead
+          need prints, our <Link href="/change-image-dpi/">change image DPI</Link> tool lets you set
+          300 or 600 DPI so the photo comes out the correct physical size on paper.
+        </p>
+        <h3>Sizes for exam forms vs visas</h3>
+        <p>
+          The size you choose depends on the application. Indian passports and most exam portals use
+          3.5×4.5&nbsp;cm (≈413×531&nbsp;px), while US visa, OCI and Green Card photos are a square
+          2×2&nbsp;inch (600×600&nbsp;px), and Schengen and UK visas reuse the 3.5×4.5&nbsp;cm size.
+          Pick the matching preset above. If your exam needs a specific pixel size for the upload box,
+          set it precisely with our <Link href="/image-resizer/">Image Resizer</Link> after making
+          the photo here.
         </p>
       </div>
 

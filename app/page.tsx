@@ -109,103 +109,17 @@ export default function Home() {
       <section className="card content" style={{ marginTop: 8 }}>
         <h2 style={{ marginTop: 0 }}>Free online tools for photos, signatures, PDFs &amp; documents</h2>
         <p>
-          ToolsKaro is a free collection of {total}+ online tools for students, job seekers and anyone
-          handling forms and documents. From resizing and compressing your photo and signature for
-          application forms to converting and merging PDFs, building a resume, and everyday calculators —
-          every tool works instantly in your web browser, with no sign-up and nothing to install.
+          ToolsKaro is a free collection of {total}+ online tools for students, job seekers,
+          professionals and developers. Resize and compress photos and signatures to an exact size,
+          convert and compress PDFs, build a resume, run everyday calculators and format code — every
+          tool works instantly in your browser, with no sign-up, no watermark and nothing uploaded to a
+          server.
         </p>
-
-        <h3>Made for government exam forms</h3>
         <p>
-          Every <strong>SSC, UPSC, IBPS, SBI, RRB and State PSC</strong> application demands your
-          photograph and signature in an exact size and file weight — typically a photo of
-          20–50&nbsp;KB at 3.5×4.5&nbsp;cm and a signature of 10–20&nbsp;KB. Our{" "}
-          <Link href="/image-compressor/">image compressor</Link>,{" "}
-          <Link href="/image-resizer/">image resizer</Link>,{" "}
-          <Link href="/passport-photo-maker/">passport photo maker</Link> and{" "}
-          <Link href="/signature-resize/">signature resizer</Link> hit those specifications in one
-          click, so your form is never rejected for the wrong size again. You can even compress to a{" "}
-          <Link href="/compress-image-to-50kb/">specific KB like 50&nbsp;KB</Link> or prepare your{" "}
-          <Link href="/photo-resize-for-ssc-cgl/">photo for SSC CGL</Link> and other exams directly.
-        </p>
-
-        <h3>Your files never leave your device</h3>
-        <p>
-          Unlike most online tools, ToolsKaro processes everything <strong>inside your browser</strong>.
-          Your photos, signatures and documents are never uploaded to a server — which makes the
-          tools fast, completely private and secure. That matters when you are handling personal
-          documents, ID proofs and certificates.
-        </p>
-
-        <h3>An all-in-one toolkit</h3>
-        <p>
-          Beyond images you get a full <Link href="/pdf/merge/">PDF toolkit</Link> — merge, split,
-          compress, convert (JPG to PDF and back), rotate and add page numbers — plus document makers
-          for <Link href="/resume-maker/">resumes</Link>,{" "}
-          <Link href="/cover-letter-generator/">cover letters</Link>,{" "}
-          <Link href="/marriage-biodata-maker/">marriage biodata</Link> and{" "}
-          <Link href="/invoice-generator/">invoices</Link>. There are everyday{" "}
-          <Link href="/emi-calculator/">calculators</Link> for EMI, SIP, GST, interest, percentage
-          and CGPA, and handy utilities like a <Link href="/typing-test/">typing test</Link>,{" "}
-          <Link href="/qr-code-generator/">QR code generator</Link>,{" "}
-          <Link href="/age-calculator/">age calculator</Link> and{" "}
-          <Link href="/password-generator/">password generator</Link>.
-        </p>
-
-        <h3>Resize or compress a photo to any KB size</h3>
-        <p>
-          Different forms ask for different file sizes, so we have a one-click page for each common
-          target — compress to <Link href="/compress-image-to-20kb/">20&nbsp;KB</Link>,{" "}
-          <Link href="/compress-image-to-50kb/">50&nbsp;KB</Link>,{" "}
-          <Link href="/compress-image-to-100kb/">100&nbsp;KB</Link> or{" "}
-          <Link href="/compress-image-to-200kb/">200&nbsp;KB</Link> — or simply{" "}
-          <Link href="/resize-image-in-kb/">resize an image in KB</Link> to any number you type. Need
-          exact pixels instead? The <Link href="/image-resizer/">image resizer</Link> sets the width and
-          height your form specifies, down to the pixel.
-        </p>
-
-        <h3>Convert between image formats</h3>
-        <p>
-          Switch formats in a click: <Link href="/jpeg-to-jpg/">JPEG to JPG</Link>,{" "}
-          <Link href="/png-to-jpg/">PNG to JPG</Link>, or use the full{" "}
-          <Link href="/image-converter/">image converter</Link> for PNG, JPG and WebP. On an iPhone?
-          Convert with <Link href="/heic-to-jpg/">HEIC to JPG</Link> or{" "}
-          <Link href="/webp-to-jpg/">WebP to JPG</Link>. You can also{" "}
-          <Link href="/remove-background/">remove a photo background</Link>,{" "}
-          <Link href="/crop-image/">crop to any ratio</Link> and{" "}
-          <Link href="/photo-signature-combiner/">combine your photo and signature</Link> into one image.
-        </p>
-
-        <h3>Photo &amp; signature size for your exam</h3>
-        <p>
-          Not sure of the exact requirements? We list the photo and signature size for each major exam —{" "}
-          <Link href="/photo-resize-for-ssc-cgl/">SSC CGL</Link>,{" "}
-          <Link href="/photo-resize-for-ibps-po/">IBPS PO</Link>,{" "}
-          <Link href="/photo-resize-for-sbi-po/">SBI PO</Link>,{" "}
-          <Link href="/photo-resize-for-upsc/">UPSC</Link>,{" "}
-          <Link href="/photo-resize-for-rrb-ntpc/">RRB NTPC</Link> and more — including the extra uploads
-          that bank exams require, such as a left thumb impression and a handwritten declaration.
-        </p>
-
-        <h3>Compress a PDF below an upload limit</h3>
-        <p>
-          Scanned documents are often too large for portals. Shrink a PDF under a set size with our
-          compress-PDF pages — <Link href="/compress-pdf-to-100kb/">100&nbsp;KB</Link>,{" "}
-          <Link href="/compress-pdf-to-200kb/">200&nbsp;KB</Link>,{" "}
-          <Link href="/compress-pdf-to-300kb/">300&nbsp;KB</Link> or{" "}
-          <Link href="/compress-pdf-to-500kb/">500&nbsp;KB</Link> — or use the full{" "}
-          <Link href="/pdf-tools/">PDF toolkit</Link> to merge, split and convert your pages first. For
-          specific needs, try <Link href="/compress-pdf-for-uscis/">compress PDF for USCIS</Link>,{" "}
-          <Link href="/compress-resume-pdf/">compress your resume PDF</Link>, or{" "}
-          <Link href="/combine-bank-statements-pdf/">combine bank statements into one PDF</Link>.
-        </p>
-
-        <h3>100% free, no watermark</h3>
-        <p>
-          Every tool is completely free with no sign-up, no watermark and no hidden limits. Use them
-          as often as you need on any device — desktop, tablet or phone. ToolsKaro is an independent
-          platform and is not affiliated with any government body; always confirm exact photo, signature
-          and file-size rules in the official exam notification.
+          Browse a category to find the right tool: <Link href="/image-tools/">image tools</Link>,{" "}
+          <Link href="/pdf-tools/">PDF tools</Link>, <Link href="/document-tools/">document makers</Link>,{" "}
+          <Link href="/calculators/">calculators</Link>, <Link href="/utilities/">utilities</Link> and{" "}
+          <Link href="/developer-tools/">developer tools</Link>.
         </p>
       </section>
 

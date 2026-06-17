@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CompressPdf from "./CompressPdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -32,6 +33,10 @@ const faqs = [
   { q: "How do I compress a PDF to upload it on a form?", a: "Pick a compression level (Recommended works for most files), upload your PDF, and download the smaller version. If you need it even smaller, choose ‘Strong’." },
   { q: "Are my files uploaded?", a: "No. Compression runs in your browser, so your document never leaves your device." },
   { q: "Why did my text PDF not shrink much?", a: "This tool is optimised for scanned and image-based PDFs, which are usually the ones that exceed size limits. A small, text-only PDF is already efficient and has little to compress." },
+  { q: "Can I compress a PDF to an exact size like 100KB or 1MB?", a: "Yes. Use our dedicated target pages — Compress PDF to 100KB, 200KB, 500KB or 1MB — which aim for a specific size, ideal when a form states an exact maximum upload limit." },
+  { q: "Will compression make my document blurry?", a: "Recommended keeps text crisp and is right for most uploads. Strong trades some image sharpness for a smaller file; preview the result and step back a level if scanned text becomes hard to read." },
+  { q: "How do I shrink a PDF for a USCIS or visa application?", a: "These portals enforce tight limits. Compress at Recommended first, and if it is still too large use our Compress PDF for USCIS or reduce PDF size for a visa application tools, which target their specific caps." },
+  { q: "Should I merge before or after compressing?", a: "Merge your documents into one PDF first, then compress the combined file. Compressing the final packet gives the smallest result and ensures the whole upload fits under the limit." },
   { q: "Is it free?", a: "Yes — free to use with no watermark and no sign-up." },
 ];
 
@@ -69,6 +74,37 @@ export default function Page() {
           <strong> Strong</strong> when you must hit a tight limit. The whole process runs in your
           browser, so your document is never uploaded. It works best on scanned and image-heavy
           PDFs, which are usually the ones that exceed size limits.
+        </p>
+
+        <h3>How PDF compression works</h3>
+        <p>
+          Most oversized PDFs are heavy because of high-resolution scanned images. The compressor
+          re-encodes those images at a sensible resolution and quality, removing data your eyes
+          won&apos;t miss on screen, while leaving real text layers intact. That is why a 5&nbsp;MB
+          phone scan can fall to a few hundred KB. Everything runs locally, so sensitive marksheets,
+          ID proofs and bank records never leave your device. If a page is rotated or out of order,
+          fix it with <Link href="/pdf/rotate/">Rotate PDF</Link> or{" "}
+          <Link href="/pdf/organize/">Organize PDF</Link> before compressing.
+        </p>
+
+        <h3>Hitting an exact upload limit</h3>
+        <p>
+          Many portals state a precise cap rather than a range. For those, our target-size tools aim
+          for a specific number — try <Link href="/compress-pdf-to-100kb/">Compress PDF to 100KB</Link>,{" "}
+          <Link href="/compress-pdf-to-500kb/">500KB</Link> or{" "}
+          <Link href="/compress-pdf-to-1mb/">1MB</Link>. Specialised flows like{" "}
+          <Link href="/compress-pdf-for-uscis/">Compress PDF for USCIS</Link> and{" "}
+          <Link href="/compress-resume-pdf/">Compress Resume PDF</Link> are tuned for those exact
+          requirements, so you avoid the rejection that comes from a file even slightly over limit.
+        </p>
+
+        <h3>Tips to keep quality while shrinking</h3>
+        <p>
+          Scan or photograph documents in even light and crop empty borders before you start, so the
+          compressor has less wasted area to encode. Begin at Recommended and only switch to Strong
+          if you must, checking that scanned text stays legible. If you are bundling several files,{" "}
+          <Link href="/pdf/merge/">merge them first</Link> and compress the final packet once, which
+          almost always beats compressing each piece separately.
         </p>
       </div>
 

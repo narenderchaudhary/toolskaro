@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Resizer from "./Resizer";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -33,6 +34,10 @@ const faqs = [
   { q: "Will resizing reduce my file size too?", a: "Resizing to smaller pixel dimensions usually reduces file size. If you need an exact KB target (for example 50 KB), resize first and then run the result through our Image Compressor." },
   { q: "Does resizing reduce image quality?", a: "Some quality change is normal when scaling an image. We use high-quality smoothing to keep the result as crisp as possible. Avoid enlarging a small image far beyond its original size, as that always looks blurry." },
   { q: "Is the tool free and private?", a: "Yes. It is completely free with no sign-up or watermark, and all resizing happens in your browser — your image is never uploaded to any server." },
+  { q: "What is the difference between resizing in pixels and in cm?", a: "Pixels measure the image on screen, while centimetres measure how big it prints. The two are linked by DPI: at 300 DPI, 3.5×4.5 cm equals about 413×531 px. Online forms almost always ask for pixels, but printers and some passport rules use cm — pick whichever your instructions specify." },
+  { q: "How do I resize a photo without stretching or distorting it?", a: "Keep the ‘Lock aspect ratio’ option on so width and height scale together. If your form needs a shape different from your photo, crop the image to that ratio first, then resize. Turning the lock off forces an exact size but can squash faces, so only do it when the dimensions already match your photo's proportions." },
+  { q: "Can I enlarge a small image to a bigger size?", a: "You can, but enlarging beyond an image's original pixels always softens it, because the tool has to invent detail that was never captured. For a crisp result, start from a photo that is at least as large as the target size. If you must scale up, keep the increase small." },
+  { q: "Which sizes do I need for SSC, IBPS or UPSC forms?", a: "Photo and signature dimensions differ slightly between recruiters, so we built exact presets for each — for example SSC CGL, IBPS PO and UPSC. Open the format that matches your exam, or set custom pixels here using the numbers from your official notification." },
 ];
 
 export default function Page() {
@@ -69,6 +74,37 @@ export default function Page() {
           It pairs perfectly with our Image Compressor: first resize to the right dimensions here,
           then compress to the exact KB limit. Everything runs inside your browser, so your photo
           and signature stay private on your own device.
+        </p>
+        <h3>Common photo &amp; signature pixel sizes</h3>
+        <p>
+          Indian exam portals usually want a passport-style photo around 200×230&nbsp;px or
+          413×531&nbsp;px and a signature near 140×60&nbsp;px, though the exact figures change by
+          recruiter. Rather than guess, open the preset built for your form —
+          {" "}<Link href="/photo-resize-for-ssc-cgl/">SSC CGL</Link>,
+          {" "}<Link href="/photo-resize-for-ibps-po/">IBPS PO</Link>,
+          {" "}<Link href="/photo-resize-for-upsc/">UPSC</Link> or
+          {" "}<Link href="/resize-for-pan-card/">PAN card</Link> — and the correct dimensions are
+          filled in for you. For a quick KB-only target instead, try
+          {" "}<Link href="/resize-image-in-kb/">resize image in KB</Link>.
+        </p>
+        <h3>Pixels, centimetres and DPI explained</h3>
+        <p>
+          If your instructions are written in centimetres, you need to convert before resizing for
+          the web. The link is DPI (dots per inch): at the common print value of 300 DPI, one inch
+          equals 300&nbsp;px, so a 3.5×4.5&nbsp;cm photo becomes roughly 413×531&nbsp;px. When you
+          need to work the other way — in physical size or print resolution — use
+          {" "}<Link href="/resize-image-in-cm/">resize image in cm</Link> or
+          {" "}<Link href="/change-image-dpi/">change image DPI</Link> to set the value your printer
+          or form expects.
+        </p>
+        <h3>Step-by-step resizing tips</h3>
+        <p>
+          For the cleanest output, start from the largest, sharpest copy of your photo you have and
+          scale down rather than up. Crop to the right shape before entering dimensions so faces are
+          not squashed, and keep the aspect-ratio lock on unless your numbers already match. Once the
+          size is right, finish by sending the file to the
+          {" "}<Link href="/image-compressor/">Image Compressor</Link> to meet any KB ceiling, or to
+          {" "}<Link href="/crop-image/">Crop Image</Link> if a final trim is needed.
         </p>
       </div>
 

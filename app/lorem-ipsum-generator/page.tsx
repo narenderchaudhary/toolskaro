@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Lorem from "./Lorem";
 import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
@@ -15,6 +16,10 @@ const faqs = [
   { q: "How much text can I generate?", a: "Choose any amount from 1 to 100 paragraphs, sentences or words. Pick the unit, set the count and click Generate." },
   { q: "Can I copy it quickly?", a: "Yes — generate your text and click Copy to put it on your clipboard, ready to paste into a mockup, CMS or code." },
   { q: "Is it free?", a: "Yes, completely free with no sign-up, and it runs entirely in your browser." },
+  { q: "Why use Lorem Ipsum instead of real words?", a: "Because it is meaningless, Lorem Ipsum stops people from reading the content and judging the copy when they should be reviewing the design. It keeps attention on layout, font choices and spacing instead of the words themselves." },
+  { q: "Where did Lorem Ipsum come from?", a: "Its roots trace to a scrambled passage of Cicero's Latin text from 45 BC, which printers have used as filler since the 1500s. The familiar wording survived because it has a natural distribution of letters and word lengths, much like English." },
+  { q: "Can I generate a specific number of words?", a: "Yes. Switch the unit to words and set any count, or choose sentences or paragraphs instead. That makes it easy to fill a headline, a button label or a full article block to the exact length your mockup needs." },
+  { q: "Is generated placeholder text safe to ship to production?", a: "No — always replace it with real copy before launch. Lorem Ipsum is strictly for drafts and design reviews; leaving it in a live page looks unfinished and gives visitors nothing useful to read." },
 ];
 
 export default function Page() {
@@ -41,6 +46,21 @@ export default function Page() {
         <p>
           Drop it into a wireframe, a CMS draft, an email template or a component while you wait for
           final content. It is free, needs no sign-up and runs entirely in your browser.
+        </p>
+        <h3>How to generate placeholder text</h3>
+        <p>
+          Pick your unit — <strong>paragraphs, sentences or words</strong> — set the count, and click
+          Generate. The text appears immediately, and one click copies it to your clipboard so you can
+          paste it into Figma, a CMS field, an HTML template or a React component. Generate a fresh
+          batch whenever you need a different length to test how a layout breathes at scale.
+        </p>
+        <h3>Who uses dummy text</h3>
+        <p>
+          Web designers, front-end developers, print designers and content teams all use placeholder
+          text to prototype before the real words arrive. Pair it with the{" "}
+          <Link href="/word-counter/">word counter</Link> to hit a target length, or the{" "}
+          <Link href="/color-converter/">color converter</Link> while styling your mockup. Explore more
+          on the <Link href="/utilities/">utilities</Link> page.
         </p>
       </div>
       <Faq items={faqs} />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Compressor from "./Compressor";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -34,6 +35,10 @@ const faqs = [
   { q: "What image formats are supported?", a: "JPG and PNG inputs are both supported. The output is a JPEG, which gives the smallest file size for photos and is accepted by virtually all government exam portals." },
   { q: "Why does my exam form reject my photo even though it looks fine?", a: "Most online application portals enforce a strict file-size range (for example, 20–50 KB for a photo and 10–20 KB for a signature) and exact dimensions. If your file is even slightly larger than allowed, it is rejected. Use this compressor to bring it inside the required range." },
   { q: "Is there any limit on how many images I can compress?", a: "No. The tool is completely free with no daily limit, no watermark, and no sign-up. Compress as many images as you need." },
+  { q: "How do I compress an image to exactly 100 KB or 200 KB?", a: "Enter your target in the size box or tap the 100 KB or 200 KB preset, then click Compress. The tool searches for the highest JPEG quality that still fits under your limit. Larger targets like 100 KB and 200 KB keep almost all the original sharpness, so the result usually looks identical to the source." },
+  { q: "Should I resize my photo before compressing it?", a: "Yes, for the best quality. Reducing the pixel dimensions first means the compressor has less data to throw away, so it can hit a small KB target while staying sharp. Set the correct dimensions in the Image Resizer, then bring that result back here to compress to the exact KB limit." },
+  { q: "Does compressing a JPG reduce its resolution or pixel size?", a: "No. Compression only lowers the JPEG quality level — the width and height in pixels stay the same. If you also need smaller pixel dimensions, use the Image Resizer first; otherwise your image keeps its original resolution at a smaller file size." },
+  { q: "Why is my compressed file still slightly above the target KB?", a: "JPEG compression works in steps, so the tool stops at the closest quality that stays at or just under your target. If you need to go lower, try a smaller pixel size first or pick a slightly tighter KB value, which gives the search more room to work." },
 ];
 
 export default function Page() {
@@ -78,6 +83,36 @@ export default function Page() {
           as sharp as possible. Because everything runs locally in your browser, your documents are
           never uploaded — making it faster and far more private than tools that send your files to
           a server.
+        </p>
+        <h3>Common KB limits on exam and ID forms</h3>
+        <p>
+          Knowing the target before you start saves a lot of trial and error. Photographs are
+          usually wanted in the 20–100&nbsp;KB band, while signatures are far smaller, often
+          10–20&nbsp;KB. Many portals publish one exact ceiling, so we built dedicated presets for
+          the most-requested sizes: <Link href="/compress-image-to-20kb/">compress image to 20&nbsp;KB</Link>,
+          {" "}<Link href="/compress-image-to-50kb/">50&nbsp;KB</Link>,
+          {" "}<Link href="/compress-image-to-100kb/">100&nbsp;KB</Link> and
+          {" "}<Link href="/compress-image-to-200kb/">200&nbsp;KB</Link>. Open the one that matches
+          your notification and the work is done in a single tap.
+        </p>
+        <h3>Get sharper results at small file sizes</h3>
+        <p>
+          The biggest quality win comes from sizing your image correctly before you compress. A
+          4000&nbsp;px phone photo squeezed straight to 20&nbsp;KB looks muddy, but the same shot
+          resized to passport dimensions first compresses cleanly. Use the
+          {" "}<Link href="/image-resizer/">Image Resizer</Link> to set the exact pixels your form
+          needs, or jump to a ready-made format such as
+          {" "}<Link href="/photo-resize-for-ssc-cgl/">SSC CGL photo resize</Link> or
+          {" "}<Link href="/resize-for-pan-card/">PAN card photo resize</Link>, then return here.
+        </p>
+        <h3>Mistakes that get a photo rejected</h3>
+        <p>
+          A file that is too large is the most common reason for rejection, but it is not the only
+          one. Avoid heavy filters or screenshots, which add noise and inflate the size; never blow
+          up a tiny image to reach the dimensions, as that destroys clarity; and check that the
+          output stays a JPG, since some portals refuse PNG. If your source is a PNG, convert it
+          with our <Link href="/png-to-jpg/">PNG to JPG</Link> tool first, then compress the JPEG to
+          your exact limit here.
         </p>
       </div>
 

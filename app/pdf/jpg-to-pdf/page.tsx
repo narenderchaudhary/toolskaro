@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import JpgToPdf from "./JpgToPdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -34,6 +35,10 @@ const faqs = [
   { q: "How do I convert a photo of a document into a PDF?", a: "Take a clear photo of the document, upload it here, and click Convert. You get a PDF ready to upload to portals that only accept PDF files." },
   { q: "Are my images uploaded anywhere?", a: "No. The PDF is created inside your browser, so your images never leave your device — ideal for sensitive documents like certificates and ID proofs." },
   { q: "Does it reduce image quality?", a: "Images are embedded at their original quality. If the resulting PDF is too large for an upload limit, run it through our Compress PDF tool afterwards." },
+  { q: "Can I change the order of the pages?", a: "Yes — the images are placed in the order you add them, with each image becoming one page. Add them in the sequence you want, or rearrange before converting so the final PDF reads correctly." },
+  { q: "Does it work with PNG and HEIC photos too?", a: "Yes, both JPG and PNG images are supported here. If your photos are iPhone HEIC files, convert them first with our HEIC to PDF tool, then merge or compress the result as needed." },
+  { q: "What if my PDF is over the form's size limit?", a: "Image-heavy PDFs can be large. After converting, open our Compress PDF tool and pick a level — or use a target size page like Compress PDF to 200KB — to fit the exact upload limit." },
+  { q: "Can I scan multiple pages with my phone and make one PDF?", a: "Yes. Photograph each page clearly in good light, add all the photos here, and they combine into a single multi-page PDF you can upload or email — no scanner app needed." },
   { q: "Is it free?", a: "Yes — completely free, with no watermark, no sign-up, and no limit on the number of images." },
 ];
 
@@ -67,8 +72,39 @@ export default function Page() {
         </p>
         <p>
           Everything happens in your browser, so your personal documents are never uploaded to a
-          server. Combine it with Merge PDF and Compress PDF to assemble and shrink a complete
+          server. Combine it with <Link href="/pdf/merge/">Merge PDF</Link> and{" "}
+          <Link href="/pdf/compress/">Compress PDF</Link> to assemble and shrink a complete
           application packet without installing any software.
+        </p>
+
+        <h3>How the JPG to PDF converter works</h3>
+        <p>
+          When you add an image, the tool reads it locally and draws it onto a fresh PDF page sized
+          to fit, preserving the original resolution. Each photo or scan becomes its own page, so a
+          set of marksheet snaps turns into a clean multi-page document. Because nothing is sent to a
+          server, conversion is instant even on slow connections, and your files stay on your device.
+          If you later need the pages back as images, our{" "}
+          <Link href="/pdf/pdf-to-jpg/">PDF to JPG</Link> tool reverses the process.
+        </p>
+
+        <h3>Common uses: forms, certificates and ID proofs</h3>
+        <p>
+          Exam portals, college admissions and government applications usually accept a single PDF
+          rather than loose JPGs, so converting your photographed certificate, signature or ID proof
+          is often the last step before upload. Students use it to bundle internship letters and
+          projects; freelancers attach scanned invoices. Once converted, you can{" "}
+          <Link href="/pdf/merge/">merge several PDFs into one</Link> packet if the form asks for a
+          combined file.
+        </p>
+
+        <h3>Keeping file size and quality in balance</h3>
+        <p>
+          Photos from modern phones are high-resolution, so a few pages can easily exceed a 1&nbsp;MB
+          upload cap. Crop out empty borders and shoot in even light to keep images sharp at smaller
+          sizes. If the finished PDF is still too heavy, run it through our{" "}
+          <Link href="/compress-pdf-to-200kb/">Compress PDF to 200KB</Link> tool or the general{" "}
+          <Link href="/image-compressor/">Image Compressor</Link> before converting, so the text on
+          your documents stays readable while comfortably meeting the limit.
         </p>
       </div>
 

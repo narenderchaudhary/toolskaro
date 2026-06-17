@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ResumeMaker from "./ResumeMaker";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -33,6 +34,10 @@ const faqs = [
   { q: "Are my personal details uploaded?", a: "No. The resume is built entirely in your browser, so your name, contact details and experience never leave your device." },
   { q: "Can I add multiple jobs and qualifications?", a: "Yes. Use the Add button under Experience and Education to include as many entries as you need, and remove any you don’t." },
   { q: "Will it work for a fresher with no experience?", a: "Yes. Focus on your education, skills and a strong summary; you can leave the experience section minimal or list internships and projects there." },
+  { q: "Is this resume ATS-friendly?", a: "Yes. The layout uses a clean single-column structure with standard section headings and real text — not images — so applicant tracking systems can read it. Avoid tables and graphics, and use plain job titles and dates so parsers map your details correctly." },
+  { q: "How long should my resume be?", a: "For freshers and most professionals, one page is ideal; two pages are fine with several years of experience. Keep bullet points short, lead with action verbs, and quantify results where you can." },
+  { q: "My resume PDF is too large to upload — what do I do?", a: "Browser-printed resumes are usually small, but if a portal sets a tight cap, run the file through our Compress Resume PDF tool to fit the limit without losing the crisp text." },
+  { q: "Should I add a cover letter too?", a: "Many roles expect one. After building your resume, use our Cover Letter Generator to create a matching letter, then combine both into a single file with Merge PDF if the application asks for one document." },
 ];
 
 export default function Page() {
@@ -65,9 +70,40 @@ export default function Page() {
           how your PDF will look.
         </p>
         <p>
-          Unlike many builders, there’s no watermark, no sign-up, and no paywall to download. Your
-          information stays in your browser and is never uploaded. When you’re done, save it as a PDF
+          Unlike many builders, there&apos;s no watermark, no sign-up, and no paywall to download. Your
+          information stays in your browser and is never uploaded. When you&apos;re done, save it as a PDF
           and attach it to job applications or print it.
+        </p>
+
+        <h3>Writing an ATS-friendly resume</h3>
+        <p>
+          Most employers screen applications through an applicant tracking system before a human
+          reads them. This builder helps you pass that filter: it produces a single-column layout
+          with standard headings and selectable text rather than images, so parsers extract your
+          name, roles and dates reliably. Mirror keywords from the job posting in your summary and
+          skills, spell out job titles plainly, and avoid graphics or columns that confuse machines.
+          When the file is ready and you need it under a portal&apos;s size cap, shrink it with our{" "}
+          <Link href="/compress-resume-pdf/">Compress Resume PDF</Link> tool.
+        </p>
+
+        <h3>Structuring sections that recruiters scan</h3>
+        <p>
+          Recruiters skim a resume in seconds, so lead with a tight summary, then experience in
+          reverse-chronological order, followed by education and skills. Start each bullet with an
+          action verb and quantify the result — &quot;cut load time by 30%&quot; beats &quot;worked
+          on performance.&quot; Freshers can move education up and lean on projects and internships.
+          Keep it to one page where possible, then pair it with a tailored letter from our{" "}
+          <Link href="/cover-letter-generator/">Cover Letter Generator</Link>.
+        </p>
+
+        <h3>Privacy and finishing your application</h3>
+        <p>
+          Your resume holds personal contact details, so it matters that everything here is built
+          locally and never uploaded. Once you have your PDF, you can{" "}
+          <Link href="/pdf/merge/">merge it</Link> with a cover letter or certificates into one file
+          if the application asks for a single document, and resize photos for the form with our{" "}
+          <Link href="/image-compressor/">Image Compressor</Link>. That way your whole application
+          stays private from draft to submission.
         </p>
       </div>
 

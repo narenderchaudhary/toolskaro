@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SignatureResize from "./SignatureResize";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -33,6 +34,10 @@ const faqs = [
   { q: "Will the white background be kept?", a: "Yes — the signature is placed on a clean white background and saved as JPG, the format exam portals accept. For best results, sign with a dark pen on white paper before scanning or photographing it." },
   { q: "My signature scan has a grey or yellow tint — can I fix it?", a: "Use a well-lit photo or a proper scan on white paper. The tool keeps a white background, but a clean source image gives the clearest result." },
   { q: "Is it free and private?", a: "Yes — free, no sign-up, no watermark, and your signature is processed entirely in your browser and never uploaded." },
+  { q: "What pixel size should a signature be for online forms?", a: "Many Indian exam portals expect a signature around 140×60 px, though some ask for up to about 300×80 px. The exact figure is in your official notification — enter those numbers as the width and height, or start from a preset and adjust. Keeping the strip wide and short matches how a real signature looks." },
+  { q: "How do I scan my signature for an exam application?", a: "Sign clearly with a dark blue or black pen on plain white paper, leaving a margin around the writing. Scan at around 200–300 DPI, or photograph it straight on in bright, even light with no shadows. Then upload the result here to set the exact size and KB limit your form needs." },
+  { q: "Can I make the signature file smaller than 20 KB?", a: "Yes. Set a lower maximum KB and the tool compresses the white-background JPG to fit. Signatures are mostly white space, so they shrink easily — if you need an even tighter target, reduce the pixel dimensions slightly first and the file size drops further." },
+  { q: "Should the signature and photo be uploaded as separate files?", a: "Almost always, yes. Portals have one upload box for the photograph and another for the signature, each with its own size and KB rules. Prepare the signature here, make the photo with the Passport Photo Maker, and keep them as two separate JPG files." },
 ];
 
 export default function Page() {
@@ -69,6 +74,34 @@ export default function Page() {
           Like all ToolsKaro utilities, it works entirely inside your browser. Your signature is
           never sent to a server, so it stays completely private. Pair it with our Image Compressor
           and Passport Photo Maker to prepare every part of your application in minutes.
+        </p>
+        <h3>Typical signature size and KB limits</h3>
+        <p>
+          Signature boxes are smaller and stricter than photo boxes. A common requirement is a strip
+          around 140×60&nbsp;px kept inside 10–20&nbsp;KB, but some recruiters allow a wider
+          300&nbsp;px image. Check your notification and enter those exact numbers above. If you only
+          need to hit a weight rather than a shape, the
+          {" "}<Link href="/resize-image-in-kb/">resize image in KB</Link> tool and presets like
+          {" "}<Link href="/compress-image-to-20kb/">compress to 20&nbsp;KB</Link> get you there in
+          one tap.
+        </p>
+        <h3>Capturing a clean signature</h3>
+        <p>
+          The clearer your source, the cleaner the result. Sign with a dark pen on white paper, leave
+          a margin, and either scan it or take a straight-on photo in bright, even light. Crop tightly
+          around the strokes before uploading so the tool does not waste pixels on blank paper. If a
+          scan comes out as a PNG, convert it with our
+          {" "}<Link href="/png-to-jpg/">PNG to JPG</Link> tool first, since most portals accept only
+          JPG signatures.
+        </p>
+        <h3>Mistakes that get a signature rejected</h3>
+        <p>
+          Watch for a few common problems: a light pencil or thin gel pen that scans too faintly, a
+          grey or yellow tint from poor lighting, a file that is the wrong shape or above the KB
+          limit, and accidentally uploading the signature in the photo box. Fix the size and weight
+          here, then prepare the matching photograph with the
+          {" "}<Link href="/passport-photo-maker/">Passport Photo Maker</Link> so both files meet
+          their own rules.
         </p>
       </div>
 
