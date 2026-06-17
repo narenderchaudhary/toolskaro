@@ -110,6 +110,23 @@ export const CATEGORIES: Category[] = [
       { href: "/date-difference-calculator/", icon: "📆", t: "Date Difference", d: "Days between two dates.", vol: "", ready: true },
     ],
   },
+  {
+    key: "dev",
+    name: "Developer Tools",
+    hubHref: "/developer-tools/",
+    color: "#7c3aed",
+    tint: "#ede9fe",
+    tools: [
+      { href: "/json-formatter/", icon: "{ }", t: "JSON Formatter", d: "Beautify, minify & validate JSON.", vol: "1M+/mo", ready: true },
+      { href: "/base64-encode-decode/", icon: "🔤", t: "Base64 Encode/Decode", d: "Text ↔ Base64, Unicode-safe.", vol: "550K/mo", ready: true },
+      { href: "/url-encode-decode/", icon: "🔗", t: "URL Encode/Decode", d: "Escape & unescape URLs and params.", vol: "246K/mo", ready: true },
+      { href: "/hash-generator/", icon: "#️⃣", t: "Hash Generator", d: "SHA-1, SHA-256, SHA-384, SHA-512.", vol: "165K/mo", ready: true },
+      { href: "/lorem-ipsum-generator/", icon: "✒️", t: "Lorem Ipsum Generator", d: "Placeholder text by para/sentence/word.", vol: "450K/mo", ready: true },
+      { href: "/uuid-generator/", icon: "🆔", t: "UUID Generator", d: "Random UUID v4, single or bulk.", vol: "201K/mo", ready: true },
+      { href: "/timestamp-converter/", icon: "🕒", t: "Timestamp Converter", d: "Unix epoch ↔ date, live clock.", vol: "165K/mo", ready: true },
+      { href: "/color-converter/", icon: "🎨", t: "Color Converter", d: "HEX ↔ RGB ↔ HSL with picker.", vol: "110K/mo", ready: true },
+    ],
+  },
 ];
 
 export const CAT_BY_KEY: Record<ToolCat, Category> = CATEGORIES.reduce(

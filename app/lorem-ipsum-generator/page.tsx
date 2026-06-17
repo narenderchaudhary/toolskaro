@@ -1,0 +1,50 @@
+import type { Metadata } from "next";
+import Lorem from "./Lorem";
+import CtaBand from "@/app/components/CtaBand";
+import Faq from "@/app/components/Faq";
+
+export const metadata: Metadata = {
+  title: "Lorem Ipsum Generator — Free Placeholder Text Generator",
+  description:
+    "Generate Lorem Ipsum placeholder text by paragraphs, sentences or words and copy it with one click. Free online dummy-text generator — 100% in your browser.",
+  alternates: { canonical: "/lorem-ipsum-generator/" },
+};
+
+const faqs = [
+  { q: "What is Lorem Ipsum?", a: "Lorem Ipsum is standard placeholder text used by designers and developers to fill a layout before the real copy is ready. Because it looks like natural language but means nothing, it lets you judge typography and spacing without being distracted by the words." },
+  { q: "How much text can I generate?", a: "Choose any amount from 1 to 100 paragraphs, sentences or words. Pick the unit, set the count and click Generate." },
+  { q: "Can I copy it quickly?", a: "Yes — generate your text and click Copy to put it on your clipboard, ready to paste into a mockup, CMS or code." },
+  { q: "Is it free?", a: "Yes, completely free with no sign-up, and it runs entirely in your browser." },
+];
+
+export default function Page() {
+  const jsonLd = { "@context": "https://schema.org", "@graph": [
+    { "@type": "SoftwareApplication", name: "Lorem Ipsum Generator", applicationCategory: "DeveloperApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
+    { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+  ] };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="tool-hero">
+        <h1>Lorem Ipsum <span className="grad">generator</span></h1>
+        <p className="lede">Generate placeholder text by paragraphs, sentences or words — then copy it in one click.</p>
+      </div>
+      <Lorem />
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>Placeholder text for any mockup</h2>
+        <p>
+          When you are building a page, a slide or a design and the real copy is not ready, Lorem Ipsum
+          fills the space with realistic-looking text so you can focus on layout, typography and
+          hierarchy. Choose how much you need — <strong>paragraphs, sentences or words</strong> — and
+          generate it instantly.
+        </p>
+        <p>
+          Drop it into a wireframe, a CMS draft, an email template or a component while you wait for
+          final content. It is free, needs no sign-up and runs entirely in your browser.
+        </p>
+      </div>
+      <Faq items={faqs} />
+      <CtaBand heading="More free tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/word-counter/", "Word Counter"], ["/uuid-generator/", "UUID Generator"], ["/color-converter/", "Color Converter"]]} />
+    </>
+  );
+}

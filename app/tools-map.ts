@@ -1,6 +1,6 @@
 // Central registry of tool pages — used for auto-breadcrumbs and footer link clusters.
 // href (with trailing slash) -> { name, cat }
-export type ToolCat = "image" | "pdf" | "doc" | "calc" | "util";
+export type ToolCat = "image" | "pdf" | "doc" | "calc" | "util" | "dev";
 
 export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   // Image
@@ -65,4 +65,13 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/password-generator/": { name: "Password Generator", cat: "util" },
   "/text-case-converter/": { name: "Text Case Converter", cat: "util" },
   "/date-difference-calculator/": { name: "Date Difference Calculator", cat: "util" },
+  // Developer Tools
+  "/json-formatter/": { name: "JSON Formatter", cat: "dev" },
+  "/base64-encode-decode/": { name: "Base64 Encode/Decode", cat: "dev" },
+  "/url-encode-decode/": { name: "URL Encode/Decode", cat: "dev" },
+  "/hash-generator/": { name: "Hash Generator", cat: "dev" },
+  "/lorem-ipsum-generator/": { name: "Lorem Ipsum Generator", cat: "dev" },
+  "/uuid-generator/": { name: "UUID Generator", cat: "dev" },
+  "/timestamp-converter/": { name: "Unix Timestamp Converter", cat: "dev" },
+  "/color-converter/": { name: "Color Converter", cat: "dev" },
 };

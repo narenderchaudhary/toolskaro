@@ -10,6 +10,7 @@ ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/
 - [Document Makers](https://toolskaro.com/document-tools/): Resume, marriage biodata, cover letter and GST invoice makers.
 - [Calculators](https://toolskaro.com/calculators/): EMI, SIP, GST, interest, percentage, CGPA, age and TDEE calculators.
 - [Utility Tools](https://toolskaro.com/utilities/): Typing test, QR generator, word counter, password generator and more.
+- [Developer Tools](https://toolskaro.com/developer-tools/): JSON formatter, Base64/URL encode-decode, hash & UUID generators, timestamp & color converters.
 
 ## Image tools
 - [Image Compressor](https://toolskaro.com/image-compressor/): Compress JPG/PNG to an exact KB (20, 50, 100 KB) for exam portals.
@@ -85,6 +86,16 @@ ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/
 - [Password Generator](https://toolskaro.com/password-generator/): Strong random passwords.
 - [Text Case Converter](https://toolskaro.com/text-case-converter/): UPPERCASE, lowercase, Title Case and more.
 - [Date Difference Calculator](https://toolskaro.com/date-difference-calculator/): Days between two dates.
+
+## Developer tools
+- [JSON Formatter](https://toolskaro.com/json-formatter/): Beautify, minify and validate JSON in the browser with clear error messages.
+- [Base64 Encode/Decode](https://toolskaro.com/base64-encode-decode/): Convert text to Base64 and back, Unicode (UTF-8) safe.
+- [URL Encode/Decode](https://toolskaro.com/url-encode-decode/): Escape and unescape URLs and query parameters (component or full URL).
+- [Hash Generator](https://toolskaro.com/hash-generator/): SHA-1, SHA-256, SHA-384 and SHA-512 hashes via the Web Crypto API.
+- [Lorem Ipsum Generator](https://toolskaro.com/lorem-ipsum-generator/): Placeholder text by paragraphs, sentences or words.
+- [UUID Generator](https://toolskaro.com/uuid-generator/): Random UUID v4 identifiers, single or bulk, with uppercase option.
+- [Unix Timestamp Converter](https://toolskaro.com/timestamp-converter/): Convert epoch time to a date and back, seconds or milliseconds.
+- [Color Converter](https://toolskaro.com/color-converter/): Convert colors between HEX, RGB and HSL with a live picker.
 
 ## Exam-specific guides
 - [Compress image to 50 KB](https://toolskaro.com/compress-image-to-50kb/): The common 50 KB photo limit for SSC, UPSC and state PSC forms.

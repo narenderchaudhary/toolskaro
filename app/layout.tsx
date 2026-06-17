@@ -105,6 +105,13 @@ const UTIL_TOOLS = [
   ["/password-generator/", "Password Generator"],
   ["/text-case-converter/", "Text Case Converter"],
 ];
+const DEV_TOOLS = [
+  ["/json-formatter/", "JSON Formatter"],
+  ["/base64-encode-decode/", "Base64 Encode/Decode"],
+  ["/hash-generator/", "Hash Generator"],
+  ["/uuid-generator/", "UUID Generator"],
+  ["/color-converter/", "Color Converter"],
+];
 const COMPANY = [
   ["/blog/", "Blog"],
   ["/about/", "About / Our Team"],
@@ -140,6 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/image-resizer/">Resize</Link>
               <Link href="/remove-background/" className="hide-sm">Remove BG</Link>
               <Link href="/pdf/merge/">PDF</Link>
+              <Link href="/developer-tools/" className="hide-sm">Dev</Link>
               <Link href="/blog/">Blog</Link>
               <Link href="/about/" className="hide-sm">About</Link>
               <ThemeToggle />
@@ -201,6 +209,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="footer-col">
               <Link href="/utilities/" className="footer-h">Utilities</Link>
               {UTIL_TOOLS.map(([href, label]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+            <div className="footer-col">
+              <Link href="/developer-tools/" className="footer-h">Developer Tools</Link>
+              {DEV_TOOLS.map(([href, label]) => (
                 <Link key={href} href={href}>{label}</Link>
               ))}
             </div>
