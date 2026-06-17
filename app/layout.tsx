@@ -6,7 +6,10 @@ import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import { CATEGORIES } from "@/app/tools-catalog";
 import "./globals.css";
+
+const TOTAL_TOOLS = CATEGORIES.reduce((n, c) => n + c.tools.length, 0);
 
 // Set the theme before first paint (no flash). Honours a saved choice, else system preference.
 const THEME_INIT = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
@@ -171,16 +174,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="site">
           <div className="container footer-cols">
             <div className="footer-col footer-brand">
-              <Logo />
-              <p>
-                Free, privacy-first online tools to resize &amp; compress photos and signatures,
-                convert PDFs, build resumes and more. Every tool runs entirely in your browser —
-                your files are never uploaded to any server.
-              </p>
-              <p className="footer-managed">
-                Crafted &amp; maintained by{" "}
-                <a href={AGENCY_LINKEDIN} target="_blank" rel="noopener noreferrer"><strong>AdMatrix Media</strong></a>
-              </p>
+              <div className="footer-brand-main">
+                <Logo />
+                <p>
+                  <strong>ToolsKaro</strong> is a free, privacy-first collection of {TOTAL_TOOLS}+ online
+                  tools for photos, signatures, PDFs, documents and developers. Resize and compress
+                  images to an exact size, convert and compress PDFs, build a resume, run everyday
+                  calculators and format code — all in one fast place.
+                </p>
+                <p>
+                  Every tool runs entirely in your browser, so your photos and documents are never
+                  uploaded to a server. No sign-up, no watermark and no limits, on any device.
+                </p>
+                <p className="footer-managed">
+                  Crafted &amp; maintained by{" "}
+                  <a href={AGENCY_LINKEDIN} target="_blank" rel="noopener noreferrer"><strong>AdMatrix Media</strong></a>
+                </p>
+              </div>
+              <ul className="footer-highlights">
+                <li><span aria-hidden="true">🔒</span> 100% in your browser — your files never leave your device.</li>
+                <li><span aria-hidden="true">🆓</span> {TOTAL_TOOLS}+ tools, completely free with no sign-up or watermark.</li>
+                <li><span aria-hidden="true">⚡</span> Fast and responsive on phone, tablet and desktop.</li>
+                <li><span aria-hidden="true">🌍</span> Used worldwide for exam forms, job, visa and everyday files.</li>
+                <li><span aria-hidden="true">✉️</span> Questions? <a href="mailto:contact@toolskaro.com">contact@toolskaro.com</a></li>
+              </ul>
             </div>
             <div className="footer-col">
               <Link href="/image-tools/" className="footer-h">Image Tools</Link>
