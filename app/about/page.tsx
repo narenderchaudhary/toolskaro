@@ -26,7 +26,7 @@ export default function Page() {
       name: "ToolsKaro",
       url: SITE,
       foundingDate: "2026",
-      knowsAbout: ["Government exam form requirements", "Image compression", "PDF tools", "Resume building"],
+      knowsAbout: ["Image editing and compression", "PDF tools", "Document and resume building", "Developer tools", "Online calculators"],
       sameAs: ["https://t.me/GovSarkariResults", "https://whatsapp.com/channel/0029Vb7eQnZ7YSd39NUElI3J", LINKEDIN],
       founder: {
         "@type": "Person",
@@ -53,20 +53,19 @@ export default function Page() {
       <h1>About ToolsKaro</h1>
       <div className="prose">
         <p>
-          ToolsKaro is a free collection of in-browser tools for students, job seekers and anyone
-          preparing photos, signatures and documents for forms and applications. Launched in 2026 and
-          built by <strong>AdMatrix Media</strong>, it brings together more than 35 utilities — image
-          resize and compress, passport-photo and signature tools, a full PDF suite, resume and
-          biodata makers, and everyday calculators — in one fast, private place.
+          ToolsKaro is a free collection of in-browser tools for anyone who works with images, PDFs,
+          documents and code — students, job seekers, professionals and developers around the world.
+          Launched in 2026 and built by <strong>AdMatrix Media</strong>, it brings together more than
+          60 utilities — image resize and compress, a full PDF suite, resume and document makers,
+          everyday calculators and developer tools — in one fast, private place.
         </p>
 
         <h2>Our mission</h2>
         <p>
-          We exist to make the everyday paperwork of forms and applications effortless. From government
-          exams such as SSC, UPSC and IBPS to job, visa and document portals around the world, forms
-          demand a photograph and signature in an exact size and file weight, documents in specific
-          formats, and more. We turn those fiddly, rejection-prone requirements into one-click tools —
-          completely free, with no account and no watermark.
+          We exist to make everyday file and document tasks effortless, wherever you are in the world.
+          Whether you are resizing a photo to an exact size, shrinking a PDF under an upload limit,
+          building a resume, or formatting JSON, the fiddly and time-consuming jobs become one-click
+          tools — completely free, with no account and no watermark.
         </p>
 
         <h2>Privacy comes first</h2>

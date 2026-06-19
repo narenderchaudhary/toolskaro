@@ -61,7 +61,7 @@ const orgJsonLd = {
         url: AGENCY_LINKEDIN,
         sameAs: [AGENCY_LINKEDIN],
       },
-      knowsAbout: ["Image compression", "PDF tools", "Government exam form requirements", "Resume building"],
+      knowsAbout: ["Image editing and compression", "PDF tools", "Document and resume building", "Developer tools", "Online calculators"],
     },
     {
       "@type": "WebSite",
@@ -69,7 +69,7 @@ const orgJsonLd = {
       url: SITE,
       name: "ToolsKaro",
       publisher: { "@id": `${SITE}/#organization` },
-      inLanguage: "en-IN",
+      inLanguage: "en",
     },
   ],
 };
@@ -138,7 +138,7 @@ function Logo() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={jakarta.variable} suppressHydrationWarning>
+    <html lang="en" className={jakarta.variable} suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
