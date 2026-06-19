@@ -90,9 +90,9 @@ export default function AgeCalc() {
             old.
           </p>
           <p className="stat">
-            That is {age.totalMonths.toLocaleString("en-US")} months ·{" "}
-            {age.totalWeeks.toLocaleString("en-US")} weeks ·{" "}
-            {age.totalDays.toLocaleString("en-US")} days.
+            That is {age.totalMonths.toLocaleString("en-IN")} months ·{" "}
+            {age.totalWeeks.toLocaleString("en-IN")} weeks ·{" "}
+            {age.totalDays.toLocaleString("en-IN")} days.
           </p>
           <p className="stat">
             🎂 Next birthday in <b>{age.nextBirthdayInDays}</b> days.
