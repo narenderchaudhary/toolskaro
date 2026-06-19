@@ -25,9 +25,9 @@ export default function WordCounter() {
   return (
     <div className="card">
       <div className="row" style={{ marginBottom: 16 }}>
-        <Stat label="Words" value={stats.words.toLocaleString("en-IN")} />
-        <Stat label="Characters" value={stats.chars.toLocaleString("en-IN")} />
-        <Stat label="Characters (no spaces)" value={stats.charsNoSpaces.toLocaleString("en-IN")} />
+        <Stat label="Words" value={stats.words.toLocaleString("en-US")} />
+        <Stat label="Characters" value={stats.chars.toLocaleString("en-US")} />
+        <Stat label="Characters (no spaces)" value={stats.charsNoSpaces.toLocaleString("en-US")} />
         <Stat label="Sentences" value={stats.sentences} />
         <Stat label="Paragraphs" value={stats.paragraphs} />
         <Stat label="Reading time" value={`${stats.readingMins} min`} />

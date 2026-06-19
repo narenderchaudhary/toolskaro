@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog/" },
 };
 
-const fmtDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+const fmtDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
 export default function Page() {
   const posts = [...POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));

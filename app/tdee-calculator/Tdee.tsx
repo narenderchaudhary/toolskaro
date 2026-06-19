@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 const field = { width: "100%" } as const;
-const round = (n: number) => Math.round(n).toLocaleString("en-IN");
+const round = (n: number) => Math.round(n).toLocaleString("en-US");
 
 const ACTIVITY: { value: number; label: string }[] = [
   { value: 1.2, label: "Sedentary — little or no exercise" },

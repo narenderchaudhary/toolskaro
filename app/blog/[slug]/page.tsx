@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 const SITE = "https://toolskaro.com";
 const AUTHOR = "Narender Chaudhary";
-const fmtDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+const fmtDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
 function getPost(slug: string) {
   return POSTS.find((p) => p.slug === slug) ?? null;

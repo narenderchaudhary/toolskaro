@@ -34,7 +34,7 @@ export default function DateDiff() {
             <b>{d.years}</b> years, <b>{d.months}</b> months, <b>{d.days}</b> days
           </p>
           <p className="stat">
-            {d.totalMonths.toLocaleString("en-IN")} months · {d.totalWeeks.toLocaleString("en-IN")} weeks · {d.totalDays.toLocaleString("en-IN")} days
+            {d.totalMonths.toLocaleString("en-US")} months · {d.totalWeeks.toLocaleString("en-US")} weeks · {d.totalDays.toLocaleString("en-US")} days
           </p>
         </div>
       )}

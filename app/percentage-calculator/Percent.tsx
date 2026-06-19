@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const r2 = (n: number) => (Math.round(n * 100) / 100).toLocaleString("en-IN", { maximumFractionDigits: 2 });
+const r2 = (n: number) => (Math.round(n * 100) / 100).toLocaleString("en-US", { maximumFractionDigits: 2 });
 
 export default function Percent() {
   // Mode 1: X% of Y
