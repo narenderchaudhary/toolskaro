@@ -39,8 +39,25 @@ export default function Home() {
     const t = ALL_TOOLS.find((x) => x.href === f.href);
     return t ? { ...t, tag: f.tag } : null;
   }).filter(Boolean) as (Tool & { color: string; tint: string; tag?: "HOT" | "NEW" })[];
+  // ItemList: presents the homepage as a structured directory of every live tool, so search engines
+  // read the site as one toolkit and can surface tools as a list in results.
+  const liveTools = ALL_TOOLS.filter((t) => t.ready);
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Free Online Tools — ToolsKaro",
+    description: `${total}+ free, browser-based tools for Indian exam and job applicants.`,
+    numberOfItems: liveTools.length,
+    itemListElement: liveTools.map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://toolskaro.com${tool.href}`,
+      name: tool.t,
+    })),
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
