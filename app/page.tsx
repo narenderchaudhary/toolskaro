@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Faq from "@/app/components/Faq";
 import SocialLinks from "@/app/components/Social";
+import ToolSearch from "@/app/components/ToolSearch";
 import { CATEGORIES, type Tool } from "@/app/tools-catalog";
 
 function ToolCard({ tool, tint, color }: { tool: Tool; tint: string; color: string }) {
@@ -29,6 +30,7 @@ const FEATURED: { href: string; tag?: "HOT" | "NEW" }[] = [
   { href: "/jpeg-to-jpg/", tag: "NEW" },
   { href: "/pdf/jpg-to-pdf/", tag: "HOT" },
   { href: "/resume-maker/" },
+  { href: "/qr-code-generator/", tag: "HOT" },
   { href: "/email-signature-maker/", tag: "NEW" },
 ];
 const ALL_TOOLS = CATEGORIES.flatMap((c) => c.tools.map((t) => ({ ...t, color: c.color, tint: c.tint })));
@@ -76,6 +78,7 @@ export default function Home() {
           Resize &amp; compress your photo and signature to the exact size any form needs, convert and
           compress PDFs, build a resume and more — free, no login, and 100% in your browser.
         </p>
+        <ToolSearch />
         <div className="hero-badges">
           <span className="badge">🔒 Files never uploaded</span>
           <span className="badge">⚡ No sign-up</span>
