@@ -6,9 +6,9 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Photo Joiner — Combine Photos Side by Side, Free",
+  title: "Free Photo Joiner — Combine Photos Side by Side",
   description:
-    "Join two or more photos into one image — side by side, stacked, or in a grid. Free online photo combiner, no upload, 100% in your browser.",
+    "Free photo joiner to combine two or more photos into one image — side by side, stacked, or in a grid. No upload, no watermark, 100% in your browser.",
   alternates: { canonical: "/photo-joiner/" },
 };
 
@@ -30,7 +30,7 @@ const faqs = [
   { q: "Can I combine more than two photos?", a: "Yes. Add as many as you like — use side-by-side or stacked for a strip, or the grid layout for a simple collage." },
   { q: "Can I add a gap or border between photos?", a: "Yes. Set the gap in pixels and pick a background colour, which shows in the gaps and around the images." },
   { q: "Are my photos uploaded?", a: "No. The images are combined in your browser, so they never leave your device." },
-  { q: "Is it free?", a: "Yes — free, no sign-up and no watermark." },
+  { q: "Is this photo joiner free?", a: "Yes — it is a completely free photo joiner with no sign-up, no watermark and no limits. Combine as many photos as you like, as often as you like." },
 ];
 
 export default function Page() {
@@ -46,7 +46,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Photo <span className="grad">joiner</span></h1>
-        <p className="lede">Combine two or more photos into one image — side by side, stacked or in a grid. Free, no upload, 100% in your browser.</p>
+        <p className="lede">A free photo joiner to combine two or more photos into one image — side by side, stacked or in a grid. No upload, no watermark, 100% in your browser.</p>
       </div>
       <PhotoJoiner />
       <Steps heading={<>Join in <span className="g">3 simple steps</span></>} steps={steps} />
@@ -54,7 +54,7 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Combine photos into one image</h2>
         <p>
-          A photo joiner merges several pictures into a single image — perfect for before-and-after
+          A free photo joiner merges several pictures into a single image — perfect for before-and-after
           shots, putting two photos next to each other for sharing, making a simple collage, or
           combining document scans into one file. Choose side by side for a row, stacked for a
           column, or grid for a tidy collage.
