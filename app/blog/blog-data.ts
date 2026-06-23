@@ -568,6 +568,28 @@ export const POSTS: Post[] = [
       { q: "Is it safe to merge personal documents online?", a: "With ToolsKaro, yes — the merge happens in your browser and your files are never uploaded to a server, so sensitive documents stay on your device." },
     ],
   },
+  {
+    slug: "how-to-join-photos-into-one-image-free",
+    title: "How to Join Two Photos Into One Image Free (Side by Side or Stacked)",
+    description: "Join two or more photos into one image with a free photo joiner — side by side, stacked or in a grid. No watermark, no sign-up, 100% in your browser.",
+    date: "2026-07-03",
+    category: "Image tools",
+    readMins: 5,
+    excerpt: "Want to put two pictures next to each other or make a quick collage? Here's how to join photos into one image for free, without uploading anything.",
+    related: [["/photo-joiner/", "Photo Joiner"], ["/crop-image/", "Crop Image"], ["/image-compressor/", "Image Compressor"], ["/photo-signature-combiner/", "Photo + Signature"]],
+    intro: "<p>Putting two photos side by side — a before-and-after, a pair of pictures for a message, or a simple collage — sounds like it needs a photo editor. It doesn't. A <strong>free photo joiner</strong> combines several images into one in a couple of clicks, right in your browser, with no app to install and nothing uploaded. Here's how to do it and get a clean result every time.</p>",
+    sections: [
+      { h2: "What a photo joiner does", html: "<p>A photo joiner takes two or more separate images and merges them into a single picture. You choose the arrangement — <strong>side by side</strong> for a row, <strong>stacked</strong> for a tall image, or a <strong>grid</strong> for a small collage — and the tool lines the photos up neatly, adds any gap or background colour you want, and exports one combined image. It's the quickest way to make a before-and-after, a comparison, or a multi-photo share without learning an editor.</p>" },
+      { h2: "Join your photos in three steps", html: "<p>Open the <a href=\"/photo-joiner/\">Photo Joiner</a> and you're done in under a minute:</p><ol><li><strong>Add your photos</strong> — drop in two or more images (JPG, PNG or WebP).</li><li><strong>Pick a layout</strong> — side by side, stacked or grid, then set the gap and a background colour to frame them.</li><li><strong>Download</strong> — click join and save the single combined image, ready to share or upload.</li></ol><p>Because it's a genuinely free photo joiner, there's no watermark stamped on the result and no sign-up — and since everything runs on your device, your photos are never uploaded to a server.</p>" },
+      { h2: "Get a clean, even result", html: "<p>A few small things make the join look professional rather than rough:</p><ul><li>Use photos of a <strong>similar size or orientation</strong> — two portraits or two landscapes line up far more evenly than a mix.</li><li><strong>Crop first</strong> if one image has extra space around the subject; the <a href=\"/crop-image/\">Crop Image</a> tool trims them to a matching shape so heights and widths match.</li><li>Add a <strong>small gap and a white or black background</strong> for a clean, framed look instead of two photos jammed edge to edge.</li></ul>" },
+      { h2: "After joining: resize or compress", html: "<p>Once you've joined the images, you may need the final file at a particular size. If a website or form has a KB limit, run the result through the <a href=\"/image-compressor/\">Image Compressor</a> to bring it under the cap while keeping it clear. Need your photo and signature combined for an exam form instead of ordinary pictures? Use the dedicated <a href=\"/photo-signature-combiner/\">Photo + Signature Combiner</a>, which lays them out in the format those forms expect.</p>" },
+    ],
+    faqs: [
+      { q: "How do I join two photos into one for free?", a: "Open the free Photo Joiner, add both images, choose 'Side by side' or 'Stacked', set the gap and background, and click join. Download the single combined image — no watermark and no sign-up." },
+      { q: "Is this photo joiner really free?", a: "Yes — it's completely free with no watermark, no sign-up and no limits. You can join as many photos as you like, as often as you like, and nothing is uploaded because it runs in your browser." },
+      { q: "Can I join more than two photos?", a: "Yes. Add as many images as you want — use side by side or stacked for a strip, or the grid layout to make a simple collage out of several photos." },
+    ],
+  },
 ];
 
 export const POST_SLUGS = POSTS.map((p) => p.slug);
