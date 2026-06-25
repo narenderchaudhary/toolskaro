@@ -138,7 +138,7 @@ header.site .container { display: flex; align-items: center; justify-content: sp
 @media (max-width: 640px) { .hero h1 { font-size: 32px; } .hero-sub { font-size: 16px; } .hero { padding: 36px 0 28px; } }
 
 /* ---------- Tool sections ---------- */
-.tools-section { margin: 8px 0 38px; }
+.tools-section { margin: 8px 0 38px; content-visibility: auto; contain-intrinsic-size: auto 720px; }
 .section-head { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
 .section-head .dot { width: 11px; height: 11px; border-radius: 50%; box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 16%, transparent); }
 .section-head h2 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
@@ -178,7 +178,7 @@ a.tool-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); b
 [data-theme="dark"] .tool-tag.new { background: #15301f; color: #4ade80; }
 
 /* ---------- Why ToolsKaro trust band ---------- */
-.trust-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 6px 0 36px; }
+.trust-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 6px 0 36px; content-visibility: auto; contain-intrinsic-size: auto 220px; }
 .trust-item { display: flex; gap: 12px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: var(--shadow-sm); }
 .trust-ic { font-size: 24px; line-height: 1; flex: none; }
 .trust-item b { display: block; font-size: 14.5px; color: var(--ink); margin-bottom: 3px; }
