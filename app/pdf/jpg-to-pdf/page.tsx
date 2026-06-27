@@ -9,7 +9,7 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "JPG to PDF — Image & Photo to PDF Converter (Free)",
   description:
-    "Convert image to PDF free: turn JPG, PNG or photos into a single PDF online. Add multiple photos, combine them into one PDF, and download — no signup, 100% in your browser.",
+    "Convert image to PDF free: turn JPG, JPEG, PNG or photos into one PDF online. Combine multiple JPGs into a single PDF and download — no signup, in your browser.",
   alternates: { canonical: "/pdf/jpg-to-pdf/" },
 };
 
@@ -32,6 +32,8 @@ const faqs = [
   { q: "How do I convert an image to PDF?", a: "Upload your image (JPG, PNG or a photo), and the tool places it into a PDF that you can download. Add several images to combine them into one PDF, one image per page — all in your browser." },
   { q: "How do I put a photo into a PDF?", a: "Add the photo above and click Convert — it becomes a page in a new PDF. You can add more photos to build a multi-page PDF, then download it ready to upload or email." },
   { q: "Can I combine multiple images into one PDF?", a: "Yes. Add as many JPG or PNG images as you like — they are combined into a single PDF in the order shown, one image per page." },
+  { q: "Can I convert JPEG or PNG to PDF too?", a: "Yes. This works as a JPEG to PDF and PNG to PDF converter as well — JPG, JPEG and PNG images are all supported, so you can convert any of them to PDF the same way." },
+  { q: "How do I combine multiple JPGs into one PDF?", a: "Add all the JPG (or PNG) images at once, arrange them in the order you want, then click Convert. They are merged into one PDF with each photo as a separate page — ready to upload or email." },
   { q: "How do I convert a photo of a document into a PDF?", a: "Take a clear photo of the document, upload it here, and click Convert. You get a PDF ready to upload to portals that only accept PDF files." },
   { q: "Are my images uploaded anywhere?", a: "No. The PDF is created inside your browser, so your images never leave your device — ideal for sensitive documents like certificates and ID proofs." },
   { q: "Does it reduce image quality?", a: "Images are embedded at their original quality. If the resulting PDF is too large for an upload limit, run it through our Compress PDF tool afterwards." },
@@ -55,7 +57,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Convert <span className="grad">JPG to PDF</span> online</h1>
-        <p className="lede">Turn any image or photo into a PDF — combine multiple JPG or PNG images into one PDF, free, no signup, entirely in your browser.</p>
+        <p className="lede">Convert JPG to PDF in seconds — and any image or photo too. Use it as a JPEG to PDF, PNG to PDF or photo to PDF converter, and combine multiple JPGs into one PDF, free, no signup, entirely in your browser.</p>
       </div>
 
       <JpgToPdf />
@@ -69,6 +71,8 @@ export default function Page() {
           Many application forms, colleges and offices only accept documents as a PDF, not as loose
           images. Whether you have a photo of a marksheet, a scanned certificate, or several pages
           captured on your phone, this tool stitches them into one clean PDF you can upload or email.
+          It doubles as an image-to-PDF, JPEG-to-PDF and PNG-to-PDF converter, so you can combine
+          multiple photos into one PDF whatever format they came in.
         </p>
         <p>
           Everything happens in your browser, so your personal documents are never uploaded to a

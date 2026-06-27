@@ -9,7 +9,7 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "Image Resizer — Resize Photo by Pixels, Free",
   description:
-    "Resize your photo or signature to exact pixel dimensions for SSC, UPSC, Bank and Railway exam forms. Presets for passport size and signature. Free and 100% in your browser.",
+    "Resize an image to exact pixel dimensions in your browser. Resize a photo or signature with passport and signature presets. Resize image online free, no signup.",
   alternates: { canonical: "/image-resizer/" },
 };
 
@@ -38,6 +38,8 @@ const faqs = [
   { q: "How do I resize a photo without stretching or distorting it?", a: "Keep the ‘Lock aspect ratio’ option on so width and height scale together. If your form needs a shape different from your photo, crop the image to that ratio first, then resize. Turning the lock off forces an exact size but can squash faces, so only do it when the dimensions already match your photo's proportions." },
   { q: "Can I enlarge a small image to a bigger size?", a: "You can, but enlarging beyond an image's original pixels always softens it, because the tool has to invent detail that was never captured. For a crisp result, start from a photo that is at least as large as the target size. If you must scale up, keep the increase small." },
   { q: "Which sizes do I need for SSC, IBPS or UPSC forms?", a: "Photo and signature dimensions differ slightly between recruiters, so we built exact presets for each — for example SSC CGL, IBPS PO and UPSC. Open the format that matches your exam, or set custom pixels here using the numbers from your official notification." },
+  { q: "How do I resize an image online?", a: "Upload your image to this page, type the width and height you want in pixels (or tap a preset), then click Resize and download. The whole image resize runs online in your browser, with nothing uploaded to a server." },
+  { q: "Can I resize a photo for free?", a: "Yes. You can resize a photo or signature here completely free — no sign-up, no watermark and no limits. It is a fully free online tool, so resize image online free as many times as you need." },
 ];
 
 export default function Page() {
@@ -53,7 +55,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Resize your photo to <span className="grad">exact dimensions</span></h1>
-        <p className="lede">Resize your photo or signature to exact pixel sizes — with one-tap presets for passport photos and signatures. Free, no signup, 100% in your browser.</p>
+        <p className="lede">Resize an image to exact pixel sizes — resize a photo or signature with one-tap presets for passport photos and signatures. Resize image online free, no signup, 100% in your browser.</p>
       </div>
 
       <Resizer />
@@ -71,9 +73,10 @@ export default function Page() {
           Indian exams.
         </p>
         <p>
-          It pairs perfectly with our Image Compressor: first resize to the right dimensions here,
-          then compress to the exact KB limit. Everything runs inside your browser, so your photo
-          and signature stay private on your own device.
+          Every image resize happens instantly here, and it pairs perfectly with our Image
+          Compressor: first resize a photo to the right dimensions, then compress to the exact KB
+          limit. Everything runs inside your browser, so your photo and signature stay private on
+          your own device.
         </p>
         <h3>Common photo &amp; signature pixel sizes</h3>
         <p>

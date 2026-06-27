@@ -9,7 +9,7 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "Compress Image to 20KB, 50KB, 100KB — Free Online",
   description:
-    "Compress JPG or PNG to an exact KB size for SSC, UPSC, Bank & Railway exam forms. Free, no signup, and 100% in your browser — your photo is never uploaded.",
+    "Free image compressor to compress JPG, JPEG or PNG to an exact KB size. Compress a photo or image online — no signup, 100% in your browser, never uploaded.",
   alternates: { canonical: "/image-compressor/" },
 };
 
@@ -39,6 +39,8 @@ const faqs = [
   { q: "Should I resize my photo before compressing it?", a: "Yes, for the best quality. Reducing the pixel dimensions first means the compressor has less data to throw away, so it can hit a small KB target while staying sharp. Set the correct dimensions in the Image Resizer, then bring that result back here to compress to the exact KB limit." },
   { q: "Does compressing a JPG reduce its resolution or pixel size?", a: "No. Compression only lowers the JPEG quality level — the width and height in pixels stay the same. If you also need smaller pixel dimensions, use the Image Resizer first; otherwise your image keeps its original resolution at a smaller file size." },
   { q: "Why is my compressed file still slightly above the target KB?", a: "JPEG compression works in steps, so the tool stops at the closest quality that stays at or just under your target. If you need to go lower, try a smaller pixel size first or pick a slightly tighter KB value, which gives the search more room to work." },
+  { q: "How do I compress a JPG photo online?", a: "Open the tool, drag in your JPG or JPEG photo, set a target KB size (or tap a preset), and click Compress. To compress a JPG you don't need to install anything — the image compressor runs in your browser and gives you a download link to the smaller file in seconds." },
+  { q: "Is the image compressor free?", a: "Yes. This is a completely free image compressor with no sign-up, no watermark and no daily limit. You can compress an image, a JPG, a JPEG or a PNG as many times as you need at no cost." },
 ];
 
 export default function Page() {
@@ -57,8 +59,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Compress image to an <span className="grad">exact KB size</span></h1>
         <p className="lede">
-          Shrink your JPG or PNG to 20&nbsp;KB, 50&nbsp;KB, 100&nbsp;KB or any size your exam form
-          requires — free, no signup, and 100% in your browser.
+          A free image compressor that lets you compress a photo or image to 20&nbsp;KB, 50&nbsp;KB,
+          100&nbsp;KB or any size your form requires. Compress JPG, JPEG or PNG — no signup, and 100%
+          in your browser.
         </p>
       </div>
 
@@ -80,9 +83,11 @@ export default function Page() {
         <p>
           This tool solves that in one click. Instead of guessing quality settings, it runs an
           automatic search to compress your image to the precise KB target you set, while keeping it
-          as sharp as possible. Because everything runs locally in your browser, your documents are
-          never uploaded — making it faster and far more private than tools that send your files to
-          a server.
+          as sharp as possible. Whether you need to compress a photo for a profile picture or
+          compress JPG and JPEG files for an upload portal, the image compress process is the same:
+          pick a target and download. Because everything runs locally in your browser, your documents
+          are never uploaded — making it faster and far more private than tools that send your files
+          to a server.
         </p>
         <h3>Common KB limits on exam and ID forms</h3>
         <p>

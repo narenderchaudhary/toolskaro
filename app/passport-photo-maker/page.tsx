@@ -9,7 +9,7 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "Passport Size Photo — Size, Dimensions & Maker (Free)",
   description:
-    "Passport size photo dimensions & free maker: India 3.5×4.5 cm (≈413×531 px), US visa 2×2 inch (600×600 px). Make a passport-size photo with a white background in your browser.",
+    "Passport photo size & dimensions: US 2×2 inch (600×600 px), India/UK/Schengen 3.5×4.5 cm. Free passport size photo maker with a white background in your browser.",
   alternates: { canonical: "/passport-photo-maker/" },
 };
 
@@ -30,6 +30,8 @@ const features = [
 
 const faqs = [
   { q: "What is the size of a passport size photo?", a: "The standard passport size photo in India is 3.5×4.5 cm (about 413×531 px at 300 DPI). For US visa, OCI and Green Card applications it is 2×2 inch (5.1×5.1 cm, 600×600 px). Schengen and UK visas also use 3.5×4.5 cm. Always confirm the exact size in the official instructions." },
+  { q: "What is the standard passport photo size?", a: "There is no single global passport photo size. The US standard is 2×2 inch (600×600 px), while India, the UK and Schengen countries use 3.5×4.5 cm (≈413×531 px at 300 DPI). Pick the preset for your country above and the maker outputs the correct passport photo dimensions automatically." },
+  { q: "What is the US passport photo size?", a: "The US passport photo size is 2×2 inch (5.1×5.1 cm), which is 600×600 pixels at 300 DPI — a square 1:1 photo on a plain white background. The same 2×2 inch size is used for US visas, OCI cards and Green Card applications. Choose the 2×2 inch preset above to get these exact dimensions." },
   { q: "What is the passport size photo measurement in pixels?", a: "At 300 DPI, a 3.5×4.5 cm passport photo is about 413×531 pixels, and a 2×2 inch photo is 600×600 pixels. The maker above outputs these pixel dimensions automatically when you pick the matching preset." },
   { q: "What is the passport size photo size in cm?", a: "In India it is 3.5 cm wide by 4.5 cm tall (3.5×4.5 cm). The US 2-inch photo is 5.1×5.1 cm. Choose the matching preset and the tool sizes your photo exactly." },
   { q: "What is the ratio of a passport size photo?", a: "A 3.5×4.5 cm passport photo has an aspect ratio of about 7:9 (0.78) — slightly taller than wide. A 2×2 inch US photo is a 1:1 square ratio." },
@@ -57,7 +59,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Passport size photo maker <span className="grad">online</span></h1>
-        <p className="lede">Create a passport-size photo with a white background for exam forms, visa and ID — free and entirely in your browser.</p>
+        <p className="lede">Create a passport size photo at the right dimensions — US 2×2 inch (600×600 px) or 3.5×4.5 cm for India, UK and Schengen — with a white background, free and entirely in your browser.</p>
       </div>
 
       <PassportPhoto />
@@ -65,9 +67,10 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Passport size photo dimensions &amp; measurements</h2>
         <p>
-          A <strong>passport size photo</strong> has a standard size, but it varies by country and
-          purpose. Here are the most common passport photo dimensions and measurements — the maker above
-          has presets for each:
+          The <strong>passport photo size</strong> you need depends on the country and purpose. The
+          <strong> US passport photo size</strong> is 2×2 inch (600×600 px), while the photo size for a
+          passport in India, the UK and Schengen countries is 3.5×4.5 cm. Here are the most common
+          passport photo dimensions and measurements — the maker above has presets for each:
         </p>
         <div className="size-table-wrap">
           <table className="size-table">
