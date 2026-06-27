@@ -27,7 +27,7 @@ export default function Page() {
       url: SITE,
       foundingDate: "2026",
       knowsAbout: ["Image editing and compression", "PDF tools", "Document and resume building", "Developer tools", "Online calculators"],
-      sameAs: ["https://t.me/GovSarkariResults", "https://whatsapp.com/channel/0029Vb7eQnZ7YSd39NUElI3J", LINKEDIN],
+      sameAs: [LINKEDIN],
       founder: {
         "@type": "Person",
         "@id": `${SITE}/#founder`,
@@ -114,9 +114,7 @@ export default function Page() {
         <h2>Get in touch</h2>
         <p>
           Questions, feedback or a tool request? Email <a href="mailto:contact@toolskaro.com">contact@toolskaro.com</a>{" "}
-          or visit our <a href="/contact/">Contact page</a> — we read every message. You can also join
-          our community on <a href="https://t.me/GovSarkariResults" target="_blank" rel="noopener noreferrer">Telegram</a>{" "}
-          and <a href="https://whatsapp.com/channel/0029Vb7eQnZ7YSd39NUElI3J" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+          or visit our <a href="/contact/">Contact page</a> — we read every message.
         </p>
       </div>
     </>

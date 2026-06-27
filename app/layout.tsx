@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
-import { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
@@ -45,7 +44,7 @@ const orgJsonLd = {
       logo: { "@type": "ImageObject", url: `${SITE}/apple-icon`, width: 180, height: 180 },
       description:
         "Free, privacy-first online tools to resize and compress photos and signatures, convert and compress PDFs, build resumes and more — all in your browser.",
-      sameAs: [TELEGRAM, WHATSAPP, LINKEDIN],
+      sameAs: [LINKEDIN],
       founder: {
         "@type": "Person",
         "@id": `${SITE}/#founder`,
