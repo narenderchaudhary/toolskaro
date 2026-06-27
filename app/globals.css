@@ -79,6 +79,25 @@ header.site {
 header.site.is-scrolled { box-shadow: 0 6px 22px rgba(15, 23, 42, .07); }
 .nav a.active { color: var(--brand); background: var(--soft); }
 .tool-icon svg, .featured-icon svg, .mega-ic svg { display: block; }
+/* header zones + search */
+.hdr-left { display: flex; align-items: center; gap: 12px; }
+.hdr-search { position: relative; flex: 1; max-width: 460px; margin: 0 22px; }
+.hdr-search-ic { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.hdr-search-input { width: 100%; height: 40px; padding: 0 46px 0 38px; border: 1px solid var(--border); border-radius: 11px; background: var(--soft); color: var(--ink); font-size: 14px; font-family: inherit; transition: border-color .15s, box-shadow .15s, background .15s; }
+.hdr-search-input::placeholder { color: var(--muted); }
+.hdr-search-input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.hdr-search-input:focus { outline: none; border-color: var(--brand); background: var(--card); box-shadow: 0 0 0 3px rgba(124, 58, 237, .14); }
+.hdr-search-kbd { position: absolute; right: 9px; top: 50%; transform: translateY(-50%); font: 600 11px/1 inherit; color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 3px 6px; pointer-events: none; }
+.hdr-results { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--card); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 20px 44px rgba(15, 23, 42, .16); padding: 6px; z-index: 50; display: grid; gap: 2px; }
+.hdr-result { display: flex; align-items: center; gap: 10px; padding: 8px 9px; border-radius: 9px; }
+.hdr-result:hover { background: var(--soft); text-decoration: none; }
+.hdr-empty { padding: 14px; color: var(--muted); font-size: 14px; }
+@media (max-width: 720px) {
+  .mega-label, .mega-caret { display: none; }
+  .mega-trigger { padding: 9px 11px; }
+  .hdr-search { margin: 0 10px; }
+  .hdr-search-kbd { display: none; }
+}
 header.site .container { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 .logo { font-weight: 800; font-size: 20px; color: var(--ink); display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
 .logo:hover { text-decoration: none; }

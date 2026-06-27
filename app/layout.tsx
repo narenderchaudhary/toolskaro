@@ -7,6 +7,7 @@ import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import MegaMenu from "@/app/components/MegaMenu";
 import HeaderScroll from "@/app/components/HeaderScroll";
+import HeaderSearch from "@/app/components/HeaderSearch";
 import NavLink from "@/app/components/NavLink";
 import { CATEGORIES } from "@/app/tools-catalog";
 import "./globals.css";
@@ -147,11 +148,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site">
           <HeaderScroll />
           <div className="container">
-            <Logo />
-            <nav className="nav">
+            <div className="hdr-left">
+              <Logo />
               <MegaMenu />
+            </div>
+            <HeaderSearch />
+            <nav className="nav">
               <NavLink href="/blog/">Blog</NavLink>
-              <NavLink href="/about/" className="hide-sm">About</NavLink>
               <ThemeToggle />
             </nav>
           </div>
