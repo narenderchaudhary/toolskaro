@@ -6,9 +6,9 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Free Photo Joiner — Combine Photos Side by Side",
+  title: "Photo Joiner Free Online — Combine Photos",
   description:
-    "Free photo joiner to combine two or more photos into one image — side by side, stacked, or in a grid. No upload, no watermark, 100% in your browser.",
+    "Free online photo joiner to combine two or more photos into one image — side by side, stacked, or in a grid. No upload, no watermark, 100% in your browser.",
   alternates: { canonical: "/photo-joiner/" },
 };
 
@@ -31,6 +31,8 @@ const faqs = [
   { q: "Can I add a gap or border between photos?", a: "Yes. Set the gap in pixels and pick a background colour, which shows in the gaps and around the images." },
   { q: "Are my photos uploaded?", a: "No. The images are combined in your browser, so they never leave your device." },
   { q: "Is this photo joiner free?", a: "Yes — it is a completely free photo joiner with no sign-up, no watermark and no limits. Combine as many photos as you like, as often as you like." },
+  { q: "Is the photo joiner free online?", a: "Yes. This is a free online photo joiner that runs straight in your browser at no cost — there is nothing to buy and no account to create." },
+  { q: "Can I join photos online without installing anything?", a: "Yes. You can join photos online without installing any app or extension. Just open the page in your browser, add your images and combine them." },
 ];
 
 export default function Page() {
@@ -46,7 +48,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Photo <span className="grad">joiner</span></h1>
-        <p className="lede">A free photo joiner to combine two or more photos into one image — side by side, stacked or in a grid. No upload, no watermark, 100% in your browser.</p>
+        <p className="lede">A free online photo joiner to combine two or more photos into one image — side by side, stacked or in a grid. No upload, no watermark, 100% in your browser.</p>
       </div>
       <PhotoJoiner />
       <Steps heading={<>Join in <span className="g">3 simple steps</span></>} steps={steps} />
@@ -54,7 +56,7 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Combine photos into one image</h2>
         <p>
-          A free photo joiner merges several pictures into a single image — perfect for before-and-after
+          A free online photo joiner merges several pictures into a single image — perfect for before-and-after
           shots, putting two photos next to each other for sharing, making a simple collage, or
           combining document scans into one file. Choose side by side for a row, stacked for a
           column, or grid for a tidy collage.
