@@ -22,7 +22,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "TDEE Calculator", url: "https://toolskaro.com/tdee-calculator/", description: "Free TDEE and BMR calculator with daily calorie targets to lose, maintain or gain weight.", applicationCategory: "HealthApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "TDEE Calculator", url: "https://toolskaro.com/tdee-calculator/", description: "Free TDEE and BMR calculator with daily calorie targets to lose, maintain or gain weight.", applicationCategory: "HealthApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };

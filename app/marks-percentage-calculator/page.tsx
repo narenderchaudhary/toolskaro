@@ -6,7 +6,7 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "Marks Percentage & CGPA Calculator — Free",
   description:
-    "Calculate your marks percentage, convert CGPA to percentage, and percentage to CGPA. Free online calculator for students and exam applicants.",
+    "Calculate your marks percentage, convert CGPA to percentage, and percentage to CGPA. Free online calculator for students and professionals.",
   alternates: { canonical: "/marks-percentage-calculator/" },
 };
 
@@ -21,7 +21,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Marks Percentage & CGPA Calculator", applicationCategory: "EducationalApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Marks Percentage & CGPA Calculator", applicationCategory: "EducationalApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -38,7 +38,7 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Marks, percentage and CGPA — sorted</h2>
         <p>
-          Students and exam applicants constantly need to convert between marks, percentage and
+          Students and professionals constantly need to convert between marks, percentage and
           CGPA — for application forms, eligibility checks and admissions. This tool does all three:
           calculate your percentage from marks obtained, convert a CGPA to a percentage, and convert
           a percentage back to CGPA.

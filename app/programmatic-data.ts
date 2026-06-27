@@ -6,7 +6,7 @@ export const KB_VALUES = [10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 300, 50
 
 export const kbSlug = (n: number) => `compress-image-to-${n}kb`;
 
-// PDF compress-to-KB programmatic targets (high-volume Indian queries, e.g. "compress pdf to 200kb").
+// PDF compress-to-KB programmatic targets (high-volume queries, e.g. "compress pdf to 200kb").
 export const PDF_KB_VALUES = [100, 200, 300, 500];
 export const pdfKbSlug = (n: number) => `compress-pdf-to-${n}kb`;
 
@@ -14,16 +14,16 @@ export const pdfKbSlug = (n: number) => `compress-pdf-to-${n}kb`;
 // template) — important under Google's scaled-content-abuse policy.
 export const PDF_KB_INFO: Record<number, { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }> = {
   100: {
-    usedFor: "single-page certificates, the bank-exam handwritten declaration, and tight form limits",
-    intro: "A 100 KB cap is one of the strictest PDF limits — common for a single scanned certificate, a mark sheet page, or the handwritten-declaration PDF some bank exams ask for. A colour phone scan is usually several times this size, so it needs real compression.",
+    usedFor: "single-page certificates, scanned declarations, and tight form limits",
+    intro: "A 100 KB cap is one of the strictest PDF limits — common for a single scanned certificate, a mark sheet page, or a declaration page some forms ask for. A colour phone scan is usually several times this size, so it needs real compression.",
     tip: "Scan or save the document in greyscale rather than full colour where the form allows it — greyscale holds text clearly while dropping to 100 KB far more easily than a colour scan.",
     faq: { q: "Can a scanned certificate really fit in 100 KB?", a: "Yes, for a single page. Scan at a moderate resolution, keep it greyscale if colour isn't required, and the tool brings it under 100 KB while keeping the text readable — which is what verifiers check." },
   },
   200: {
-    usedFor: "the most common exam, bank and job-portal PDF upload limit",
-    intro: "200 KB is the single most common PDF size limit across Indian exam and recruitment portals — if a form caps your PDF, it is very often at 200 KB. It fits a short multi-page document or a detailed single-page scan with stamps.",
+    usedFor: "the most common PDF upload limit on application and job portals",
+    intro: "200 KB is the single most common PDF size limit across online application portals — if a form caps your PDF, it is very often at 200 KB. It fits a short multi-page document or a detailed single-page scan with stamps.",
     tip: "If your PDF is only slightly over, deleting blank or duplicate pages first (with our Delete Pages tool) can get you under 200 KB without losing any quality at all.",
-    faq: { q: "Why do so many forms use a 200 KB PDF limit?", a: "200 KB balances legibility and upload speed — large enough for a clear, verifiable scanned document, small enough to upload reliably on slow connections — so most Indian portals standardised on it." },
+    faq: { q: "Why do so many forms use a 200 KB PDF limit?", a: "200 KB balances legibility and upload speed — large enough for a clear, verifiable scanned document, small enough to upload reliably on slow connections — so many portals standardised on it." },
   },
   300: {
     usedFor: "multi-page documents, combined certificates and detailed scans",
@@ -51,63 +51,63 @@ export const KB_INFO: Record<number, KbInfo> = {
   10: {
     usedFor: "signatures and thumb impressions — rarely photographs",
     bestFor: "Signatures",
-    intro: "A 10 KB limit almost always applies to a signature or thumb-impression image, not a photograph — it is too small for a clear face photo. Many recruitment portals ask for the signature to be 10 KB or under so the upload stays light.",
+    intro: "A 10 KB limit almost always applies to a signature or thumb-impression image, not a photograph — it is too small for a clear face photo. Many online forms ask for the signature to be 10 KB or under so the upload stays light.",
     tip: "Scan or photograph your signature on plain white paper, crop tightly around the strokes, and convert to JPG before compressing — a tightly cropped black-on-white signature reaches 10 KB easily without smudging.",
     faq: { q: "Can a passport photo really fit in 10 KB?", a: "A small signature fits comfortably in 10 KB, but a face photo at 10 KB will look blurry. If your form asks for a 10 KB photo, double-check the notification — it is usually the signature that has the 10 KB cap, while the photo is allowed a larger size." },
   },
   15: {
-    usedFor: "signatures and small scanned marks on many state forms",
+    usedFor: "signatures and small scanned marks on many online forms",
     bestFor: "Signatures",
-    intro: "A 15 KB cap is common for signatures and other small line images on state PSC and university portals. It gives a little more room than 10 KB while keeping the file tiny.",
+    intro: "A 15 KB cap is common for signatures and other small line images on many online application portals. It gives a little more room than 10 KB while keeping the file tiny.",
     tip: "If your signature is just over the limit, crop out the white margins first — removing empty space shrinks the file far more than dropping quality does.",
     faq: { q: "Why does my signature exceed 15 KB?", a: "Usually because the scan includes a lot of white background or was saved as PNG. Crop tightly and save as JPG, then compress — both steps bring a signature well under 15 KB." },
   },
   20: {
-    usedFor: "signatures on SSC forms and very small photos",
-    bestFor: "SSC signatures",
-    intro: "A 20 KB target is the typical upper limit for signatures on Staff Selection Commission (SSC) forms and a common minimum for small photos. It is one of the most-requested signature sizes in Indian government applications.",
-    tip: "For an SSC-style signature, aim for roughly 140×60 pixels and JPG format before compressing — the smaller pixel size plus a 20 KB target keeps the signature crisp.",
-    faq: { q: "Is 20 KB enough for an SSC signature?", a: "Yes. SSC signatures are typically capped around 20 KB and look perfectly clear at that size when signed in black ink on white paper and cropped tightly." },
+    usedFor: "signatures on online application forms and very small photos",
+    bestFor: "Signatures",
+    intro: "A 20 KB target is a typical upper limit for signatures on online application forms and a common minimum for small photos. It is one of the most-requested signature sizes across web forms.",
+    tip: "For a signature image, aim for roughly 140×60 pixels and JPG format before compressing — the smaller pixel size plus a 20 KB target keeps the signature crisp.",
+    faq: { q: "Is 20 KB enough for a signature image?", a: "Yes. Signatures are typically capped around 20 KB and look perfectly clear at that size when signed in black ink on white paper and cropped tightly." },
   },
   25: {
-    usedFor: "small photographs on some state PSC portals",
+    usedFor: "small photographs on some online application portals",
     bestFor: "Small photos",
-    intro: "A 25 KB photo limit appears on several state public service commission and police recruitment portals. It is small for a photo, so a clean, well-lit headshot compresses better than a busy background.",
+    intro: "A 25 KB photo limit appears on several online application and registration portals. It is small for a photo, so a clean, well-lit headshot compresses better than a busy background.",
     tip: "Use a plain light background and resize the photo to about 200×230 pixels first — a smaller starting resolution makes the 25 KB target much easier to hit without heavy blurring.",
     faq: { q: "My photo blurs at 25 KB — what can I do?", a: "Resize it to passport dimensions (around 200×230 px) before compressing. A smaller pixel size needs far less compression to reach 25 KB, so the face stays sharper." },
   },
   30: {
-    usedFor: "photographs on many state and university application forms",
+    usedFor: "photographs on many online application forms",
     bestFor: "Photos",
-    intro: "A 30 KB photo cap is widely used by state recruitment boards and university admission portals. It is a comfortable middle ground — small enough to upload quickly, large enough to keep a face recognisable.",
+    intro: "A 30 KB photo cap is widely used by many online application and admission portals. It is a comfortable middle ground — small enough to upload quickly, large enough to keep a face recognisable.",
     tip: "A front-facing photo with even lighting and a plain background compresses cleanly to 30 KB. Avoid patterned backgrounds, which add detail and push the file size up.",
     faq: { q: "What dimensions suit a 30 KB photo?", a: "Around 3.5×4.5 cm (roughly 200×230 px) works well. At that resolution a 30 KB JPG stays clear enough for form verification." },
   },
   40: {
-    usedFor: "photographs on Railway (RRB) and several state forms",
-    bestFor: "Railway photos",
-    intro: "A 40 KB photo size is common on Railway Recruitment Board (RRB) and state-level application portals. It offers a touch more clarity than the 30 KB forms while still being a small upload.",
-    tip: "Railway forms often want a recent colour photo on a white background — compress to 40 KB after resizing to passport size and the photo will pass the upload check easily.",
-    faq: { q: "Is 40 KB good for a Railway exam photo?", a: "Yes. RRB photo limits often sit around 40 KB, and a passport-style colour photo retains good clarity at that size." },
+    usedFor: "photographs on many online application forms",
+    bestFor: "Photos",
+    intro: "A 40 KB photo size is common on many online application and registration portals. It offers a touch more clarity than the 30 KB forms while still being a small upload.",
+    tip: "Many forms want a recent colour photo on a white background — compress to 40 KB after resizing to passport size and the photo will pass the upload check easily.",
+    faq: { q: "Is 40 KB good for an application photo?", a: "Yes. Photo limits often sit around 40 KB, and a passport-style colour photo retains good clarity at that size." },
   },
   50: {
-    usedFor: "photographs on SSC, UPSC and most central government forms",
-    bestFor: "SSC & UPSC photos",
-    intro: "50 KB is the single most common photo limit across Indian government exam portals — SSC, many UPSC stages, banking and central recruitment forms all frequently use it. If you only learn one size, this is the one.",
+    usedFor: "photographs on most online application forms",
+    bestFor: "Photos",
+    intro: "50 KB is the single most common photo limit across online application portals — registration, recruitment and account-signup forms all frequently use it. If you only learn one size, this is the one.",
     tip: "A passport-style colour photo (about 200×230 px) on a light background compresses to 50 KB with almost no visible quality loss — this is the sweet spot for most application forms.",
-    faq: { q: "Why is 50 KB so common for exam photos?", a: "It balances clarity and upload speed: 50 KB is large enough to show a clear, verifiable face yet small enough to upload reliably on slow connections, so most portals standardised on it." },
+    faq: { q: "Why is 50 KB so common for application photos?", a: "It balances clarity and upload speed: 50 KB is large enough to show a clear, verifiable face yet small enough to upload reliably on slow connections, so most portals standardised on it." },
   },
   75: {
     usedFor: "higher-quality photos and small scanned documents",
     bestFor: "Sharper photos",
-    intro: "A 75 KB limit gives room for a sharper photograph or a small scanned document such as a category certificate thumbnail. Forms that want extra clarity often choose 75 KB over 50 KB.",
+    intro: "A 75 KB limit gives room for a sharper photograph or a small scanned document such as a certificate thumbnail. Forms that want extra clarity often choose 75 KB over 50 KB.",
     tip: "If your form allows up to 75 KB, you don't need to over-compress — let the tool keep the quality high and simply land under 75 KB for the crispest result.",
     faq: { q: "Should I always compress to the smallest size?", a: "No. If the form allows up to 75 KB, staying near that cap keeps your photo sharper. Only compress harder when a smaller limit forces you to." },
   },
   100: {
     usedFor: "documents, certificates and handwritten declarations",
     bestFor: "Documents",
-    intro: "A 100 KB cap is typical for scanned documents — certificates, mark sheets and the handwritten declaration that bank exams require. It is larger than a photo limit because documents contain more detail and text.",
+    intro: "A 100 KB cap is typical for scanned documents — certificates, mark sheets and handwritten declarations that some forms require. It is larger than a photo limit because documents contain more detail and text.",
     tip: "Scan documents in greyscale rather than full colour where allowed — greyscale scans hold text clearly while compressing to 100 KB far more easily than colour ones.",
     faq: { q: "Can I fit a scanned certificate in 100 KB?", a: "Usually yes. Scan at a moderate resolution, save as JPG, and compress to 100 KB — the text stays readable, which is what verifiers check." },
   },
@@ -119,18 +119,18 @@ export const KB_INFO: Record<number, KbInfo> = {
     faq: { q: "Will my mark sheet stay readable at 150 KB?", a: "Yes, if you scan it clearly. At 150 KB a typical A4 mark sheet keeps its numbers and text legible for verification." },
   },
   200: {
-    usedFor: "category certificates, mark sheets and ID proofs",
+    usedFor: "certificates, mark sheets and ID proofs",
     bestFor: "Certificates",
-    intro: "A 200 KB cap is frequently used for caste/category certificates, ID proofs and mark sheets on government portals. The extra size keeps fine print and official stamps legible.",
+    intro: "A 200 KB cap is frequently used for certificates, ID proofs and mark sheets on online portals. The extra size keeps fine print and official stamps legible.",
     tip: "Scan in colour only if the document has a coloured seal that must be visible; otherwise greyscale at 200 KB preserves more text clarity per kilobyte.",
     faq: { q: "Is 200 KB enough for a certificate with a stamp?", a: "Yes. 200 KB comfortably holds a single-page certificate including a coloured seal or stamp while keeping the text sharp." },
   },
   300: {
-    usedFor: "UPSC photos/signatures and detailed document scans",
-    bestFor: "UPSC photos",
-    intro: "A 300 KB limit is notable because UPSC allows photographs and signatures up to roughly this size — much larger than the 50 KB most exams use. It also fits detailed multi-element document scans.",
-    tip: "Because UPSC permits a larger photo, you can keep the quality high — compress to just under 300 KB rather than shrinking aggressively, so your face photo stays crisp.",
-    faq: { q: "Why would a photo be allowed up to 300 KB?", a: "Some commissions, including UPSC, accept larger images for clearer identity verification. If your form allows 300 KB, there's no need to compress down to 50 KB." },
+    usedFor: "larger photos/signatures and detailed document scans",
+    bestFor: "Larger photos",
+    intro: "A 300 KB limit is notable because some forms allow photographs and signatures up to roughly this size — much larger than the 50 KB most forms use. It also fits detailed multi-element document scans.",
+    tip: "Because a 300 KB cap permits a larger photo, you can keep the quality high — compress to just under 300 KB rather than shrinking aggressively, so your face photo stays crisp.",
+    faq: { q: "Why would a photo be allowed up to 300 KB?", a: "Some portals accept larger images for clearer identity verification. If your form allows 300 KB, there's no need to compress down to 50 KB." },
   },
   500: {
     usedFor: "full document scans, resumes and PDFs",

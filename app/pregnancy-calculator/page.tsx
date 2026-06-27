@@ -22,7 +22,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Pregnancy Due Date Calculator", url: "https://toolskaro.com/pregnancy-calculator/", description: "Free pregnancy due date and week-by-week calculator using LMP, conception or IVF transfer date.", applicationCategory: "HealthApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Pregnancy Due Date Calculator", url: "https://toolskaro.com/pregnancy-calculator/", description: "Free pregnancy due date and week-by-week calculator using LMP, conception or IVF transfer date.", applicationCategory: "HealthApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };

@@ -78,7 +78,7 @@ function jsonLd(name: string, faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name, applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name, applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };

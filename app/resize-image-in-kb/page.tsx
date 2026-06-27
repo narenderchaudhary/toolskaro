@@ -6,14 +6,14 @@ import Faq from "@/app/components/Faq";
 export const metadata: Metadata = {
   title: "Resize Image in KB Online — Free Photo KB Resizer",
   description:
-    "Resize any image to an exact KB size online — 20 KB, 50 KB, 100 KB or any target. Free photo KB resizer for exam forms, 100% in your browser, no upload, no signup.",
+    "Resize any image to an exact KB size online — 20 KB, 50 KB, 100 KB or any target. Free photo KB resizer for online forms, 100% in your browser, no upload, no signup.",
   alternates: { canonical: "/resize-image-in-kb/" },
 };
 
 const faqs = [
   { q: "How do I resize an image in KB?", a: "Upload your photo above, type the size you need in KB (for example 50), and click Resize. The tool reduces the file to at or under your target KB while keeping the best possible quality, then lets you download it — all in your browser." },
   { q: "What does 'resize in KB' mean?", a: "It means reducing the file size (measured in kilobytes), not the pixel dimensions. Exam and job portals usually cap the file weight — e.g. a photo under 50 KB — so 'resize in KB' is about hitting that file-size limit." },
-  { q: "Can I resize a photo to 20 KB or 50 KB?", a: "Yes. Enter 20 or 50 as the KB target and the tool compresses your image to fit. Common targets are 20 KB and 50 KB for photos and 10–20 KB for signatures on Indian exam forms." },
+  { q: "Can I resize a photo to 20 KB or 50 KB?", a: "Yes. Enter 20 or 50 as the KB target and the tool compresses your image to fit. Common targets are 20 KB and 50 KB for photos and 10–20 KB for signatures on online forms." },
   { q: "Will my photo stay clear after resizing in KB?", a: "The tool keeps the highest quality that fits your KB limit. Larger targets stay sharper; very small targets soften the image. For a small KB target, resizing to passport dimensions first helps keep the face clear." },
   { q: "Is it free and are my files uploaded?", a: "It is completely free with no sign-up or watermark, and nothing is uploaded — the resizing runs entirely on your device." },
 ];
@@ -22,7 +22,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Resize Image in KB", url: "https://toolskaro.com/resize-image-in-kb/", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Resize Image in KB", url: "https://toolskaro.com/resize-image-in-kb/", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -39,7 +39,7 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Resize your photo to the exact KB you need</h2>
         <p>
-          Indian exam and job portals almost always cap the <strong>file size in KB</strong> — a photo
+          Online application portals almost always cap the <strong>file size in KB</strong> — a photo
           under 50&nbsp;KB, a signature under 20&nbsp;KB, and so on. A picture from your phone is far
           larger, so the form rejects it. This tool lets you type the exact KB target and it shrinks the
           file to fit, keeping the photo as sharp as possible.

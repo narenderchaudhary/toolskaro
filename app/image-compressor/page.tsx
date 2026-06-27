@@ -24,16 +24,16 @@ const features = [
   { icon: "🔒", title: "Private — no upload", text: "Compression runs in your browser. Your photo never leaves your device." },
   { icon: "⚡", title: "Instant & lightweight", text: "No waiting in a queue or installing software — it works in seconds, on any device." },
   { icon: "🆓", title: "Free, no watermark", text: "Unlimited use with no sign-up, no watermark and no hidden limits." },
-  { icon: "🖼️", title: "JPG & PNG support", text: "Upload JPG or PNG; download an optimised JPEG accepted by every exam portal." },
+  { icon: "🖼️", title: "JPG & PNG support", text: "Upload JPG or PNG; download an optimised JPEG accepted by virtually every online portal." },
   { icon: "📐", title: "Pairs with resizing", text: "Resize to the right dimensions first, then compress to the exact KB limit." },
 ];
 
 const faqs = [
-  { q: "How do I compress a photo to 50 KB for an exam form?", a: "Upload your photo, enter 50 in the target size box (or tap the 50 KB preset), and click Compress. The tool reduces the image quality just enough to land at or just under 50 KB, then lets you download the result." },
+  { q: "How do I compress a photo to 50 KB for an online form?", a: "Upload your photo, enter 50 in the target size box (or tap the 50 KB preset), and click Compress. The tool reduces the image quality just enough to land at or just under 50 KB, then lets you download the result." },
   { q: "Can I compress an image to 20 KB without losing too much quality?", a: "Yes. Our tool uses a smart quality search that keeps the highest possible quality while still hitting your target size. For very small targets like 20 KB, some quality loss is unavoidable, but the result stays clear enough for passport-style photos and signatures." },
   { q: "Are my images uploaded to a server?", a: "No. All compression happens inside your browser using the HTML5 Canvas API. Your file never leaves your device, so the process is completely private and secure." },
-  { q: "What image formats are supported?", a: "JPG and PNG inputs are both supported. The output is a JPEG, which gives the smallest file size for photos and is accepted by virtually all government exam portals." },
-  { q: "Why does my exam form reject my photo even though it looks fine?", a: "Most online application portals enforce a strict file-size range (for example, 20–50 KB for a photo and 10–20 KB for a signature) and exact dimensions. If your file is even slightly larger than allowed, it is rejected. Use this compressor to bring it inside the required range." },
+  { q: "What image formats are supported?", a: "JPG and PNG inputs are both supported. The output is a JPEG, which gives the smallest file size for photos and is accepted by virtually all online application portals." },
+  { q: "Why does my form reject my photo even though it looks fine?", a: "Most online application portals enforce a strict file-size range (for example, 20–50 KB for a photo and 10–20 KB for a signature) and exact dimensions. If your file is even slightly larger than allowed, it is rejected. Use this compressor to bring it inside the required range." },
   { q: "Is there any limit on how many images I can compress?", a: "No. The tool is completely free with no daily limit, no watermark, and no sign-up. Compress as many images as you need." },
   { q: "How do I compress an image to exactly 100 KB or 200 KB?", a: "Enter your target in the size box or tap the 100 KB or 200 KB preset, then click Compress. The tool searches for the highest JPEG quality that still fits under your limit. Larger targets like 100 KB and 200 KB keep almost all the original sharpness, so the result usually looks identical to the source." },
   { q: "Should I resize my photo before compressing it?", a: "Yes, for the best quality. Reducing the pixel dimensions first means the compressor has less data to throw away, so it can hit a small KB target while staying sharp. Set the correct dimensions in the Image Resizer, then bring that result back here to compress to the exact KB limit." },
@@ -47,7 +47,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Image Compressor", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Image Compressor", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -73,12 +73,12 @@ export default function Page() {
       <Features heading={<>Why use this <span className="g">image compressor</span></>} items={features} />
 
       <div className="card content">
-        <h2 style={{ marginTop: 0 }}>Compress photos for any government exam form</h2>
+        <h2 style={{ marginTop: 0 }}>Compress photos for forms, applications and everyday files</h2>
         <p>
-          Almost every Indian government recruitment portal — SSC, UPSC, IBPS, SBI, RRB, state PSCs
-          and more — asks you to upload your photograph and signature within a fixed file-size range
-          and exact dimensions. A photo straight from your phone is usually several megabytes, far
-          above the 20–100&nbsp;KB most forms allow, so it gets rejected at upload.
+          Many online application portals ask you to upload your photograph and signature within a
+          fixed file-size range and exact dimensions. A photo straight from your phone is usually
+          several megabytes, far above the 20–100&nbsp;KB most forms allow, so it gets rejected at
+          upload.
         </p>
         <p>
           This tool solves that in one click. Instead of guessing quality settings, it runs an
@@ -89,7 +89,7 @@ export default function Page() {
           are never uploaded — making it faster and far more private than tools that send your files
           to a server.
         </p>
-        <h3>Common KB limits on exam and ID forms</h3>
+        <h3>Common KB limits on online forms</h3>
         <p>
           Knowing the target before you start saves a lot of trial and error. Photographs are
           usually wanted in the 20–100&nbsp;KB band, while signatures are far smaller, often
@@ -98,7 +98,7 @@ export default function Page() {
           {" "}<Link href="/compress-image-to-50kb/">50&nbsp;KB</Link>,
           {" "}<Link href="/compress-image-to-100kb/">100&nbsp;KB</Link> and
           {" "}<Link href="/compress-image-to-200kb/">200&nbsp;KB</Link>. Open the one that matches
-          your notification and the work is done in a single tap.
+          your form and the work is done in a single tap.
         </p>
         <h3>Get sharper results at small file sizes</h3>
         <p>

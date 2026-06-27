@@ -35,7 +35,7 @@ const faqs = [
 
 export default function Page() {
   const jsonLd = { "@context": "https://schema.org", "@graph": [
-    { "@type": "SoftwareApplication", name: "Split PDF", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+    { "@type": "SoftwareApplication", name: "Split PDF", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ] };
   return (

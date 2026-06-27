@@ -4,7 +4,7 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "GST Calculator — Add or Remove GST Online (Free, India)",
+  title: "GST Calculator — Add or Remove GST Online (Free)",
   description:
     "Calculate GST instantly — add GST to a price or remove GST from a total. Shows CGST and SGST split for 3%, 5%, 12%, 18% and 28% slabs. Free online GST calculator.",
   alternates: { canonical: "/gst-calculator/" },
@@ -21,7 +21,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "GST Calculator", applicationCategory: "FinanceApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "GST Calculator", applicationCategory: "FinanceApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -30,7 +30,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>GST <span className="grad">Calculator</span></h1>
-        <p className="lede">Add GST to a price or remove it from a total in one tap — with the CGST/SGST split for every Indian GST slab.</p>
+        <p className="lede">Add GST to a price or remove it from a total in one tap — with the CGST/SGST split for every GST slab.</p>
       </div>
 
       <Gst />

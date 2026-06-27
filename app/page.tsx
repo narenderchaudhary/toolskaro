@@ -47,7 +47,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Free Online Tools — ToolsKaro",
-    description: `${total}+ free, browser-based tools for Indian exam and job applicants.`,
+    description: `${total}+ free, browser-based tools for images, PDFs, documents and code.`,
     numberOfItems: liveTools.length,
     itemListElement: liveTools.map((tool, i) => ({
       "@type": "ListItem",
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="trust-item"><span className="trust-ic">🔒</span><div><b>Files never uploaded</b><p>Every tool runs in your browser — your photos and documents stay on your device.</p></div></div>
         <div className="trust-item"><span className="trust-ic">🆓</span><div><b>Free, no watermark</b><p>No sign-up, no watermark and no hidden limits — use every tool as much as you like.</p></div></div>
         <div className="trust-item"><span className="trust-ic">⚡</span><div><b>Fast &amp; works anywhere</b><p>Instant results on phone, tablet or desktop in any modern browser.</p></div></div>
-        <div className="trust-item"><span className="trust-ic">📄</span><div><b>For any form or document</b><p>Built for exam forms, job applications, visa documents and everyday files.</p></div></div>
+        <div className="trust-item"><span className="trust-ic">📄</span><div><b>For any form or document</b><p>For forms, applications, documents and everyday files.</p></div></div>
       </section>
 
       <section className="card content" style={{ marginTop: 8 }}>

@@ -7,9 +7,9 @@ import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
-  title: "Signature Resize — Exact Size & KB for Exams",
+  title: "Signature Resize — Exact Size & KB for Forms",
   description:
-    "Resize your signature to the exact pixel size and KB limit required by SSC, UPSC, Bank and Railway exam forms (e.g. 10–20 KB). Free, no signup, 100% in your browser.",
+    "Resize your signature to the exact pixel size and KB limit required by online application forms (e.g. 10–20 KB). Free, no signup, 100% in your browser.",
   alternates: { canonical: "/signature-resize/" },
 };
 
@@ -22,20 +22,20 @@ const steps = [
 const features = [
   { icon: "📏", title: "Exact dimensions", text: "Resize to the precise width and height your application expects." },
   { icon: "🎯", title: "KB ceiling", text: "Automatically keeps the file under your form's size limit (often 10–20 KB)." },
-  { icon: "⬜", title: "White background", text: "Outputs a clean white-background JPG that exam portals accept." },
+  { icon: "⬜", title: "White background", text: "Outputs a clean white-background JPG that online portals accept." },
   { icon: "🔒", title: "Private", text: "Processed in your browser — your signature is never uploaded." },
   { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark, no limits." },
   { icon: "🧩", title: "Part of the kit", text: "Use alongside the photo and PDF tools to finish your whole application." },
 ];
 
 const faqs = [
-  { q: "What size should a signature be for exam forms?", a: "Most forms ask for a signature around 3×1 cm with a file size of 10–20 KB. Set the width, height and max KB to match your form's instructions, which are listed in the official notification." },
+  { q: "What size should a signature be for online forms?", a: "Most forms ask for a signature around 3×1 cm with a file size of 10–20 KB. Set the width, height and max KB to match your form's instructions, which are listed in the official guidelines." },
   { q: "How do I reduce my signature to 20 KB?", a: "Upload a scan or photo of your signature, choose a size preset or enter custom dimensions, set the maximum KB (for example 20), and click Resize. The tool fits your signature within that size on a white background." },
-  { q: "Will the white background be kept?", a: "Yes — the signature is placed on a clean white background and saved as JPG, the format exam portals accept. For best results, sign with a dark pen on white paper before scanning or photographing it." },
+  { q: "Will the white background be kept?", a: "Yes — the signature is placed on a clean white background and saved as JPG, the format online portals accept. For best results, sign with a dark pen on white paper before scanning or photographing it." },
   { q: "My signature scan has a grey or yellow tint — can I fix it?", a: "Use a well-lit photo or a proper scan on white paper. The tool keeps a white background, but a clean source image gives the clearest result." },
   { q: "Is it free and private?", a: "Yes — free, no sign-up, no watermark, and your signature is processed entirely in your browser and never uploaded." },
-  { q: "What pixel size should a signature be for online forms?", a: "Many Indian exam portals expect a signature around 140×60 px, though some ask for up to about 300×80 px. The exact figure is in your official notification — enter those numbers as the width and height, or start from a preset and adjust. Keeping the strip wide and short matches how a real signature looks." },
-  { q: "How do I scan my signature for an exam application?", a: "Sign clearly with a dark blue or black pen on plain white paper, leaving a margin around the writing. Scan at around 200–300 DPI, or photograph it straight on in bright, even light with no shadows. Then upload the result here to set the exact size and KB limit your form needs." },
+  { q: "What pixel size should a signature be for online forms?", a: "Many online portals expect a signature around 140×60 px, though some ask for up to about 300×80 px. The exact figure is in your official instructions — enter those numbers as the width and height, or start from a preset and adjust. Keeping the strip wide and short matches how a real signature looks." },
+  { q: "How do I scan my signature for an online application?", a: "Sign clearly with a dark blue or black pen on plain white paper, leaving a margin around the writing. Scan at around 200–300 DPI, or photograph it straight on in bright, even light with no shadows. Then upload the result here to set the exact size and KB limit your form needs." },
   { q: "Can I make the signature file smaller than 20 KB?", a: "Yes. Set a lower maximum KB and the tool compresses the white-background JPG to fit. Signatures are mostly white space, so they shrink easily — if you need an even tighter target, reduce the pixel dimensions slightly first and the file size drops further." },
   { q: "Should the signature and photo be uploaded as separate files?", a: "Almost always, yes. Portals have one upload box for the photograph and another for the signature, each with its own size and KB rules. Prepare the signature here, make the photo with the Passport Photo Maker, and keep them as two separate JPG files." },
 ];
@@ -44,7 +44,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Signature Resizer", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Signature Resizer", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -53,7 +53,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="tool-hero">
         <h1>Resize your signature to <span className="grad">size & KB</span></h1>
-        <p className="lede">Resize your signature to the exact dimensions and KB limit your exam form needs — free and entirely in your browser.</p>
+        <p className="lede">Resize your signature to the exact dimensions and KB limit your online form needs — free and entirely in your browser.</p>
       </div>
 
       <SignatureResize />
@@ -64,7 +64,7 @@ export default function Page() {
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Get your signature accepted on the first try</h2>
         <p>
-          Online exam applications check your signature against strict rules: a small pixel size, a
+          Online applications check your signature against strict rules: a small pixel size, a
           tight file-size range (often 10–20 KB), and a plain background. A photo of your signature
           is almost always too big and the wrong shape, so the upload fails. This tool fixes both at
           once — it scales your signature to the dimensions you choose and squeezes it under your KB

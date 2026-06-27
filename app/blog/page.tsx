@@ -4,9 +4,9 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 import { POSTS } from "./blog-data";
 
 export const metadata: Metadata = {
-  title: "Blog — Guides for Exam Forms, Photos & PDFs",
+  title: "Blog — Guides for Photos, PDFs & Files",
   description:
-    "Free guides on resizing photos and signatures for exam forms, compressing images and PDFs to an exact size, converting formats and more — from ToolsKaro.",
+    "Free guides on resizing photos and signatures, compressing images and PDFs to an exact size, converting formats and more — from ToolsKaro.",
   alternates: { canonical: "/blog/" },
 };
 
@@ -19,7 +19,7 @@ export default function Page() {
     "@type": "Blog",
     name: "ToolsKaro Blog",
     url: "https://toolskaro.com/blog/",
-    description: "Guides on exam form photos & signatures, compressing images and PDFs, and converting formats.",
+    description: "Guides on photos & signatures, compressing images and PDFs, and converting formats.",
     blogPost: posts.map((p) => ({ "@type": "BlogPosting", headline: p.title, url: `https://toolskaro.com/blog/${p.slug}/`, datePublished: p.date })),
   };
   return (
@@ -28,7 +28,7 @@ export default function Page() {
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog", href: "/blog/" }]} />
       <div className="tool-hero">
         <h1>ToolsKaro <span className="grad">Blog</span></h1>
-        <p className="lede">Practical guides on preparing photos &amp; signatures for exam forms, compressing images and PDFs to an exact size, converting formats and more.</p>
+        <p className="lede">Practical guides on preparing photos &amp; signatures for online forms, compressing images and PDFs to an exact size, converting formats and more.</p>
       </div>
 
       <div className="blog-grid">

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 
 const steps = [
   { icon: "📁", title: "Upload your photo", text: "Choose a clear, front-facing photo of yourself." },
-  { icon: "🪪", title: "Pick size & background", text: "Select 3.5×4.5 cm, 2×2 inch or a form size, with a white background." },
+  { icon: "🪪", title: "Pick size & background", text: "Select 3.5×4.5 cm, 2×2 inch or another form size, with a white background." },
   { icon: "⬇️", title: "Download", text: "Crop to fill and save your ready-to-use passport photo." },
 ];
 
 const features = [
-  { icon: "🪪", title: "Standard photo sizes", text: "Passport 3.5×4.5 cm, 2×2 inch, and common exam-form sizes built in." },
-  { icon: "⬜", title: "Clean background", text: "White, light blue or grey backgrounds — white is standard for forms." },
+  { icon: "🪪", title: "Standard photo sizes", text: "Passport 3.5×4.5 cm, 2×2 inch, and other common form sizes built in." },
+  { icon: "⬜", title: "Clean background", text: "White, light blue or grey backgrounds — white is the standard for forms." },
   { icon: "🏠", title: "Skip the studio", text: "Turn any decent photo into a passport photo at home in seconds." },
   { icon: "🔒", title: "Fully private", text: "Your photo is processed in your browser and never uploaded." },
   { icon: "🆓", title: "Free, no watermark", text: "Unlimited passport photos with no sign-up and no watermark." },
@@ -38,9 +38,9 @@ const faqs = [
   { q: "What is the photo size for an Indian passport?", a: "For an Indian passport the photo is 3.5×4.5 cm (about 1.38×1.77 inches, ≈413×531 px at 300 DPI) on a plain white background, with the face clearly visible. The maker above has this preset built in." },
   { q: "Can I get a white background?", a: "Yes — choose the white background option (light blue and grey are also available). For photos shot against a busy background, remove the background first using our Remove Background tool, then make the passport photo." },
   { q: "How do I make a passport photo from a normal selfie?", a: "Upload your photo, pick the size preset your application needs, choose a background colour, and select ‘Crop to fill’ so your face fills the frame. Click Make passport photo and download it." },
-  { q: "Will this meet the file size limit for my exam form?", a: "This tool sets the correct dimensions and background. If your form also has a KB limit (e.g. 20–50 KB), pass the downloaded photo through our Image Compressor to hit that exact size." },
+  { q: "Will this meet the file size limit for my form?", a: "This tool sets the correct dimensions and background. If your form also has a KB limit (e.g. 20–50 KB), pass the downloaded photo through our Image Compressor to hit that exact size." },
   { q: "Is it free and private?", a: "Completely free, with no watermark or sign-up. Your photo is processed entirely in your browser and never uploaded to a server." },
-  { q: "What background colour should a passport photo have?", a: "Plain white is the safe, standard choice for passports, visas and almost all exam forms. Light blue or light grey are accepted by a few authorities, but always check the official instructions. If your photo was shot against a coloured or busy wall, remove the background first, then apply a clean white one here." },
+  { q: "What background colour should a passport photo have?", a: "Plain white is the safe, standard choice for passports, visas and almost all application forms. Light blue or light grey are accepted by a few authorities, but always check the official instructions. If your photo was shot against a coloured or busy wall, remove the background first, then apply a clean white one here." },
   { q: "How many pixels is a passport photo at 600 DPI?", a: "DPI changes the pixel count for the same physical size. A 3.5×4.5 cm photo is about 413×531 px at 300 DPI but roughly 827×1063 px at 600 DPI. Most online forms expect 300 DPI, so use that unless your instructions say otherwise; for print you can raise the DPI for a sharper result." },
   { q: "What are common mistakes that make a passport photo rejected?", a: "Frequent reasons are a tilted or turned head, shadows on the face or behind it, glasses glare, a non-white or busy background, and the face being too small or too large in the frame. Use even, front-on lighting, keep a neutral expression, and crop so the head fills most of the height." },
   { q: "How do I crop my photo so the face fits correctly?", a: "Pick the size preset your application needs and choose ‘Crop to fill’, which centres your face and fills the frame to the right ratio automatically. Position yourself so the head and the top of the shoulders are visible, with a little space above the hair, before you upload." },
@@ -50,7 +50,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Passport Photo Maker", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Passport Photo Maker", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -78,19 +78,18 @@ export default function Page() {
               <tr><th>Used for</th><th>Centimetres</th><th>Inches</th><th>Pixels (300 DPI)</th></tr>
             </thead>
             <tbody>
-              <tr><td>India passport &amp; most exam forms</td><td>3.5 × 4.5 cm</td><td>1.38 × 1.77 in</td><td>≈ 413 × 531 px</td></tr>
+              <tr><td>India / UK / Schengen</td><td>3.5 × 4.5 cm</td><td>1.38 × 1.77 in</td><td>≈ 413 × 531 px</td></tr>
               <tr><td>US visa, OCI, Green Card</td><td>5.1 × 5.1 cm</td><td>2 × 2 in</td><td>600 × 600 px</td></tr>
               <tr><td>Stamp size (some forms)</td><td>2 × 2.5 cm</td><td>0.8 × 1 in</td><td>≈ 236 × 295 px</td></tr>
-              <tr><td>Schengen / UK visa</td><td>3.5 × 4.5 cm</td><td>1.38 × 1.77 in</td><td>≈ 413 × 531 px</td></tr>
             </tbody>
           </table>
         </div>
         <h3>Passport size photo in cm, inches &amp; ratio</h3>
         <p>
-          In India, a passport size photo is <strong>3.5 cm wide × 4.5 cm tall</strong> — the same as
+          In India, the UK and Schengen countries, a passport size photo is <strong>3.5 cm wide × 4.5 cm tall</strong> — the same as
           <strong> 1.38 × 1.77 inches</strong>. That works out to an aspect <strong>ratio of about 7:9</strong>
-          (0.78), so the photo is slightly taller than it is wide. For an <strong>Indian passport</strong> and
-          most Indian exam forms, 3.5 × 4.5 cm is the standard; US visa, OCI and Green Card photos instead use
+          (0.78), so the photo is slightly taller than it is wide. In those countries 3.5 × 4.5 cm is the standard;
+          US visa, OCI and Green Card photos instead use
           the square <strong>2 × 2 inch (5.1 × 5.1 cm, 1:1 ratio)</strong> size. Pick the matching preset above and
           the maker outputs the exact dimensions for you.
         </p>
@@ -105,11 +104,11 @@ export default function Page() {
         <p>
           A trip to the photo studio for a few passport prints costs time and money, and you still
           have to scan them for online forms. With this tool you can turn any decent front-facing
-          photo into a correctly sized passport photo in seconds, ready to upload to an exam portal
+          photo into a correctly sized passport photo in seconds, ready to upload to an online portal
           or print at home.
         </p>
         <p>
-          The maker outputs the exact dimensions required for Indian passport and exam photos, on a
+          The maker outputs the exact dimensions required for passport, visa and ID photos, on a
           clean background, with the face centred. For the sharpest result, start from a well-lit
           photo taken against a plain wall. If the background is messy, run it through our Remove
           Background tool first, then come back here to set the size and white background.
@@ -135,12 +134,11 @@ export default function Page() {
           need prints, our <Link href="/change-image-dpi/">change image DPI</Link> tool lets you set
           300 or 600 DPI so the photo comes out the correct physical size on paper.
         </p>
-        <h3>Sizes for exam forms vs visas</h3>
+        <h3>Sizes for forms vs visas</h3>
         <p>
-          The size you choose depends on the application. Indian passports and most exam portals use
+          The size you choose depends on the application. India, the UK and Schengen countries use
           3.5×4.5&nbsp;cm (≈413×531&nbsp;px), while US visa, OCI and Green Card photos are a square
-          2×2&nbsp;inch (600×600&nbsp;px), and Schengen and UK visas reuse the 3.5×4.5&nbsp;cm size.
-          Pick the matching preset above. If your exam needs a specific pixel size for the upload box,
+          2×2&nbsp;inch (600×600&nbsp;px). Pick the matching preset above. If your form needs a specific pixel size for the upload box,
           set it precisely with our <Link href="/image-resizer/">Image Resizer</Link> after making
           the photo here.
         </p>

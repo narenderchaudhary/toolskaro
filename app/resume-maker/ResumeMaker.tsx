@@ -9,7 +9,7 @@ const field = { width: "100%", padding: "9px 11px", border: "1px solid var(--bor
 export default function ResumeMaker() {
   const [name, setName] = useState("Your Name");
   const [role, setRole] = useState("Job Title");
-  const [contact, setContact] = useState("email@example.com · +91 90000 00000 · City, India");
+  const [contact, setContact] = useState("email@example.com · +1 (555) 000-0000 · City");
   const [summary, setSummary] = useState("A short professional summary highlighting your strengths and goals.");
   const [skills, setSkills] = useState("MS Office, Communication, Tally, Data Entry");
   const [exp, setExp] = useState<Entry[]>([{ title: "Job Title", sub: "Company · 2022–Present", detail: "Key responsibility or achievement." }]);

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const PINS: { slug: string; label: string; link: string }[] = [
   { slug: "compress-50kb", label: "Compress Photo to 50 KB", link: "/compress-image-to-50kb/" },
   { slug: "passport-photo", label: "Passport Size Photo Maker", link: "/passport-photo-maker/" },
-  { slug: "resize-photo", label: "Resize Photo for Exam Forms", link: "/image-resizer/" },
+  { slug: "resize-photo", label: "Resize a Photo", link: "/image-resizer/" },
   { slug: "remove-bg", label: "Remove Image Background", link: "/remove-background/" },
   { slug: "biodata", label: "Marriage Biodata Maker", link: "/marriage-biodata-maker/" },
   { slug: "resume", label: "Free Resume / CV Maker", link: "/resume-maker/" },

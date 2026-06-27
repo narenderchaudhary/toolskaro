@@ -22,7 +22,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Email Signature Generator", url: "https://toolskaro.com/email-signature-maker/", description: "Free email signature generator with templates, photo, brand colour and social icons. Copy to Gmail or Outlook.", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Email Signature Generator", url: "https://toolskaro.com/email-signature-maker/", description: "Free email signature generator with templates, photo, brand colour and social icons. Copy to Gmail or Outlook.", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };

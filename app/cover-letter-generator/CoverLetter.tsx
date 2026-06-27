@@ -6,7 +6,7 @@ const field = { width: "100%", padding: "9px 11px", border: "1px solid var(--bor
 
 export default function CoverLetter() {
   const [name, setName] = useState("Your Name");
-  const [contact, setContact] = useState("email@example.com · +91 90000 00000 · City, India");
+  const [contact, setContact] = useState("email@example.com · +1 (555) 000-0000 · City");
   const [date, setDate] = useState("");
   const [toName, setToName] = useState("Hiring Manager");
   const [company, setCompany] = useState("Company Name");

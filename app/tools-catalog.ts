@@ -19,7 +19,7 @@ export const CATEGORIES: Category[] = [
     color: "#4f46e5",
     tint: "#eef2ff",
     tools: [
-      { href: "/image-compressor/", icon: "🗜️", t: "Image Compressor", d: "Compress JPG/PNG to an exact KB size for exam forms.", vol: "1M+/mo", ready: true },
+      { href: "/image-compressor/", icon: "🗜️", t: "Image Compressor", d: "Compress JPG/PNG to an exact KB size.", vol: "1M+/mo", ready: true },
       { href: "/image-resizer/", icon: "📐", t: "Image Resizer", d: "Resize photo by pixels or exam preset.", vol: "1.5M/mo", ready: true },
       { href: "/passport-photo-maker/", icon: "🪪", t: "Passport Photo Maker", d: "White-background passport / exam photo.", vol: "550K/mo", ready: true },
       { href: "/signature-resize/", icon: "✍️", t: "Signature Resize", d: "Resize signature to the KB & size you need.", vol: "74K/mo", ready: true },

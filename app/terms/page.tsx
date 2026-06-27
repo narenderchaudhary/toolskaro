@@ -63,8 +63,7 @@ export default function Page() {
 
         <h2>7. Governing law</h2>
         <p>
-          These terms are governed by the laws of India. Any disputes shall be subject to the
-          jurisdiction of the courts of India.
+          These terms are governed by applicable law in the operator&apos;s jurisdiction.
         </p>
 
         <h2>8. Contact</h2>

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-// Common signature box sizes for Indian exam forms (px @ ~300 DPI).
+// Common signature box sizes for online forms (px @ ~300 DPI).
 const SIZES = [
   { label: "3×1 cm (140×60)", w: 140, h: 60 },
   { label: "Signature 132×46", w: 132, h: 46 },

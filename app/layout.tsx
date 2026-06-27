@@ -187,7 +187,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><span aria-hidden="true">🔒</span> 100% in your browser — your files never leave your device.</li>
                 <li><span aria-hidden="true">🆓</span> {TOTAL_TOOLS}+ tools, completely free with no sign-up or watermark.</li>
                 <li><span aria-hidden="true">⚡</span> Fast and responsive on phone, tablet and desktop.</li>
-                <li><span aria-hidden="true">🌍</span> Used worldwide for exam forms, job, visa and everyday files.</li>
+                <li><span aria-hidden="true">🌍</span> Used worldwide for forms, applications and everyday files.</li>
                 <li><span aria-hidden="true">✉️</span> Questions? <a href="mailto:contact@toolskaro.com">contact@toolskaro.com</a></li>
               </ul>
             </div>

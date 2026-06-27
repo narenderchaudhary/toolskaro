@@ -10,7 +10,7 @@ type Result = {
   quality: number;
 };
 
-const PRESETS = [20, 50, 100, 200]; // KB — the sizes exam forms ask for
+const PRESETS = [20, 50, 100, 200]; // KB — common target sizes
 
 function fmtKB(bytes: number) {
   return (bytes / 1024).toFixed(1) + " KB";

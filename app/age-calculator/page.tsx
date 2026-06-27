@@ -28,7 +28,7 @@ const features = [
 ];
 
 const faqs = [
-  { q: "How do I calculate my age for a government exam?", a: "Enter your date of birth and set the “age as on” date to the cut-off date mentioned in the official notification. The result shows your exact age in years, months and days on that date." },
+  { q: "How do I calculate my age as on a specific date?", a: "Enter your date of birth and set the “age as on” date to the cut-off date you need to check against. The result shows your exact age in years, months and days on that date." },
   { q: "Is this age calculator accurate?", a: "Yes. It accounts for leap years and the actual number of days in each month, so the years/months/days breakdown is exact." },
   { q: "What is an age cut-off date?", a: "Recruitment notifications fix a reference date (the cut-off) on which your age must fall within the eligible range. Set that date in the ‘age as on’ field to check your eligibility." },
   { q: "Can it tell me days until my next birthday?", a: "Yes — along with your age, it shows exactly how many days remain until your next birthday." },
@@ -39,7 +39,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Age Calculator", applicationCategory: "UtilitiesApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Age Calculator", applicationCategory: "UtilitiesApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };

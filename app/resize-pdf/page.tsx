@@ -24,7 +24,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Resize PDF", url: "https://toolskaro.com/resize-pdf/", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Resize PDF", url: "https://toolskaro.com/resize-pdf/", applicationCategory: "BusinessApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -43,7 +43,7 @@ export default function Page() {
         <p>
           PDFs assembled from scans and photos often end up with mixed or unusual page sizes, which can
           print badly or be rejected by upload portals. This tool resizes every page to a standard size —{" "}
-          <strong>A4</strong> is the default for India — scaling each page to fit while keeping its
+          <strong>A4</strong> is the default in most countries — scaling each page to fit while keeping its
           proportions, so nothing is stretched.
         </p>
         <p>

@@ -29,7 +29,7 @@ const features = [
 ];
 
 const faqs = [
-  { q: "What size should my exam photo be?", a: "Most Indian exam portals ask for a passport-style photo around 3.5×4.5 cm (about 413×531 px at 300 DPI) and a signature around 3×1 cm. Always confirm the exact size in the official notification — use the presets here as a starting point." },
+  { q: "What size should my application photo be?", a: "Most online application portals ask for a passport-style photo around 3.5×4.5 cm (about 413×531 px at 300 DPI) and a signature around 3×1 cm. Always confirm the exact size in the official instructions — use the presets here as a starting point." },
   { q: "How do I resize an image to specific pixel dimensions?", a: "Upload your image, then type the width and height you need in pixels. Keep ‘Lock aspect ratio’ on to avoid stretching, or turn it off to force an exact size. Click Resize and download the result." },
   { q: "Will resizing reduce my file size too?", a: "Resizing to smaller pixel dimensions usually reduces file size. If you need an exact KB target (for example 50 KB), resize first and then run the result through our Image Compressor." },
   { q: "Does resizing reduce image quality?", a: "Some quality change is normal when scaling an image. We use high-quality smoothing to keep the result as crisp as possible. Avoid enlarging a small image far beyond its original size, as that always looks blurry." },
@@ -37,7 +37,7 @@ const faqs = [
   { q: "What is the difference between resizing in pixels and in cm?", a: "Pixels measure the image on screen, while centimetres measure how big it prints. The two are linked by DPI: at 300 DPI, 3.5×4.5 cm equals about 413×531 px. Online forms almost always ask for pixels, but printers and some passport rules use cm — pick whichever your instructions specify." },
   { q: "How do I resize a photo without stretching or distorting it?", a: "Keep the ‘Lock aspect ratio’ option on so width and height scale together. If your form needs a shape different from your photo, crop the image to that ratio first, then resize. Turning the lock off forces an exact size but can squash faces, so only do it when the dimensions already match your photo's proportions." },
   { q: "Can I enlarge a small image to a bigger size?", a: "You can, but enlarging beyond an image's original pixels always softens it, because the tool has to invent detail that was never captured. For a crisp result, start from a photo that is at least as large as the target size. If you must scale up, keep the increase small." },
-  { q: "Which sizes do I need for SSC, IBPS or UPSC forms?", a: "Photo and signature dimensions differ slightly between recruiters, so we built exact presets for each — for example SSC CGL, IBPS PO and UPSC. Open the format that matches your exam, or set custom pixels here using the numbers from your official notification." },
+  { q: "Which sizes do I need for online application forms?", a: "Photo and signature dimensions differ slightly between forms, so we built exact presets for the most common ones. Open the format that matches your form, or set custom pixels here using the numbers from your official instructions." },
   { q: "How do I resize an image online?", a: "Upload your image to this page, type the width and height you want in pixels (or tap a preset), then click Resize and download. The whole image resize runs online in your browser, with nothing uploaded to a server." },
   { q: "Can I resize a photo for free?", a: "Yes. You can resize a photo or signature here completely free — no sign-up, no watermark and no limits. It is a fully free online tool, so resize image online free as many times as you need." },
 ];
@@ -46,7 +46,7 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "SoftwareApplication", name: "Image Resizer", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } },
+      { "@type": "SoftwareApplication", name: "Image Resizer", applicationCategory: "MultimediaApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
       { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
@@ -64,13 +64,12 @@ export default function Page() {
       <Features heading={<>Why use this <span className="g">image resizer</span></>} items={features} />
 
       <div className="card content">
-        <h2 style={{ marginTop: 0 }}>Resize photos for any government exam form</h2>
+        <h2 style={{ marginTop: 0 }}>Resize photos for forms, applications and everyday files</h2>
         <p>
-          Government application portals require your photograph and signature in precise pixel
+          Online application portals require your photograph and signature in precise pixel
           dimensions. Upload an image that is too large or the wrong shape, and the form rejects it
           or distorts it. This resizer lets you set the exact width and height your form specifies,
-          with handy presets for the most common passport-photo and signature sizes used across
-          Indian exams.
+          with handy presets for the most common passport-photo and signature sizes.
         </p>
         <p>
           Every image resize happens instantly here, and it pairs perfectly with our Image
@@ -80,9 +79,9 @@ export default function Page() {
         </p>
         <h3>Common photo &amp; signature pixel sizes</h3>
         <p>
-          Indian exam portals usually want a passport-style photo around 200×230&nbsp;px or
+          Online forms usually want a passport-style photo around 200×230&nbsp;px or
           413×531&nbsp;px and a signature near 140×60&nbsp;px, though the exact figures change by
-          recruiter. Rather than guess, open the preset built for your form —
+          form. Rather than guess, open the preset built for your form —
           {" "}<Link href="/photo-resize-for-ssc-cgl/">SSC CGL</Link>,
           {" "}<Link href="/photo-resize-for-ibps-po/">IBPS PO</Link>,
           {" "}<Link href="/photo-resize-for-upsc/">UPSC</Link> or

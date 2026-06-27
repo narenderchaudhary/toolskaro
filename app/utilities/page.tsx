@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   { q: "What utilities does ToolsKaro offer?", a: "A typing speed test (Hindi and English), a QR code generator, a word and character counter, a strong password generator, a text case converter and a date difference calculator — all free and in your browser." },
-  { q: "Is the typing test useful for government exam practice?", a: "Yes. Many clerical and stenographer exams test typing speed, and the Typing Test measures your words-per-minute and accuracy in both Hindi and English so you can practise." },
+  { q: "Is the typing test useful for clerical and typing jobs?", a: "Yes. Many clerical, data-entry and typing jobs require a minimum typing speed, and the Typing Test measures your words-per-minute and accuracy in both Hindi and English so you can practise." },
   { q: "Does the password generator store my passwords?", a: "No. Passwords are generated locally in your browser and are never sent or saved anywhere, so they remain completely private to you." },
   { q: "Are these utility tools free?", a: "Yes, every utility is completely free to use with no sign-up, no watermark and no usage limits." },
 ];
@@ -27,8 +27,8 @@ export default function Page() {
     >
       <h2 style={{ marginTop: 0 }}>Small tools that save you time every day</h2>
       <p>
-        These are the quick utilities you reach for again and again. Practise for clerical and
-        stenographer exams with the <Link href="/typing-test/">Typing Test</Link> (Hindi and English
+        These are the quick utilities you reach for again and again. Check your typing speed with the{" "}
+        <Link href="/typing-test/">Typing Test</Link> (Hindi and English
         WPM), turn any link or text into a scannable code with the{" "}
         <Link href="/qr-code-generator/">QR Code Generator</Link>, and check the length of an essay or
         application with the <Link href="/word-counter/">Word Counter</Link>.
