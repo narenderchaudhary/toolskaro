@@ -85,14 +85,16 @@ header.site .container { display: flex; align-items: center; justify-content: sp
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
 }
 .logo-text b { background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.nav { display: flex; gap: 2px; align-items: center; }
-.nav a { font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 13px; border-radius: 9px; transition: all .15s; }
-.nav a:hover { color: var(--brand); background: var(--soft); text-decoration: none; }
+.nav { display: flex; gap: 6px; align-items: center; }
+.nav a { font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 12px; border-radius: 9px; transition: all .15s; }
+.nav a:hover { color: var(--ink); background: var(--soft); text-decoration: none; }
 /* Mega menu */
 .mega { display: inline-flex; }
-.mega-trigger { background: none; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; gap: 5px; padding: 8px 13px; border-radius: 9px; transition: all .15s; }
-.mega-trigger:hover { color: var(--brand); background: var(--soft); }
-.mega-caret { font-size: 10px; transition: transform .15s; }
+.mega-trigger { display: inline-flex; align-items: center; gap: 7px; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--ink); background: var(--soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; cursor: pointer; transition: all .15s; }
+.mega-trigger:hover { color: var(--brand); border-color: var(--brand); background: var(--card); }
+.mega-trigger[aria-expanded="true"] { color: var(--brand); border-color: var(--brand); }
+.mega-grid { width: 15px; height: 15px; opacity: .85; }
+.mega-caret { font-size: 9px; opacity: .65; transition: transform .15s; }
 .mega-caret.up { transform: rotate(180deg); }
 .mega-panel { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); box-shadow: 0 20px 44px rgba(0,0,0,.14); z-index: 40; animation: megaIn .14s ease; }
 @keyframes megaIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }

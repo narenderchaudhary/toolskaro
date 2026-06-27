@@ -33,6 +33,7 @@ export default function MegaMenu() {
   return (
     <div className="mega" ref={ref}>
       <button type="button" className="mega-trigger" aria-expanded={open} aria-haspopup="true" onClick={() => setOpen((v) => !v)}>
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" className="mega-grid"><rect x="1" y="1" width="6" height="6" rx="1.6" /><rect x="9" y="1" width="6" height="6" rx="1.6" /><rect x="1" y="9" width="6" height="6" rx="1.6" /><rect x="9" y="9" width="6" height="6" rx="1.6" /></svg>
         Tools <span className={`mega-caret${open ? " up" : ""}`} aria-hidden="true">▾</span>
       </button>
 
