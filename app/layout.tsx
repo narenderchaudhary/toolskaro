@@ -5,6 +5,7 @@ import Script from "next/script";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import MegaMenu from "@/app/components/MegaMenu";
 import { CATEGORIES } from "@/app/tools-catalog";
 import "./globals.css";
 
@@ -145,11 +146,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container">
             <Logo />
             <nav className="nav">
-              <Link href="/image-compressor/">Compress</Link>
-              <Link href="/image-resizer/">Resize</Link>
-              <Link href="/remove-background/" className="hide-sm">Remove BG</Link>
-              <Link href="/pdf/merge/">PDF</Link>
-              <Link href="/developer-tools/" className="hide-sm">Dev</Link>
+              <MegaMenu />
               <Link href="/blog/">Blog</Link>
               <Link href="/about/" className="hide-sm">About</Link>
               <ThemeToggle />
