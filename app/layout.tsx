@@ -237,7 +237,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="container footer-bottom">
             <span>© 2026 ToolsKaro. All rights reserved.</span>
-            <span>Not affiliated with any government body or examination authority.</span>
           </div>
         </footer>
         <Script id="ga-src" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-98K21RL284" />
