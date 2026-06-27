@@ -590,6 +590,252 @@ export const POSTS: Post[] = [
       { q: "Can I join more than two photos?", a: "Yes. Add as many images as you want — use side by side or stacked for a strip, or the grid layout to make a simple collage out of several photos." },
     ],
   },
+{
+  slug: "how-to-resize-a-pdf-to-a4-size",
+  title: "How to Resize a PDF to A4 Size (Free, No Upload)",
+  description: "Learn how to resize a PDF to A4 size for free in your browser, with no upload. A simple pdf to a4 converter guide with step-by-step tips.",
+  date: "2026-07-03",
+  category: "PDF tools",
+  readMins: 6,
+  excerpt: "A plain-English guide to resizing any PDF to A4 size right in your browser, why PDFs end up the wrong page size, and how to shrink the file afterwards.",
+  related: [["/resize-pdf/","Resize PDF"],["/pdf/compress/","Compress PDF"],["/pdf/merge/","Merge PDF"],["/pdf-tools/","PDF Tools"]],
+  intro: "<p>You open a document, hit print, and the pages come out cropped, shrunk, or floating in a sea of white margin. The usual culprit is page size: your PDF is not actually A4. The good news is you do not need expensive software to fix it. In this guide you will learn how to <strong>resize a PDF to A4 size</strong> entirely in your browser, with no upload and no sign-up, plus a few tips so your files print cleanly every time.</p>",
+  sections: [
+    {
+      h2: "Why PDFs end up the wrong page size",
+      html: "<p>A PDF stores an exact page size in points, and that size is locked in by whatever created the file. Trouble starts when the source did not use A4. Common reasons a PDF is not A4 include:</p><ul><li><strong>US Letter defaults.</strong> Many apps, especially those made in North America, default to Letter (216 x 279 mm), which is slightly wider and shorter than A4.</li><li><strong>Scanned documents.</strong> Scanners often save at odd sizes or at the scanner glass dimensions rather than a standard sheet.</li><li><strong>Phone photos turned into PDFs.</strong> A photo-to-PDF app keeps the camera aspect ratio, so the page is rarely A4.</li><li><strong>Slides, receipts, and tickets.</strong> These are built for screens or thermal printers, not standard paper.</li></ul><p>When the page size does not match your printer or an upload form that demands A4, you need to <strong>change the PDF size to A4</strong> so every page conforms to one clean standard.</p>"
+    },
+    {
+      h2: "What A4 actually is (and how it differs from Letter)",
+      html: "<p>A4 measures <strong>210 x 297 mm</strong> (about 8.27 x 11.69 inches). It is the international standard sheet used almost everywhere outside the United States and Canada, and it is what most exam portals, government forms, and offices expect. US Letter, by contrast, is 216 x 279 mm. That seemingly small gap is enough to cause cut-off text or extra margins when you print one on the other. So when a form says A4 only, you genuinely do need a true <strong>pdf to a4 converter</strong> rather than just trusting your printer to cope. Adjusting the page geometry once, up front, saves you from reprinting later.</p>"
+    },
+    {
+      h2: "Step by step: resize your PDF to A4 in the browser",
+      html: "<p>Our <a href=\"/resize-pdf/\">Resize PDF</a> tool runs fully on your device, so the file never leaves your computer. Here is the whole process to <strong>adjust a PDF to A4</strong>:</p><ul><li><strong>Open the tool.</strong> Go to <a href=\"/resize-pdf/\">resize a PDF to A4</a> and drop your file onto the page, or tap to browse for it.</li><li><strong>Pick A4 as the target.</strong> Choose A4 (210 x 297 mm) from the page-size list so every page is rebuilt to that standard.</li><li><strong>Choose how content fits.</strong> Select fit-to-page to scale the existing content so it sits neatly inside the A4 frame without clipping. This is the safest way to <strong>fit a PDF to A4</strong>.</li><li><strong>Set orientation.</strong> Keep portrait for most documents, or switch to landscape for wide tables and slides.</li><li><strong>Process and download.</strong> The tool re-lays every page to A4 and gives you the finished file instantly. No account, no watermark.</li></ul><p>Because everything happens locally, even sensitive paperwork stays private. Nothing is sent to a server to <strong>resize the PDF to A4 size</strong>.</p>"
+    },
+    {
+      h2: "Tips: page size is not the same as file size",
+      html: "<p>This is the single most common mix-up, so it is worth saying clearly. <strong>Page size</strong> is the physical dimensions of the sheet, measured in mm or inches, such as A4. <strong>File size</strong> is how much storage the document takes, measured in KB or MB. Resizing to A4 changes the page dimensions; it does not necessarily make the file smaller, and a tiny file can still be the wrong page size.</p><ul><li>If a form asks for A4, use the <a href=\"/resize-pdf/\">Resize PDF</a> tool to fix the dimensions.</li><li>If a form asks for a maximum like 100 KB, shrink the file with <a href=\"/pdf/compress/\">Compress PDF</a> or the focused <a href=\"/compress-pdf-to-100kb/\">compress to 100 KB</a> tool.</li><li>Often you need both: first set the page to A4, then compress the result so it meets an upload limit.</li><li>Joining several A4 pages into one document? Use <a href=\"/pdf/merge/\">Merge PDF</a> before you compress.</li></ul><p>A good order of operations is resize first, then compress, then merge if needed. Explore the full set of utilities on the <a href=\"/pdf-tools/\">PDF Tools</a> page to handle whatever a portal throws at you.</p>"
+    }
+  ],
+  faqs: [
+    { q: "Is it really free to resize a PDF to A4?", a: "Yes. The Resize PDF tool is completely free with no sign-up, no watermark, and no page limits. You can change the PDF size to A4 as many times as you need." },
+    { q: "Do I have to upload my file anywhere?", a: "No. The tool processes your PDF directly in your browser on your own device, so the document is never uploaded to a server. This keeps private paperwork secure while you fit the PDF to A4." },
+    { q: "Will resizing to A4 reduce my file size in KB or MB?", a: "Not necessarily. Page size and file size are different things. To make the file smaller, run it through the Compress PDF tool or the compress-to-100KB tool after you have set the page to A4." },
+    { q: "What is the difference between A4 and Letter?", a: "A4 is 210 x 297 mm, the international standard, while US Letter is 216 x 279 mm. If a form requires A4, use a proper pdf to a4 converter rather than relying on your printer to rescale the page." }
+  ]
+},
+{
+  slug: "how-to-resize-an-image-in-cm-at-300-dpi",
+  title: "How to Resize an Image in CM at 300 DPI",
+  description: "Learn how to resize an image in cm at 300 DPI for crisp printing and ID photos. Simple formula, step-by-step guide, and common cm sizes explained.",
+  date: "2026-07-04",
+  category: "Image tools",
+  readMins: 6,
+  excerpt: "A plain-English guide to resizing an image in cm at 300 DPI, with the pixel formula, why 300 DPI matters for printing, and the exact steps to do it.",
+  related: [["/resize-image-in-cm/","Resize Image in CM"],["/change-image-dpi/","Change DPI"],["/image-resizer/","Image Resizer"],["/passport-photo-maker/","Passport Photo Maker"]],
+  intro: "<p>If you have ever tried to print a photo or upload a passport picture and ended up with something blurry, pixelated, or the wrong size, the culprit is almost always a mismatch between centimetres, pixels, and DPI. This guide explains how to resize an image in cm with dpi 300 the right way. You will learn what each term means, the one formula that ties them together, and the exact steps to get a print-ready file every time.</p>",
+  sections: [
+    {
+      h2: "CM vs Pixels vs DPI: the difference in plain English",
+      html: "<p>These three words confuse a lot of people, so here is the simplest way to think about them. Centimetres (cm) describe the physical size of a printed image, the real width and height you can measure with a ruler. Pixels are the tiny coloured dots that make up a digital image on a screen, and they have no fixed physical size on their own. DPI, which stands for dots per inch, is the bridge between the two: it tells the printer how many of those dots to pack into every inch of paper.</p><p>A screen does not care about cm, it only sees pixels. A printer, on the other hand, needs to know how many pixels belong in each centimetre. That is why a photo can look perfectly sharp on your phone but turn out fuzzy when printed at a larger size. The image simply did not have enough pixels for the physical dimensions you asked for. When you use a <a href=\"/resize-image-in-cm/\">photo resizer in cm with dpi</a>, you are telling the file exactly how many pixels to carry per centimetre so the print stays crisp.</p>"
+    },
+    {
+      h2: "The formula that connects cm, pixels, and DPI",
+      html: "<p>There is one tidy formula that does all the heavy lifting. Because one inch equals 2.54 centimetres, you convert any centimetre measurement into pixels like this:</p><p><strong>pixels = (cm / 2.54) x DPI</strong></p><p>Say you want a photo that is 3.5 cm wide at 300 DPI. The maths is (3.5 / 2.54) x 300, which comes out to roughly 413 pixels. For a 4.5 cm height at the same 300 DPI, you get (4.5 / 2.54) x 300, or about 531 pixels. So a classic 3.5 x 4.5 cm passport photo needs to be about 413 x 531 pixels to print correctly at 300 DPI.</p><p>You do not have to do this by hand. A good tool lets you type the size in centimetres, pick 300 DPI, and it works out the pixels for you. But understanding the formula helps you sanity-check the result and explains why a tiny low-resolution image cannot magically become a large sharp print.</p>"
+    },
+    {
+      h2: "Why 300 DPI matters for printing and ID photos",
+      html: "<p>300 DPI is the long-standing gold standard for print. At that density, the dots are small enough that the human eye blends them into smooth tones and clean edges, so text stays legible and skin tones look natural. Drop below 300, say to 150 or 72 DPI, and printed images start to look soft or jagged up close. Going much higher than 300 rarely helps for normal viewing distances and just creates needlessly huge files.</p><p>This matters most for passport and ID photos, where official portals and print shops often demand an exact physical size combined with 300 DPI. If you upload a file that is the right cm dimensions but only 72 DPI, it may be rejected or printed blurry. When you resize photo in cm 300 dpi before submitting, you meet both requirements at once: correct size and correct resolution. For official portraits, pairing the resize with a dedicated <a href=\"/passport-photo-maker/\">passport photo maker</a> helps you nail the framing too.</p>"
+    },
+    {
+      h2: "Step-by-step: resize an image in cm at 300 DPI",
+      html: "<p>Here is the quick workflow using a browser-based tool, no software install needed.</p><ol><li><strong>Open the tool.</strong> Head to the <a href=\"/resize-image-in-cm/\">resize image in cm</a> page and upload your photo.</li><li><strong>Switch the unit to centimetres.</strong> Make sure width and height are set to cm rather than pixels.</li><li><strong>Enter your size.</strong> Type the exact dimensions you need, for example 3.5 x 4.5 cm.</li><li><strong>Set DPI to 300.</strong> This locks in print quality. If your file is already sized but the resolution is wrong, you can instead use the <a href=\"/change-image-dpi/\">change DPI</a> tool.</li><li><strong>Download.</strong> Save the result and check the preview before printing or uploading.</li></ol><p>Some common targets to keep handy: 3.5 x 4.5 cm is the standard for many countries' passport and visa photos, while the United States and a few others use a 2 x 2 inch (about 5.08 x 5.08 cm) square. If you only need to hit a pixel target or file size rather than a physical size, a general <a href=\"/image-resizer/\">image resizer</a> works well, and you can browse the full set of options on the <a href=\"/image-tools/\">image tools</a> page.</p>"
+    }
+  ],
+  faqs: [
+    {
+      q: "What does it mean to resize an image in cm with dpi 300?",
+      a: "It means setting the physical print size in centimetres and the resolution to 300 dots per inch at the same time. The tool converts your cm dimensions into the right number of pixels using the formula pixels = (cm / 2.54) x 300, so the file prints at the correct size without looking blurry."
+    },
+    {
+      q: "How many pixels is a 3.5 x 4.5 cm photo at 300 DPI?",
+      a: "About 413 x 531 pixels. You get this from (3.5 / 2.54) x 300 for the width and (4.5 / 2.54) x 300 for the height. Most photo resizers in cm with dpi calculate this for you automatically once you enter the size and choose 300 DPI."
+    },
+    {
+      q: "Can I increase a small image to 300 DPI and keep it sharp?",
+      a: "Changing the DPI label alone does not add real detail. If the original image has too few pixels for the physical size you want, enlarging it will look soft. For best results start with a high-resolution photo, then resize it in cm at 300 DPI rather than stretching a tiny image."
+    },
+    {
+      q: "Why do passport portals reject my photo even when the size is right?",
+      a: "A common reason is the DPI being too low. Many official systems require both the exact cm dimensions and 300 DPI. Resize your photo in cm 300 dpi before uploading, and if the size is already correct, just use a change DPI tool to bump the resolution to 300."
+    }
+  ]
+},
+{
+  slug: "how-to-combine-photos-into-one-image",
+  title: "How to Combine Photos Into One Image (Free)",
+  description: "Learn how to combine photos into one image for free. Use a photo joiner to merge pictures side by side, stacked, or in a grid in your browser.",
+  date: "2026-07-05",
+  category: "Image tools",
+  readMins: 5,
+  excerpt: "A simple, free way to combine photos into one image. Join pictures side by side, stack them, or build a quick grid with a browser photo joiner.",
+  related: [["/photo-joiner/","Photo Joiner"],["/photo-signature-combiner/","Photo + Signature"],["/crop-image/","Crop Image"],["/image-resizer/","Image Resizer"]],
+  intro: "<p>Putting two or more pictures together used to mean opening heavy editing software, lining up layers and exporting through a dozen menus. It does not have to be that hard anymore. If you just want to combine photos into one image, a lightweight photo joiner does the whole job in your browser, in under a minute, for free. This guide explains when joining photos makes sense, how to do it step by step, and the small layout and quality tips that make the finished picture look clean instead of thrown together.</p>",
+  sections: [
+    {
+      h2: "When you need to join photos",
+      html: "<p>There are three layouts people reach for most often, and each one solves a different problem.</p><p><strong>Side by side.</strong> When you want to join photos side by side, you are usually comparing two things: a before and after, two outfit options, a product from two angles, or a left and right page of a document. Placing them next to each other lets the viewer judge both at a glance without scrolling.</p><p><strong>Stacked (top and bottom).</strong> Vertical stacking suits screenshots, chat threads, recipes or step sequences where order matters. It also fits portrait phone screens well, so the result reads naturally on mobile.</p><p><strong>Grid or collage.</strong> When you have three, four or more pictures, a grid keeps everything tidy and equal. A simple grid is perfect for event recaps, mood boards, listings or a quick social post. The goal in every case is the same: merge photos into one picture so you can share a single file instead of a messy folder.</p>"
+    },
+    {
+      h2: "How to combine photos into one image, step by step",
+      html: "<p>Here is the full workflow using a free browser tool. Open the <a href=\"/photo-joiner/\">photo joiner</a> and follow along.</p><ol><li><strong>Add your pictures.</strong> Click to upload or drag and drop the images you want to combine. You can start with two and add more later.</li><li><strong>Pick a layout.</strong> Choose horizontal to join photos side by side, vertical to stack them, or a grid to combine photos into one collage.</li><li><strong>Order the images.</strong> Drag them into the sequence you want. For before and after shots, put the before image first so the story reads left to right or top to bottom.</li><li><strong>Adjust spacing and background.</strong> Add a little gap between pictures and choose a background colour so the seams look intentional.</li><li><strong>Download.</strong> Export the finished file as a single JPG or PNG, ready to send or post.</li></ol><p>That is the whole process. Because this is a photo joiner free online, there is no account, no watermark and no software to install.</p>"
+    },
+    {
+      h2: "Layout, spacing and alignment tips",
+      html: "<p>The difference between a sloppy combo and a polished one is almost always alignment. A few habits help.</p><ul><li><strong>Match dimensions first.</strong> If your images are wildly different sizes, the joined result looks lopsided. Run each one through the <a href=\"/image-resizer/\">image resizer</a> so they share a width (for stacking) or a height (for side by side).</li><li><strong>Crop out the clutter.</strong> Trim distracting edges with the <a href=\"/crop-image/\">crop tool</a> before joining, so every panel focuses on the subject.</li><li><strong>Keep spacing consistent.</strong> Use the same gap between all images. Equal margins make the layout feel deliberate.</li><li><strong>Mind the read order.</strong> People scan left to right and top to bottom, so place the most important image where the eye lands first.</li><li><strong>Pick a neutral background.</strong> White or light grey usually works; it keeps the focus on the photos rather than the gaps between them.</li></ul>"
+    },
+    {
+      h2: "Export quality and privacy",
+      html: "<p>Once your layout looks right, think about the file you save. Choose <strong>PNG</strong> when you need crisp edges and text, such as joined screenshots or documents. Choose <strong>JPG</strong> for photos with lots of colour and detail, where a smaller file matters more than perfect edges. If the combined image comes out larger than you need for email or a form, run it through the <a href=\"/image-compressor/\">image compressor</a> to shrink the size without an obvious drop in quality.</p><p>Privacy is the quiet advantage of a browser based tool. A good photo joiner online free does all the work on your own device, so your pictures are never uploaded to a server. Nothing leaves your phone or laptop, which matters when you are combining ID pages, receipts or personal photos. When you need a picture and signature in one file, the <a href=\"/photo-signature-combiner/\">photo and signature combiner</a> follows the same private, in-browser approach. You can explore the full set in our <a href=\"/image-tools/\">image tools</a> collection.</p>"
+    }
+  ],
+  faqs: [
+    { q: "How do I combine photos into one image for free?", a: "Open a free photo joiner in your browser, upload your pictures, choose a side by side, stacked or grid layout, then download the result as one file. No account or software needed." },
+    { q: "Can I join photos side by side without losing quality?", a: "Yes. Add your images at full resolution and export as PNG for the sharpest result. Only compress afterwards if you need a smaller file." },
+    { q: "Is the photo joiner online free and safe to use?", a: "It is. The tool runs entirely in your browser, so your photos stay on your device and are never uploaded, making it safe for personal or document images." },
+    { q: "How many pictures can I merge into one picture?", a: "You can combine two for a simple side by side or stack, or add several more to build a grid collage. Just keep the layout balanced so every image stays clear." }
+  ]
+},
+{
+  slug: "how-to-combine-bank-statements-into-one-pdf",
+  title: "How to Combine Bank Statements Into One PDF",
+  description: "Learn how to combine bank statements into one PDF for visa, loan, rental and mortgage applications, with the page order, file size and privacy tips that matter.",
+  date: "2026-07-06",
+  category: "PDF tools",
+  readMins: 6,
+  excerpt: "A clear, step-by-step guide to merging several months of bank statements into one clean PDF, including how to unlock encrypted statements, fix the page order and shrink the file to fit an upload limit.",
+  related: [["/combine-bank-statements-pdf/","Combine Bank Statements"],["/pdf/merge/","Merge PDF"],["/pdf/compress/","Compress PDF"],["/pdf-tools/","PDF Tools"]],
+  intro: "<p>If you have ever applied for a visa, a loan, a rental flat or a mortgage, you have probably hit the same request: send us your last three to six months of bank statements as a single PDF. Banks hand you one file per month, so you are left wondering how to combine bank statements into one tidy document that an officer can actually open and read. This guide walks you through exactly how to combine bank statements into one PDF, in the right order, at a size that fits the upload box, while keeping your financial data private.</p>",
+  sections: [
+    {
+      h2: "Why applications want one PDF, not six",
+      html: "<p>Reviewers process hundreds of files a day, so a single, well-ordered document is far easier for them than juggling six separate attachments. When you <a href=\"/combine-bank-statements-pdf/\">combine bank statements</a> into one PDF, the person assessing your case can scroll through your full financial history in one window instead of downloading, opening and matching files by hand.</p><p>It also protects you. A complete, continuous file shows there are no missing months, which is one of the most common reasons applications get sent back. Visa officers, loan underwriters, landlords and mortgage lenders all read statements the same way: they want an unbroken run of months that proves steady income and a healthy balance. Learning how to combine bank statements properly means fewer follow-up emails and a faster decision.</p><p>The good news is that you do not need expensive software. A free browser tool can merge bank statements into one PDF in under a minute, and you stay in control of the order and the final size.</p>"
+    },
+    {
+      h2: "Unlock encrypted statements first",
+      html: "<p>This is the step most people miss. Many banks send statements as password-protected or encrypted PDFs, where you have to type your card number, date of birth or a chosen PIN to open the file. A secured PDF like that usually cannot be merged until the protection is removed, and a merge tool will not strip a password for you.</p><p>The fix is simple and stays on your own device. Open each protected statement with the password as normal, then re-save it without the password. On most computers you can use the print dialog and choose Save as PDF (or Print to PDF) as the destination; the new copy you create is no longer encrypted. Some PDF readers also offer a Save a Copy or Export option that lets you remove the password once the file is open. Do this for every locked statement before you start merging.</p><p>To be clear: our tool does not crack or remove PDF passwords. You unlock the file yourself using the password you already have, then bring the unlocked copies to the merge step. This keeps things both legal and secure, because only you ever see the password.</p>"
+    },
+    {
+      h2: "Step by step: merge bank statements into one PDF",
+      html: "<p>Once your statements are unlocked, combining them takes only a few clicks. Here is how to combine bank statements into one file using our <a href=\"/pdf/merge/\">Merge PDF</a> tool:</p><ol><li>Open the <a href=\"/combine-bank-statements-pdf/\">combine bank statements</a> page, or go straight to <a href=\"/pdf/merge/\">Merge PDF</a>.</li><li>Add your monthly statement PDFs. You can select all of them at once or drag them in one at a time.</li><li>Set the page order. Drag the files so the months run in sequence, usually oldest first or newest first depending on what the application asks for.</li><li>Click merge. The tool joins every page into one continuous document.</li><li>Download your single combined PDF and check that no month is missing or duplicated.</li></ol><p>Getting the order right matters more than people expect. If you want to combine monthly bank statements into one PDF file the way a reviewer prefers, keep the months in a clear, logical run rather than a random mix. Open the finished file and scroll from the first page to the last to confirm January follows December cleanly, statement totals line up, and there are no blank pages between months.</p>"
+    },
+    {
+      h2: "Shrink the file to fit upload limits and stay private",
+      html: "<p>Six months of statements can add up to a large file, and many portals cap uploads at a few megabytes. If your merged PDF is too big, run it through our <a href=\"/pdf/compress/\">Compress PDF</a> tool, which reduces the size while keeping the text sharp and readable. When a form demands something very small, our <a href=\"/compress-pdf-to-100kb/\">compress to 100KB</a> tool can squeeze it down to a strict target. A handy workflow is to merge first, then compress, so you only optimise once.</p><p>Privacy deserves special attention with financial documents. Our PDF tools run entirely in your browser, which means your statements are processed on your own device and are never uploaded to a server. Your account numbers, balances and transactions stay with you. That matters a great deal more for bank statements than for an ordinary document, so it is worth using a tool that keeps everything local.</p><p>Once you know how to combine bank statements this way, you can reuse the same steps for any future application. Explore the full set of <a href=\"/pdf-tools/\">PDF tools</a> to split, rotate or reorder pages whenever a form needs something specific.</p>"
+    }
+  ],
+  faqs: [
+    {
+      q: "How do I combine bank statements into one PDF for free?",
+      a: "Unlock any password-protected statements first, then open our Merge PDF tool, add all your monthly files, drag them into the right order and click merge. The combined PDF downloads straight to your device at no cost."
+    },
+    {
+      q: "Can I merge bank statements PDF if they are password protected?",
+      a: "Not directly. Open each protected statement with its password, re-save it without the password using Save as PDF or your reader's export option, and then merge the unlocked copies. The merge tool does not remove PDF passwords for you."
+    },
+    {
+      q: "What order should the months be in when I combine monthly bank statements into one PDF file?",
+      a: "Keep the months in a clear sequence, usually oldest to newest, unless the application asks otherwise. After merging, scroll through the whole file to confirm no month is missing or duplicated."
+    },
+    {
+      q: "My merged statements file is too large to upload. What can I do?",
+      a: "Run the combined PDF through our Compress PDF tool to reduce its size, or use the compress to 100KB tool when a form sets a strict limit. Merge first, then compress, so you optimise the file just once."
+    }
+  ]
+},
+{
+  slug: "how-to-resize-a-photo-for-whatsapp-dp",
+  title: "How to Resize a Photo for Your WhatsApp DP",
+  description: "Learn how to resize a photo for WhatsApp DP so it stays sharp and your face never gets cropped. Ideal sizes, a square-crop guide, and free tools.",
+  date: "2026-07-07",
+  category: "Image tools",
+  readMins: 5,
+  excerpt: "WhatsApp crops and zooms every profile picture into a circle. Here is the ideal WhatsApp DP size and how to resize a photo so your face stays perfectly centred.",
+  related: [["/resize-image-for-whatsapp-dp/","WhatsApp DP Resizer"],["/crop-image/","Crop Image"],["/social-media-image-resizer/","Social Media Resizer"],["/image-resizer/","Image Resizer"]],
+  intro: "<p>You found the perfect photo, set it as your WhatsApp DP, and somehow half your face got cut off or the picture looks blurry. It is one of the most common little frustrations on the app, and it happens because WhatsApp forces every profile picture into a fixed shape. The good news is that a quick resize fixes it for good. In this guide you will learn exactly what the right WhatsApp DP size is, why the app crops your photos, and how to resize a photo for WhatsApp DP in under a minute using a free in-browser tool.</p>",
+  sections: [
+    {
+      h2: "What does DP mean, and why does WhatsApp crop it?",
+      html: "<p>DP simply stands for display picture, the small image that represents you across WhatsApp. It shows up next to your chats, in groups, and on your profile. The catch is that WhatsApp does not display your photo exactly as you uploaded it. Instead, it shows your DP inside a circle in most places and as a square thumbnail in others.</p><p>To make any photo fit that shape, WhatsApp zooms in and crops the edges automatically. If your original image is wide, tall, or rectangular, the app trims whatever does not fit, which is why faces, text, or important details near the edges so often disappear. A landscape holiday photo or a tall portrait will almost always get chopped. The fix is to give WhatsApp an image that already matches the shape it wants, so it has nothing left to crop.</p>"
+    },
+    {
+      h2: "The ideal WhatsApp DP size",
+      html: "<p>The single most important rule is that your DP should be a perfect square. Because WhatsApp displays the profile picture in a circle, a square photo gives the app a clean, predictable area to work with and keeps your face centred.</p><p>For the actual dimensions, aim for a square around 640x640 pixels. That is large enough to look crisp on modern high-resolution phone screens without making the file unnecessarily heavy. The minimum WhatsApp profile picture size is roughly 192x192 pixels, so anything smaller will look soft or pixelated. Going much larger than 640 pixels brings no visible benefit on a small DP and only slows uploads on weak connections. A square in the 500 to 640 pixel range is the sweet spot for a sharp, fast-loading WhatsApp DP size that looks great everywhere the picture appears.</p>"
+    },
+    {
+      h2: "Step by step: crop and resize your photo",
+      html: "<p>The easiest way to get this right is to crop to a square first, then set the dimensions. Our free <a href=\"/resize-image-for-whatsapp-dp/\">WhatsApp DP resizer</a> does both in one place, with no app to install and no sign-up. Here is the full process:</p><ol><li>Open the <a href=\"/resize-image-for-whatsapp-dp/\">WhatsApp DP resizer</a> and upload the photo you want to use.</li><li>Use the square crop option to trim the image to a 1:1 ratio. If you only need to recompose the shot, the dedicated <a href=\"/crop-image/\">crop image</a> tool gives you finer control over the frame.</li><li>Set the output to a square size, ideally 640x640 pixels. For other platforms, the <a href=\"/image-resizer/\">image resizer</a> lets you type in any custom dimensions you like.</li><li>Preview the result to confirm your face sits nicely inside the frame, then download the finished image.</li><li>Open WhatsApp, tap your profile, choose the new photo, and you will see the crop circle barely move because the image already fits.</li></ol><p>Posting to several apps at once? The <a href=\"/social-media-image-resizer/\">social media image resizer</a> handles Instagram, Facebook, and more from the same upload, so you are never guessing dimensions again.</p>"
+    },
+    {
+      h2: "Tips to keep your face centred and sharp",
+      html: "<p>A few small habits make every DP look better. When you crop, leave a little breathing room around your head rather than zooming in tight, since WhatsApp trims the corners of the square to form the circle. Anything pushed right to the edge risks being clipped, so keep your eyes and smile near the middle of the frame.</p><p>If your photo file is large, run it through the <a href=\"/image-compressor/\">image compressor</a> after resizing. A lighter file uploads instantly even on slow data and still looks identical at DP size. Always start from the highest-quality original you have, because enlarging a tiny image only adds blur that no tool can undo.</p><p>On privacy, it is worth knowing that a good <a href=\"/resize-image-for-whatsapp-dp/\">WhatsApp dp maker</a> processes everything right inside your browser. With our tools, your photo is never uploaded to a server, so your image stays on your own device from start to finish. Explore the full set of free utilities on the <a href=\"/image-tools/\">image tools</a> page whenever you need to edit a picture quickly and safely.</p>"
+    }
+  ],
+  faqs: [
+    {
+      q: "What is the best size to resize a photo for WhatsApp DP?",
+      a: "A perfect square of about 640x640 pixels is ideal. It stays sharp on high-resolution screens, loads quickly, and matches the circular shape WhatsApp uses so your face is not cropped."
+    },
+    {
+      q: "Why does WhatsApp crop or zoom my profile picture?",
+      a: "WhatsApp displays your DP inside a circle and as a square thumbnail, so it automatically zooms and trims any photo that is not already square. Uploading a square image stops it from cutting off the edges."
+    },
+    {
+      q: "What is the minimum WhatsApp profile picture size?",
+      a: "Around 192x192 pixels is the practical minimum. Smaller images look soft or pixelated. For a crisp result, a square between 500 and 640 pixels works best."
+    },
+    {
+      q: "Is it safe to use an online WhatsApp dp maker?",
+      a: "It is when the tool works in your browser. Our WhatsApp DP resizer processes your photo locally on your device and never uploads it to a server, so your picture stays completely private."
+    }
+  ]
+},
+{
+  slug: "how-to-resize-photo-and-signature-for-pan-card",
+  title: "How to Resize Photo and Signature for a PAN Card",
+  description: "A simple step-by-step guide to resize your photo and signature for a PAN card application so your Form 49A passes the NSDL or UTIITSL upload check.",
+  date: "2026-07-08",
+  category: "Document tools",
+  readMins: 6,
+  excerpt: "Get your photo and signature for a PAN card application sized correctly the first time. Learn the exact dimensions, file sizes, and how to resize both online in minutes.",
+  related: [["/resize-for-pan-card/","PAN Card Photo"],["/signature-resize/","Signature Resize"],["/image-compressor/","Image Compressor"],["/passport-photo-maker/","Passport Photo Maker"]],
+  intro: "<p>Applying for a PAN card sounds straightforward until the online form rejects your uploads. The two files that trip people up most are the photo and the signature, because both have strict size and dimension rules. If your image is a few kilobytes too large or the wrong shape, the portal simply will not accept it. This guide walks you through the exact pan card photo size and pan card signature size you need, then shows you how to resize both files in a couple of minutes using free browser tools, so your Form 49A goes through on the first try.</p>",
+  sections: [
+    {
+      h2: "Where you actually submit a PAN photo and signature",
+      html: "<p>A new PAN card is applied for using Form 49A (for Indian citizens) through one of two official channels: the Protean portal, formerly known as NSDL, or the UTIITSL portal. Both let you apply fully online with e-KYC or with a scanned photo and signature upload. The moment you choose the upload route, the system expects a properly cropped passport-style photo and a clear signature image that meet its file rules.</p><p>The two portals are run by different agencies, so their upload screens and exact limits can differ slightly and can change over time. Treat the numbers in this guide as the typical, widely-used values, and always confirm the current limits printed on the actual NSDL or UTIITSL upload page before you submit. The good news is that once you understand the pattern, resizing for either portal uses the same simple steps.</p>"
+    },
+    {
+      h2: "The photo and signature requirements at a glance",
+      html: "<p>Here is what a PAN application usually asks for. Getting these right is the whole game.</p><ul><li><strong>Photo:</strong> a recent colour passport-style photograph, roughly 3.5 x 2.5 cm, with your face centred, plain light background, and no caps or dark glasses. The file is typically a JPEG and is expected to sit within a small kilobyte range, often a few KB up to around 20 to 50 KB depending on the portal.</li><li><strong>Signature:</strong> your signature done in black ink on plain white paper, then scanned or photographed. The signature should fill the box neatly without touching the edges, and the file is again a small JPEG within a similar KB range.</li></ul><p>Two details cause most rejections. First, the photo and signature for pan card application must be the correct shape, not a random crop from a phone selfie. Second, the file size must fall inside the allowed KB window. A photo straight from a modern phone can be 3 to 6 MB, which is hundreds of times larger than allowed, so a signature resize for pan card and a photo resize are almost always required.</p>"
+    },
+    {
+      h2: "Step by step: resize your photo and signature",
+      html: "<p>You can do everything from a phone or laptop browser, with no app to install. Here is the workflow we recommend.</p><ol><li><strong>Start with the all-in-one tool.</strong> Open the <a href=\"/resize-for-pan-card/\">PAN card photo and signature</a> resizer, which is built specifically for this document and handles both files with the right targets.</li><li><strong>Fix the photo dimensions.</strong> Upload your photograph and crop it to the passport-style shape close to 3.5 x 2.5 cm. If you only need a clean crop and scale, the general <a href=\"/image-resizer/\">image resizer</a> works too, and the <a href=\"/passport-photo-maker/\">passport photo maker</a> is handy when you want a tidy plain background.</li><li><strong>Resize the signature.</strong> Photograph or scan your black-ink signature, then open the <a href=\"/signature-resize/\">signature resize</a> tool to crop out the white margins and set the dimensions so it fills the signature box correctly.</li><li><strong>Bring both files under the KB limit.</strong> Run each image through the <a href=\"/image-compressor/\">image compressor</a> and target the KB range shown on the portal. Compression shrinks the file without changing the visible dimensions, which is exactly what the upload check wants.</li><li><strong>Save and upload.</strong> Download the finished JPEGs and upload them on the NSDL or UTIITSL form. Because they already match the shape and size rules, the portal should accept them straight away.</li></ol><p>Everything runs in your browser, so your photo and signature are processed on your own device rather than being sent to a server. You can explore the full set under <a href=\"/image-tools/\">image tools</a> if you need other formats later.</p>"
+    },
+    {
+      h2: "Common rejection reasons and how to avoid them",
+      html: "<p>If a PAN portal keeps refusing your upload, it is almost always one of these.</p><ul><li><strong>File too large.</strong> The single most common cause. A raw phone photo is far above the KB limit, so compress it before uploading.</li><li><strong>Wrong dimensions or aspect ratio.</strong> A square selfie crop will not pass a passport-style check. Match the expected pan card photo size and pan card signature size before compressing.</li><li><strong>Signature in blue or pencil.</strong> Use black ink on white paper, then do the signature resize for pan card so only the signature, not the page, shows.</li><li><strong>Faint or low-contrast signature.</strong> A light grey scan can read as blank. Use a firm pen stroke and good lighting.</li><li><strong>Dark, blurred, or cluttered photo.</strong> A plain light background, even lighting, and a clear face are expected.</li></ul><p>Fix the shape first, then the file size, and you remove almost every reason a PAN application gets bounced at the upload step.</p>"
+    }
+  ],
+  faqs: [
+    { q: "What is the correct pan card photo size?", a: "A PAN photo is a colour passport-style photograph of roughly 3.5 x 2.5 cm, saved as a small JPEG within the kilobyte range the portal shows on its upload page. Crop to the passport shape first, then compress the file to fit the allowed KB window." },
+    { q: "What is the right pan card signature size?", a: "Your signature should be done in black ink on white paper, then cropped so it fills the signature box without touching the edges. Save it as a small JPEG inside the KB range listed on the NSDL or UTIITSL upload screen, and make sure the strokes are dark and clear." },
+    { q: "How do I prepare the photo and signature for pan card application online?", a: "Crop the photo to passport shape, crop the signature out of its white margins, then compress both JPEGs to the allowed KB size. You can do all of this in your browser using the PAN card photo and signature tool, the signature resize tool, and the image compressor." },
+    { q: "Why does the portal keep rejecting my files?", a: "Usually the file is too large or the wrong shape. Resize the image to the expected dimensions, then compress it under the KB limit. Always confirm the exact specifications on the official NSDL or UTIITSL portal, since the limits can change." }
+  ],
+},
 ];
 
 export const POST_SLUGS = POSTS.map((p) => p.slug);
