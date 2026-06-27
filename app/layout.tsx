@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
-import SocialLinks, { TELEGRAM, WHATSAPP } from "@/app/components/Social";
+import { TELEGRAM, WHATSAPP } from "@/app/components/Social";
 import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
@@ -163,13 +163,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <AutoByline />
         </main>
-
-        <section className="join-band">
-          <div className="container">
-            <span className="join-label">Join us on Telegram &amp; WhatsApp for the latest updates</span>
-            <div className="join-social"><SocialLinks /></div>
-          </div>
-        </section>
 
         <footer className="site">
           <div className="container footer-cols">

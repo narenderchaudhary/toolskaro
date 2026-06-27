@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Faq from "@/app/components/Faq";
-import SocialLinks from "@/app/components/Social";
 import ToolSearch from "@/app/components/ToolSearch";
 import { CATEGORIES, type Tool } from "@/app/tools-catalog";
 
@@ -84,7 +83,6 @@ export default function Home() {
           <span className="badge">⚡ No sign-up</span>
           <span className="badge">🆓 {total} free tools</span>
         </div>
-        <div className="hero-social"><SocialLinks /></div>
       </section>
 
       <section className="featured">
