@@ -2,11 +2,12 @@ import Link from "next/link";
 import Faq from "@/app/components/Faq";
 import ToolSearch from "@/app/components/ToolSearch";
 import { CATEGORIES, type Tool } from "@/app/tools-catalog";
+import { ToolIcon } from "@/app/tool-icons";
 
 function ToolCard({ tool, tint, color }: { tool: Tool; tint: string; color: string }) {
   const inner = (
     <>
-      <div className="tool-icon" style={{ background: tint, color }}>{tool.icon}</div>
+      <div className="tool-icon" style={{ background: tint, color }}><ToolIcon href={tool.href} /></div>
       <div>
         <div className="t">{tool.t}{!tool.ready && <span className="vol soon" style={{ marginLeft: 8 }}>Soon</span>}</div>
         <div className="d">{tool.d}</div>
@@ -94,7 +95,7 @@ export default function Home() {
           {featured.map((t) => (
             <Link key={t.href} href={t.href} className="featured-card" style={{ ["--cat" as string]: t.color } as React.CSSProperties}>
               {t.tag && <span className={`tool-tag ${t.tag.toLowerCase()}`}>{t.tag}</span>}
-              <div className="featured-icon" style={{ background: t.tint, color: t.color }}>{t.icon}</div>
+              <div className="featured-icon" style={{ background: t.tint, color: t.color }}><ToolIcon href={t.href} size={26} /></div>
               <div className="featured-t">{t.t}</div>
               <div className="featured-d">{t.d}</div>
             </Link>

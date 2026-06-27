@@ -6,6 +6,8 @@ import AutoBreadcrumbs from "@/app/components/AutoBreadcrumbs";
 import AutoByline from "@/app/components/AutoByline";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import MegaMenu from "@/app/components/MegaMenu";
+import HeaderScroll from "@/app/components/HeaderScroll";
+import NavLink from "@/app/components/NavLink";
 import { CATEGORIES } from "@/app/tools-catalog";
 import "./globals.css";
 
@@ -143,12 +145,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <header className="site">
+          <HeaderScroll />
           <div className="container">
             <Logo />
             <nav className="nav">
               <MegaMenu />
-              <Link href="/blog/">Blog</Link>
-              <Link href="/about/" className="hide-sm">About</Link>
+              <NavLink href="/blog/">Blog</NavLink>
+              <NavLink href="/about/" className="hide-sm">About</NavLink>
               <ThemeToggle />
             </nav>
           </div>

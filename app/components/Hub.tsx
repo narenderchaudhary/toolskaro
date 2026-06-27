@@ -3,6 +3,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import Faq from "./Faq";
 import CtaBand from "./CtaBand";
 import { CATEGORIES, CAT_BY_KEY } from "@/app/tools-catalog";
+import { ToolIcon } from "@/app/tool-icons";
 import type { ToolCat } from "@/app/tools-map";
 
 const SITE = "https://toolskaro.com";
@@ -62,7 +63,7 @@ export default function Hub({
       <div className="tool-grid">
         {cat.tools.map((tool) => (
           <Link key={tool.href} href={tool.href} className="tool-card" style={{ ["--cat" as string]: cat.color } as React.CSSProperties}>
-            <div className="tool-icon" style={{ background: cat.tint, color: cat.color }}>{tool.icon}</div>
+            <div className="tool-icon" style={{ background: cat.tint, color: cat.color }}><ToolIcon href={tool.href} /></div>
             <div>
               <div className="t">{tool.t}</div>
               <div className="d">{tool.d}</div>

@@ -1,0 +1,84 @@
+// Per-tool icons (mapped by href) so every tool shows a representative icon.
+import {
+  Shrink, Maximize2, UserRound, PenLine, Eraser, Crop, RefreshCw, Layers, Images, Share2,
+  FileImage, Image as ImageIcon, Gauge, Plus, Ruler, Focus, MessageCircle, CreditCard, Smartphone,
+  Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
+  Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
+  Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, type LucideIcon,
+} from "lucide-react";
+
+const MAP: Record<string, LucideIcon> = {
+  // Image
+  "/image-compressor/": Shrink,
+  "/image-resizer/": Maximize2,
+  "/passport-photo-maker/": UserRound,
+  "/signature-resize/": PenLine,
+  "/remove-background/": Eraser,
+  "/crop-image/": Crop,
+  "/image-converter/": RefreshCw,
+  "/photo-signature-combiner/": Layers,
+  "/photo-joiner/": Images,
+  "/social-media-image-resizer/": Share2,
+  "/jpeg-to-jpg/": FileImage,
+  "/png-to-jpg/": ImageIcon,
+  "/resize-image-in-kb/": Gauge,
+  "/increase-image-size-in-kb/": Plus,
+  "/resize-image-in-cm/": Ruler,
+  "/change-image-dpi/": Focus,
+  "/resize-image-for-whatsapp-dp/": MessageCircle,
+  "/resize-for-pan-card/": CreditCard,
+  "/heic-to-jpg/": Smartphone,
+  "/webp-to-jpg/": RefreshCw,
+  // PDF
+  "/pdf/jpg-to-pdf/": FileImage,
+  "/pdf/pdf-to-jpg/": ImageIcon,
+  "/pdf/merge/": Combine,
+  "/pdf/compress/": FileArchive,
+  "/pdf/split/": Scissors,
+  "/pdf/rotate/": RotateCw,
+  "/pdf/delete-pages/": FileX,
+  "/pdf/page-numbers/": ListOrdered,
+  "/pdf/watermark/": Droplet,
+  "/pdf/organize/": LayoutGrid,
+  "/resize-pdf/": Scaling,
+  "/heic-to-pdf/": FileText,
+  "/webp-to-pdf/": FileText,
+  // Documents
+  "/resume-maker/": FileText,
+  "/marriage-biodata-maker/": Heart,
+  "/cover-letter-generator/": Mail,
+  "/invoice-generator/": Receipt,
+  "/email-signature-maker/": AtSign,
+  // Calculators
+  "/emi-calculator/": Landmark,
+  "/sip-calculator/": TrendingUp,
+  "/gst-calculator/": Receipt,
+  "/interest-calculator/": PiggyBank,
+  "/percentage-calculator/": Percent,
+  "/marks-percentage-calculator/": GraduationCap,
+  "/tdee-calculator/": Flame,
+  "/pregnancy-calculator/": Baby,
+  // Utilities
+  "/age-calculator/": Cake,
+  "/qr-code-generator/": QrCode,
+  "/word-counter/": Type,
+  "/typing-test/": Keyboard,
+  "/password-generator/": KeyRound,
+  "/text-case-converter/": CaseSensitive,
+  "/date-difference-calculator/": CalendarRange,
+  // Developer
+  "/json-formatter/": Braces,
+  "/base64-encode-decode/": Binary,
+  "/url-encode-decode/": LinkIcon,
+  "/hash-generator/": Hash,
+  "/lorem-ipsum-generator/": Pilcrow,
+  "/uuid-generator/": Fingerprint,
+  "/timestamp-converter/": Clock,
+  "/color-converter/": Palette,
+};
+
+export function ToolIcon({ href, size = 22 }: { href: string; size?: number }) {
+  const Icon = MAP[href] ?? Wrench;
+  return <Icon size={size} strokeWidth={2} aria-hidden="true" />;
+}

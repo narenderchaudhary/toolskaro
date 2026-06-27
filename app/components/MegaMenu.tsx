@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CATEGORIES } from "@/app/tools-catalog";
+import { ToolIcon } from "@/app/tool-icons";
 
 const ALL = CATEGORIES.flatMap((c) => c.tools.map((t) => ({ ...t, color: c.color, tint: c.tint, cat: c.name })));
 
@@ -56,7 +57,7 @@ export default function MegaMenu() {
             <div className="mega-results">
               {results.length ? results.map((t) => (
                 <Link key={t.href} href={t.href} className="mega-result" onClick={close}>
-                  <span className="mega-ic" style={{ background: t.tint, color: t.color }} aria-hidden="true">{t.icon}</span>
+                  <span className="mega-ic" style={{ background: t.tint, color: t.color }} aria-hidden="true"><ToolIcon href={t.href} size={15} /></span>
                   <span className="mr-txt"><span className="mr-t">{t.t}</span><span className="mr-c">{t.cat}</span></span>
                 </Link>
               )) : <div className="mega-empty">No tools match &ldquo;{q}&rdquo;.</div>}
@@ -70,7 +71,7 @@ export default function MegaMenu() {
                     {cat.tools.slice(0, 8).map((t) => (
                       <li key={t.href}>
                         <Link href={t.href} onClick={close}>
-                          <span className="mega-ic" style={{ background: cat.tint, color: cat.color }} aria-hidden="true">{t.icon}</span>
+                          <span className="mega-ic" style={{ background: cat.tint, color: cat.color }} aria-hidden="true"><ToolIcon href={t.href} size={15} /></span>
                           {t.t}
                         </Link>
                       </li>
