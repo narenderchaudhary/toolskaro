@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import QrGenerator from "./QrGenerator";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free <span className="grad">QR code generator</span></h1>
         <p className="lede">Turn any link, text or UPI ID into a downloadable QR code — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <QrGenerator />
+      <div className="tool-shell"><QrGenerator /></div>
 
       <Steps heading={<>Generate in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">QR generator</span></>} items={features} />
@@ -71,13 +74,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More handy free tools"
-        text="Everything runs in your browser — fast, private and free."
-        links={[["/word-counter/", "Word Counter"], ["/age-calculator/", "Age Calculator"], ["/image-compressor/", "Image Compressor"], ["/pdf/merge/", "Merge PDF"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/password-generator/", "/word-counter/", "/text-case-converter/", "/color-converter/"]}
       />
+
+      <RecentTools current="/qr-code-generator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

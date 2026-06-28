@@ -3,7 +3,9 @@ import Link from "next/link";
 import CompressPdf from "./CompressPdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -54,9 +56,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Compress <span className="grad">PDF file size</span> online</h1>
         <p className="lede">Shrink your PDF to a smaller file size for exam uploads and email — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <CompressPdf />
+      <div className="tool-shell"><CompressPdf /></div>
 
       <Steps heading={<>Compress in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF compressor</span></>} items={features} />
@@ -108,13 +111,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Make any PDF upload-ready"
-        text="Compress, merge and convert your documents — free and private."
-        links={[["/pdf/merge/", "Merge PDF"], ["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/pdf-to-jpg/", "PDF to JPG"], ["/image-compressor/", "Image Compressor"]]}
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/merge/", "/resize-pdf/", "/pdf/jpg-to-pdf/", "/pdf/pdf-to-jpg/"]}
       />
+
+      <RecentTools current="/pdf/compress/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

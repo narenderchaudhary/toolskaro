@@ -3,8 +3,10 @@ import Link from "next/link";
 import Resizer from "./Resizer";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Image Resizer — Resize Photo by Pixels, Free",
@@ -56,9 +58,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Resize your photo to <span className="grad">exact dimensions</span></h1>
         <p className="lede">Resize an image to exact pixel sizes — resize a photo or signature with one-tap presets for passport photos and signatures. Resize image online free, no signup, 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <Resizer />
+      <div className="tool-shell"><Resizer /></div>
 
       <Steps heading={<>Resize in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">image resizer</span></>} items={features} />
@@ -110,13 +113,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Prepare your whole application in minutes"
-        text="Resize, compress and convert every document — free and private."
-        links={[["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"], ["/signature-resize/", "Signature Resize"], ["/remove-background/", "Remove Background"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-compressor/", "/resize-image-in-cm/", "/crop-image/", "/passport-photo-maker/"]}
       />
+
+      <RecentTools current="/image-resizer/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

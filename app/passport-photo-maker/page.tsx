@@ -3,8 +3,10 @@ import Link from "next/link";
 import PassportPhoto from "./PassportPhoto";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Passport Size Photo — Size, Dimensions & Maker (Free)",
@@ -60,9 +62,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Passport size photo maker <span className="grad">online</span></h1>
         <p className="lede">Create a passport size photo at the right dimensions — US 2×2 inch (600×600 px) or 3.5×4.5 cm for India, UK and Schengen — with a white background, free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <PassportPhoto />
+      <div className="tool-shell"><PassportPhoto /></div>
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Passport size photo dimensions &amp; measurements</h2>
@@ -144,13 +147,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Get a form-ready photo in seconds"
-        text="Make, clean up and compress your application photo — all free and private."
-        links={[["/remove-background/", "Remove Background"], ["/image-compressor/", "Image Compressor"], ["/image-resizer/", "Image Resizer"], ["/signature-resize/", "Signature Resize"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/remove-background/", "/image-resizer/", "/image-compressor/", "/resize-image-in-cm/"]}
       />
+
+      <RecentTools current="/passport-photo-maker/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

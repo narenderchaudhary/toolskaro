@@ -3,8 +3,10 @@ import Link from "next/link";
 import Compressor from "./Compressor";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Compress Image to 20KB, 50KB, 100KB — Free Online",
@@ -63,10 +65,10 @@ export default function Page() {
           100&nbsp;KB or any size your form requires. Compress JPG, JPEG or PNG — no signup, and 100%
           in your browser.
         </p>
+        <ToolBadges />
       </div>
 
-      <Compressor />
-
+      <div className="tool-shell"><Compressor /></div>
 
       <Steps heading={<>Compress in <span className="g">3 simple steps</span></>} steps={steps} />
 
@@ -121,18 +123,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Get your application photo ready in minutes"
-        text="Resize, compress and convert every document you need — free and private."
-        links={[
-          ["/image-resizer/", "Image Resizer"],
-          ["/passport-photo-maker/", "Passport Photo"],
-          ["/signature-resize/", "Signature Resize"],
-          ["/pdf/jpg-to-pdf/", "JPG to PDF"],
-        ]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resize-image-in-kb/", "/image-resizer/", "/passport-photo-maker/", "/jpeg-to-jpg/"]}
       />
+
+      <RecentTools current="/image-compressor/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

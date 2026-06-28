@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonFormatter from "./JsonFormatter";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>JSON <span className="grad">formatter &amp; validator</span></h1>
         <p className="lede">Beautify, minify and validate JSON instantly — with clear error messages, 100% in your browser.</p>
+        <ToolBadges />
       </div>
-      <JsonFormatter />
+
+      <div className="tool-shell"><JsonFormatter /></div>
+
+      <Steps
+        heading={<>Format JSON in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📋", title: "Paste your JSON", text: "Drop in an API response, config file or any JSON snippet — even minified." },
+          { icon: "✨", title: "Beautify or minify", text: "Click Beautify to indent it neatly, or Minify to collapse it to one line." },
+          { icon: "✅", title: "Validate & copy", text: "Validate to confirm it parses, then copy the clean result back to your code." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">JSON formatter</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "Parsing happens locally with your browser's native JSON engine — nothing is uploaded." },
+          { icon: "🪲", title: "Clear errors", text: "Invalid JSON points you to the exact problem — a trailing comma, single quote or missing bracket." },
+          { icon: "↔️", title: "Beautify & minify", text: "Switch between readable, indented JSON and a compact single-line payload in one click." },
+          { icon: "🔢", title: "Choose indentation", text: "Pick 2-space or 4-space indenting to match your codebase or linter style." },
+          { icon: "⚡", title: "Handles big payloads", text: "Native parsing formats multi-megabyte API responses in a fraction of a second." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits, no watermark — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Format and validate JSON in one place</h2>
         <p>
@@ -66,8 +94,15 @@ export default function Page() {
           you can browse the full set on the <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/base64-encode-decode/", "/url-encode-decode/", "/hash-generator/", "/uuid-generator/"]}
+      />
+
+      <RecentTools current="/json-formatter/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free developer tools" text="Fast, private utilities that run entirely in your browser." links={[["/base64-encode-decode/", "Base64 Encode/Decode"], ["/url-encode-decode/", "URL Encode/Decode"], ["/hash-generator/", "Hash Generator"], ["/uuid-generator/", "UUID Generator"]]} />
     </>
   );
 }

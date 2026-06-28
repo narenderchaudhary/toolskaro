@@ -3,7 +3,9 @@ import Link from "next/link";
 import ResumeMaker from "./ResumeMaker";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -54,9 +56,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free <span className="grad">resume / CV maker</span></h1>
         <p className="lede">Build a clean, professional resume and download it as a PDF — free, no signup, and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <ResumeMaker />
+      <div className="tool-shell"><ResumeMaker /></div>
 
       <Steps heading={<>Build it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">resume builder</span></>} items={features} />
@@ -107,13 +110,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Land the job — get fully prepared"
-        text="Resume, typing practice and application photos, all free and private."
-        links={[["/typing-test/", "Typing Test"], ["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"], ["/pdf/merge/", "Merge PDF"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/cover-letter-generator/", "/invoice-generator/", "/email-signature-maker/", "/pdf/compress/"]}
       />
+
+      <RecentTools current="/resume-maker/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

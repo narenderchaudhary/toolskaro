@@ -3,7 +3,9 @@ import Link from "next/link";
 import MergePdf from "./MergePdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -54,9 +56,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Merge <span className="grad">PDF files</span> into one</h1>
         <p className="lede">Combine multiple PDFs into a single file, in any order — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <MergePdf />
+      <div className="tool-shell"><MergePdf /></div>
 
       <Steps heading={<>Merge in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF merger</span></>} items={features} />
@@ -106,13 +109,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Assemble your documents for free"
-        text="Convert, merge and compress everything privately in your browser."
-        links={[["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/pdf-to-jpg/", "PDF to JPG"], ["/image-compressor/", "Image Compressor"]]}
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/split/", "/pdf/compress/", "/pdf/jpg-to-pdf/", "/pdf/organize/"]}
       />
+
+      <RecentTools current="/pdf/merge/" />
+
+      <Faq items={faqs} />
     </>
   );
 }
