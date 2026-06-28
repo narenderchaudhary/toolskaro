@@ -239,6 +239,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="container footer-bottom">
             <span>© 2026 ToolsKaro. All rights reserved.</span>
+            <span className="footer-made">Made with <span className="heart" aria-hidden="true">♥</span> in India <span className="flag" aria-hidden="true">🇮🇳</span></span>
           </div>
         </footer>
         <Script id="ga-src" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-98K21RL284" />
