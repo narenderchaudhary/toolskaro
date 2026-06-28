@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Lorem from "./Lorem";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Lorem Ipsum <span className="grad">generator</span></h1>
         <p className="lede">Generate placeholder text by paragraphs, sentences or words — then copy it in one click.</p>
+        <ToolBadges />
       </div>
-      <Lorem />
+
+      <div className="tool-shell"><Lorem /></div>
+
+      <Steps
+        heading={<>Generate filler text in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📐", title: "Pick a unit", text: "Choose paragraphs, sentences or words depending on how much copy your layout needs." },
+          { icon: "🔢", title: "Set the count", text: "Enter any amount from 1 to 100 to match a headline, button label or full article block." },
+          { icon: "📋", title: "Generate & copy", text: "Click Generate, then copy the text straight into Figma, a CMS field or your code." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">Lorem Ipsum generator</span></>}
+        items={[
+          { icon: "📐", title: "Three units", text: "Generate by paragraphs, sentences or words to fill exactly the space you are designing." },
+          { icon: "🎚️", title: "Any length", text: "Set any count from 1 to 100 to test how a layout breathes at different scales." },
+          { icon: "👁️", title: "Distraction-free", text: "Meaningless text keeps reviewers focused on typography, spacing and hierarchy, not the words." },
+          { icon: "📋", title: "One-click copy", text: "Copy the generated text instantly, ready to paste into a mockup, CMS or component." },
+          { icon: "🔒", title: "100% in-browser", text: "Text is generated locally with no sign-up and nothing uploaded." },
+          { icon: "🆓", title: "Free & unlimited", text: "Generate as many fresh batches as you like — no limits, no watermark." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Placeholder text for any mockup</h2>
         <p>
@@ -63,8 +91,14 @@ export default function Page() {
           on the <Link href="/utilities/">utilities</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/uuid-generator/", "/color-converter/", "/base64-encode-decode/"]}
+      />
+
+      <RecentTools current="/lorem-ipsum-generator/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/word-counter/", "Word Counter"], ["/uuid-generator/", "UUID Generator"], ["/color-converter/", "Color Converter"]]} />
     </>
   );
 }

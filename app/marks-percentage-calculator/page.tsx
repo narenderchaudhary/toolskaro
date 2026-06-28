@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Marks from "./Marks";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Marks Percentage & CGPA Calculator — Free",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Marks % &amp; <span className="grad">CGPA Calculator</span></h1>
         <p className="lede">Find your percentage from marks, convert CGPA to percentage, and percentage to CGPA — all in one place.</p>
+        <ToolBadges />
       </div>
 
-      <Marks />
+      <div className="tool-shell"><Marks /></div>
+
+      <Steps
+        heading={<>Find your result in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🎓", title: "Choose what to convert", text: "Marks to percentage, CGPA to percentage, or percentage back to CGPA." },
+          { icon: "📝", title: "Enter your numbers", text: "Type your marks and total, or your CGPA — and set the multiplier if your board differs from CBSE's 9.5." },
+          { icon: "✅", title: "Get your answer", text: "Your percentage or CGPA appears instantly, ready for forms and applications." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">marks &amp; CGPA calculator</span></>}
+        items={[
+          { icon: "🎓", title: "Built for students", text: "Marks %, CGPA to %, and % to CGPA — the three conversions you need for forms and admissions." },
+          { icon: "⚙️", title: "Adjustable multiplier", text: "Defaults to the CBSE 9.5 factor but lets you set your own board or university factor." },
+          { icon: "⚡", title: "Instant results", text: "Answers update as you type — no submit button, no waiting." },
+          { icon: "🎯", title: "Accurate conversions", text: "Clean math you can trust for eligibility checks and application forms." },
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; your marks are never uploaded or stored." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — convert as many times as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Marks, percentage and CGPA — sorted</h2>
@@ -50,13 +76,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free tools for students"
-        text="Calculate, write and prepare — all free and private."
-        links={[["/percentage-calculator/", "Percentage Calculator"], ["/age-calculator/", "Age Calculator"], ["/resume-maker/", "Resume Maker"], ["/typing-test/", "Typing Test"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/percentage-calculator/", "/emi-calculator/", "/sip-calculator/", "/interest-calculator/"]}
       />
+
+      <RecentTools current="/marks-percentage-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

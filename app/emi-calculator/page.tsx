@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Emi from "./Emi";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "EMI Calculator — Home, Car & Personal Loan EMI",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>EMI <span className="grad">Calculator</span></h1>
         <p className="lede">Work out your monthly EMI, total interest and total payment for any home, car or personal loan — instantly and free.</p>
+        <ToolBadges />
       </div>
 
-      <Emi />
+      <div className="tool-shell"><Emi /></div>
+
+      <Steps
+        heading={<>Find your EMI in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "💵", title: "Enter the loan amount", text: "Type how much you want to borrow — your home, car or personal loan principal in ₹." },
+          { icon: "📊", title: "Set rate & tenure", text: "Add the annual interest rate and the repayment period in months or years." },
+          { icon: "✅", title: "See your EMI", text: "Instantly get your monthly EMI plus the total interest and total amount payable." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">EMI calculator</span></>}
+        items={[
+          { icon: "🏦", title: "Any loan type", text: "Works for home, car, personal, education or business loans — just enter your figures." },
+          { icon: "📉", title: "See total interest", text: "Know exactly how much interest you pay over the full tenure, not just the EMI." },
+          { icon: "🔁", title: "Compare scenarios", text: "Tweak the rate or tenure to instantly see how your EMI and interest change." },
+          { icon: "⚡", title: "Instant & accurate", text: "Uses the standard reducing-balance EMI formula — results update as you type." },
+          { icon: "🔒", title: "100% private", text: "Your numbers never leave your device; everything runs in your browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — calculate as many loans as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Plan your loan with confidence</h2>
@@ -50,13 +76,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Plan your money with our other instant calculators."
-        links={[["/sip-calculator/", "SIP Calculator"], ["/interest-calculator/", "Interest Calculator"], ["/gst-calculator/", "GST Calculator"], ["/percentage-calculator/", "Percentage"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/sip-calculator/", "/interest-calculator/", "/gst-calculator/", "/percentage-calculator/"]}
       />
+
+      <RecentTools current="/emi-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

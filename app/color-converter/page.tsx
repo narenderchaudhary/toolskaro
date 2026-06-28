@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ColorConv from "./ColorConv";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Color <span className="grad">converter</span></h1>
         <p className="lede">Convert colors between HEX, RGB and HSL with a live picker — copy any format in one click.</p>
+        <ToolBadges />
       </div>
-      <ColorConv />
+
+      <div className="tool-shell"><ColorConv /></div>
+
+      <Steps
+        heading={<>Convert a color in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🎨", title: "Enter a color", text: "Type a hex code like #7c3aed, or open the swatch and pick a color visually." },
+          { icon: "🔄", title: "See every format", text: "The HEX, RGB and HSL equivalents update together the instant you change the input." },
+          { icon: "📋", title: "Copy what you need", text: "Hit Copy next to any format to drop it straight into your CSS, design file or code." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">color converter</span></>}
+        items={[
+          { icon: "🔁", title: "HEX, RGB & HSL in sync", text: "All three notations update together, so you always have the format each tool expects." },
+          { icon: "🖌️", title: "Live color picker", text: "Pick a color visually with the swatch instead of guessing hex codes by hand." },
+          { icon: "✨", title: "Shorthand expansion", text: "Three-digit hex like #abc is expanded to #aabbcc automatically — no manual spelling out." },
+          { icon: "🎚️", title: "Easy tints & shades", text: "Adjust Lightness in HSL to lighten or darken a color while keeping the same hue." },
+          { icon: "🔒", title: "100% in-browser", text: "Conversion runs locally with no sign-up and nothing uploaded." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>HEX, RGB and HSL in sync</h2>
         <p>
@@ -64,8 +92,14 @@ export default function Page() {
           for prototypes. Find the rest on the <Link href="/utilities/">utilities</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/lorem-ipsum-generator/", "/uuid-generator/", "/base64-encode-decode/"]}
+      />
+
+      <RecentTools current="/color-converter/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/lorem-ipsum-generator/", "Lorem Ipsum Generator"], ["/uuid-generator/", "UUID Generator"], ["/qr-code-generator/", "QR Code Generator"]]} />
     </>
   );
 }

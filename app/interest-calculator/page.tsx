@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Interest from "./Interest";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Interest Calculator — Simple & Compound, Free",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Interest <span className="grad">Calculator</span></h1>
         <p className="lede">Calculate simple or compound interest in seconds — enter the principal, rate and time to see the interest and total amount.</p>
+        <ToolBadges />
       </div>
 
-      <Interest />
+      <div className="tool-shell"><Interest /></div>
+
+      <Steps
+        heading={<>Calculate interest in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🔘", title: "Choose the mode", text: "Pick simple interest or compound interest, depending on what you need." },
+          { icon: "💵", title: "Enter your numbers", text: "Type the principal, the annual rate and the time period in years." },
+          { icon: "📈", title: "See interest & total", text: "Instantly view the interest earned (or owed) and the final maturity amount." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">interest calculator</span></>}
+        items={[
+          { icon: "🔁", title: "Simple & compound", text: "Switch between both methods to see how much faster compounding grows money." },
+          { icon: "📅", title: "Any compounding", text: "Choose yearly, half-yearly, quarterly or monthly compounding for accuracy." },
+          { icon: "🏦", title: "FDs, savings & loans", text: "Plan fixed deposits, savings growth, recurring loans or solve exam maths." },
+          { icon: "⚡", title: "Instant & accurate", text: "Uses the standard interest formulas — results update the moment you type." },
+          { icon: "🔒", title: "100% private", text: "Your figures stay on your device; nothing is uploaded or stored." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — run as many calculations as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Simple and compound interest, instantly</h2>
@@ -49,13 +75,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Plan your money with our other instant calculators."
-        links={[["/emi-calculator/", "EMI Calculator"], ["/sip-calculator/", "SIP Calculator"], ["/gst-calculator/", "GST Calculator"], ["/percentage-calculator/", "Percentage"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/emi-calculator/", "/sip-calculator/", "/gst-calculator/", "/percentage-calculator/"]}
       />
+
+      <RecentTools current="/interest-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

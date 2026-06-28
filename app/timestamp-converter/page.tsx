@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Timestamp from "./Timestamp";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Unix <span className="grad">timestamp converter</span></h1>
         <p className="lede">Convert epoch time to a readable date and back — seconds or milliseconds, with the live current timestamp.</p>
+        <ToolBadges />
       </div>
-      <Timestamp />
+
+      <div className="tool-shell"><Timestamp /></div>
+
+      <Steps
+        heading={<>Convert a timestamp in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🔢", title: "Paste an epoch value", text: "Drop in a 10-digit (seconds) or 13-digit (milliseconds) number — the tool detects which." },
+          { icon: "🕒", title: "Read the date", text: "See the moment in your local time, UTC and ISO 8601 format at once." },
+          { icon: "📅", title: "Or go the other way", text: "Use the Date → Timestamp picker to turn any date into its Unix value in seconds or ms." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">timestamp converter</span></>}
+        items={[
+          { icon: "⏱️", title: "Seconds & milliseconds", text: "Auto-detects 10-digit and 13-digit values, so both Unix and JavaScript timestamps just work." },
+          { icon: "🌍", title: "Local, UTC & ISO", text: "Shows every moment in your local zone, UTC and ISO 8601 so nothing is ambiguous." },
+          { icon: "🔴", title: "Live current time", text: "The current timestamp updates every second from your device clock for quick tests." },
+          { icon: "↔️", title: "Both directions", text: "Convert epoch → date to read logs, or date → epoch to build expiry and scheduling values." },
+          { icon: "🔒", title: "100% in-browser", text: "All conversion is computed locally on your device — nothing is uploaded." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Epoch time, made readable</h2>
         <p>
@@ -64,8 +92,14 @@ export default function Page() {
           <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/url-encode-decode/", "/base64-encode-decode/", "/hash-generator/"]}
+      />
+
+      <RecentTools current="/timestamp-converter/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/url-encode-decode/", "URL Encode/Decode"], ["/date-difference-calculator/", "Date Difference"], ["/age-calculator/", "Age Calculator"]]} />
     </>
   );
 }

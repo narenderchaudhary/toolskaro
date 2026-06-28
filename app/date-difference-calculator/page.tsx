@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import DateDiff from "./DateDiff";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -28,8 +32,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Date <span className="grad">difference calculator</span></h1>
         <p className="lede">Find the duration between two dates — in years, months, days, weeks and total days.</p>
+        <ToolBadges />
       </div>
-      <DateDiff />
+      <div className="tool-shell"><DateDiff /></div>
+
+      <Steps
+        heading={<>Find the gap in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📅", title: "Pick the start date", text: "Choose the first date — past or future." },
+          { icon: "🏁", title: "Pick the end date", text: "Choose the second date to measure against." },
+          { icon: "✅", title: "See the duration", text: "Get years, months and days, plus totals in weeks and days." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">date calculator</span></>}
+        items={[
+          { icon: "🎯", title: "Exact breakdown", text: "Years, months and days, using the real calendar for accuracy." },
+          { icon: "🗓️", title: "Leap-year aware", text: "Handles leap years and varying month lengths correctly." },
+          { icon: "⏳", title: "Multiple units", text: "Also shows the total in months, weeks and days." },
+          { icon: "🔮", title: "Past or future", text: "Works with any two dates — count down or count back." },
+          { icon: "⚡", title: "Instant", text: "Results update the moment you pick both dates." },
+          { icon: "🔒", title: "Private & free", text: "Runs in your browser; no dates are stored, no sign-up needed." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>How long between two dates?</h2>
         <p>
@@ -39,8 +66,14 @@ export default function Page() {
         </p>
         <p>It uses the real calendar, so leap years and month lengths are handled correctly, and everything runs privately in your browser.</p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/age-calculator/", "/word-counter/", "/typing-test/", "/qr-code-generator/"]}
+      />
+
+      <RecentTools current="/date-difference-calculator/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free calculators &amp; tools" text="Quick answers, every time — all in your browser." links={[["/age-calculator/", "Age Calculator"], ["/percentage-calculator/", "Percentage"], ["/emi-calculator/", "EMI Calculator"], ["/word-counter/", "Word Counter"]]} />
     </>
   );
 }

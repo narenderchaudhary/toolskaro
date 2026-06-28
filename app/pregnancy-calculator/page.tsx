@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Pregnancy from "./Pregnancy";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Pregnancy Due Date Calculator — Week by Week Tracker",
@@ -34,9 +38,31 @@ export default function Page() {
         <span className="preg-badge">🌸 Made with care for expecting mums</span>
         <h1>Pregnancy <span className="grad">Due&nbsp;Date Calculator</span></h1>
         <p className="lede">Find your estimated due date and see exactly how many weeks pregnant you are, your trimester and how many days to go — free, instant and private.</p>
+        <ToolBadges />
       </div>
 
-      <Pregnancy />
+      <div className="tool-shell"><Pregnancy /></div>
+
+      <Steps
+        heading={<>Find your due date in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📅", title: "Choose your method", text: "Calculate from your last period (LMP), conception or ovulation date, or IVF transfer date." },
+          { icon: "🌸", title: "Enter your date", text: "Pick the relevant date and we'll do the gestational-age maths for you." },
+          { icon: "👶", title: "See your timeline", text: "Get your estimated due date, current weeks and days, trimester and days to go." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">pregnancy calculator</span></>}
+        items={[
+          { icon: "📅", title: "Three start methods", text: "Works from your LMP, conception/ovulation date, or IVF embryo-transfer date." },
+          { icon: "🤰", title: "Week-by-week tracking", text: "See exactly how many weeks and days pregnant you are right now." },
+          { icon: "🌷", title: "Trimester at a glance", text: "Highlights your current trimester and the days remaining until your due date." },
+          { icon: "⚡", title: "Instant & gentle", text: "Your timeline appears the moment you enter a date — calm, clear and reassuring." },
+          { icon: "🔒", title: "Completely private", text: "Everything is calculated in your browser; your dates are never uploaded or stored." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — check back any time as your pregnancy progresses." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Know your due date and how far along you are</h2>
@@ -56,13 +82,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Plan your health, dates and money with our other instant calculators."
-        links={[["/age-calculator/", "Age Calculator"], ["/tdee-calculator/", "TDEE Calculator"], ["/date-difference-calculator/", "Date Difference"], ["/calculators/", "All Calculators"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/tdee-calculator/", "/percentage-calculator/", "/marks-percentage-calculator/", "/emi-calculator/"]}
       />
+
+      <RecentTools current="/pregnancy-calculator/" />
+
+      <Faq items={faqs} />
       </div>
     </>
   );

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Gst from "./Gst";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "GST Calculator — Add or Remove GST Online (Free)",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>GST <span className="grad">Calculator</span></h1>
         <p className="lede">Add GST to a price or remove it from a total in one tap — with the CGST/SGST split for every GST slab.</p>
+        <ToolBadges />
       </div>
 
-      <Gst />
+      <div className="tool-shell"><Gst /></div>
+
+      <Steps
+        heading={<>Calculate GST in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🔀", title: "Pick a direction", text: "Choose Add GST to a base price, or Remove GST from a tax-inclusive total." },
+          { icon: "💵", title: "Enter the amount", text: "Type the price or total in ₹ and select the GST slab — 3%, 5%, 12%, 18% or 28%." },
+          { icon: "🧾", title: "See the breakdown", text: "Instantly get the GST amount, final price and the equal CGST/SGST split." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">GST calculator</span></>}
+        items={[
+          { icon: "↔️", title: "Add or remove GST", text: "Works both ways — build a price up from a base, or strip GST out of a total." },
+          { icon: "🏛️", title: "CGST/SGST split", text: "Automatically shows the equal central and state split for intra-state sales." },
+          { icon: "📋", title: "All Indian slabs", text: "Supports 3%, 5%, 12%, 18% and 28% — or type any custom GST rate." },
+          { icon: "⚡", title: "Instant results", text: "Perfect for invoices, billing and quick price checks — no manual maths." },
+          { icon: "🔒", title: "100% private", text: "Your amounts stay on your device; nothing is uploaded or stored." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — calculate GST as often as you need." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Calculate GST the easy way</h2>
@@ -50,13 +76,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Handle your money and numbers with our other tools."
-        links={[["/emi-calculator/", "EMI Calculator"], ["/sip-calculator/", "SIP Calculator"], ["/percentage-calculator/", "Percentage"], ["/interest-calculator/", "Interest Calculator"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/emi-calculator/", "/sip-calculator/", "/percentage-calculator/", "/interest-calculator/"]}
       />
+
+      <RecentTools current="/gst-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import AgeCalc from "./AgeCalc";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Find your <span className="grad">exact age</span></h1>
         <p className="lede">Find your exact age in years, months and days — and check your age as on any exam cut-off date.</p>
+        <ToolBadges />
       </div>
 
-      <AgeCalc />
+      <div className="tool-shell"><AgeCalc /></div>
 
       <Steps heading={<>Calculate in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">age calculator</span></>} items={features} />
@@ -71,13 +74,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free tools for your application"
-        text="Prepare your photo, signature and documents in minutes."
-        links={[["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"], ["/typing-test/", "Typing Test"], ["/resume-maker/", "Resume Maker"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/date-difference-calculator/", "/typing-test/", "/word-counter/", "/qr-code-generator/"]}
       />
+
+      <RecentTools current="/age-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

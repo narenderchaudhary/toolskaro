@@ -611,9 +611,11 @@ footer.site { border-top: 1px solid var(--border); margin-top: 0; background: va
 /* ---------- Print (resume / biodata → PDF) ---------- */
 @media print {
   header.site, footer.site, .ad-slot, .no-print, h1, .lede, .faq,
-  .section-center, .steps-rail, .feature-grid, .cta-band, .join-band { display: none !important; }
+  .section-center, .steps-rail, .feature-grid, .cta-band, .join-band,
+  .tool-badges, .related, .recent { display: none !important; }
   html, body { background: #fff !important; }
   main.container { max-width: none; padding: 0; }
+  .tool-shell { box-shadow: none !important; }
   .card { box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
   .doc-preview { border: none !important; border-radius: 0 !important; padding: 0 !important; }
   @page { margin: 14mm; }

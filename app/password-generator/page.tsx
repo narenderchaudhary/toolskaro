@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import PasswordGen from "./PasswordGen";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -28,8 +32,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Strong <span className="grad">password generator</span></h1>
         <p className="lede">Create strong, random and secure passwords in one click — generated privately in your browser.</p>
+        <ToolBadges />
       </div>
-      <PasswordGen />
+      <div className="tool-shell"><PasswordGen /></div>
+
+      <Steps
+        heading={<>Generate a password in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📏", title: "Set the length", text: "Pick how long the password should be — 16 characters or more is ideal." },
+          { icon: "🔣", title: "Choose characters", text: "Toggle uppercase, lowercase, numbers and symbols to match the site's rules." },
+          { icon: "📋", title: "Copy & use", text: "Copy your new password in one tap, or regenerate for another." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">password generator</span></>}
+        items={[
+          { icon: "🔐", title: "Cryptographically secure", text: "Built from your device's secure random generator, not a predictable formula." },
+          { icon: "🔒", title: "100% private", text: "Passwords are created in your browser and never sent to or stored on a server." },
+          { icon: "🎚️", title: "Fully customisable", text: "Control length and which character types to include for any site's rules." },
+          { icon: "💪", title: "Live strength meter", text: "See a strength rating update as you adjust the options." },
+          { icon: "🔁", title: "Instant regenerate", text: "Click once for a fresh password whenever you need one." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up and no limits — generate as many as you like." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Generate secure passwords instantly</h2>
         <p>
@@ -40,8 +67,14 @@ export default function Page() {
         </p>
         <p>Because it runs entirely on your device, your password is never transmitted or saved anywhere. Use a unique password for every important account, ideally with a password manager.</p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/text-case-converter/", "/qr-code-generator/", "/word-counter/", "/date-difference-calculator/"]}
+      />
+
+      <RecentTools current="/password-generator/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free, private tools" text="Everything runs in your browser — fast and secure." links={[["/text-case-converter/", "Text Case Converter"], ["/qr-code-generator/", "QR Generator"], ["/word-counter/", "Word Counter"], ["/date-difference-calculator/", "Date Difference"]]} />
     </>
   );
 }

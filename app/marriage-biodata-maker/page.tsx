@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import BiodataMaker from "./BiodataMaker";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free <span className="grad">marriage biodata maker</span></h1>
         <p className="lede">Create a clean marriage biodata in Hindi or English and download it as a PDF — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <BiodataMaker />
+      <div className="tool-shell"><BiodataMaker /></div>
 
       <Steps heading={<>Create it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">biodata maker</span></>} items={features} />
@@ -70,13 +73,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free tools you’ll find handy"
-        text="From documents to photos — everything runs privately in your browser."
-        links={[["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"], ["/resume-maker/", "Resume Maker"], ["/pdf/jpg-to-pdf/", "JPG to PDF"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resume-maker/", "/cover-letter-generator/", "/invoice-generator/", "/email-signature-maker/"]}
       />
+
+      <RecentTools current="/marriage-biodata-maker/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

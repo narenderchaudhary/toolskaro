@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Percent from "./Percent";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Percentage Calculator — Calculate Percentages Online (Free)",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Percentage <span className="grad">Calculator</span></h1>
         <p className="lede">Find X% of a number, what percent one value is of another, and percentage increase or decrease — all in one place.</p>
+        <ToolBadges />
       </div>
 
-      <Percent />
+      <div className="tool-shell"><Percent /></div>
+
+      <Steps
+        heading={<>Calculate a percentage in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🧮", title: "Pick a calculation", text: "Choose X% of a number, what percent one value is of another, or the percentage change." },
+          { icon: "⌨️", title: "Type your numbers", text: "Enter your values in the boxes — there's no button to press." },
+          { icon: "✅", title: "Read the answer", text: "The result updates instantly as you type, ready to copy or use." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">percentage calculator</span></>}
+        items={[
+          { icon: "🧮", title: "Three tools in one", text: "Percentage of a number, percent of a total, and increase/decrease — no switching pages." },
+          { icon: "⚡", title: "Instant results", text: "Answers appear the moment you type — no submit, no waiting." },
+          { icon: "🎯", title: "Accurate every time", text: "Clean math with no rounding surprises, ideal for marks, discounts and interest." },
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; nothing you type is uploaded or stored." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — use it as often as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Three percentage calculations in one tool</h2>
@@ -49,13 +75,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="From marks to money — quick answers, every time."
-        links={[["/marks-percentage-calculator/", "Marks % & CGPA"], ["/emi-calculator/", "EMI Calculator"], ["/gst-calculator/", "GST Calculator"], ["/interest-calculator/", "Interest Calculator"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/marks-percentage-calculator/", "/emi-calculator/", "/gst-calculator/", "/interest-calculator/"]}
       />
+
+      <RecentTools current="/percentage-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Sip from "./Sip";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "SIP Calculator — Mutual Fund SIP Returns Calculator (Free)",
@@ -31,9 +35,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>SIP <span className="grad">Calculator</span></h1>
         <p className="lede">See how much your monthly SIP could grow to. Estimate the future value and returns of your mutual-fund investment — free and instant.</p>
+        <ToolBadges />
       </div>
 
-      <Sip />
+      <div className="tool-shell"><Sip /></div>
+
+      <Steps
+        heading={<>Project your SIP in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "💰", title: "Enter monthly amount", text: "Type how much you plan to invest every month into your SIP, in ₹." },
+          { icon: "📈", title: "Add return & period", text: "Set the expected annual return rate and how many years you will keep investing." },
+          { icon: "🎯", title: "See the future value", text: "Instantly view your estimated maturity value, total invested and estimated gains." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">SIP calculator</span></>}
+        items={[
+          { icon: "📈", title: "See compounding work", text: "Watch how small monthly amounts grow into a large corpus over the years." },
+          { icon: "🧮", title: "Invested vs returns", text: "Splits your maturity value into what you put in and what the market added." },
+          { icon: "🎯", title: "Plan for goals", text: "Reverse-engineer how much to invest monthly for a car, home or retirement." },
+          { icon: "⚡", title: "Instant estimates", text: "Uses the standard SIP future-value formula — results update as you type." },
+          { icon: "🔒", title: "100% private", text: "Your figures never leave your device; it all runs in your browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — model as many SIP plans as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Visualise the power of monthly investing</h2>
@@ -51,13 +77,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Plan your money with our other instant calculators."
-        links={[["/emi-calculator/", "EMI Calculator"], ["/interest-calculator/", "Interest Calculator"], ["/gst-calculator/", "GST Calculator"], ["/percentage-calculator/", "Percentage"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/emi-calculator/", "/interest-calculator/", "/gst-calculator/", "/percentage-calculator/"]}
       />
+
+      <RecentTools current="/sip-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Invoice from "./Invoice";
 import Steps from "@/app/components/Steps";
-import CtaBand from "@/app/components/CtaBand";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -34,9 +37,21 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free <span className="grad">invoice generator</span></h1>
         <p className="lede">Create a professional GST invoice and download it as a PDF — free, no signup, in your browser.</p>
+        <ToolBadges />
       </div>
-      <Invoice />
+      <div className="tool-shell"><Invoice /></div>
       <Steps heading={<>Create it in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features
+        heading={<>Why use this <span className="grad">invoice generator</span></>}
+        items={[
+          { icon: "🧮", title: "Auto totals", text: "Subtotal, tax and grand total recalculate the moment you change a quantity or rate." },
+          { icon: "🧾", title: "GST ready", text: "Set a tax/GST percentage and it's applied to the bill for clean, compliant invoices." },
+          { icon: "➕", title: "Unlimited line items", text: "Add as many products or services as your invoice needs, then remove any you don't." },
+          { icon: "🆓", title: "No watermark", text: "Download a professional PDF free — no sign-up, no logo, no paywall." },
+          { icon: "🔒", title: "Private", text: "Your business and client data stay in your browser and are never uploaded." },
+          { icon: "⬇️", title: "Email or print", text: "Save the finished invoice as a PDF to send to clients or print on the spot." },
+        ]}
+      />
       <div className="card content no-print">
         <h2 style={{ marginTop: 0 }}>Professional invoices in minutes</h2>
         <p>
@@ -46,8 +61,12 @@ export default function Page() {
         </p>
         <p>It works entirely in your browser, so your business and client data stay private. Save the finished invoice as a PDF to email or print.</p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resume-maker/", "/marriage-biodata-maker/", "/cover-letter-generator/", "/email-signature-maker/"]}
+      />
+      <RecentTools current="/invoice-generator/" />
       <Faq items={faqs} />
-      <CtaBand heading="More free business tools" text="Invoices, documents and calculators — all in your browser." links={[["/gst-calculator/", "GST Calculator"], ["/cover-letter-generator/", "Cover Letter"], ["/pdf/merge/", "Merge PDF"], ["/qr-code-generator/", "QR Generator"]]} />
     </>
   );
 }

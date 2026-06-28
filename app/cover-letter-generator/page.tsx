@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import CoverLetter from "./CoverLetter";
 import Steps from "@/app/components/Steps";
-import CtaBand from "@/app/components/CtaBand";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -34,9 +37,21 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free <span className="grad">cover letter generator</span></h1>
         <p className="lede">Write a clean, professional cover letter and download it as a PDF — free, no signup, in your browser.</p>
+        <ToolBadges />
       </div>
-      <CoverLetter />
+      <div className="tool-shell"><CoverLetter /></div>
       <Steps heading={<>Write it in <span className="g">3 simple steps</span></>} steps={steps} />
+      <Features
+        heading={<>Why use this <span className="grad">cover letter generator</span></>}
+        items={[
+          { icon: "👀", title: "Live preview", text: "Watch your formatted letter update on the right as you fill in the fields." },
+          { icon: "🧹", title: "Correct formatting", text: "Proper date, address block, greeting and sign-off — laid out the way recruiters expect." },
+          { icon: "🆓", title: "No watermark", text: "Download a clean PDF free — no sign-up, no paywall, no logo stamped on it." },
+          { icon: "🔒", title: "Private", text: "Your name, company and message stay in your browser and are never uploaded." },
+          { icon: "🎯", title: "Tailored fast", text: "Swap the company and role in seconds to send a fresh letter for every application." },
+          { icon: "🤝", title: "Pairs with your resume", text: "Match it to a resume from our Resume Maker for one consistent application." },
+        ]}
+      />
       <div className="card content no-print">
         <h2 style={{ marginTop: 0 }}>Make a strong first impression</h2>
         <p>
@@ -46,8 +61,12 @@ export default function Page() {
         </p>
         <p>Keep it concise (three short paragraphs), tailor it to the company, and pair it with our Resume Maker. Everything runs privately in your browser.</p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resume-maker/", "/marriage-biodata-maker/", "/invoice-generator/", "/email-signature-maker/"]}
+      />
+      <RecentTools current="/cover-letter-generator/" />
       <Faq items={faqs} />
-      <CtaBand heading="Complete your job application" text="Cover letter, resume and application photo — all free." links={[["/resume-maker/", "Resume Maker"], ["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"], ["/typing-test/", "Typing Test"]]} />
     </>
   );
 }

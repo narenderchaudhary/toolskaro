@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Base64 from "./Base64";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Base64 <span className="grad">encode &amp; decode</span></h1>
         <p className="lede">Convert text to Base64 and back instantly, with full Unicode support — private to your browser.</p>
+        <ToolBadges />
       </div>
-      <Base64 />
+
+      <div className="tool-shell"><Base64 /></div>
+
+      <Steps
+        heading={<>Convert Base64 in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📝", title: "Paste your text or Base64", text: "Drop in plain text to encode, or a Base64 string to decode — emoji and accents are fine." },
+          { icon: "🔁", title: "Encode or decode", text: "Click Encode → Base64 to convert text, or Decode ← Base64 to recover the original." },
+          { icon: "📋", title: "Copy the result", text: "Grab the output with one click and paste it into your config, header or data URI." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">Base64 converter</span></>}
+        items={[
+          { icon: "🌐", title: "Unicode-safe", text: "Encodes through UTF-8, so emoji, Hindi, Arabic and accented characters round-trip correctly." },
+          { icon: "🔒", title: "100% private", text: "Encoding and decoding run locally in your browser — nothing you paste is ever uploaded." },
+          { icon: "↔️", title: "Both directions", text: "Encode text to Base64 or decode Base64 back to text in a single click." },
+          { icon: "🪲", title: "Clear errors", text: "Invalid Base64 is flagged rather than silently mangled, so you always know if a string is genuine." },
+          { icon: "🔗", title: "Data-URI ready", text: "Perfect for building data URIs, JWT payloads, API keys and HTML embeds." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits, no watermark — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Encode and decode Base64 the easy way</h2>
         <p>
@@ -64,8 +92,14 @@ export default function Page() {
           <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/url-encode-decode/", "/hash-generator/", "/uuid-generator/"]}
+      />
+
+      <RecentTools current="/base64-encode-decode/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free developer tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/url-encode-decode/", "URL Encode/Decode"], ["/hash-generator/", "Hash Generator"], ["/uuid-generator/", "UUID Generator"]]} />
     </>
   );
 }

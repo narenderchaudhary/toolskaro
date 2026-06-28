@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Signature from "./Signature";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Email <span className="grad">Signature Generator</span></h1>
         <p className="lede">Build a beautiful, professional email signature with your photo, designation, company and social links — then copy it straight into Gmail or Outlook. Free, no sign-up.</p>
+        <ToolBadges />
       </div>
 
-      <Signature />
+      <div className="tool-shell"><Signature /></div>
+
+      <Steps
+        heading={<>Make your signature in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📝", title: "Fill in your details", text: "Add your name, designation, company, website, email, photo and social links." },
+          { icon: "🎨", title: "Pick a template", text: "Choose Classic, Modern or Minimal and set your brand colour — preview updates live." },
+          { icon: "📋", title: "Copy to your email", text: "Click Copy signature (or Copy HTML) and paste it into Gmail or Outlook." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">email signature maker</span></>}
+        items={[
+          { icon: "👀", title: "Live preview", text: "See your signature build instantly as you type — no guesswork before you copy." },
+          { icon: "🎨", title: "Templates & brand colour", text: "Three layouts — Classic, Modern and Minimal — plus a colour to match your brand." },
+          { icon: "🔗", title: "Social icons", text: "Add LinkedIn, X, Facebook, Instagram and YouTube with hosted icons that load everywhere." },
+          { icon: "📧", title: "Gmail & Outlook ready", text: "Clean table-based HTML with inline styles that email clients render correctly." },
+          { icon: "🔒", title: "Private", text: "Your details, photo and links stay in your browser and are never uploaded." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up and no watermark — create and copy as many signatures as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>A polished signature in under a minute</h2>
@@ -54,13 +80,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Build your whole professional kit"
-        text="Make a matching resume, cover letter and more — all free and private."
-        links={[["/resume-maker/", "Resume Maker"], ["/cover-letter-generator/", "Cover Letter"], ["/qr-code-generator/", "QR Code Generator"], ["/document-tools/", "All Document Tools"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resume-maker/", "/marriage-biodata-maker/", "/cover-letter-generator/", "/invoice-generator/"]}
       />
+
+      <RecentTools current="/email-signature-maker/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

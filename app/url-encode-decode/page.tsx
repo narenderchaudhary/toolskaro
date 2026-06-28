@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import UrlCodec from "./UrlCodec";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>URL <span className="grad">encode &amp; decode</span></h1>
         <p className="lede">Escape or unescape URLs and query parameters instantly — component or full-URL, all in your browser.</p>
+        <ToolBadges />
       </div>
-      <UrlCodec />
+
+      <div className="tool-shell"><UrlCodec /></div>
+
+      <Steps
+        heading={<>Encode a URL in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🧭", title: "Pick encode or decode", text: "Choose Encode to escape text, or Decode to turn %-escapes back into readable characters." },
+          { icon: "🔀", title: "Choose component or full-URL", text: "Use component mode for a single ?key=value, or full-URL mode for a complete link." },
+          { icon: "📋", title: "Paste and copy", text: "Drop in your text, then copy the safely encoded or decoded result with one click." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">URL encoder</span></>}
+        items={[
+          { icon: "🔀", title: "Two encoding modes", text: "Component (encodeURIComponent) for single values, full-URL (encodeURI) for complete addresses." },
+          { icon: "🔒", title: "100% private", text: "Encoding and decoding run entirely in your browser, so your URLs and data stay on your device." },
+          { icon: "↩️", title: "Fix double-encoding", text: "Decode messy %2520-style links twice to recover the original spaces and characters." },
+          { icon: "🔗", title: "Built for query strings", text: "Safely escape spaces, &, ?, # and non-English characters before dropping them into a link." },
+          { icon: "📊", title: "Inspect tracking links", text: "Decode UTM, OAuth redirect and analytics URLs to see exactly what they contain." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Encode and decode URLs correctly</h2>
         <p>
@@ -64,8 +92,14 @@ export default function Page() {
           lives on the <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/base64-encode-decode/", "/hash-generator/", "/timestamp-converter/"]}
+      />
+
+      <RecentTools current="/url-encode-decode/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free developer tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/base64-encode-decode/", "Base64 Encode/Decode"], ["/hash-generator/", "Hash Generator"], ["/timestamp-converter/", "Timestamp Converter"]]} />
     </>
   );
 }

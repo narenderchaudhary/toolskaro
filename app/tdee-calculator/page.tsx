@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Tdee from "./Tdee";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "TDEE Calculator — Daily Calorie & Maintenance Needs",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>TDEE <span className="grad">Calculator</span></h1>
         <p className="lede">Find your Total Daily Energy Expenditure and BMR, plus the exact daily calories to lose, maintain or gain weight — instant, free and private.</p>
+        <ToolBadges />
       </div>
 
-      <Tdee />
+      <div className="tool-shell"><Tdee /></div>
+
+      <Steps
+        heading={<>Find your calories in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📋", title: "Enter your details", text: "Add your age, gender, height and weight so we can estimate your BMR." },
+          { icon: "🏃", title: "Pick your activity level", text: "Choose how active you are, from sedentary to extra active, to set your activity factor." },
+          { icon: "🔥", title: "See your targets", text: "Get your TDEE plus ready-made calorie goals to lose, maintain or gain weight." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">TDEE calculator</span></>}
+        items={[
+          { icon: "🧪", title: "Trusted formula", text: "Uses the Mifflin–St Jeor equation, the most recommended BMR formula for healthy adults." },
+          { icon: "🎯", title: "Goal-based targets", text: "See exact daily calories for losing fat, maintaining, or building mass — not just one number." },
+          { icon: "🏃", title: "Activity-aware", text: "Adjusts your burn for real life, from desk-bound to highly active." },
+          { icon: "⚡", title: "Instant results", text: "Your BMR and TDEE appear the moment you fill in your details." },
+          { icon: "🔒", title: "100% private", text: "Calculated in your browser; your body details are never uploaded or stored." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — recalculate any time your weight or activity changes." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Know exactly how many calories you burn</h2>
@@ -52,13 +78,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free calculators"
-        text="Plan your health, studies and money with our other instant calculators."
-        links={[["/age-calculator/", "Age Calculator"], ["/marks-percentage-calculator/", "Marks % & CGPA"], ["/percentage-calculator/", "Percentage"], ["/emi-calculator/", "EMI Calculator"]]}
+      <RelatedTools
+        heading="Related calculators"
+        hrefs={["/pregnancy-calculator/", "/percentage-calculator/", "/marks-percentage-calculator/", "/emi-calculator/"]}
       />
+
+      <RecentTools current="/tdee-calculator/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

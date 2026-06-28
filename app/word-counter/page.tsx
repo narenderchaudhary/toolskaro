@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import WordCounter from "./WordCounter";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Free online <span className="grad">word counter</span></h1>
         <p className="lede">Count words, characters, sentences and reading time instantly as you type — free and private.</p>
+        <ToolBadges />
       </div>
 
-      <WordCounter />
+      <div className="tool-shell"><WordCounter /></div>
 
       <Steps heading={<>Count in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">word counter</span></>} items={features} />
@@ -70,13 +73,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="More free, private tools"
-        text="Everything runs in your browser — no sign-up required."
-        links={[["/typing-test/", "Typing Test"], ["/qr-code-generator/", "QR Generator"], ["/resume-maker/", "Resume Maker"], ["/age-calculator/", "Age Calculator"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/text-case-converter/", "/typing-test/", "/qr-code-generator/", "/password-generator/"]}
       />
+
+      <RecentTools current="/word-counter/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

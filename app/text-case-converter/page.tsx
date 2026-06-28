@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import TextCase from "./TextCase";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -28,8 +32,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Text <span className="grad">case converter</span></h1>
         <p className="lede">Convert text to UPPERCASE, lowercase, Title Case, Sentence case and more — instantly and privately.</p>
+        <ToolBadges />
       </div>
-      <TextCase />
+      <div className="tool-shell"><TextCase /></div>
+
+      <Steps
+        heading={<>Convert text in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📥", title: "Paste your text", text: "Type or paste any text into the box — no length limit." },
+          { icon: "🔤", title: "Pick a case", text: "Choose UPPERCASE, lowercase, Title Case, Sentence case and more." },
+          { icon: "📋", title: "Copy the result", text: "Copy the converted text with one tap and paste it anywhere." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">case converter</span></>}
+        items={[
+          { icon: "🔠", title: "Six case styles", text: "UPPERCASE, lowercase, Title Case, Sentence case, aLtErNaTiNg and inverse." },
+          { icon: "⚡", title: "Instant", text: "The text converts the moment you pick a style — no waiting." },
+          { icon: "📋", title: "One-tap copy", text: "Copy the result straight to your clipboard, ready to paste." },
+          { icon: "🔒", title: "100% private", text: "Conversion runs in your browser; your text is never uploaded." },
+          { icon: "♻️", title: "No retyping", text: "Fix a stray Caps Lock or reformat a heading without typing it again." },
+          { icon: "🆓", title: "Free, no limit", text: "No sign-up and no character limit — convert as much as you like." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Fix your text case in one click</h2>
         <p>
@@ -39,8 +66,14 @@ export default function Page() {
         </p>
         <p>It works entirely in your browser, so your text stays private. Handy for headings, form fields, social posts and code.</p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/word-counter/", "/password-generator/", "/qr-code-generator/", "/typing-test/"]}
+      />
+
+      <RecentTools current="/text-case-converter/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free, private tools" text="Everything runs in your browser — no sign-up." links={[["/word-counter/", "Word Counter"], ["/password-generator/", "Password Generator"], ["/qr-code-generator/", "QR Generator"], ["/resume-maker/", "Resume Maker"]]} />
     </>
   );
 }

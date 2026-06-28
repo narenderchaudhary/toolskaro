@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HashGen from "./HashGen";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Hash <span className="grad">generator</span></h1>
         <p className="lede">Create SHA-256, SHA-1, SHA-384 and SHA-512 hashes from any text — instantly and privately in your browser.</p>
+        <ToolBadges />
       </div>
-      <HashGen />
+
+      <div className="tool-shell"><HashGen /></div>
+
+      <Steps
+        heading={<>Generate a hash in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📝", title: "Enter your text", text: "Type or paste any string — a password, token, message or file contents." },
+          { icon: "#️⃣", title: "Read every digest", text: "SHA-1, SHA-256, SHA-384 and SHA-512 are computed instantly, all at once." },
+          { icon: "📋", title: "Copy & compare", text: "Copy the digest you need and compare it against a published checksum to verify." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">hash generator</span></>}
+        items={[
+          { icon: "🔐", title: "Web Crypto API", text: "Hashes are computed with the browser's native engine — the same one that secures HTTPS." },
+          { icon: "🧮", title: "Four SHA algorithms", text: "Get SHA-1, SHA-256, SHA-384 and SHA-512 digests side by side from a single input." },
+          { icon: "🔒", title: "100% private", text: "Hashing happens entirely in your browser, so passwords and tokens are never uploaded." },
+          { icon: "✅", title: "Verify downloads", text: "Compare a SHA-256 value against a publisher's checksum to confirm a file is untampered." },
+          { icon: "🎯", title: "Deterministic", text: "Identical input always gives identical output, so you can reliably compare values for equality." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Generate secure hashes in your browser</h2>
         <p>
@@ -65,8 +93,14 @@ export default function Page() {
           option on the <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/base64-encode-decode/", "/uuid-generator/", "/url-encode-decode/"]}
+      />
+
+      <RecentTools current="/hash-generator/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free developer tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/base64-encode-decode/", "Base64 Encode/Decode"], ["/uuid-generator/", "UUID Generator"], ["/password-generator/", "Password Generator"]]} />
     </>
   );
 }

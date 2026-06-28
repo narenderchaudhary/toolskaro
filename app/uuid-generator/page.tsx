@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Uuid from "./Uuid";
-import CtaBand from "@/app/components/CtaBand";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -33,8 +37,32 @@ export default function Page() {
       <div className="tool-hero">
         <h1>UUID <span className="grad">generator</span></h1>
         <p className="lede">Generate secure random UUID v4 identifiers, one or in bulk — instantly and privately.</p>
+        <ToolBadges />
       </div>
-      <Uuid />
+
+      <div className="tool-shell"><Uuid /></div>
+
+      <Steps
+        heading={<>Generate UUIDs in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🔢", title: "Set the count", text: "Choose how many UUID v4 identifiers you need, from 1 up to 100 at once." },
+          { icon: "🔠", title: "Toggle case", text: "Flip the uppercase switch if your database or legacy system expects uppercase hex." },
+          { icon: "📋", title: "Generate & copy", text: "Click Generate and copy the whole batch with one button, ready to paste anywhere." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">UUID generator</span></>}
+        items={[
+          { icon: "🎲", title: "Cryptographically random", text: "Built on crypto.randomUUID() with 122 bits of entropy — safe for production keys." },
+          { icon: "📦", title: "Bulk generation", text: "Create up to 100 v4 UUIDs in one go and copy the entire list with a single click." },
+          { icon: "🔠", title: "Uppercase toggle", text: "Switch between lowercase canonical form and uppercase to match any target system." },
+          { icon: "🔒", title: "100% private", text: "Every UUID is generated locally in your browser from a secure source — nothing is uploaded." },
+          { icon: "🗝️", title: "Collision-free keys", text: "Ideal for database primary keys, request and trace IDs, idempotency keys and file names." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no limits — works offline once the page has loaded." },
+        ]}
+      />
+
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Random UUIDs whenever you need them</h2>
         <p>
@@ -63,8 +91,14 @@ export default function Page() {
           <Link href="/developer-tools/">developer tools</Link> page.
         </p>
       </div>
+      <RelatedTools
+        heading="More developer tools"
+        hrefs={["/json-formatter/", "/hash-generator/", "/base64-encode-decode/", "/url-encode-decode/"]}
+      />
+
+      <RecentTools current="/uuid-generator/" />
+
       <Faq items={faqs} />
-      <CtaBand heading="More free developer tools" text="Fast, private utilities that run entirely in your browser." links={[["/json-formatter/", "JSON Formatter"], ["/hash-generator/", "Hash Generator"], ["/base64-encode-decode/", "Base64 Encode/Decode"], ["/password-generator/", "Password Generator"]]} />
     </>
   );
 }

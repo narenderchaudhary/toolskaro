@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import TypingTest from "./TypingTest";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 import Faq from "@/app/components/Faq";
 
 export const metadata: Metadata = {
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Typing test — <span className="grad">English &amp; Hindi</span></h1>
         <p className="lede">Check your typing speed and accuracy in real time. Practise for government skill tests — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <TypingTest />
+      <div className="tool-shell"><TypingTest /></div>
 
       <Steps heading={<>Test in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">typing test</span></>} items={features} />
@@ -71,13 +74,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Get exam-ready with free tools"
-        text="From typing practice to photo and document prep — all in one place."
-        links={[["/word-counter/", "Word Counter"], ["/age-calculator/", "Age Calculator"], ["/resume-maker/", "Resume Maker"], ["/image-compressor/", "Image Compressor"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/word-counter/", "/age-calculator/", "/text-case-converter/", "/qr-code-generator/"]}
       />
+
+      <RecentTools current="/typing-test/" />
+
+      <Faq items={faqs} />
     </>
   );
 }
