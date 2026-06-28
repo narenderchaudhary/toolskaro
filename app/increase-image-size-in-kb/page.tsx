@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Increase from "./Increase";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Increase Image Size in KB — Free Online Image KB Increaser",
@@ -34,9 +38,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Increase image size <span className="grad">in KB</span></h1>
         <p className="lede">Increase the KB of a photo to meet a form&apos;s minimum file size — 20 KB, 50 KB, 100 KB or any target. A free, instant image KB increaser that runs 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <Increase />
+      <div className="tool-shell"><Increase /></div>
+
+      <Steps
+        heading={<>Increase your image in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📏", title: "Set the minimum KB", text: "Type the size your form needs, or tap a preset like 20, 50 or 100 KB." },
+          { icon: "🖼️", title: "Upload your photo", text: "Drop a JPG or PNG — it stays on your device and is never uploaded." },
+          { icon: "⬇️", title: "Download", text: "The tool tops the file up to your target and you download a standard JPG." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">KB increaser</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; your photo is never uploaded to a server." },
+          { icon: "✨", title: "No quality loss", text: "It only adds harmless padding to reach the size — the picture looks identical." },
+          { icon: "⚡", title: "Instant", text: "Hit any KB target in about a second — no waiting and no queue." },
+          { icon: "🎯", title: "Exact size", text: "Meet a strict minimum like 20–50 KB so a form finally accepts your image." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — use it as many times as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>When you need to increase a photo&apos;s size in KB</h2>
@@ -62,9 +88,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related image tools"
+        hrefs={["/resize-image-in-kb/", "/image-compressor/", "/image-resizer/", "/passport-photo-maker/"]}
+      />
 
-      <CtaBand heading="Hit any size your form needs" text="Increase, compress and resize images to the exact KB." links={[["/resize-image-in-kb/", "Resize Image in KB"], ["/image-compressor/", "Image Compressor"], ["/image-resizer/", "Image Resizer"], ["/passport-photo-maker/", "Passport Photo"]]} />
+      <RecentTools current="/increase-image-size-in-kb/" />
+
+      <Faq items={faqs} />
     </>
   );
 }
