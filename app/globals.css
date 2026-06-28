@@ -106,9 +106,6 @@ header.site.is-scrolled { box-shadow: 0 6px 22px rgba(15, 23, 42, .07); }
 .tool-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--card); border: 1px solid var(--border); padding: 7px 13px; border-radius: 999px; }
 .tool-badge svg { color: var(--brand); }
 .tool-shell { border-radius: 20px; box-shadow: 0 18px 50px -16px rgba(124, 58, 237, .22); }
-@keyframes toolUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.tool-hero, .tool-shell { animation: toolUp .4s ease both; }
-.tool-shell { animation-delay: .05s; }
 
 .related { margin: 32px 0; }
 .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
