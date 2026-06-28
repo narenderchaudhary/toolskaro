@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Watermark from "./Watermark";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Watermark PDF — Add a Text Watermark, Free",
@@ -43,8 +45,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Watermark <span className="grad">PDF</span></h1>
         <p className="lede">Add a text watermark to every page of your PDF — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <Watermark />
+      <div className="tool-shell"><Watermark /></div>
       <Steps heading={<>Watermark in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF watermarker</span></>} items={features} />
       <div className="card content">
@@ -56,8 +59,9 @@ export default function Page() {
         </p>
         <p>It all runs in your browser, so your document is never uploaded.</p>
       </div>
+      <RelatedTools heading="Related PDF tools" hrefs={["/pdf/merge/", "/pdf/organize/", "/pdf/compress/", "/pdf/split/"]} />
+      <RecentTools current="/pdf/watermark/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Watermark, organize, merge and compress — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/organize/", "Organize PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/split/", "Split PDF"]]} />
     </>
   );
 }

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import ChangeDpi from "./ChangeDpi";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Change Image DPI Online — Set Photo to 300 DPI (Free)",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Change image <span className="grad">DPI</span></h1>
         <p className="lede">Set your photo to 300 DPI (or any DPI) for forms and printing — instantly, free and 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <ChangeDpi />
+      <div className="tool-shell"><ChangeDpi /></div>
+
+      <Steps
+        heading={<>Change DPI in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🎯", title: "Set the target DPI", text: "Choose 300 DPI for forms and printing, or type any DPI your portal asks for." },
+          { icon: "🖼️", title: "Upload your photo", text: "Drop a JPG or PNG; it stays on your device and is never uploaded." },
+          { icon: "⬇️", title: "Download", text: "The tool writes the new DPI into the file and you download it — pixel size unchanged." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">DPI changer</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; your photo is never uploaded to a server." },
+          { icon: "🖼️", title: "No resampling", text: "Only the DPI tag changes — the pixels stay identical, so the image quality is untouched." },
+          { icon: "🎯", title: "Exact 300 DPI", text: "Hit the standard print resolution forms and printers expect in one click." },
+          { icon: "⚡", title: "Instant", text: "Update the DPI in about a second — no waiting and no queue." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — use it as often as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Set your photo to 300 DPI for forms</h2>
@@ -53,9 +79,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resize-image-in-cm/", "/image-resizer/", "/image-compressor/", "/passport-photo-maker/"]}
+      />
 
-      <CtaBand heading="Prepare a fully compliant photo" text="Set the DPI, size and KB your form needs — free and private." links={[["/resize-image-in-cm/", "Resize in CM"], ["/image-resizer/", "Resize by Pixels"], ["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"]]} />
+      <RecentTools current="/change-image-dpi/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import HeicConvert from "@/app/components/HeicConvert";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "HEIC to JPG Converter — Free, No Watermark, No Upload",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Convert <span className="grad">HEIC to JPG</span></h1>
         <p className="lede">Turn iPhone HEIC photos into standard JPG images — free, no watermark, no sign-up, and 100% in your browser. Convert as many as you like.</p>
+        <ToolBadges />
       </div>
 
-      <HeicConvert to="jpg" />
+      <div className="tool-shell"><HeicConvert to="jpg" /></div>
+
+      <Steps
+        heading={<>Convert HEIC to JPG in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📱", title: "Add your HEIC photos", text: "Drop one or many .heic / .heif files straight from your iPhone — they stay on your device." },
+          { icon: "🔄", title: "Convert", text: "The tool turns each photo into a standard high-quality JPG, right in your browser." },
+          { icon: "⬇️", title: "Download", text: "Save the JPGs and open or upload them anywhere — no watermark, no account." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">HEIC to JPG converter</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "Conversion runs on your device, so your personal iPhone photos are never uploaded." },
+          { icon: "🚫", title: "No watermark", text: "No watermark, no sign-up and no email — just clean JPG files." },
+          { icon: "🗂️", title: "Batch convert", text: "Drop several HEIC photos at once and convert them all in one go." },
+          { icon: "✨", title: "High quality", text: "Converts at top quality so the JPG looks the same as the original photo." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No limit on how many photos you convert." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Open your iPhone photos anywhere</h2>
@@ -52,9 +78,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-converter/", "/png-to-jpg/", "/jpeg-to-jpg/", "/webp-to-jpg/"]}
+      />
 
-      <CtaBand heading="More free image tools" text="Convert, compress and resize — no watermark, no upload." links={[["/heic-to-pdf/", "HEIC to PDF"], ["/image-converter/", "Image Converter"], ["/image-compressor/", "Image Compressor"], ["/png-to-jpg/", "PNG to JPG"]]} />
+      <RecentTools current="/heic-to-jpg/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

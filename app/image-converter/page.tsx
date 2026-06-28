@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Converter from "./Converter";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Image Converter — PNG, JPG & WebP, Free",
@@ -47,8 +49,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Image converter — <span className="grad">PNG, JPG &amp; WebP</span></h1>
         <p className="lede">Convert images between PNG, JPG and WebP with quality control — free, no upload, 100% in your browser.</p>
+        <ToolBadges />
       </div>
-      <Converter />
+      <div className="tool-shell"><Converter /></div>
       <Steps heading={<>Convert in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">image converter</span></>} items={features} />
       <div className="card content">
@@ -64,8 +67,12 @@ export default function Page() {
           images are never uploaded. Need an exact file size afterwards? Use our Image Compressor.
         </p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/crop-image/", "/image-resizer/", "/image-compressor/", "/remove-background/"]}
+      />
+      <RecentTools current="/image-converter/" />
       <Faq items={faqs} />
-      <CtaBand heading="Get your image exactly right" text="Convert, crop, resize and compress — all free and private." links={[["/crop-image/", "Crop Image"], ["/image-resizer/", "Image Resizer"], ["/image-compressor/", "Image Compressor"], ["/remove-background/", "Remove Background"]]} />
     </>
   );
 }

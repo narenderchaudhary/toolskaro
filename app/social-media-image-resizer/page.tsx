@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import SocialResizer from "./SocialResizer";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Social Media Image Resizer — All Platforms",
@@ -47,8 +49,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Social media <span className="grad">image resizer</span></h1>
         <p className="lede">Resize any image to the exact size for Instagram, Facebook, WhatsApp, LinkedIn, X, YouTube and Pinterest — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <SocialResizer />
+      <div className="tool-shell"><SocialResizer /></div>
       <Steps heading={<>Resize in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">social media resizer</span></>} items={features} />
       <div className="card content">
@@ -67,8 +70,12 @@ export default function Page() {
           result with our Image Compressor if you need a smaller file.
         </p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-resizer/", "/crop-image/", "/image-compressor/", "/remove-background/"]}
+      />
+      <RecentTools current="/social-media-image-resizer/" />
       <Faq items={faqs} />
-      <CtaBand heading="Create perfect posts every time" text="Resize, crop, convert and compress — all free and private." links={[["/crop-image/", "Crop Image"], ["/image-resizer/", "Image Resizer"], ["/image-compressor/", "Image Compressor"], ["/remove-background/", "Remove Background"]]} />
     </>
   );
 }

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import JpgToPdf from "@/app/pdf/jpg-to-pdf/JpgToPdf";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "WebP to PDF Converter — Free, No Watermark, No Upload",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Convert <span className="grad">WebP to PDF</span></h1>
         <p className="lede">Turn WebP images into one PDF — combine several into a single document. Free, no watermark, no sign-up, 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <JpgToPdf />
+      <div className="tool-shell"><JpgToPdf /></div>
+
+      <Steps
+        heading={<>Convert WebP to PDF in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🖼️", title: "Add WebP images", text: "Drop one or more WebP files — you can mix in JPG and PNG too." },
+          { icon: "📄", title: "Combine into a PDF", text: "Each image becomes one page, in the order shown." },
+          { icon: "⬇️", title: "Download", text: "Save the finished PDF, ready to upload or print." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">WebP to PDF converter</span></>}
+        items={[
+          { icon: "🖼️", title: "WebP, JPG & PNG", text: "Accepts mixed formats and merges them into a single PDF." },
+          { icon: "📄", title: "Many images, one PDF", text: "Combine several images into one tidy, upload-ready document." },
+          { icon: "🚫", title: "No watermark", text: "The PDF is clean — no branding, no account and no email required." },
+          { icon: "🔒", title: "100% private", text: "The PDF is built in your browser; your images are never uploaded." },
+          { icon: "⚡", title: "Instant", text: "Build the PDF in seconds, with no upload wait or queue." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up and no limit on the number of images." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Combine WebP images into a single PDF</h2>
@@ -50,9 +76,11 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools heading="Related PDF tools" hrefs={["/heic-to-pdf/", "/pdf/jpg-to-pdf/", "/pdf/compress/", "/pdf/merge/"]} />
 
-      <CtaBand heading="More free PDF tools" text="Convert, combine and compress — no watermark, no upload." links={[["/webp-to-jpg/", "WebP to JPG"], ["/pdf/jpg-to-pdf/", "Image to PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
+      <RecentTools current="/webp-to-pdf/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

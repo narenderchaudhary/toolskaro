@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import RotatePdf from "./RotatePdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Rotate PDF — Rotate PDF Pages 90°, 180°, 270° Online (Free)",
@@ -43,8 +45,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Rotate <span className="grad">PDF</span></h1>
         <p className="lede">Rotate every page of your PDF and save it permanently — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <RotatePdf />
+      <div className="tool-shell"><RotatePdf /></div>
       <Steps heading={<>Rotate in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF rotator</span></>} items={features} />
       <div className="card content">
@@ -56,8 +59,12 @@ export default function Page() {
         </p>
         <p>It works entirely in your browser, keeping your documents private.</p>
       </div>
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/split/", "/pdf/merge/", "/pdf/delete-pages/", "/pdf/page-numbers/"]}
+      />
+      <RecentTools current="/pdf/rotate/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Rotate, split, merge and compress — free and private." links={[["/pdf/split/", "Split PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/delete-pages/", "Delete Pages"], ["/pdf/page-numbers/", "Page Numbers"]]} />
     </>
   );
 }

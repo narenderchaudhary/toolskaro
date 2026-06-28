@@ -3,8 +3,10 @@ import Link from "next/link";
 import SignatureResize from "./SignatureResize";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Signature Resize — Exact Size & KB for Forms",
@@ -54,9 +56,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Resize your signature to <span className="grad">size & KB</span></h1>
         <p className="lede">Resize your signature to the exact dimensions and KB limit your online form needs — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <SignatureResize />
+      <div className="tool-shell"><SignatureResize /></div>
 
       <Steps heading={<>Resize in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">signature resizer</span></>} items={features} />
@@ -105,13 +108,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Finish your application paperwork in minutes"
-        text="Photo, signature and documents — sized, compressed and converted, all free."
-        links={[["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"], ["/image-resizer/", "Image Resizer"], ["/pdf/jpg-to-pdf/", "JPG to PDF"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/passport-photo-maker/", "/image-compressor/", "/image-resizer/", "/photo-signature-combiner/"]}
       />
+
+      <RecentTools current="/signature-resize/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

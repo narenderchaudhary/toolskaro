@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Converter from "@/app/image-converter/Converter";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "JPEG to JPG Converter — Free Online, No Upload",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Convert <span className="grad">JPEG to JPG</span></h1>
         <p className="lede">Change your .jpeg image to a .jpg file (or convert any PNG/WebP to JPG) — free, instant and 100% in your browser. No signup, no upload.</p>
+        <ToolBadges />
       </div>
 
-      <Converter />
+      <div className="tool-shell"><Converter /></div>
+
+      <Steps
+        heading={<>Convert JPEG to JPG in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📁", title: "Upload your JPEG", text: "Drop a .jpeg file — it stays on your device and is never uploaded." },
+          { icon: "🔄", title: "Choose JPG output", text: "Set the output format to JPG and pick the quality you want." },
+          { icon: "⬇️", title: "Download .jpg", text: "Save a clean, standard .jpg that opens and uploads everywhere." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">JPEG to JPG converter</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "The conversion runs in your browser; your image is never uploaded to a server." },
+          { icon: "✨", title: "Identical quality", text: "Keep the quality at 100% for a copy that looks exactly like the original." },
+          { icon: "⚡", title: "Instant", text: "Convert in about a second — no waiting, no queue, no install." },
+          { icon: "🔁", title: "Any source", text: "Also turns PNG and WebP images into a standard JPG file." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — convert as many files as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>JPEG and JPG — what&apos;s the difference?</h2>
@@ -54,9 +80,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-converter/", "/png-to-jpg/", "/image-compressor/", "/image-resizer/"]}
+      />
 
-      <CtaBand heading="More free image tools" text="Convert, compress and resize — all in your browser." links={[["/image-converter/", "Image Converter"], ["/image-compressor/", "Image Compressor"], ["/image-resizer/", "Image Resizer"], ["/passport-photo-maker/", "Passport Photo"]]} />
+      <RecentTools current="/jpeg-to-jpg/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

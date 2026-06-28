@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import ResizePdf from "./ResizePdf";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Resize PDF to A4 Size — Free PDF to A4 Converter",
@@ -34,9 +38,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Resize <span className="grad">PDF</span> page size</h1>
         <p className="lede">Resize a PDF to A4 size — or Letter, Legal, A5 or A3 — to get a clean, consistent, print-ready document. A free PDF to A4 converter that runs instantly, 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <ResizePdf />
+      <div className="tool-shell"><ResizePdf /></div>
+
+      <Steps
+        heading={<>Resize your PDF in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📐", title: "Pick a page size", text: "Choose A4, Letter, Legal, A5 or A3 as your target size." },
+          { icon: "📁", title: "Upload your PDF", text: "Drop your file — it stays on your device and is never uploaded." },
+          { icon: "⬇️", title: "Download", text: "Every page is scaled to fit and you download the resized PDF." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">PDF resizer</span></>}
+        items={[
+          { icon: "📄", title: "Standard sizes", text: "Fit every page to A4, Letter, Legal, A5 or A3 in one click." },
+          { icon: "🎯", title: "No distortion", text: "Each page keeps its aspect ratio — content is centred, never stretched." },
+          { icon: "🖨️", title: "Print-ready", text: "Standardise mixed page sizes so the document prints and uploads cleanly." },
+          { icon: "🔒", title: "100% private", text: "Runs entirely in your browser; your PDF is never uploaded to a server." },
+          { icon: "⚡", title: "Instant", text: "Resize even a multi-page PDF in seconds — no queue, no waiting." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark and no file-size cap." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Standardise your PDF page size</h2>
@@ -61,9 +87,11 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools heading="Related PDF tools" hrefs={["/pdf/compress/", "/pdf/merge/", "/pdf/jpg-to-pdf/", "/pdf/split/"]} />
 
-      <CtaBand heading="More free PDF tools" text="Resize, merge, split and compress — all in your browser." links={[["/pdf/compress/", "Compress PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
+      <RecentTools current="/resize-pdf/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

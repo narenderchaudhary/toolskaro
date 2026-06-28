@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PhotoSign from "./PhotoSign";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Photo & Signature Combiner — Join in One Image",
@@ -47,8 +49,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Combine <span className="grad">photo &amp; signature</span></h1>
         <p className="lede">Join your photo and signature into one image for online forms — free, no upload, 100% in your browser.</p>
+        <ToolBadges />
       </div>
-      <PhotoSign />
+      <div className="tool-shell"><PhotoSign /></div>
       <Steps heading={<>Combine in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">combiner</span></>} items={features} />
       <div className="card content">
@@ -64,8 +67,12 @@ export default function Page() {
           form also enforces a file-size limit, compress the result with our Image Compressor.
         </p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/passport-photo-maker/", "/signature-resize/", "/image-compressor/", "/image-resizer/"]}
+      />
+      <RecentTools current="/photo-signature-combiner/" />
       <Faq items={faqs} />
-      <CtaBand heading="Prepare every part of your application" text="Photo, signature and documents — sized, combined and compressed, free." links={[["/passport-photo-maker/", "Passport Photo"], ["/signature-resize/", "Signature Resize"], ["/image-compressor/", "Image Compressor"], ["/pdf/jpg-to-pdf/", "JPG to PDF"]]} />
     </>
   );
 }

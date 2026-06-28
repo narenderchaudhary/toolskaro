@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Converter from "@/app/image-converter/Converter";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "PNG to JPG Converter — Free Online, No Upload",
@@ -32,9 +36,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Convert <span className="grad">PNG to JPG</span></h1>
         <p className="lede">Turn a PNG into a smaller JPG (or JPEG) — transparency flattened to white, ready for any form or upload. Free, instant, 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <Converter />
+      <div className="tool-shell"><Converter /></div>
+
+      <Steps
+        heading={<>Convert PNG to JPG in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📁", title: "Upload your PNG", text: "Drop a .png file — it stays on your device and is never uploaded." },
+          { icon: "🖼️", title: "Choose JPG output", text: "Pick JPG; transparent areas are flattened onto a white background." },
+          { icon: "⬇️", title: "Download .jpg", text: "Save a smaller, standard JPG ready for any form or upload." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">PNG to JPG converter</span></>}
+        items={[
+          { icon: "📉", title: "Smaller files", text: "JPG compresses photos far better than PNG, shrinking the file for uploads." },
+          { icon: "⬜", title: "Clean white fill", text: "Transparent areas are placed on a solid white background automatically." },
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; your image is never uploaded to a server." },
+          { icon: "⚡", title: "Instant", text: "Convert in about a second — no waiting, no queue, no install." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — convert as many files as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Why convert PNG to JPG?</h2>
@@ -52,9 +78,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/jpeg-to-jpg/", "/image-converter/", "/image-compressor/", "/image-resizer/"]}
+      />
 
-      <CtaBand heading="More free image tools" text="Convert, compress and resize — all in your browser." links={[["/jpeg-to-jpg/", "JPEG to JPG"], ["/image-compressor/", "Image Compressor"], ["/image-converter/", "Image Converter"], ["/image-resizer/", "Image Resizer"]]} />
+      <RecentTools current="/png-to-jpg/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

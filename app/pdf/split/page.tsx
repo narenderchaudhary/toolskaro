@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import SplitPdf from "./SplitPdf";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Split PDF — Extract or Split Pages, Free",
@@ -44,8 +46,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Split <span className="grad">PDF</span></h1>
         <p className="lede">Extract a page range into a new PDF, or split every page into separate files — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <SplitPdf />
+      <div className="tool-shell"><SplitPdf /></div>
       <Steps heading={<>Split in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF splitter</span></>} items={features} />
       <div className="card content">
@@ -57,8 +60,12 @@ export default function Page() {
         </p>
         <p>It all happens in your browser, so even confidential documents stay private. To put pages back together, use our Merge PDF tool.</p>
       </div>
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/merge/", "/pdf/compress/", "/pdf/rotate/", "/pdf/delete-pages/"]}
+      />
+      <RecentTools current="/pdf/split/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Split, merge, compress and convert — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/rotate/", "Rotate PDF"], ["/pdf/delete-pages/", "Delete Pages"]]} />
     </>
   );
 }

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Compressor from "@/app/image-compressor/Compressor";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Resize Photo for PAN Card — Photo & Signature Size (Free)",
@@ -33,6 +37,7 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Resize photo for <span className="grad">PAN card</span></h1>
         <p className="lede">Resize and compress your photo and signature for a PAN card application (Form 49A) to the right size and KB — free, no signup, in your browser.</p>
+        <ToolBadges />
       </div>
 
       <div className="card content">
@@ -45,7 +50,28 @@ export default function Page() {
         <p className="muted-note">⚠️ Exact photo size and KB limits differ between the NSDL/Protean and UTIITSL portals and can change — always confirm the current requirement on the official PAN portal before you upload.</p>
       </div>
 
-      <Compressor initialTarget={50} />
+      <div className="tool-shell"><Compressor initialTarget={50} /></div>
+
+      <Steps
+        heading={<>Resize for your PAN card in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "🪪", title: "Upload your PAN photo or signature", text: "Drop your passport-style colour photo or your black-ink signature scan — it stays on your device." },
+          { icon: "⚖️", title: "Set the KB target", text: "Compress to the KB limit your NSDL/Protean or UTIITSL Form 49A requires." },
+          { icon: "⬇️", title: "Download & upload", text: "Download the compliant JPG and upload it with your PAN application." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">PAN card resizer</span></>}
+        items={[
+          { icon: "🇮🇳", title: "Built for Form 49A", text: "Tuned for NSDL/Protean and UTIITSL PAN portals so your photo and signature pass their checks." },
+          { icon: "🔒", title: "100% private", text: "Your photo and signature are processed in your browser and never uploaded to a server." },
+          { icon: "⚖️", title: "Exact KB", text: "Hit the portal's file-size limit so the upload isn't rejected for being too large." },
+          { icon: "✍️", title: "Photo & signature", text: "Prepare both PAN documents — pair with Signature Resize for the signature file." },
+          { icon: "⚡", title: "Instant", text: "Compress in about a second — no waiting and no queue." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — use it as often as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Prepare both files in minutes</h2>
@@ -60,9 +86,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/resize-image-in-cm/", "/signature-resize/", "/image-compressor/", "/passport-photo-maker/"]}
+      />
 
-      <CtaBand heading="Get your PAN application ready" text="Photo, signature and documents — sized and private." links={[["/resize-image-in-cm/", "Resize in CM"], ["/signature-resize/", "Signature Resize"], ["/image-compressor/", "Image Compressor"], ["/passport-photo-maker/", "Passport Photo"]]} />
+      <RecentTools current="/resize-for-pan-card/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

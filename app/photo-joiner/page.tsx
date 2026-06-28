@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PhotoJoiner from "./PhotoJoiner";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Photo Joiner Free Online — Combine Photos",
@@ -49,8 +51,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Photo <span className="grad">joiner</span></h1>
         <p className="lede">A free online photo joiner to combine two or more photos into one image — side by side, stacked or in a grid. No upload, no watermark, 100% in your browser.</p>
+        <ToolBadges />
       </div>
-      <PhotoJoiner />
+      <div className="tool-shell"><PhotoJoiner /></div>
       <Steps heading={<>Join in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">photo joiner</span></>} items={features} />
       <div className="card content">
@@ -67,8 +70,12 @@ export default function Page() {
           specific size, run it through our Image Compressor or Resizer afterwards.
         </p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/crop-image/", "/image-resizer/", "/image-compressor/", "/photo-signature-combiner/"]}
+      />
+      <RecentTools current="/photo-joiner/" />
       <Faq items={faqs} />
-      <CtaBand heading="Do more with your images" text="Join, crop, resize, convert and compress — all free and private." links={[["/crop-image/", "Crop Image"], ["/image-resizer/", "Image Resizer"], ["/image-compressor/", "Image Compressor"], ["/photo-signature-combiner/", "Photo + Signature"]]} />
     </>
   );
 }

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import DeletePages from "./DeletePages";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Delete Pages from PDF — Remove PDF Pages Online (Free)",
@@ -43,8 +45,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Delete pages from <span className="grad">PDF</span></h1>
         <p className="lede">Remove unwanted pages from your PDF and download the clean file — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <DeletePages />
+      <div className="tool-shell"><DeletePages /></div>
       <Steps heading={<>Remove in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">page remover</span></>} items={features} />
       <div className="card content">
@@ -56,8 +59,12 @@ export default function Page() {
         </p>
         <p>Everything runs in your browser, so your document never leaves your device.</p>
       </div>
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/split/", "/pdf/merge/", "/pdf/rotate/", "/pdf/compress/"]}
+      />
+      <RecentTools current="/pdf/delete-pages/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Delete, split, merge and compress — free and private." links={[["/pdf/split/", "Split PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/rotate/", "Rotate PDF"], ["/pdf/compress/", "Compress PDF"]]} />
     </>
   );
 }

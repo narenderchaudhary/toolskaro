@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PdfToJpg from "./PdfToJpg";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "PDF to JPG — Convert PDF Pages to Images, Free",
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Convert <span className="grad">PDF to JPG</span> online</h1>
         <p className="lede">Turn each page of your PDF into a downloadable JPG image — free and entirely in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <PdfToJpg />
+      <div className="tool-shell"><PdfToJpg /></div>
 
       <Steps heading={<>Convert in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">PDF to JPG</span> tool</>} items={features} />
@@ -69,13 +72,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="All the PDF tools you need — free"
-        text="Convert, merge, compress and rebuild PDFs privately in your browser."
-        links={[["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf/compress/", "Compress PDF"], ["/image-compressor/", "Image Compressor"]]}
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/jpg-to-pdf/", "/pdf/merge/", "/pdf/compress/", "/pdf/split/"]}
       />
+
+      <RecentTools current="/pdf/pdf-to-jpg/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

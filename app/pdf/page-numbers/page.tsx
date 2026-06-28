@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PageNumbers from "./PageNumbers";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Add Page Numbers to PDF — Free Online (No Upload)",
@@ -43,8 +45,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Add page numbers to <span className="grad">PDF</span></h1>
         <p className="lede">Number the pages of your PDF, choose the position and starting number — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <PageNumbers />
+      <div className="tool-shell"><PageNumbers /></div>
       <Steps heading={<>Number in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">page numbering</span> tool</>} items={features} />
       <div className="card content">
@@ -56,8 +59,12 @@ export default function Page() {
         </p>
         <p>It runs entirely in your browser, so your document is never uploaded.</p>
       </div>
+      <RelatedTools
+        heading="Related PDF tools"
+        hrefs={["/pdf/merge/", "/pdf/split/", "/pdf/rotate/", "/pdf/compress/"]}
+      />
+      <RecentTools current="/pdf/page-numbers/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Number, merge, split and compress — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/split/", "Split PDF"], ["/pdf/rotate/", "Rotate PDF"], ["/pdf/compress/", "Compress PDF"]]} />
     </>
   );
 }

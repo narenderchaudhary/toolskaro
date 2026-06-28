@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Organize from "./Organize";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Organize PDF — Reorder, Rotate & Delete Pages Online Free",
@@ -43,8 +45,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Organize <span className="grad">PDF</span></h1>
         <p className="lede">Reorder, rotate and delete pages with visual thumbnails, then download — free, no upload, in your browser.</p>
+        <ToolBadges />
       </div>
-      <Organize />
+      <div className="tool-shell"><Organize /></div>
       <Steps heading={<>Organize in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">organize tool</span></>} items={features} />
       <div className="card content">
@@ -56,8 +59,9 @@ export default function Page() {
         </p>
         <p>It runs entirely in your browser, keeping your document private.</p>
       </div>
+      <RelatedTools heading="Related PDF tools" hrefs={["/pdf/merge/", "/pdf/split/", "/pdf/compress/", "/pdf/watermark/"]} />
+      <RecentTools current="/pdf/organize/" />
       <Faq items={faqs} />
-      <CtaBand heading="All your PDF tools in one place" text="Organize, merge, split and compress — free and private." links={[["/pdf/merge/", "Merge PDF"], ["/pdf/split/", "Split PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/watermark/", "Watermark PDF"]]} />
     </>
   );
 }

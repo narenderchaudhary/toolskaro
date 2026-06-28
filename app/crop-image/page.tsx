@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Crop from "./Crop";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Crop Image Online — Free Photo Cropper (No Upload)",
@@ -47,8 +49,9 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Crop image <span className="grad">online</span></h1>
         <p className="lede">Drag to crop any part of your photo, or use a ratio preset — free, no upload, 100% in your browser.</p>
+        <ToolBadges />
       </div>
-      <Crop />
+      <div className="tool-shell"><Crop /></div>
       <Steps heading={<>Crop in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">image cropper</span></>} items={features} />
       <div className="card content">
@@ -64,8 +67,12 @@ export default function Page() {
           and the whole process runs privately in your browser.
         </p>
       </div>
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-converter/", "/image-resizer/", "/remove-background/", "/image-compressor/"]}
+      />
+      <RecentTools current="/crop-image/" />
       <Faq items={faqs} />
-      <CtaBand heading="Finish editing your photo" text="Crop, convert, resize and compress — all free and private." links={[["/image-converter/", "Image Converter"], ["/image-resizer/", "Image Resizer"], ["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"]]} />
     </>
   );
 }

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import RemoveBg from "./RemoveBg";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Remove Background from Image — Free, No Upload",
@@ -49,9 +51,10 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Remove image background <span className="grad">automatically</span></h1>
         <p className="lede">Erase the background and get a transparent PNG — free, and 100% private because it runs in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <RemoveBg />
+      <div className="tool-shell"><RemoveBg /></div>
 
       <Steps heading={<>Remove it in <span className="g">3 simple steps</span></>} steps={steps} />
       <Features heading={<>Why use this <span className="g">background remover</span></>} items={features} />
@@ -71,13 +74,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
-
-      <CtaBand
-        heading="Turn any photo into a clean, form-ready image"
-        text="Cut out, resize and compress — all free and in your browser."
-        links={[["/passport-photo-maker/", "Passport Photo"], ["/image-resizer/", "Image Resizer"], ["/image-compressor/", "Image Compressor"], ["/qr-code-generator/", "QR Generator"]]}
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/passport-photo-maker/", "/crop-image/", "/image-resizer/", "/image-compressor/"]}
       />
+
+      <RecentTools current="/remove-background/" />
+
+      <Faq items={faqs} />
     </>
   );
 }

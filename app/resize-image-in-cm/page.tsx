@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import ResizeCm from "./ResizeCm";
-import CtaBand from "@/app/components/CtaBand";
 import Faq from "@/app/components/Faq";
+import Steps from "@/app/components/Steps";
+import Features from "@/app/components/Features";
+import ToolBadges from "@/app/components/ToolBadges";
+import RelatedTools from "@/app/components/RelatedTools";
+import RecentTools from "@/app/components/RecentTools";
 
 export const metadata: Metadata = {
   title: "Resize Image in CM with DPI 300 — Free Photo Resizer",
@@ -34,9 +38,31 @@ export default function Page() {
       <div className="tool-hero">
         <h1>Resize image in <span className="grad">centimetres</span></h1>
         <p className="lede">Resize a photo in cm with DPI — set the exact width and height in centimetres at 300 DPI for passport, form and print sizes. Free, instant and 100% in your browser.</p>
+        <ToolBadges />
       </div>
 
-      <ResizeCm />
+      <div className="tool-shell"><ResizeCm /></div>
+
+      <Steps
+        heading={<>Resize in cm in <span className="grad">3 simple steps</span></>}
+        steps={[
+          { icon: "📐", title: "Enter cm and DPI", text: "Type the width and height in centimetres and set the DPI — 300 is standard for forms and print." },
+          { icon: "🖼️", title: "Upload your photo", text: "Drop a JPG or PNG; it stays on your device and is never uploaded." },
+          { icon: "⬇️", title: "Download", text: "The tool resizes to the exact pixel size and you download a ready-to-use JPG." },
+        ]}
+      />
+
+      <Features
+        heading={<>Why use this <span className="grad">cm resizer</span></>}
+        items={[
+          { icon: "🔒", title: "100% private", text: "Everything runs in your browser; your photo is never uploaded to a server." },
+          { icon: "🎯", title: "Exact centimetres", text: "Hit precise sizes like 3.5×4.5 cm so forms and print shops accept your photo." },
+          { icon: "🔢", title: "DPI-aware", text: "Pick 300 DPI and the tool works out the matching pixel dimensions for you." },
+          { icon: "⚡", title: "Instant", text: "Resize in about a second — no waiting and no queue." },
+          { icon: "📱", title: "Works anywhere", text: "Phone, tablet or desktop, in any modern browser." },
+          { icon: "🆓", title: "Free & unlimited", text: "No sign-up, no watermark — use it as often as you like." },
+        ]}
+      />
 
       <div className="card content">
         <h2 style={{ marginTop: 0 }}>Resize a photo to exact centimetres</h2>
@@ -57,9 +83,14 @@ export default function Page() {
         </p>
       </div>
 
-      <Faq items={faqs} />
+      <RelatedTools
+        heading="Related tools"
+        hrefs={["/image-resizer/", "/resize-image-in-kb/", "/passport-photo-maker/", "/image-compressor/"]}
+      />
 
-      <CtaBand heading="Size your photo any way you need" text="By centimetres, pixels or KB — all free and private." links={[["/image-resizer/", "Resize by Pixels"], ["/resize-image-in-kb/", "Resize in KB"], ["/passport-photo-maker/", "Passport Photo"], ["/image-compressor/", "Image Compressor"]]} />
+      <RecentTools current="/resize-image-in-cm/" />
+
+      <Faq items={faqs} />
     </>
   );
 }
