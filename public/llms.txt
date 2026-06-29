@@ -4,6 +4,8 @@
 
 ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/company/admatrix-media); editorial and product direction by Narender Chaudhary. Every tool is free, works on mobile, and never uploads your files to a server.
 
+Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.txt
+
 ## Tool hubs (categories)
 - [Image Tools](https://toolskaro.com/image-tools/): All photo and signature tools — compress, resize, passport photo, remove background, convert.
 - [PDF Tools](https://toolskaro.com/pdf-tools/): Full PDF toolkit — merge, split, compress, convert, rotate, organize.
