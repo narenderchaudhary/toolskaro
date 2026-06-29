@@ -13,6 +13,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/image-converter/": { name: "Image Converter", cat: "image" },
   "/photo-signature-combiner/": { name: "Photo & Signature Combiner", cat: "image" },
   "/photo-joiner/": { name: "Photo Joiner", cat: "image" },
+  "/image-joiner/": { name: "Image Joiner", cat: "image" },
   "/social-media-image-resizer/": { name: "Social Media Image Resizer", cat: "image" },
   "/jpeg-to-jpg/": { name: "JPEG to JPG Converter", cat: "image" },
   "/png-to-jpg/": { name: "PNG to JPG Converter", cat: "image" },

@@ -124,6 +124,26 @@ header.site.is-scrolled { box-shadow: 0 6px 22px rgba(15, 23, 42, .07); }
 
 @media (max-width: 860px) { .related-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .related-grid { grid-template-columns: 1fr; } }
+
+/* Image Joiner */
+.ij-drop { border: 2px dashed var(--border); border-radius: 14px; padding: 30px 20px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; color: var(--muted); }
+.ij-drop:hover, .ij-drop.over { border-color: var(--brand); background: var(--soft); }
+.ij-drop-ic { font-size: 30px; margin-bottom: 6px; }
+.ij-drop strong { color: var(--ink); }
+.ij-link { color: var(--brand); font-weight: 600; }
+.ij-hint { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+.ij-thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.ij-thumb { width: 96px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--soft); }
+.ij-thumb img { width: 100%; height: 70px; object-fit: cover; display: block; }
+.ij-thumb-bar { display: flex; justify-content: space-between; align-items: center; padding: 2px; }
+.ij-thumb-bar button { border: none; background: none; cursor: pointer; color: var(--muted); font-size: 15px; line-height: 1; padding: 4px 7px; border-radius: 6px; }
+.ij-thumb-bar button:hover:not(:disabled) { background: var(--card); color: var(--ink); }
+.ij-thumb-bar button:disabled { opacity: .3; cursor: default; }
+.ij-thumb-bar .ij-x:hover { color: #dc2626; }
+.ij-controls { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; margin: 18px 0 6px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--soft); }
+.ij-preview { margin-top: 16px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--soft); display: flex; justify-content: center; overflow: auto; }
+.ij-canvas { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(15,23,42,.10); }
+.ij-canvas.checker { background-image: linear-gradient(45deg, #ddd 25%, transparent 25%), linear-gradient(-45deg, #ddd 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ddd 75%), linear-gradient(-45deg, transparent 75%, #ddd 75%); background-size: 18px 18px; background-position: 0 0, 0 9px, 9px -9px, -9px 0; }
 header.site .container { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 .logo { font-weight: 800; font-size: 20px; color: var(--ink); display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
 .logo:hover { text-decoration: none; }

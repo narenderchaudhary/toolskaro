@@ -22,6 +22,7 @@ ToolsKaro is crafted and maintained by AdMatrix Media (https://www.linkedin.com/
 - [Image Converter](https://toolskaro.com/image-converter/): Convert between PNG, JPG and WebP.
 - [Photo + Signature Combiner](https://toolskaro.com/photo-signature-combiner/): Combine photo and signature into one image.
 - [Photo Joiner](https://toolskaro.com/photo-joiner/): Combine photos side by side, stacked or in a grid.
+- [Image Joiner](https://toolskaro.com/image-joiner/): Join two or more images into one horizontally or vertically, with gap and background options.
 - [Social Media Image Resizer](https://toolskaro.com/social-media-image-resizer/): Exact sizes for Instagram, Facebook, WhatsApp, LinkedIn, X, YouTube, Pinterest.
 - [JPEG to JPG Converter](https://toolskaro.com/jpeg-to-jpg/): Convert JPEG (or PNG/WebP) to a JPG file in the browser.
 - [PNG to JPG Converter](https://toolskaro.com/png-to-jpg/): Convert PNG to a smaller JPG, transparency flattened to white.

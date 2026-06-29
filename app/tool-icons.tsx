@@ -5,7 +5,7 @@ import {
   Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
   Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
   Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
-  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, type LucideIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -19,6 +19,7 @@ const MAP: Record<string, LucideIcon> = {
   "/image-converter/": RefreshCw,
   "/photo-signature-combiner/": Layers,
   "/photo-joiner/": Images,
+  "/image-joiner/": SquareStack,
   "/social-media-image-resizer/": Share2,
   "/jpeg-to-jpg/": FileImage,
   "/png-to-jpg/": ImageIcon,

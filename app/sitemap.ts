@@ -21,6 +21,7 @@ const ROUTES = [
   "image-converter",
   "photo-signature-combiner",
   "photo-joiner",
+  "image-joiner",
   "social-media-image-resizer",
   "jpeg-to-jpg",
   "png-to-jpg",
