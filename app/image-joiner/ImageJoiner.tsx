@@ -4,64 +4,90 @@ import { useEffect, useRef, useState } from "react";
 
 type Img = { id: string; el: HTMLImageElement; name: string };
 
+function loadImg(file: File): Promise<Img> {
+  return new Promise((res) => {
+    const el = new Image();
+    const u = URL.createObjectURL(file);
+    el.onload = () => res({ id: u + Math.random(), el, name: file.name });
+    el.src = u;
+  });
+}
+
+function Slot({ label, img, onFile, onRemove }: { label: string; img: Img | null; onFile: (f: File) => void; onRemove: () => void }) {
+  const ref = useRef<HTMLInputElement>(null);
+  const [over, setOver] = useState(false);
+  return (
+    <div
+      className={`ij-slot${img ? " filled" : ""}${over ? " over" : ""}`}
+      onClick={() => !img && ref.current?.click()}
+      onDragOver={(e) => { e.preventDefault(); setOver(true); }}
+      onDragLeave={() => setOver(false)}
+      onDrop={(e) => { e.preventDefault(); setOver(false); const f = e.dataTransfer.files?.[0]; if (f && f.type.startsWith("image/")) onFile(f); }}
+      role="button"
+      tabIndex={0}
+    >
+      <input ref={ref} type="file" accept="image/*" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = ""; }} />
+      <span className="ij-slot-label">{label}</span>
+      {img ? (
+        <>
+          <img src={img.el.src} alt={img.name} />
+          <div className="ij-slot-foot">
+            <button type="button" onClick={(e) => { e.stopPropagation(); ref.current?.click(); }}>Change</button>
+            <button type="button" className="ij-x" onClick={(e) => { e.stopPropagation(); onRemove(); }}>Remove</button>
+          </div>
+        </>
+      ) : (
+        <div className="ij-slot-empty">
+          <span className="ij-slot-ic" aria-hidden="true">🖼️</span>
+          <span>Click or drop to choose</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ImageJoiner() {
-  const [imgs, setImgs] = useState<Img[]>([]);
+  const [slot1, setSlot1] = useState<Img | null>(null);
+  const [slot2, setSlot2] = useState<Img | null>(null);
+  const [extras, setExtras] = useState<Img[]>([]);
   const [layout, setLayout] = useState<"horizontal" | "vertical">("horizontal");
   const [gap, setGap] = useState(0);
   const [bg, setBg] = useState("#ffffff");
   const [transparent, setTransparent] = useState(false);
-  const [drag, setDrag] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
 
-  function addFiles(list: FileList | null) {
+  const ordered = [slot1, slot2, ...extras].filter(Boolean) as Img[];
+
+  async function addExtras(list: FileList | null) {
     if (!list) return;
-    Array.from(list).filter((f) => f.type.startsWith("image/")).forEach((f) => {
-      const el = new Image();
-      const u = URL.createObjectURL(f);
-      el.onload = () => setImgs((prev) => [...prev, { id: u + Math.random(), el, name: f.name }]);
-      el.src = u;
-    });
-  }
-  function remove(id: string) { setImgs((prev) => prev.filter((i) => i.id !== id)); }
-  function move(id: string, dir: -1 | 1) {
-    setImgs((prev) => {
-      const i = prev.findIndex((x) => x.id === id);
-      const j = i + dir;
-      if (i < 0 || j < 0 || j >= prev.length) return prev;
-      const next = [...prev];
-      [next[i], next[j]] = [next[j], next[i]];
-      return next;
-    });
+    const loaded = await Promise.all(Array.from(list).filter((f) => f.type.startsWith("image/")).map(loadImg));
+    setExtras((p) => [...p, ...loaded]);
   }
 
-  // Live preview — redraw whenever inputs change.
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !imgs.length) return;
+    if (!canvas || ordered.length < 1) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    const els = imgs.map((i) => i.el);
+    const els = ordered.map((i) => i.el);
     if (layout === "horizontal") {
       const h = Math.min(...els.map((e) => e.naturalHeight));
-      const scaled = els.map((e) => ({ e, w: Math.max(1, Math.round(e.naturalWidth * h / e.naturalHeight)), h }));
-      const totalW = scaled.reduce((s, x) => s + x.w, 0) + gap * (els.length - 1);
+      const s = els.map((e) => ({ e, w: Math.max(1, Math.round(e.naturalWidth * h / e.naturalHeight)), h }));
+      const totalW = s.reduce((a, x) => a + x.w, 0) + gap * (els.length - 1);
       canvas.width = totalW; canvas.height = h;
       ctx.clearRect(0, 0, totalW, h);
       if (!transparent) { ctx.fillStyle = bg; ctx.fillRect(0, 0, totalW, h); }
-      let x = 0;
-      for (const s of scaled) { ctx.drawImage(s.e, x, 0, s.w, h); x += s.w + gap; }
+      let x = 0; for (const it of s) { ctx.drawImage(it.e, x, 0, it.w, h); x += it.w + gap; }
     } else {
       const w = Math.min(...els.map((e) => e.naturalWidth));
-      const scaled = els.map((e) => ({ e, w, h: Math.max(1, Math.round(e.naturalHeight * w / e.naturalWidth)) }));
-      const totalH = scaled.reduce((s, x) => s + x.h, 0) + gap * (els.length - 1);
+      const s = els.map((e) => ({ e, w, h: Math.max(1, Math.round(e.naturalHeight * w / e.naturalWidth)) }));
+      const totalH = s.reduce((a, x) => a + x.h, 0) + gap * (els.length - 1);
       canvas.width = w; canvas.height = totalH;
       ctx.clearRect(0, 0, w, totalH);
       if (!transparent) { ctx.fillStyle = bg; ctx.fillRect(0, 0, w, totalH); }
-      let y = 0;
-      for (const s of scaled) { ctx.drawImage(s.e, 0, y, s.w, s.h); y += s.h + gap; }
+      let y = 0; for (const it of s) { ctx.drawImage(it.e, 0, y, it.w, it.h); y += it.h + gap; }
     }
-  }, [imgs, layout, gap, bg, transparent]);
+  }, [slot1, slot2, extras, layout, gap, bg, transparent]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function download() {
     const canvas = canvasRef.current;
@@ -70,7 +96,7 @@ export default function ImageJoiner() {
       if (!blob) return;
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `joined-image.${transparent ? "png" : "png"}`;
+      a.download = "joined-image.png";
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     }, "image/png");
@@ -81,39 +107,31 @@ export default function ImageJoiner() {
 
   return (
     <div className="card">
-      {/* Upload / drop zone */}
-      <div
-        className={`ij-drop${drag ? " over" : ""}`}
-        onDragOver={(e) => { e.preventDefault(); setDrag(true); }}
-        onDragLeave={() => setDrag(false)}
-        onDrop={(e) => { e.preventDefault(); setDrag(false); addFiles(e.dataTransfer.files); }}
-        onClick={() => fileRef.current?.click()}
-        role="button"
-        tabIndex={0}
-      >
-        <div className="ij-drop-ic" aria-hidden="true">🖼️</div>
-        <div><strong>Drop images here</strong>, or <span className="ij-link">click to choose</span></div>
-        <div className="ij-hint">JPG, PNG or WebP · add 2 or more · nothing is uploaded</div>
-        <input ref={fileRef} type="file" accept="image/*" multiple hidden onChange={(e) => { addFiles(e.target.files); e.target.value = ""; }} />
+      <div className="ij-slots">
+        <Slot label="Image 1" img={slot1} onFile={async (f) => setSlot1(await loadImg(f))} onRemove={() => setSlot1(null)} />
+        <Slot label="Image 2" img={slot2} onFile={async (f) => setSlot2(await loadImg(f))} onRemove={() => setSlot2(null)} />
       </div>
 
-      {imgs.length > 0 && (
-        <>
-          {/* Thumbnails + reorder */}
-          <div className="ij-thumbs">
-            {imgs.map((im, idx) => (
-              <div className="ij-thumb" key={im.id}>
-                <img src={im.el.src} alt={im.name} />
-                <div className="ij-thumb-bar">
-                  <button type="button" aria-label="Move earlier" disabled={idx === 0} onClick={() => move(im.id, -1)}>‹</button>
-                  <button type="button" aria-label="Remove" className="ij-x" onClick={() => remove(im.id)}>✕</button>
-                  <button type="button" aria-label="Move later" disabled={idx === imgs.length - 1} onClick={() => move(im.id, 1)}>›</button>
-                </div>
+      {extras.length > 0 && (
+        <div className="ij-thumbs">
+          {extras.map((im, idx) => (
+            <div className="ij-thumb" key={im.id}>
+              <img src={im.el.src} alt={im.name} />
+              <div className="ij-thumb-bar">
+                <span className="ij-thumb-n">#{idx + 3}</span>
+                <button type="button" aria-label="Remove" className="ij-x" onClick={() => setExtras((p) => p.filter((x) => x.id !== im.id))}>✕</button>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+      )}
+      <label className="ij-addmore">
+        <input type="file" accept="image/*" multiple hidden onChange={(e) => { addExtras(e.target.files); e.target.value = ""; }} />
+        + Add more images
+      </label>
 
-          {/* Controls */}
+      {ordered.length >= 2 && (
+        <>
           <div className="ij-controls">
             <div>
               <span style={lbl}>Direction</span>
@@ -137,18 +155,17 @@ export default function ImageJoiner() {
             </div>
           </div>
 
-          {/* Preview */}
           <div className="ij-preview">
             <canvas ref={canvasRef} className={transparent ? "ij-canvas checker" : "ij-canvas"} />
           </div>
 
           <div style={{ display: "flex", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
-            <button className="btn" onClick={download} disabled={imgs.length < 2}>⬇ Download joined image (PNG)</button>
-            <button className="btn secondary" onClick={() => setImgs([])}>Start over</button>
+            <button className="btn" onClick={download}>⬇ Download joined image (PNG)</button>
+            <button className="btn secondary" onClick={() => { setSlot1(null); setSlot2(null); setExtras([]); }}>Start over</button>
           </div>
-          {imgs.length < 2 && <p className="ij-hint" style={{ marginTop: 10 }}>Add at least 2 images to join them.</p>}
         </>
       )}
+      {ordered.length < 2 && <p className="ij-hint" style={{ marginTop: 12 }}>Choose Image 1 and Image 2 to join them.</p>}
     </div>
   );
 }

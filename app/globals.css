@@ -144,6 +144,23 @@ header.site.is-scrolled { box-shadow: 0 6px 22px rgba(15, 23, 42, .07); }
 .ij-preview { margin-top: 16px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--soft); display: flex; justify-content: center; overflow: auto; }
 .ij-canvas { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(15,23,42,.10); }
 .ij-canvas.checker { background-image: linear-gradient(45deg, #ddd 25%, transparent 25%), linear-gradient(-45deg, #ddd 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ddd 75%), linear-gradient(-45deg, transparent 75%, #ddd 75%); background-size: 18px 18px; background-position: 0 0, 0 9px, 9px -9px, -9px 0; }
+/* Two-slot upload (Image 1 / Image 2) */
+.ij-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ij-slot { position: relative; border: 2px dashed var(--border); border-radius: 14px; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: border-color .15s, background .15s; overflow: hidden; }
+.ij-slot.over, .ij-slot:not(.filled):hover { border-color: var(--brand); background: var(--soft); }
+.ij-slot.filled { cursor: default; border-style: solid; }
+.ij-slot-label { position: absolute; top: 8px; left: 10px; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--brand); background: var(--card); padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); z-index: 2; }
+.ij-slot-empty { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; padding: 16px; text-align: center; }
+.ij-slot-ic { font-size: 28px; }
+.ij-slot.filled img { max-width: 100%; max-height: 150px; object-fit: contain; padding: 28px 8px 40px; }
+.ij-slot-foot { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; padding: 7px; background: var(--card); border-top: 1px solid var(--border); }
+.ij-slot-foot button { border: none; background: var(--soft); cursor: pointer; font-size: 12px; font-weight: 600; color: var(--ink); padding: 5px 12px; border-radius: 7px; }
+.ij-slot-foot button:hover { background: var(--border); }
+.ij-slot-foot .ij-x:hover { color: #dc2626; }
+.ij-addmore { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--brand); cursor: pointer; }
+.ij-addmore:hover { text-decoration: underline; }
+.ij-thumb-n { font-size: 11px; color: var(--muted); padding-left: 6px; }
+@media (max-width: 480px) { .ij-slots { grid-template-columns: 1fr; } }
 header.site .container { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 .logo { font-weight: 800; font-size: 20px; color: var(--ink); display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
 .logo:hover { text-decoration: none; }
