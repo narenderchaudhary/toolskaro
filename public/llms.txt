@@ -90,6 +90,7 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [Password Generator](https://toolskaro.com/password-generator/): Strong random passwords.
 - [Text Case Converter](https://toolskaro.com/text-case-converter/): UPPERCASE, lowercase, Title Case and more.
 - [Date Difference Calculator](https://toolskaro.com/date-difference-calculator/): Days between two dates.
+- [Unit Converter](https://toolskaro.com/unit-converter/): Convert meters to feet plus length, weight, temperature, area, volume and speed units.
 
 ## Developer tools
 - [JSON Formatter](https://toolskaro.com/json-formatter/): Beautify, minify and validate JSON in the browser with clear error messages.

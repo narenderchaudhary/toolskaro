@@ -67,6 +67,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/password-generator/": { name: "Password Generator", cat: "util" },
   "/text-case-converter/": { name: "Text Case Converter", cat: "util" },
   "/date-difference-calculator/": { name: "Date Difference Calculator", cat: "util" },
+  "/unit-converter/": { name: "Unit Converter", cat: "util" },
   // Developer Tools
   "/json-formatter/": { name: "JSON Formatter", cat: "dev" },
   "/base64-encode-decode/": { name: "Base64 Encode/Decode", cat: "dev" },

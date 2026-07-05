@@ -5,7 +5,7 @@ import {
   Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
   Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
   Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
-  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, type LucideIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, ArrowLeftRight, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -69,6 +69,7 @@ const MAP: Record<string, LucideIcon> = {
   "/password-generator/": KeyRound,
   "/text-case-converter/": CaseSensitive,
   "/date-difference-calculator/": CalendarRange,
+  "/unit-converter/": ArrowLeftRight,
   // Developer
   "/json-formatter/": Braces,
   "/base64-encode-decode/": Binary,

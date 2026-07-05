@@ -110,6 +110,7 @@ export const CATEGORIES: Category[] = [
       { href: "/password-generator/", icon: "🔑", t: "Password Generator", d: "Strong, secure random passwords.", vol: "", ready: true },
       { href: "/text-case-converter/", icon: "🔡", t: "Text Case Converter", d: "UPPERCASE, lowercase, Title Case.", vol: "", ready: true },
       { href: "/date-difference-calculator/", icon: "📆", t: "Date Difference", d: "Days between two dates.", vol: "", ready: true },
+      { href: "/unit-converter/", icon: "📏", t: "Unit Converter", d: "Meters to feet, kg, °C, area, volume, speed.", vol: "1M+/mo", ready: true },
     ],
   },
   {

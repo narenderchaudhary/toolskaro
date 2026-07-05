@@ -56,6 +56,7 @@ const ROUTES = [
   "password-generator",
   "text-case-converter",
   "date-difference-calculator",
+  "unit-converter",
   "json-formatter",
   "base64-encode-decode",
   "url-encode-decode",
