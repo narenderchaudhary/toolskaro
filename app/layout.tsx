@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Free online tools to resize & compress photos and signatures to an exact KB, convert and compress PDFs, build a resume and more — 100% in your browser, no upload, no sign-up.",
+    "Free browser-based tools for images, PDFs, documents, calculators and code — compress, resize and convert. No upload, no sign-up, no watermark.",
   metadataBase: new URL(SITE),
   alternates: { canonical: "/" },
   // Only type + siteName here, so each page auto-fills its own og:title/description from its metadata.
