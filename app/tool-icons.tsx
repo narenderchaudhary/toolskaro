@@ -5,7 +5,7 @@ import {
   Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
   Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
   Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
-  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, type LucideIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -60,6 +60,7 @@ const MAP: Record<string, LucideIcon> = {
   "/marks-percentage-calculator/": GraduationCap,
   "/tdee-calculator/": Flame,
   "/pregnancy-calculator/": Baby,
+  "/dog-age-calculator/": Dog,
   // Utilities
   "/age-calculator/": Cake,
   "/qr-code-generator/": QrCode,
@@ -77,6 +78,7 @@ const MAP: Record<string, LucideIcon> = {
   "/uuid-generator/": Fingerprint,
   "/timestamp-converter/": Clock,
   "/color-converter/": Palette,
+  "/csv-to-json/": FileJson,
 };
 
 export function ToolIcon({ href, size = 22 }: { href: string; size?: number }) {

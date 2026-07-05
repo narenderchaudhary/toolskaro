@@ -93,6 +93,7 @@ export const CATEGORIES: Category[] = [
       { href: "/marks-percentage-calculator/", icon: "🎓", t: "Marks % & CGPA", d: "Marks %, CGPA ↔ percentage.", vol: "", ready: true },
       { href: "/tdee-calculator/", icon: "🔥", t: "TDEE Calculator", d: "Daily calories to maintain, lose or gain.", vol: "", ready: true },
       { href: "/pregnancy-calculator/", icon: "🤰", t: "Pregnancy Calculator", d: "Due date & week-by-week tracker.", vol: "", ready: true },
+      { href: "/dog-age-calculator/", icon: "🐕", t: "Dog Age Calculator", d: "Dog years to human years, by breed size.", vol: "60K/mo", ready: true },
     ],
   },
   {
@@ -126,6 +127,7 @@ export const CATEGORIES: Category[] = [
       { href: "/uuid-generator/", icon: "🆔", t: "UUID Generator", d: "Random UUID v4, single or bulk.", vol: "201K/mo", ready: true },
       { href: "/timestamp-converter/", icon: "🕒", t: "Timestamp Converter", d: "Unix epoch ↔ date, live clock.", vol: "165K/mo", ready: true },
       { href: "/color-converter/", icon: "🎨", t: "Color Converter", d: "HEX ↔ RGB ↔ HSL with picker.", vol: "110K/mo", ready: true },
+      { href: "/csv-to-json/", icon: "🔧", t: "CSV to JSON", d: "Convert CSV to clean JSON in the browser.", vol: "40K/mo", ready: true },
     ],
   },
 ];

@@ -80,6 +80,7 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [Marks % & CGPA Calculator](https://toolskaro.com/marks-percentage-calculator/): Marks percentage and CGPA ↔ percentage.
 - [TDEE Calculator](https://toolskaro.com/tdee-calculator/): Total Daily Energy Expenditure and BMR, with daily calorie targets to lose, maintain or gain weight.
 - [Pregnancy Due Date Calculator](https://toolskaro.com/pregnancy-calculator/): Estimated due date and week-by-week pregnancy tracker from LMP, conception or IVF transfer date.
+- [Dog Age Calculator](https://toolskaro.com/dog-age-calculator/): Convert a dog's age to human years using a size-adjusted veterinary method (small, medium, large, giant).
 
 ## Utilities
 - [Age Calculator](https://toolskaro.com/age-calculator/): Exact age and age-as-on exam cut-off date.
@@ -99,6 +100,7 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [UUID Generator](https://toolskaro.com/uuid-generator/): Random UUID v4 identifiers, single or bulk, with uppercase option.
 - [Unix Timestamp Converter](https://toolskaro.com/timestamp-converter/): Convert epoch time to a date and back, seconds or milliseconds.
 - [Color Converter](https://toolskaro.com/color-converter/): Convert colors between HEX, RGB and HSL with a live picker.
+- [CSV to JSON](https://toolskaro.com/csv-to-json/): Convert CSV to clean JSON in the browser — headers as keys, with number/boolean detection and any delimiter.
 
 ## Exam-specific guides
 - [Compress image to 50 KB](https://toolskaro.com/compress-image-to-50kb/): The common 50 KB photo limit for SSC, UPSC and state PSC forms.

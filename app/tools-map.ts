@@ -58,6 +58,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/marks-percentage-calculator/": { name: "Marks % & CGPA Calculator", cat: "calc" },
   "/tdee-calculator/": { name: "TDEE Calculator", cat: "calc" },
   "/pregnancy-calculator/": { name: "Pregnancy Calculator", cat: "calc" },
+  "/dog-age-calculator/": { name: "Dog Age Calculator", cat: "calc" },
   // Utilities
   "/age-calculator/": { name: "Age Calculator", cat: "util" },
   "/qr-code-generator/": { name: "QR Code Generator", cat: "util" },
@@ -75,4 +76,5 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/uuid-generator/": { name: "UUID Generator", cat: "dev" },
   "/timestamp-converter/": { name: "Unix Timestamp Converter", cat: "dev" },
   "/color-converter/": { name: "Color Converter", cat: "dev" },
+  "/csv-to-json/": { name: "CSV to JSON Converter", cat: "dev" },
 };
