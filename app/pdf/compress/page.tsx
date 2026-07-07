@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { icon: "🎚️", title: "Pick a level", text: "Light, Recommended or Strong compression." },
+  { icon: "🎚️", title: "Choose a mode", text: "Compress by quality (Light/Recommended/Strong) or to a target size." },
   { icon: "📁", title: "Upload your PDF", text: "Choose the PDF you want to shrink." },
   { icon: "⬇️", title: "Download", text: "See the before/after size and save the smaller PDF." },
 ];
 
 const features = [
   { icon: "📉", title: "Big savings", text: "Scanned and image-heavy PDFs often shrink by 40–80%." },
-  { icon: "🎚️", title: "Adjustable", text: "Choose how hard to compress to balance size and clarity." },
+  { icon: "🎯", title: "Compress to a size", text: "Set an exact target — 100KB, 500KB, 1MB or any custom KB — or compress by quality." },
   { icon: "🔒", title: "Private", text: "Compression runs in your browser; your file is never uploaded." },
   { icon: "📤", title: "Beat upload limits", text: "Get under the maximum size a form or email allows." },
   { icon: "🆓", title: "Free", text: "No watermark and no sign-up." },
@@ -35,7 +35,7 @@ const faqs = [
   { q: "How do I compress a PDF to upload it on a form?", a: "Pick a compression level (Recommended works for most files), upload your PDF, and download the smaller version. If you need it even smaller, choose ‘Strong’." },
   { q: "Are my files uploaded?", a: "No. Compression runs in your browser, so your document never leaves your device." },
   { q: "Why did my text PDF not shrink much?", a: "This tool is optimised for scanned and image-based PDFs, which are usually the ones that exceed size limits. A small, text-only PDF is already efficient and has little to compress." },
-  { q: "Can I compress a PDF to an exact size like 100KB or 1MB?", a: "Yes. Use our dedicated target pages — Compress PDF to 100KB, 200KB, 500KB or 1MB — which aim for a specific size, ideal when a form states an exact maximum upload limit." },
+  { q: "Can I compress a PDF to an exact size like 100KB or 1MB?", a: "Yes. Switch this tool to “To a target size”, then pick a preset (100KB, 200KB, 500KB, 1MB or 2MB) or type any custom size in KB — it searches for the best quality that lands under your target. There are also dedicated one-click pages such as Compress PDF to 100KB, 200KB, 500KB and 1MB." },
   { q: "Will compression make my document blurry?", a: "Recommended keeps text crisp and is right for most uploads. Strong trades some image sharpness for a smaller file; preview the result and step back a level if scanned text becomes hard to read." },
   { q: "How do I shrink a PDF for a USCIS or visa application?", a: "These portals enforce tight limits. Compress at Recommended first, and if it is still too large use our Compress PDF for USCIS or reduce PDF size for a visa application tools, which target their specific caps." },
   { q: "Should I merge before or after compressing?", a: "Merge your documents into one PDF first, then compress the combined file. Compressing the final packet gives the smallest result and ensures the whole upload fits under the limit." },
