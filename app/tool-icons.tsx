@@ -5,7 +5,7 @@ import {
   Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
   Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
   Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
-  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, ArrowLeftRight, ImagePlus, FileCode, type LucideIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, ArrowLeftRight, ImagePlus, FileCode, Presentation, BookOpen, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -56,6 +56,9 @@ const MAP: Record<string, LucideIcon> = {
   "/cover-letter-generator/": Mail,
   "/invoice-generator/": Receipt,
   "/email-signature-maker/": AtSign,
+  "/ppt-to-word/": Presentation,
+  "/txt-to-word/": FileText,
+  "/epub-to-word/": BookOpen,
   // Calculators
   "/emi-calculator/": Landmark,
   "/sip-calculator/": TrendingUp,

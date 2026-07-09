@@ -81,6 +81,9 @@ export const CATEGORIES: Category[] = [
       { href: "/cover-letter-generator/", icon: "✉️", t: "Cover Letter Generator", d: "Professional cover letter to PDF.", vol: "", ready: true },
       { href: "/invoice-generator/", icon: "🧾", t: "Invoice Generator", d: "GST invoice maker, export to PDF.", vol: "", ready: true },
       { href: "/email-signature-maker/", icon: "✉️", t: "Email Signature Maker", d: "Pro email signature for Gmail & Outlook.", vol: "", ready: true },
+      { href: "/ppt-to-word/", icon: "📊", t: "PPT to Word", d: "Extract PowerPoint slide text into an editable Word doc.", vol: "50K/mo", ready: true },
+      { href: "/txt-to-word/", icon: "📝", t: "Text to Word", d: "Convert a .txt file or text into a Word .docx.", vol: "8K/mo", ready: true },
+      { href: "/epub-to-word/", icon: "📖", t: "EPUB to Word", d: "Extract an ebook's text into an editable Word doc.", vol: "", ready: true },
     ],
   },
   {

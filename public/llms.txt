@@ -75,6 +75,9 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [Cover Letter Generator](https://toolskaro.com/cover-letter-generator/): Professional cover letter to PDF.
 - [Invoice Generator](https://toolskaro.com/invoice-generator/): GST invoice maker, export to PDF.
 - [Email Signature Maker](https://toolskaro.com/email-signature-maker/): Create a professional email signature with photo, designation, company and social icons; copy to Gmail or Outlook.
+- [PPT to Word](https://toolskaro.com/ppt-to-word/): Extract the text from a .pptx PowerPoint into an editable Word .docx, in the browser (text extraction, not slide layout).
+- [Text to Word](https://toolskaro.com/txt-to-word/): Convert a .txt file or pasted text into an editable Word .docx.
+- [EPUB to Word](https://toolskaro.com/epub-to-word/): Extract an .epub ebook's text into an editable Word .docx, in reading order.
 
 ## Calculators
 - [EMI Calculator](https://toolskaro.com/emi-calculator/): Home, car and personal loan EMI.

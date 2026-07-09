@@ -54,6 +54,9 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/cover-letter-generator/": { name: "Cover Letter Generator", cat: "doc" },
   "/invoice-generator/": { name: "Invoice Generator", cat: "doc" },
   "/email-signature-maker/": { name: "Email Signature Maker", cat: "doc" },
+  "/ppt-to-word/": { name: "PPT to Word Converter", cat: "doc" },
+  "/txt-to-word/": { name: "Text to Word Converter", cat: "doc" },
+  "/epub-to-word/": { name: "EPUB to Word Converter", cat: "doc" },
   // Calculators
   "/emi-calculator/": { name: "EMI Calculator", cat: "calc" },
   "/sip-calculator/": { name: "SIP Calculator", cat: "calc" },
