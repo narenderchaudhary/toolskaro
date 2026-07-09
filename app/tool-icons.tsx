@@ -5,7 +5,7 @@ import {
   Combine, FileArchive, Scissors, RotateCw, FileX, ListOrdered, Droplet, LayoutGrid, Scaling, FileText,
   Heart, Mail, Receipt, AtSign, Landmark, TrendingUp, Percent, PiggyBank, GraduationCap, Flame, Baby,
   Cake, QrCode, Type, Keyboard, KeyRound, CaseSensitive, CalendarRange, Braces, Binary, Link as LinkIcon,
-  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, ArrowLeftRight, type LucideIcon,
+  Hash, Pilcrow, Fingerprint, Clock, Palette, Wrench, SquareStack, Dog, FileJson, ArrowLeftRight, ImagePlus, FileCode, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -31,6 +31,11 @@ const MAP: Record<string, LucideIcon> = {
   "/resize-for-pan-card/": CreditCard,
   "/heic-to-jpg/": Smartphone,
   "/webp-to-jpg/": RefreshCw,
+  "/text-to-image/": ImagePlus,
+  "/jfif-to-jpg/": FileImage,
+  "/jfif-to-png/": ImageIcon,
+  "/bmp-to-jpg/": FileImage,
+  "/avif-to-jpg/": RefreshCw,
   // PDF
   "/pdf/jpg-to-pdf/": FileImage,
   "/pdf/pdf-to-jpg/": ImageIcon,
@@ -80,6 +85,10 @@ const MAP: Record<string, LucideIcon> = {
   "/timestamp-converter/": Clock,
   "/color-converter/": Palette,
   "/csv-to-json/": FileJson,
+  "/csv-to-pdf/": FileText,
+  "/text-to-html/": FileCode,
+  "/text-to-xml/": FileCode,
+  "/text-to-json/": FileJson,
 };
 
 export function ToolIcon({ href, size = 22 }: { href: string; size?: number }) {

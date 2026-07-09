@@ -37,6 +37,11 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [HEIC to JPG](https://toolskaro.com/heic-to-jpg/): Convert iPhone HEIC/HEIF photos to standard JPG, no watermark.
 - [HEIC to PDF](https://toolskaro.com/heic-to-pdf/): Convert iPhone HEIC photos into one PDF.
 - [WebP to JPG](https://toolskaro.com/webp-to-jpg/): Convert WebP images to JPG.
+- [Text to Image](https://toolskaro.com/text-to-image/): Turn any text into a JPG or PNG image with custom font, size and colors.
+- [JFIF to JPG](https://toolskaro.com/jfif-to-jpg/): Convert .jfif images to standard JPG files in the browser.
+- [JFIF to PNG](https://toolskaro.com/jfif-to-png/): Convert .jfif images to lossless PNG files in the browser.
+- [BMP to JPG](https://toolskaro.com/bmp-to-jpg/): Convert large .bmp bitmaps to compact JPG files.
+- [AVIF to JPG](https://toolskaro.com/avif-to-jpg/): Convert modern .avif images to widely-supported JPG.
 - [WebP to PDF](https://toolskaro.com/webp-to-pdf/): Convert WebP images into one PDF.
 
 ## Document use-case pages
@@ -102,6 +107,10 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [Unix Timestamp Converter](https://toolskaro.com/timestamp-converter/): Convert epoch time to a date and back, seconds or milliseconds.
 - [Color Converter](https://toolskaro.com/color-converter/): Convert colors between HEX, RGB and HSL with a live picker.
 - [CSV to JSON](https://toolskaro.com/csv-to-json/): Convert CSV to clean JSON in the browser — headers as keys, with number/boolean detection and any delimiter.
+- [CSV to PDF](https://toolskaro.com/csv-to-pdf/): Convert CSV data into a clean, printable PDF table with headers, any delimiter, portrait or landscape.
+- [Text to HTML](https://toolskaro.com/text-to-html/): Convert plain text into clean, escaped HTML with paragraphs.
+- [Text to XML](https://toolskaro.com/text-to-xml/): Convert plain text into valid, escaped XML with one element per line.
+- [Text to JSON](https://toolskaro.com/text-to-json/): Convert plain text into a valid JSON object with a lines array.
 
 ## Exam-specific guides
 - [Compress image to 50 KB](https://toolskaro.com/compress-image-to-50kb/): The common 50 KB photo limit for SSC, UPSC and state PSC forms.

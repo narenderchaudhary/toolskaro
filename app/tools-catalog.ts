@@ -40,6 +40,11 @@ export const CATEGORIES: Category[] = [
       { href: "/resize-for-pan-card/", icon: "🪪", t: "PAN Card Photo", d: "Photo & signature size for a PAN card.", vol: "", ready: true },
       { href: "/heic-to-jpg/", icon: "📱", t: "HEIC to JPG", d: "Convert iPhone HEIC photos to JPG.", vol: "", ready: true },
       { href: "/webp-to-jpg/", icon: "🔄", t: "WebP to JPG", d: "Convert WebP images to JPG.", vol: "", ready: true },
+      { href: "/text-to-image/", icon: "🔤", t: "Text to Image", d: "Turn text into a JPG or PNG image.", vol: "33K/mo", ready: true },
+      { href: "/jfif-to-jpg/", icon: "🔄", t: "JFIF to JPG", d: "Convert .jfif images to standard JPG.", vol: "", ready: true },
+      { href: "/jfif-to-png/", icon: "🖼️", t: "JFIF to PNG", d: "Convert .jfif images to lossless PNG.", vol: "", ready: true },
+      { href: "/bmp-to-jpg/", icon: "🗜️", t: "BMP to JPG", d: "Shrink large .bmp bitmaps into JPG.", vol: "", ready: true },
+      { href: "/avif-to-jpg/", icon: "🔄", t: "AVIF to JPG", d: "Convert modern .avif images to JPG.", vol: "", ready: true },
     ],
   },
   {
@@ -129,6 +134,10 @@ export const CATEGORIES: Category[] = [
       { href: "/timestamp-converter/", icon: "🕒", t: "Timestamp Converter", d: "Unix epoch ↔ date, live clock.", vol: "165K/mo", ready: true },
       { href: "/color-converter/", icon: "🎨", t: "Color Converter", d: "HEX ↔ RGB ↔ HSL with picker.", vol: "110K/mo", ready: true },
       { href: "/csv-to-json/", icon: "🔧", t: "CSV to JSON", d: "Convert CSV to clean JSON in the browser.", vol: "40K/mo", ready: true },
+      { href: "/csv-to-pdf/", icon: "🧾", t: "CSV to PDF", d: "Turn CSV data into a printable PDF table.", vol: "", ready: true },
+      { href: "/text-to-html/", icon: "📄", t: "Text to HTML", d: "Convert plain text into escaped HTML.", vol: "", ready: true },
+      { href: "/text-to-xml/", icon: "📄", t: "Text to XML", d: "Convert plain text into valid XML.", vol: "", ready: true },
+      { href: "/text-to-json/", icon: "{ }", t: "Text to JSON", d: "Convert plain text into a JSON object.", vol: "", ready: true },
     ],
   },
 ];

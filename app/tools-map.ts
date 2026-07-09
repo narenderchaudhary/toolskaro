@@ -25,6 +25,11 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/resize-for-pan-card/": { name: "PAN Card Photo", cat: "image" },
   "/heic-to-jpg/": { name: "HEIC to JPG Converter", cat: "image" },
   "/webp-to-jpg/": { name: "WebP to JPG Converter", cat: "image" },
+  "/text-to-image/": { name: "Text to Image", cat: "image" },
+  "/jfif-to-jpg/": { name: "JFIF to JPG Converter", cat: "image" },
+  "/jfif-to-png/": { name: "JFIF to PNG Converter", cat: "image" },
+  "/bmp-to-jpg/": { name: "BMP to JPG Converter", cat: "image" },
+  "/avif-to-jpg/": { name: "AVIF to JPG Converter", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },
@@ -78,4 +83,8 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/timestamp-converter/": { name: "Unix Timestamp Converter", cat: "dev" },
   "/color-converter/": { name: "Color Converter", cat: "dev" },
   "/csv-to-json/": { name: "CSV to JSON Converter", cat: "dev" },
+  "/csv-to-pdf/": { name: "CSV to PDF Converter", cat: "dev" },
+  "/text-to-html/": { name: "Text to HTML Converter", cat: "dev" },
+  "/text-to-xml/": { name: "Text to XML Converter", cat: "dev" },
+  "/text-to-json/": { name: "Text to JSON Converter", cat: "dev" },
 };
