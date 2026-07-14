@@ -244,7 +244,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
         <Script id="ga-src" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-98K21RL284" />
         <Script id="ga-init" strategy="lazyOnload">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-98K21RL284');`}</Script>
-        <Script id="ahrefs-analytics" strategy="afterInteractive" src="https://analytics.ahrefs.com/analytics.js" data-key="PWWrzT7KpcwUq88BeOZjsQ" />
+        <Script id="ahrefs-analytics" strategy="beforeInteractive" src="https://analytics.ahrefs.com/analytics.js" data-key="PWWrzT7KpcwUq88BeOZjsQ" />
       </body>
     </html>
   );
