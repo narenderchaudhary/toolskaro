@@ -82,7 +82,7 @@ export default function Page() {
           over 41 kg. If your dog sits between two sizes, choose the heavier category. For a human age
           gap between two dates instead, try the{" "}
           <Link href="/age-calculator/">age calculator</Link> or the{" "}
-          <Link href="/date-difference-calculator/">date difference calculator</Link>.
+          <Link href="/date-difference-calculator/">date difference calculator</Link>. Want the full explanation? Read{" "}<Link href="/blog/dog-years-to-human-years/">dog years to human years</Link>.
         </p>
       </div>
 

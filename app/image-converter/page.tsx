@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Converter from "./Converter";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -64,7 +65,7 @@ export default function Page() {
         </p>
         <p>
           Because it runs in your browser, conversion is instant and completely private — your
-          images are never uploaded. Need an exact file size afterwards? Use our Image Compressor.
+          images are never uploaded. Need an exact file size afterwards? Use our <Link href="/image-compressor/">Image Compressor</Link>. You can also convert specific formats — <Link href="/jfif-to-jpg/">JFIF to JPG</Link>, <Link href="/bmp-to-jpg/">BMP to JPG</Link> and <Link href="/avif-to-jpg/">AVIF to JPG</Link> — or turn <Link href="/text-to-image/">text into an image</Link>.
         </p>
       </div>
       <RelatedTools

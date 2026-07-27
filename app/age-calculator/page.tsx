@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AgeCalc from "./AgeCalc";
 import Steps from "@/app/components/Steps";
 import Features from "@/app/components/Features";
@@ -70,7 +71,7 @@ export default function Page() {
         <p>
           Beyond exams, it’s handy for forms, interviews, and everyday curiosity — finding your age
           in days or weeks, or counting down to a birthday. It runs entirely in your browser and
-          stores nothing.
+          stores nothing. Got a dog? Work out its age in human years with our <Link href="/dog-age-calculator/">dog age calculator</Link>.
         </p>
       </div>
 

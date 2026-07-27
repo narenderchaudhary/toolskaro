@@ -82,7 +82,7 @@ export default function Page() {
           your JSON, tidy it with the <Link href="/json-formatter/">JSON formatter</Link>, or reach for
           the <Link href="/base64-encode-decode/">Base64 encoder</Link> and{" "}
           <Link href="/uuid-generator/">UUID generator</Link>. Browse the rest on the{" "}
-          <Link href="/developer-tools/">developer tools</Link> page.
+          <Link href="/developer-tools/">developer tools</Link> page. For a walkthrough with examples, see our{" "}<Link href="/blog/how-to-convert-csv-to-json/">CSV to JSON guide</Link>.
         </p>
       </div>
 

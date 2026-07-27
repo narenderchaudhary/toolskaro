@@ -91,7 +91,7 @@ export default function Page() {
           shrink payloads before shipping them. If you are also handling encoded data, the{" "}
           <Link href="/base64-encode-decode/">Base64 encoder/decoder</Link> and{" "}
           <Link href="/url-encode-decode/">URL encoder</Link> pair naturally with this formatter, and
-          you can browse the full set on the <Link href="/developer-tools/">developer tools</Link> page.
+          you can browse the full set on the <Link href="/developer-tools/">developer tools</Link> page. Newer additions: <Link href="/csv-to-json/">CSV to JSON</Link>, <Link href="/csv-to-pdf/">CSV to PDF</Link> and <Link href="/text-to-json/">text to JSON</Link>.
         </p>
       </div>
 

@@ -84,7 +84,7 @@ export default function Page() {
           1 meter = 3.28084 feet = 100 cm = 39.3701 inches. 1 foot = 0.3048 m = 30.48 cm = 12 inches.
           1 mile = 1.60934 km. 1 inch = 2.54 cm. For photo and document sizes in centimeters, see the{" "}
           <Link href="/resize-image-in-cm/">resize image in cm</Link> tool, and for everyday math try the{" "}
-          <Link href="/percentage-calculator/">percentage calculator</Link>.
+          <Link href="/percentage-calculator/">percentage calculator</Link>. See also our{" "}<Link href="/blog/meters-to-feet-conversion-guide/">meters to feet conversion guide</Link>.
         </p>
       </div>
 

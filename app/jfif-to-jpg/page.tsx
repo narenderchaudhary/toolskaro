@@ -64,7 +64,7 @@ export default function Page() {
         <p>
           Need other conversions? Use the <Link href="/png-to-jpg/">PNG to JPG</Link>,{" "}
           <Link href="/webp-to-jpg/">WebP to JPG</Link> or <Link href="/heic-to-jpg/">HEIC to JPG</Link>{" "}
-          tools, or the all-in-one <Link href="/image-converter/">image converter</Link>.
+          tools, or the all-in-one <Link href="/image-converter/">image converter</Link>. Curious what a JFIF really is? Read{" "}<Link href="/blog/what-is-a-jfif-file/">what is a JFIF file</Link>.
         </p>
       </div>
 

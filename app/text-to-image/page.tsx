@@ -65,7 +65,7 @@ export default function Page() {
           Everything happens in your browser, so it’s instant and private. Need the reverse or related
           tools? Try the <Link href="/image-converter/">image converter</Link>,{" "}
           <Link href="/crop-image/">crop image</Link> or the{" "}
-          <Link href="/qr-code-generator/">QR code generator</Link>.
+          <Link href="/qr-code-generator/">QR code generator</Link>. New to this? See our{" "}<Link href="/blog/how-to-convert-text-to-image/">guide to converting text to an image</Link>.
         </p>
       </div>
 

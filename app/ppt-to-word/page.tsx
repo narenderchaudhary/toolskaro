@@ -70,7 +70,7 @@ export default function Page() {
         <p>
           Related: turn slides’ companion documents with <Link href="/text-to-word/">Text to Word</Link>,
           or build a PDF with <Link href="/csv-to-pdf/">CSV to PDF</Link>. Browse more in{" "}
-          <Link href="/document-tools/">document tools</Link>.
+          <Link href="/document-tools/">document tools</Link>. Prefer a walkthrough? Read our{" "}<Link href="/blog/how-to-convert-powerpoint-to-word/">step-by-step guide to converting PowerPoint to Word</Link>.
         </p>
       </div>
 
