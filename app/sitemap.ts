@@ -41,6 +41,7 @@ const ROUTES = [
   "jfif-to-png",
   "bmp-to-jpg",
   "avif-to-jpg",
+  "rotate-image",
   "compress-pdf-for-uscis",
   "compress-resume-pdf",
   "combine-bank-statements-pdf",

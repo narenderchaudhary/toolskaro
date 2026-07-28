@@ -45,6 +45,7 @@ export const CATEGORIES: Category[] = [
       { href: "/jfif-to-png/", icon: "🖼️", t: "JFIF to PNG", d: "Convert .jfif images to lossless PNG.", vol: "", ready: true },
       { href: "/bmp-to-jpg/", icon: "🗜️", t: "BMP to JPG", d: "Shrink large .bmp bitmaps into JPG.", vol: "", ready: true },
       { href: "/avif-to-jpg/", icon: "🔄", t: "AVIF to JPG", d: "Convert modern .avif images to JPG.", vol: "", ready: true },
+      { href: "/rotate-image/", icon: "🔄", t: "Rotate Image", d: "Rotate to any angle, flip & straighten.", vol: "", ready: true },
     ],
   },
   {

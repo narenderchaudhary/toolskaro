@@ -42,6 +42,7 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [JFIF to PNG](https://toolskaro.com/jfif-to-png/): Convert .jfif images to lossless PNG files in the browser.
 - [BMP to JPG](https://toolskaro.com/bmp-to-jpg/): Convert large .bmp bitmaps to compact JPG files.
 - [AVIF to JPG](https://toolskaro.com/avif-to-jpg/): Convert modern .avif images to widely-supported JPG.
+- [Rotate Image](https://toolskaro.com/rotate-image/): Rotate an image to 90° or any custom angle, flip horizontally/vertically, and download as PNG or JPG.
 - [WebP to PDF](https://toolskaro.com/webp-to-pdf/): Convert WebP images into one PDF.
 
 ## Document use-case pages

@@ -30,6 +30,7 @@ export const TOOLS: Record<string, { name: string; cat: ToolCat }> = {
   "/jfif-to-png/": { name: "JFIF to PNG Converter", cat: "image" },
   "/bmp-to-jpg/": { name: "BMP to JPG Converter", cat: "image" },
   "/avif-to-jpg/": { name: "AVIF to JPG Converter", cat: "image" },
+  "/rotate-image/": { name: "Rotate Image", cat: "image" },
   // PDF
   "/pdf/jpg-to-pdf/": { name: "JPG to PDF", cat: "pdf" },
   "/pdf/pdf-to-jpg/": { name: "PDF to JPG", cat: "pdf" },

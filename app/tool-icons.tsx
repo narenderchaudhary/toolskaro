@@ -36,6 +36,7 @@ const MAP: Record<string, LucideIcon> = {
   "/jfif-to-png/": ImageIcon,
   "/bmp-to-jpg/": FileImage,
   "/avif-to-jpg/": RefreshCw,
+  "/rotate-image/": RotateCw,
   // PDF
   "/pdf/jpg-to-pdf/": FileImage,
   "/pdf/pdf-to-jpg/": ImageIcon,
