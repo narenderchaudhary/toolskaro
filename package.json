@@ -13,6 +13,7 @@
   "dependencies": {
     "@imgly/background-removal": "^1.7.0",
     "@next/third-parties": "^16.2.6",
+    "heic-to": "^1.5.2",
     "heic2any": "^0.0.4",
     "jszip": "^3.10.1",
     "lucide-react": "^1.21.0",
