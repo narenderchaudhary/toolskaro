@@ -392,4 +392,57 @@ export const PDF_MB_INFO: Record<number, { usedFor: string; intro: string; tip: 
   },
 };
 
-export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...PDF_KB_VALUES.map(pdfKbSlug), ...PDF_MB_VALUES.map(pdfMbSlug), ...EXAMS.map((e) => e.slug)];
+// JPG -> PDF with a size target ("jpg to pdf 200kb"): convert images to a PDF that lands under N KB.
+export const JPG_PDF_KB_VALUES = [50, 100, 150, 200, 300, 500];
+export const jpgPdfKbSlug = (n: number) => `jpg-to-pdf-${n}kb`;
+export const JPG_PDF_KB_INFO: Record<number, { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }> = {
+  50: {
+    usedFor: "the strictest photo-to-PDF upload limits",
+    intro: "A 50 KB cap is tight for a PDF made from photos — it suits a single clear document page or ID scan. The tool compresses the images hard while keeping the text readable.",
+    tip: "Start from a single, well-lit, tightly-cropped photo. One page compresses to 50 KB far more cleanly than several, so split multi-page uploads if the form allows.",
+    faq: { q: "Can a photo really fit in a 50 KB PDF?", a: "Yes, for a single well-lit page. The tool lowers the image quality just enough to land under 50 KB; very detailed or multi-photo PDFs may need a larger limit." },
+  },
+  100: {
+    usedFor: "common ID and single-document upload limits",
+    intro: "A 100 KB PDF made from images fits a clear single-page document or a photo ID scan. It is one of the most common caps on application portals.",
+    tip: "Scan or photograph on a plain background in good light. A clean, high-contrast page reaches 100 KB with the text still crisp.",
+    faq: { q: "Will my document stay readable in a 100 KB PDF?", a: "Yes. 100 KB keeps a single-page scan legible. The tool preserves the best quality that fits under the limit." },
+  },
+  150: {
+    usedFor: "single or short multi-page document uploads",
+    intro: "A 150 KB limit gives a little more room — enough for a clean single page or a short two-page document made from photos, with readable text.",
+    tip: "Photograph each page straight-on and evenly lit; a well-aligned page compresses to 150 KB with clear text.",
+    faq: { q: "Is 150 KB enough for two pages?", a: "For two clean, well-lit pages, usually yes. If it can't fit, the tool tells you the smallest achievable size so you can drop a page or raise the limit." },
+  },
+  200: {
+    usedFor: "the single most common photo-to-PDF upload limit",
+    intro: "200 KB is the most common size cap for PDFs built from photos on application and job portals. It fits a detailed single-page scan or a short multi-page document.",
+    tip: "If you are only slightly over, removing one photo or cropping out empty margins gets you under 200 KB without losing quality on the rest.",
+    faq: { q: "Why do so many forms use a 200 KB PDF limit?", a: "200 KB balances legibility and upload speed — big enough for a clear document, small enough to upload on slow connections — so many portals standardised on it." },
+  },
+  300: {
+    usedFor: "multi-page documents and detailed photo scans",
+    intro: "A 300 KB limit comfortably holds a multi-page document or a detailed photo scan with stamps and seals, made from several images combined into one PDF.",
+    tip: "Combine all your photos first, then let the tool compress the whole PDF to 300 KB in one pass so every page stays consistent.",
+    faq: { q: "Will coloured stamps stay visible at 300 KB?", a: "Yes. 300 KB is generous enough to keep coloured seals and signatures clear across a few pages while meeting the limit." },
+  },
+  500: {
+    usedFor: "richer multi-page photo documents",
+    intro: "A 500 KB cap is one of the more generous photo-to-PDF limits — it suits a full multi-page document set or a high-detail colour scan built from several images.",
+    tip: "At 500 KB you have headroom, so photograph at higher resolution for maximum legibility and simply confirm the PDF lands under 500 KB.",
+    faq: { q: "Do I need to compress much for 500 KB?", a: "Often a multi-photo PDF already exceeds 500 KB, so a light compression brings it under the cap while keeping excellent quality." },
+  },
+};
+
+export const JPG_PDF_MB_VALUES = [1];
+export const jpgPdfMbSlug = (n: number) => `jpg-to-pdf-${n}mb`;
+export const JPG_PDF_MB_INFO: Record<number, { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }> = {
+  1: {
+    usedFor: "larger multi-page photo documents and combined certificate sets",
+    intro: "A 1 MB (about 1024 KB) limit is generous for a PDF built from photos — it comfortably fits a multi-page document set or several certificates combined into one file at good quality.",
+    tip: "Add all your images, pick 1 MB, and the tool keeps quality high while ensuring the finished PDF stays under 1 MB.",
+    faq: { q: "Is 1 MB enough for several photo pages?", a: "Yes. 1 MB easily holds several photo pages at readable quality; if your images are very large the tool reduces them to fit while keeping text clear." },
+  },
+};
+
+export const ALL_SLUGS = [...KB_VALUES.map(kbSlug), ...PDF_KB_VALUES.map(pdfKbSlug), ...PDF_MB_VALUES.map(pdfMbSlug), ...JPG_PDF_KB_VALUES.map(jpgPdfKbSlug), ...JPG_PDF_MB_VALUES.map(jpgPdfMbSlug), ...EXAMS.map((e) => e.slug)];

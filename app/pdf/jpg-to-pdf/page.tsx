@@ -108,10 +108,13 @@ export default function Page() {
         <p>
           Photos from modern phones are high-resolution, so a few pages can easily exceed a 1&nbsp;MB
           upload cap. Crop out empty borders and shoot in even light to keep images sharp at smaller
-          sizes. If the finished PDF is still too heavy, run it through our{" "}
-          <Link href="/compress-pdf-to-200kb/">Compress PDF to 200KB</Link> tool or the general{" "}
-          <Link href="/image-compressor/">Image Compressor</Link> before converting, so the text on
-          your documents stays readable while comfortably meeting the limit.
+          sizes. Even easier: pick a <strong>target size</strong> above and the tool builds a PDF that
+          lands under your limit in one step — use the ready-made pages for{" "}
+          <Link href="/jpg-to-pdf-100kb/">100&nbsp;KB</Link>,{" "}
+          <Link href="/jpg-to-pdf-200kb/">200&nbsp;KB</Link>,{" "}
+          <Link href="/jpg-to-pdf-300kb/">300&nbsp;KB</Link> or{" "}
+          <Link href="/jpg-to-pdf-500kb/">500&nbsp;KB</Link>. To shrink an <em>existing</em> PDF instead,
+          try <Link href="/compress-pdf-to-200kb/">Compress PDF to 200KB</Link>.
         </p>
       </div>
 

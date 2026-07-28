@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Compressor from "@/app/image-compressor/Compressor";
 import CompressPdfToKb from "@/app/pdf/compress/CompressPdfToKb";
+import JpgToPdf from "@/app/pdf/jpg-to-pdf/JpgToPdf";
 import Faq from "@/app/components/Faq";
 import CtaBand from "@/app/components/CtaBand";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import Byline from "@/app/components/Byline";
-import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, PDF_MB_VALUES, PDF_MB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
+import { ALL_SLUGS, EXAMS, KB_VALUES, KB_INFO, PDF_KB_VALUES, PDF_KB_INFO, PDF_MB_VALUES, PDF_MB_INFO, JPG_PDF_KB_VALUES, JPG_PDF_KB_INFO, JPG_PDF_MB_VALUES, JPG_PDF_MB_INFO, kbSlug, type Exam } from "@/app/programmatic-data";
 
 export const dynamicParams = false;
 
@@ -35,6 +36,18 @@ function pdfMbFromSlug(slug: string): number | null {
   const n = Number(m[1]);
   return PDF_MB_VALUES.includes(n) ? n : null;
 }
+function jpgPdfKbFromSlug(slug: string): number | null {
+  const m = slug.match(/^jpg-to-pdf-(\d+)kb$/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return JPG_PDF_KB_VALUES.includes(n) ? n : null;
+}
+function jpgPdfMbFromSlug(slug: string): number | null {
+  const m = slug.match(/^jpg-to-pdf-(\d+)mb$/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return JPG_PDF_MB_VALUES.includes(n) ? n : null;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -60,6 +73,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `Compress PDF to ${pmb} MB Online — Free, No Upload`,
       description: `Compress a PDF to ${pmb} MB online free in your browser. Get your PDF under the ${pmb} MB limit for portals that accept larger documents — no signup, files never uploaded.`,
+      alternates: { canonical: `/${slug}/` },
+    };
+  }
+  const jkb = jpgPdfKbFromSlug(slug);
+  if (jkb !== null) {
+    return {
+      title: `JPG to PDF ${jkb} KB — Convert & Compress Free Online`,
+      description: `Convert JPG images to a PDF under ${jkb} KB online, free and in your browser. Combine photos and hit the ${jkb} KB upload limit in one step — no signup, files never uploaded.`,
+      alternates: { canonical: `/${slug}/` },
+    };
+  }
+  const jmb = jpgPdfMbFromSlug(slug);
+  if (jmb !== null) {
+    return {
+      title: `JPG to PDF ${jmb} MB — Convert & Compress Free Online`,
+      description: `Convert JPG images to a PDF under ${jmb} MB online, free and in your browser. Combine photos into one PDF within the ${jmb} MB limit — no signup, files never uploaded.`,
       alternates: { canonical: `/${slug}/` },
     };
   }
@@ -193,6 +222,42 @@ function PdfMbPage({ mb }: { mb: number }) {
   );
 }
 
+function JpgPdfPage({ n, unit, targetKb, info, slug }: { n: number; unit: "KB" | "MB"; targetKb: number; info: { usedFor: string; intro: string; tip: string; faq: { q: string; a: string } }; slug: string }) {
+  const label = `${n} ${unit}`;
+  const faqs = [
+    info.faq,
+    { q: `How do I convert JPG to a PDF under ${label}?`, a: `Drop your photos above — the target is preset to ${label}. The tool combines your images into a PDF and compresses it to land under ${label}, then lets you download it. Everything runs in your browser; nothing is uploaded.` },
+    { q: `Will the pages stay readable under ${label}?`, a: `The tool keeps the highest quality that fits under ${label}. ${unit === "KB" && n <= 100 ? "Very small targets soften detail, so a single clean, well-lit page gives the sharpest result." : "There is enough room to keep the pages clear at this size."}` },
+    { q: "Is it free and private?", a: "Yes — free, no sign-up, no watermark, and your images are converted entirely on your device, never uploaded." },
+  ];
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(`JPG to PDF under ${label}`, faqs)) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "PDF Tools", href: "/pdf-tools/" }, { name: "JPG to PDF", href: "/pdf/jpg-to-pdf/" }, { name: `under ${label}`, href: `/${slug}/` }]} />
+      <div className="tool-hero">
+        <h1>JPG to PDF <span className="grad">under {label}</span></h1>
+        <p className="lede">Convert your photos into a PDF that stays under {label} — free, 100% in your browser, nothing uploaded. The target is preset, so just drop your images and download.</p>
+      </div>
+      <JpgToPdf initialTargetKb={targetKb} />
+      <div className="card content">
+        <h2 style={{ marginTop: 0 }}>When you need a JPG-to-PDF under {label}</h2>
+        <p>A <strong>{label}</strong> limit is typically used for <strong>{info.usedFor}</strong>. {info.intro}</p>
+        <h3>Tip for getting under {label}</h3>
+        <p>{info.tip}</p>
+        <p>
+          Need a plain PDF with no size limit? Use <a href="/pdf/jpg-to-pdf/">JPG to PDF</a>. To shrink an
+          existing PDF instead, try <a href="/pdf/compress/">Compress PDF</a> or a target page like{" "}
+          <a href="/compress-pdf-to-200kb/">200&nbsp;KB</a>. Your file never leaves your device.
+        </p>
+        <p className="muted-note">⚠️ Upload limits vary between portals — always confirm the exact maximum in the official instructions.</p>
+      </div>
+      <Faq items={faqs} />
+      <Byline />
+      <CtaBand heading="More free PDF tools" text="Convert, merge, split and compress — all in your browser." links={[["/pdf/jpg-to-pdf/", "JPG to PDF"], ["/pdf/compress/", "Compress PDF"], ["/pdf/merge/", "Merge PDF"], ["/pdf-tools/", "All PDF Tools"]]} />
+    </>
+  );
+}
+
 function ExamPage({ exam }: { exam: Exam }) {
   const faqs = [
     ...exam.uniqueFaqs,
@@ -287,6 +352,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (pkb !== null) return <PdfKbPage kb={pkb} />;
   const pmb = pdfMbFromSlug(slug);
   if (pmb !== null) return <PdfMbPage mb={pmb} />;
+  const jkb = jpgPdfKbFromSlug(slug);
+  if (jkb !== null) return <JpgPdfPage n={jkb} unit="KB" targetKb={jkb} info={JPG_PDF_KB_INFO[jkb]} slug={slug} />;
+  const jmb = jpgPdfMbFromSlug(slug);
+  if (jmb !== null) return <JpgPdfPage n={jmb} unit="MB" targetKb={jmb * 1024} info={JPG_PDF_MB_INFO[jmb]} slug={slug} />;
   const exam = examFromSlug(slug);
   if (exam) return <ExamPage exam={exam} />;
   notFound();

@@ -52,7 +52,8 @@ Full reference (all tools, blog and policies): https://toolskaro.com/llms-full.t
 - [Reduce PDF Size for Visa Application](https://toolskaro.com/reduce-pdf-size-for-visa-application/): Compress documents below a visa portal limit.
 
 ## PDF tools
-- [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF.
+- [JPG to PDF](https://toolskaro.com/pdf/jpg-to-pdf/): Combine images into one PDF, with an optional target file size (KB/MB).
+- [JPG to PDF under a size](https://toolskaro.com/jpg-to-pdf-200kb/): Convert JPGs to a PDF that fits an exact limit — /jpg-to-pdf-{50,100,150,200,300,500}kb/ and /jpg-to-pdf-1mb/.
 - [PDF to JPG](https://toolskaro.com/pdf/pdf-to-jpg/): Convert PDF pages to JPG images.
 - [Merge PDF](https://toolskaro.com/pdf/merge/): Combine multiple PDFs into one.
 - [Compress PDF](https://toolskaro.com/pdf/compress/): Reduce PDF file size for uploads.
