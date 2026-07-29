@@ -245,6 +245,12 @@ function JpgPdfPage({ n, unit, targetKb, info, slug }: { n: number; unit: "KB" |
         <h3>Tip for getting under {label}</h3>
         <p>{info.tip}</p>
         <p>
+          <strong>Other JPG-to-PDF sizes:</strong>{" "}
+          {JPG_PDF_KB_VALUES.map((v, i) => (
+            <span key={v}>{i > 0 ? ", " : ""}<a href={`/jpg-to-pdf-${v}kb/`}>{v}&nbsp;KB</a></span>
+          ))}{" "}and <a href="/jpg-to-pdf-1mb/">1&nbsp;MB</a>.
+        </p>
+        <p>
           Need a plain PDF with no size limit? Use <a href="/pdf/jpg-to-pdf/">JPG to PDF</a>. To shrink an
           existing PDF instead, try <a href="/pdf/compress/">Compress PDF</a> or a target page like{" "}
           <a href="/compress-pdf-to-200kb/">200&nbsp;KB</a>. Your file never leaves your device.
