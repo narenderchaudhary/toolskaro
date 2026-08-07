@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 
 type Img = { bmp: ImageBitmap; url: string };
 type Layout = "horizontal" | "vertical" | "grid";
@@ -11,6 +11,25 @@ function drawContain(ctx: CanvasRenderingContext2D, img: ImageBitmap, x: number,
   const dw = img.width * s, dh = img.height * s;
   ctx.drawImage(img, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
 }
+
+// Mini preview icons showing each arrangement (inherit the button colour via currentColor).
+const LAYOUT_ICONS: Record<Layout, ReactNode> = {
+  horizontal: (
+    <svg width="28" height="18" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="3" width="5" height="12" rx="1" /><rect x="9.5" y="3" width="5" height="12" rx="1" /><rect x="17" y="3" width="5" height="12" rx="1" />
+    </svg>
+  ),
+  vertical: (
+    <svg width="28" height="18" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true">
+      <rect x="4" y="2" width="16" height="3.6" rx="1" /><rect x="4" y="7.2" width="16" height="3.6" rx="1" /><rect x="4" y="12.4" width="16" height="3.6" rx="1" />
+    </svg>
+  ),
+  grid: (
+    <svg width="28" height="18" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true">
+      <rect x="3" y="2" width="8" height="6.5" rx="1" /><rect x="13" y="2" width="8" height="6.5" rx="1" /><rect x="3" y="9.5" width="8" height="6.5" rx="1" /><rect x="13" y="9.5" width="8" height="6.5" rx="1" />
+    </svg>
+  ),
+};
 
 export default function PhotoJoiner() {
   const [imgs, setImgs] = useState<Img[]>([]);
@@ -94,7 +113,17 @@ export default function PhotoJoiner() {
       <label>Layout</label>
       <div className="preset-row">
         {([["horizontal", "Side by side"], ["vertical", "Stacked"], ["grid", "Grid"]] as [Layout, string][]).map(([l, lbl]) => (
-          <button key={l} type="button" className="chip" onClick={() => { setLayout(l); setOut(null); }} style={layout === l ? { borderColor: "var(--brand)", color: "var(--brand)" } : undefined}>{lbl}</button>
+          <button
+            key={l}
+            type="button"
+            className="chip"
+            aria-pressed={layout === l}
+            onClick={() => { setLayout(l); setOut(null); }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 5, padding: "9px 16px", ...(layout === l ? { borderColor: "var(--brand)", color: "var(--brand)", background: "var(--bg-soft, #faf9fc)" } : {}) }}
+          >
+            {LAYOUT_ICONS[l]}
+            <span>{lbl}</span>
+          </button>
         ))}
       </div>
 
